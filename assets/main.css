@@ -9,7 +9,13 @@ body {
   color: #ffffff;
   font-family: 'Roboto', sans-serif;
   font-size: 20px;
-  line-height: 1.8;
+  line-height: 1.6;  
+}
+
+p {
+  text-indent: 0px;
+  /* line-height: 32px; */
+  margin-bottom: 18px;
 }
 
 header {
