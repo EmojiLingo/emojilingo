@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Grammar
+permalink: /grammar/
 ---
 
 # EmojiLingo Grammar
