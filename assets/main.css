@@ -7,8 +7,9 @@ body, h1, h2, h3, h4, h5, h6, p {
 body {
   background-color: #1a1a1a;
   color: #ffffff;
-  font-family: 'Arial', sans-serif;
-  line-height: 1.6;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  line-height: 1.8;
 }
 
 header {
@@ -66,6 +67,32 @@ a:hover {
 h1, h2, h3, h4, h5, h6 {
   color: #3498db;
 }
+
+h1 {
+  font-size: 22px;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  font-size: 12px;
+}
+
+
 
 hr {
   border-color: #3498db;
