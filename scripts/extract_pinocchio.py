@@ -29,7 +29,7 @@ def main():
     mk_output_en_emojilingo.append('| ------- | ---------- |')
     for en,el in zip(strings_en, strings_emojilingo):
         en = en.replace('\n','')
-        el = el.replace('\n','').replace("'","＇")
+        el = el.replace('\n','').replace("'","^") # "＇"
         mk_output_en_emojilingo.append(
             '| ' + en + ' | <span class="emojitext">' + el + '</span> |'
         )
@@ -41,7 +41,7 @@ def main():
     mk_output_it_emojilingo.append('| ------- | ---------- |')
     for it,el in zip(strings_it, strings_emojilingo):
         it = it.replace('\n','')
-        el = el.replace('\n','').replace("'","＇")
+        el = el.replace('\n','').replace("'","^") # "＇"
         mk_output_it_emojilingo.append(
             '| ' + it + ' | <span class="emojitext">' + el + '</span> |'
         )
