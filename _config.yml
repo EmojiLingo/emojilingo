@@ -7,5 +7,5 @@ exclude_from_localizations: ["javascript", "images", "css"]
 
 baseurl: ""
 
-plugins:
-  - jekyll-multiple-languages-plugin
+# plugins:
+#   - jekyll-multiple-languages-plugin
