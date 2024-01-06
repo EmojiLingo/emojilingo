@@ -40,9 +40,9 @@
    - Gli **aggettivi possessivi** si ottengono inserendo ⏩ prima del pronome personale: ⌊⏩🚹️⌋ = mio (di me).
    - Il **diminutivo** si ottiene inserendo 👶 dopo l'aggettivo. Esempio: ⌊🐮👶⌋ = vitellino.
    - Lo **spregiativo** si ottiene inserendo 👹 dopo l'aggettivo. Esempio: ⌊👁👹⌋ = occhiacci.
-   - **Comparativo di maggioranza**: 📶<aggettivo>➡️. Esempio: 📶🕸➡️ = più sottile di.
-   - **Superlativo relativo**: ⌊<aggettivo>💯⌋. Esempio:  ⌊🕸💯⌋ = il più sottile.
-   - **Superlativo assoluto**: ⌊<aggettivo>🔝⌋. Esempio: ⌊🕸🔝⌋ = sottilissimo.
+   - **Comparativo di maggioranza**: 📶\<aggettivo\>➡️. Esempio: 📶🕸➡️ = più sottile di.
+   - **Superlativo relativo**: ⌊\<aggettivo\>💯⌋. Esempio:  ⌊🕸💯⌋ = il più sottile.
+   - **Superlativo assoluto**: ⌊\<aggettivo\>🔝⌋. Esempio: ⌊🕸🔝⌋ = sottilissimo.
 
 * Regole degli avverbi
    - Il simbolo ⬅️ viene inserito a destra dell'aggettivo per trasformarlo in **avverbio**. Esemptio: 🐌 = lento, ⌊🐌⬅️⌋ = lentamente.

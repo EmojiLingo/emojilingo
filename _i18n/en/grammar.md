@@ -40,9 +40,9 @@
    - The **possessive adjectives** are obtained by inserting ⏩ before the personal pronoun: ⌊⏩🚹️⌋ = mine (of me).
    - The **diminutive form** is obtained by inserting 👶 after the adjective. Example: ⌊🐮👶⌋ = calf.
    - The **pejorative form** is obtained by inserting 👹 after the adjective. Example: ⌊👁👹⌋ = stink eyes.
-   - **Comparative**: 📶 <adjective> ➡️. Example: 📶🕸➡️ = more thin then.
-   - **Superlative (relative)**: ⌊<adjective> 💯⌋. Example:  ⌊🕸💯⌋ = the thinnest.
-   - **Superlative (absolute)**: ⌊<adjective>🔝⌋. Esempio: ⌊🕸🔝⌋ = very thin.
+   - **Comparative**: 📶 \<adjective\> ➡️. Example: 📶🕸➡️ = more thin then.
+   - **Superlative (relative)**: ⌊\<adjective\> 💯⌋. Example:  ⌊🕸💯⌋ = the thinnest.
+   - **Superlative (absolute)**: ⌊\<adjective\>🔝⌋. Esempio: ⌊🕸🔝⌋ = very thin.
 
 * Adverbs
    - The symbol ⬅️ is inserted to the right of the adjective to transform it into a **adverb**. Example: 🐌 = slow, ⌊🐌⬅️⌋ = slowly.

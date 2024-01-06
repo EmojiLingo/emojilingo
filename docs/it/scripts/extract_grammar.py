@@ -28,9 +28,11 @@ def main(lang):
     md_output.append('# Grammatica' if lang=='it' else '# Grammar')
     md_output.append('')
     for r,e in zip(rules, explanations):
-        if str(r)!='nan':
+        r = str(r).replace('<','\<').replace('>','\>')
+        e = str(e).replace('<','\<').replace('>','\>')
+        if r!='nan':
             md_output.append('* ' + str(r))
-        if str(e)!='nan':
+        if e!='nan':
             md_output.append('   - ' + str(e))
         else:
             md_output.append('')
