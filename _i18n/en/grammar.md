@@ -21,7 +21,7 @@
 
 * Verbs
    - The verb is invariable in the person, with compulsory explicit of the subject: 🚹️^🈶 = I am, 👆^🈶 = you are, ⌊👆👆⌋^🈶 = you are.
-   - Verb marker: ^ (apostrophe to the left of the emoji). The verb with only the marker (^) applies as infinite, simple indicative, and/or present time. Example: 👞 = shoe, ^👞 = go.
+   - Verb marker: ^ (circumflex to the left of the emoji). The verb with only the marker (^) applies as infinite, simple indicative, and/or present time. Example: 👞 = shoe, ^👞 = go.
    - Past marker: ◀️ Example: 🚹️ ^⌊👞◀️⌋ = I went, I had gone (etc.).
    - Future marker: ▶️️ Example: 🚹️ ^⌊👞▶️️⌋ = I will go, I will be gone (etc.).
    - Gerund and present participle marker: ⬅️ Example: ^⌊👞⬅️⌋ = going, been going.

@@ -65,7 +65,7 @@
    - Per (a causa di): ↙️ Esempio: 🏃^⌊😱◀️️⌋↙️🚹 ^⌊👂◀️️⌋⌊👿🗡👿🗡⌋^⌊👞👇⌋ = Pinocchio era spaventato perché (per il fatto che) sentiva gli assassini arrivare.
    - Per (allo scopo di): ↗️. Esempio: ↗️🏃^⌊👐◀️️⌋⌊⚜️⚜️⌋ = affinché/perché Pinocchio consegnasse le monete.
    - Verso, contro, di fronte a, nei confronti di: 🆚. Esempio: ⌊👨💟⌋^⌊🔄◀️️⌋🆚🏃= Geppetto si voltò verso Pinocchio.
-   - Così che (consecutivo): 🔝➡️ (anche distanziati alla frase). Esempio: 🏃^⌊😱◀️️⌋⌊🔝➡️⌋🚹'⌊🍃◀️️⌋ = Pinocchio era tanto spaventato che tremava.
+   - Così che (consecutivo): 🔝➡️ (anche distanziati alla frase). Esempio: 🏃^⌊😱◀️️⌋⌊🔝➡️⌋🚹^⌊🍃◀️️⌋ = Pinocchio era tanto spaventato che tremava.
    - Benché (concessivo): ⌊➕👍🎲⌋. Esempio: ⌊➕👍🎲⌋🏃🙅^⌊🙏‼️◀️️⌋, 🏃^⌊👞◀️️⌋▶️️🏠 = benché non volesse (anche se non voleva), Pinocchio andò a casa.
 
 * Regole delle espressioni idiomatiche
