@@ -15,6 +15,4 @@ Nato dalla traduzione di Pinocchio in prosa, il successo di Emojitaliano ha spia
 
 Unisciti a noi in questo viaggio ricco di emoji! Esplora il mondo di EmojiLingo e assisti al potere degli emoji nel superare le barriere linguistiche. 🚀🌐
 
-Visita EmojiLingo.org e inizia le conversazioni in emoji! 🚀🎉
-
 **#EmojiLingo #RivoluzioneLinguistica #Emoji #ComunicazioneAColori**

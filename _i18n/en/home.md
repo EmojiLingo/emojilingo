@@ -20,6 +20,4 @@ Born from the translation of Pinocchio to prose, Emojitaliano's success paved th
 
 Join us on this emoji-filled journey! Explore the world of EmojiLingo and witness the power of emojis in breaking language barriers. 🚀🌐
 
-Visit [EmojiLingo.org](#) and let the emoji conversations begin! 🚀🎉
-
 **#EmojiLingo #LanguageRevolution #Emojis #CommunicationInColor**
