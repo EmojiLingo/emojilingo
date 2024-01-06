@@ -12,6 +12,10 @@ body {
   line-height: 1.6;  
 }
 
+.emojitext {
+  font-family: 'AppleColorEmoji'
+}
+
 p {
   text-indent: 0px;
   /* line-height: 32px; */

@@ -30,7 +30,9 @@ def main():
     for en,el in zip(strings_en, strings_emojilingo):
         en = en.replace('\n','')
         el = el.replace('\n','')
-        mk_output_en_emojilingo.append('| ' + en + ' | ' + el + ' |')
+        mk_output_en_emojilingo.append(
+            '| ' + en + ' | <span class="emojitext">' + el + '</span> |'
+        )
 
     mk_output_it_emojilingo = []
     mk_output_it_emojilingo.append('# Pinocchio')
@@ -40,12 +42,14 @@ def main():
     for it,el in zip(strings_it, strings_emojilingo):
         it = it.replace('\n','')
         el = el.replace('\n','')
-        mk_output_it_emojilingo.append('| ' + it + ' | ' + el + ' |')
+        mk_output_it_emojilingo.append(
+            '| ' + it + ' | <span class="emojitext">' + el + '</span> |'
+        )
     
-    with open('../_i18n/en/examples.md', 'w') as f:
+    with open('_i18n/en/examples.md', 'w') as f:
         f.write('\n'.join(mk_output_en_emojilingo))
 
-    with open('../_i18n/it/examples.md', 'w') as f:
+    with open('_i18n/it/examples.md', 'w') as f:
         f.write('\n'.join(mk_output_it_emojilingo))
 
 
