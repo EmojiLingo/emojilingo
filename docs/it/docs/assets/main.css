@@ -13,7 +13,8 @@ body {
 }
 
 .emojitext {
-  font-family: 'AppleColorEmoji'
+  font-family: 'AppleColorEmoji';
+  letter-spacing: 2px;
 }
 
 p {
