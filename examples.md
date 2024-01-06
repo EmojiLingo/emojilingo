@@ -1,9 +1,8 @@
 ---
 layout: default
 title: Examples
+namespace: examples
 permalink: /examples/
 ---
 
-# Examples of EmojiLingo
-
-This is the Examples page content.
+{% translate_file examples.md %}

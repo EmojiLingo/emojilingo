@@ -7,6 +7,7 @@ langs:
 pages:
   about: About
   grammar: Grammar
-#   includeexample: The following text is a Jekyll include liquid tag parameter
-# titles:
-#   pagination: Pagination
+  examples: Examples
+  publications: Publications
+  media: Media
+  contacts: Contacts 

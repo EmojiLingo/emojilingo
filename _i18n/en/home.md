@@ -1,10 +1,4 @@
----
-layout: post
-title:  "🚀 Introducing EmojiLingo: Bridging Language Gaps with Emojis! 🌐"
-date:   2023-12-16 07:31:26 +0900
-categories: project updates
----
-Hello Emoji Enthusiasts! 👋🌍
+# Hello Emoji Enthusiasts! 👋🌍
 
 We're thrilled to unveil **EmojiLingo**, a groundbreaking project that takes the universal language of emojis to new heights! 🎉
 

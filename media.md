@@ -1,9 +1,8 @@
 ---
 layout: default
 title: Media
+namespace: media
 permalink: /media/
 ---
 
-# Media EmojiLingo
-
-This is the Media page content.
+{% translate_file media.md %}

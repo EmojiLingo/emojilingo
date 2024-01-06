@@ -1,9 +1,8 @@
 ---
 layout: default
 title: Publications
+namespace: publications
 permalink: /publications/
 ---
 
-# Publications EmojiLingo
-
-This is the Publications page content.
+{% translate_file publications.md %}
