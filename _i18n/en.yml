@@ -1,0 +1,12 @@
+global:
+  tagline: English
+  # about: About
+langs:
+  it: Italiano
+  en: English
+pages:
+  about: About
+  grammar: Grammar
+#   includeexample: The following text is a Jekyll include liquid tag parameter
+# titles:
+#   pagination: Pagination

@@ -1,9 +1,3 @@
----
-layout: default
-title: About
-permalink: /about/
----
-
 # About EmojiLingo
 
 Consisting today in over three thousand pictograms and symbols, and regularly updated by Unicode Consortium, the emoji international catalog contains signs for facial expressions (smileys) and for human gestures, portraits of people, plants and animals, reproductions of food and objects for everyday activities and sports, symbols of travel and places, flags, numbers, geometrical forms. 
