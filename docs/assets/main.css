@@ -34,15 +34,36 @@ nav ul li {
   margin-right: 20px;
 }
 
-nav a {
-  text-decoration: none;
-  color: #ffffff;
-  font-weight: bold;
-  transition: color 0.3s ease-in-out;
+/* Add a black background color to the top navigation */
+.topnav {
+  overflow: hidden;
 }
 
-nav a:hover {
-  color: #3498db;
+/* Style the links inside the navigation bar */
+.topnav a {
+float: left;
+color: #f2f2f2;
+text-align: center;
+padding: 14px 16px;
+text-decoration: none;
+font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+background-color: #ddd;
+color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+background-color: #2b1987;
+color: white;
+}
+
+/* Right-aligned section inside the top navigation */
+.topnav-right {
+float: right;
 }
 
 main {

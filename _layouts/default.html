@@ -8,36 +8,32 @@
 </head>
 <body>
   <header>    
-    <nav>
-      <ul>
-        <li><a href="{{ '/' | relative_url }}">Home</a></li>
-        <li><a href="{% tl about %}">{% t pages.about %}</a></li>
-        <li><a href="{% tl grammar %}">{% t pages.grammar %}</a></li>
-        <li><a href="{% tl examples %}">{% t pages.examples %}</a></li>
-        <li><a href="{% tl publications %}">{% t pages.publications %}</a></li>
-        <li><a href="{% tl media %}">{% t pages.media %}</a></li>
-        <li><a href="{% tl contacts %}">{% t pages.contacts %}</a></li>
-      </ul>
-    </nav>
-    <div align="right">
-      <!-- Adds links to other languages on the post -->
-      {% for lang in site.languages %}
-        {% unless site.lang == lang %}
-          {% if lang == site.default_lang and site.default_locale_in_subfolder != true %}
-            <a href="{{ site.baseurl_root }}{{ page.url }}" >{% t langs.{{ lang }} %}</a>
-          {% else %}
-            <a href="{{ site.baseurl_root }}/{{ lang }}{{ page.url }}" >{% t langs.{{ lang }} %}</a>
-          {% endif %}
-          
-          {% assign next = forloop.index | plus: 1 %}
-          
-          {% if forloop.last != true and site.languages[forloop.index] != site.lang or site.languages[forloop.index] == site.lang and next < forloop.length %}
-            <span class="separator"> &bull; </span>
-          {% endif %}
-          
-        {% endunless %}
-      {% endfor %}
-    </div>
+    <div class="topnav">
+      <a {% if page.url == "/" %} class="active" {% endif %} href="{% tl home %}">{% t pages.home %}</a>
+      <a {% if page.url == "/about/" %} class="active" {% endif %} href="{% tl about %}">{% t pages.about %}</a>
+      <a {% if page.url == "/grammar/" %} class="active" {% endif %} href="{% tl grammar %}">{% t pages.grammar %}</a>
+      <a {% if page.url == "/examples/" %} class="active" {% endif %} href="{% tl examples %}">{% t pages.examples %}</a>
+      <a {% if page.url == "/publications/" %} class="active" {% endif %} href="{% tl publications %}">{% t pages.publications %}</a>
+      <a {% if page.url == "/media/" %} class="active" {% endif %} href="{% tl media %}">{% t pages.media %}</a>
+      <a {% if page.url == "/contacts/" %} class="active" {% endif %} href="{% tl contacts %}">{% t pages.contacts %}</a>
+      <div class="topnav-right">
+        <!-- Adds links to other languages on the post -->
+        {% for lang in site.languages %}
+          {% unless site.lang == lang %}
+            {% if lang == site.default_lang and site.default_locale_in_subfolder != true %}
+              <a href="{{ site.baseurl_root }}{{ page.url }}" >{% t langs.{{ lang }} %}</a>
+            {% else %}
+              <a href="{{ site.baseurl_root }}/{{ lang }}{{ page.url }}" >{% t langs.{{ lang }} %}</a>
+            {% endif %}
+            
+            {% assign next = forloop.index | plus: 1 %}
+            
+            {% if forloop.last != true and site.languages[forloop.index] != site.lang or site.languages[forloop.index] == site.lang and next < forloop.length %}
+              <span class="separator"> &bull; </span>
+            {% endif %}
+          {% endunless %}
+        {% endfor %}
+      </div>    
   </header>
 
   <main>
