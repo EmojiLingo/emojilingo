@@ -1,5 +1,6 @@
 title: EmojiLingo
 theme: minima
+# remote-theme: minima
 # markdown: kramdown
 languages: ["en", "it"]
 exclude_from_localizations: ["javascript", "images", "css"]
