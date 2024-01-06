@@ -6,8 +6,7 @@ languages: ["en", "it"]
 exclude_from_localizations: ["javascript", "images", "css"]
 # default_locale_in_subfolder: true
 
-# baseurl: ""
-baseurl: "https://emojilingo.github.io"
+baseurl: ""
 
 # plugins:
 #   - jekyll-multiple-languages-plugin
