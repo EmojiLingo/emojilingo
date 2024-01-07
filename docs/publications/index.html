@@ -27,18 +27,65 @@
     }
   </style>
 
+  <script>
+    document.addEventListener('click', function (event) {
+      var menu = document.getElementById("DropdownMenu");
+      var hb_icon = document.querySelector('.hamburger-menu-icon');     
+      // Check if the clicked element is inside the hamburger-menu-icon or not
+      if (!hb_icon.contains(event.target)) {
+        menu.style.display = "none";
+      }
+    });
+    
+    function toggleDropdown() {      
+      var menu = document.getElementById("DropdownMenu");
+      console.log("DropdownMenu: '" + menu.style.display + "'");
+      if (menu.style.display === "none" || menu.style.display === "") {
+        menu.style.display = "flex";
+      }
+      else {
+        menu.style.display = "none";
+      }
+    }
+
+    // function hideDropdown() {
+    //   console.log("hideDropdown");
+    //   var menu = document.getElementById("DropdownMenu");
+    //   menu.style.display = "none";
+    // }
+  </script>
+
 </head>
 <body>
   <header>    
-    <div class="topnav">
-      <a  href="/">Home</a>
-      <a  href="/about/">About</a>
-      <a  href="/grammar/">Grammar</a>
-      <a  href="/examples/">Examples</a>
-      <a  class="active"  href="/publications/">Publications</a>
-      <a  href="/media/">Media</a>
-      <a  href="/contacts/">Contacts</a>
-      <div class="topnav-right">
+    <div class="nav-wrapper">
+      <div class="toplogo">
+        <img width="100px" height="auto" src="/assets/emojilingo-logo-transparent.png" alt="EmojiLingo" />
+      </div>
+      <div class="hamburger-menu">
+        <div class="hamburger-menu-icon" onclick="toggleDropdown()">
+          <img src="/assets/burger-bar.png" alt="Menu">
+        </div>
+        <div class="hamburger-menu-dropdown" id="DropdownMenu">
+          <a  href="/" onclick="hideDropdown()">Home</a>
+          <a  href="/about/" onclick="hideDropdown()">About</a>
+          <a  href="/grammar/" onclick="hideDropdown()">Grammar</a>
+          <a  href="/examples/" onclick="hideDropdown()">Examples</a>
+          <a  class="active"  href="/publications/" onclick="hideDropdown()">Publications</a>
+          <a  href="/media/" onclick="hideDropdown()">Media</a>
+          <a  href="/contacts/" onclick="hideDropdown()">Contacts</a>
+        </div>
+      </div>        
+      <div class="topnav">
+        <a  href="/">Home</a>
+        <a  href="/about/">About</a>
+        <a  href="/grammar/">Grammar</a>
+        <a  href="/examples/">Examples</a>
+        <a  class="active"  href="/publications/">Publications</a>
+        <a  href="/media/">Media</a>
+        <a  href="/contacts/">Contacts</a>
+      </div>
+      <div class="topnav-lang">
         <!-- Adds links to other languages on the post -->
         
           
@@ -52,8 +99,9 @@
             
             
           
-        
-      </div>    
+            
+      </div>
+    </div>
   </header>
 
   <main>

@@ -27,18 +27,65 @@
     }
   </style>
 
+  <script>
+    document.addEventListener('click', function (event) {
+      var menu = document.getElementById("DropdownMenu");
+      var hb_icon = document.querySelector('.hamburger-menu-icon');     
+      // Check if the clicked element is inside the hamburger-menu-icon or not
+      if (!hb_icon.contains(event.target)) {
+        menu.style.display = "none";
+      }
+    });
+    
+    function toggleDropdown() {      
+      var menu = document.getElementById("DropdownMenu");
+      console.log("DropdownMenu: '" + menu.style.display + "'");
+      if (menu.style.display === "none" || menu.style.display === "") {
+        menu.style.display = "flex";
+      }
+      else {
+        menu.style.display = "none";
+      }
+    }
+
+    // function hideDropdown() {
+    //   console.log("hideDropdown");
+    //   var menu = document.getElementById("DropdownMenu");
+    //   menu.style.display = "none";
+    // }
+  </script>
+
 </head>
 <body>
   <header>    
-    <div class="topnav">
-      <a {% if page.url == "/" %} class="active" {% endif %} href="{% tl home %}">{% t pages.home %}</a>
-      <a {% if page.url == "/about/" %} class="active" {% endif %} href="{% tl about %}">{% t pages.about %}</a>
-      <a {% if page.url == "/grammar/" %} class="active" {% endif %} href="{% tl grammar %}">{% t pages.grammar %}</a>
-      <a {% if page.url == "/examples/" %} class="active" {% endif %} href="{% tl examples %}">{% t pages.examples %}</a>
-      <a {% if page.url == "/publications/" %} class="active" {% endif %} href="{% tl publications %}">{% t pages.publications %}</a>
-      <a {% if page.url == "/media/" %} class="active" {% endif %} href="{% tl media %}">{% t pages.media %}</a>
-      <a {% if page.url == "/contacts/" %} class="active" {% endif %} href="{% tl contacts %}">{% t pages.contacts %}</a>
-      <div class="topnav-right">
+    <div class="nav-wrapper">
+      <div class="toplogo">
+        <img width="100px" height="auto" src="/assets/emojilingo-logo-transparent.png" alt="EmojiLingo" />
+      </div>
+      <div class="hamburger-menu">
+        <div class="hamburger-menu-icon" onclick="toggleDropdown()">
+          <img src="/assets/burger-bar.png" alt="Menu">
+        </div>
+        <div class="hamburger-menu-dropdown" id="DropdownMenu">
+          <a {% if page.url == "/" %} class="active" {% endif %} href="{% tl home %}" onclick="hideDropdown()">{% t pages.home %}</a>
+          <a {% if page.url == "/about/" %} class="active" {% endif %} href="{% tl about %}" onclick="hideDropdown()">{% t pages.about %}</a>
+          <a {% if page.url == "/grammar/" %} class="active" {% endif %} href="{% tl grammar %}" onclick="hideDropdown()">{% t pages.grammar %}</a>
+          <a {% if page.url == "/examples/" %} class="active" {% endif %} href="{% tl examples %}" onclick="hideDropdown()">{% t pages.examples %}</a>
+          <a {% if page.url == "/publications/" %} class="active" {% endif %} href="{% tl publications %}" onclick="hideDropdown()">{% t pages.publications %}</a>
+          <a {% if page.url == "/media/" %} class="active" {% endif %} href="{% tl media %}" onclick="hideDropdown()">{% t pages.media %}</a>
+          <a {% if page.url == "/contacts/" %} class="active" {% endif %} href="{% tl contacts %}" onclick="hideDropdown()">{% t pages.contacts %}</a>
+        </div>
+      </div>        
+      <div class="topnav">
+        <a {% if page.url == "/" %} class="active" {% endif %} href="{% tl home %}">{% t pages.home %}</a>
+        <a {% if page.url == "/about/" %} class="active" {% endif %} href="{% tl about %}">{% t pages.about %}</a>
+        <a {% if page.url == "/grammar/" %} class="active" {% endif %} href="{% tl grammar %}">{% t pages.grammar %}</a>
+        <a {% if page.url == "/examples/" %} class="active" {% endif %} href="{% tl examples %}">{% t pages.examples %}</a>
+        <a {% if page.url == "/publications/" %} class="active" {% endif %} href="{% tl publications %}">{% t pages.publications %}</a>
+        <a {% if page.url == "/media/" %} class="active" {% endif %} href="{% tl media %}">{% t pages.media %}</a>
+        <a {% if page.url == "/contacts/" %} class="active" {% endif %} href="{% tl contacts %}">{% t pages.contacts %}</a>
+      </div>
+      <div class="topnav-lang">
         <!-- Adds links to other languages on the post -->
         {% for lang in site.languages %}
           {% unless site.lang == lang %}
@@ -54,8 +101,9 @@
               <span class="separator"> &bull; </span>
             {% endif %}
           {% endunless %}
-        {% endfor %}
-      </div>    
+        {% endfor %}    
+      </div>
+    </div>
   </header>
 
   <main>
