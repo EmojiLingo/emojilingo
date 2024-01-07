@@ -16,6 +16,10 @@
   <!-- Responsive CSS -->
   <link rel="stylesheet" href="/assets/responsive.css">
 
+  <!-- Font Awesome -->
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+
+
   <!-- Google Fonts -->
   <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Raleway:300,400,700' rel='stylesheet' type='text/css'>
@@ -47,12 +51,6 @@
         menu.style.display = "none";
       }
     }
-
-    // function hideDropdown() {
-    //   console.log("hideDropdown");
-    //   var menu = document.getElementById("DropdownMenu");
-    //   menu.style.display = "none";
-    // }
   </script>
 
 </head>
@@ -64,7 +62,7 @@
       </div>
       <div class="hamburger-menu">
         <div class="hamburger-menu-icon" onclick="toggleDropdown()">
-          <img src="/assets/burger-bar.png" alt="Menu">
+          <img src="/assets/burger-menu.svg" alt="Menu">
         </div>
         <div class="hamburger-menu-dropdown" id="DropdownMenu">
           <a {% if page.url == "/" %} class="active" {% endif %} href="{% tl home %}" onclick="hideDropdown()">{% t pages.home %}</a>
