@@ -132,8 +132,7 @@ main{
   justify-content: center;
   flex-direction: column;  
   max-width: 60%;
-  margin-left: 20%;
-  margin-right: 20%;
+  margin: auto;
   margin-top: 60px;
   margin-bottom: 50px;
   background-color: #5c7187;

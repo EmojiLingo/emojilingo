@@ -27,7 +27,7 @@ def main(lang):
     md_output.append('| ------- | ---------- |')
     strings_emojilingo = [re.sub(' +\(\d+\)', '', el) for el in strings_emojilingo]
     pairs = list(set([(l,e) for l,e in zip(strings_lang, strings_emojilingo)]))
-    pairs = sorted(pairs, key=lambda x: x[0])
+    pairs = sorted(pairs, key=lambda x: x[0].lower())
     for en,el in pairs:
         el = el.replace('\n','').replace("'","^") # "＇"
         md_output.append(
