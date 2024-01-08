@@ -41,7 +41,7 @@ header {
   /* padding: 10px; */
   justify-content: space-between;
   align-items: center;
-  background-color: #2c3e50;  
+  background-color: #5c7187;  
   z-index: 1000; /* Adjust the z-index based on your needs */
   border-bottom: 30px solid #1a1a1a;
 }
@@ -136,7 +136,7 @@ main{
   margin-right: 20%;
   margin-top: 60px;
   margin-bottom: 50px;
-  background-color: #2c3e50;
+  background-color: #5c7187;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding: 20px;
@@ -145,7 +145,7 @@ main{
 @media only screen and (max-width: 950px) {
 
   body {
-    font-size: 17px;
+    font-size: 15px;
   }
 
   /* Adjust the max-width value based on your design needs */
