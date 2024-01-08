@@ -37,6 +37,7 @@ header {
   align-items: center;
   background-color: #2c3e50;  
   z-index: 1000; /* Adjust the z-index based on your needs */
+  border-bottom: 20px solid #1a1a1a;
 }
 
 .nav-wrapper {
@@ -82,18 +83,6 @@ header {
 .topnav-lang .separator {
   margin: 0 5px; /* Adjust the margin as needed */
 }
-
-nav ul {
-  list-style-type: none;  
-  margin: 0;
-  padding: 0;
-}
-
-nav ul li {
-  display: inline;
-  margin-right: 20px;  
-}
-
 
 /* Style the links inside the navigation bar */
 .topnav a {
@@ -152,8 +141,8 @@ color: white;
 
   .hamburger-menu-icon {    
     display: block;
-    width: 100px;
-    height: 100px;    
+    width: 50px;
+    height: 50px;    
     cursor: pointer;
   }
 
@@ -196,18 +185,20 @@ color: white;
   }
     
 }
-  
-main {
+
+main{
   justify-content: center;
-  padding: 20px;
-  margin-left: 20%;
-  margin-right: 20%;
+  flex-direction: column;  
+  max-width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
   margin-top: 100px;
   margin-bottom: 50px;
-  /* padding: 20px; */
   background-color: #2c3e50;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+
 }
 
 footer {
