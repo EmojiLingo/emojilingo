@@ -34,6 +34,10 @@ p {
   margin-bottom: 18px;
 }
 
+th{
+  text-align: left;
+}
+
 header {
   position: fixed;
   top: 0;

@@ -15,6 +15,10 @@ def download_table():
 
 def main(lang):
     assert lang in ['IT','EN']
+    languages = {
+        'IT': 'Italiano',
+        'EN': 'English'    
+    }
     table = download_table()
     # print(json.dumps(table, indent=3))
     table_emojilingo = table['EMOJILINGO']
@@ -23,7 +27,7 @@ def main(lang):
     strings_lang = table_lang.values()
     
     md_output = []
-    md_output.append(f'| {lang} | EmojiLingo |')
+    md_output.append(f'| {languages[lang]} | EmojiLingo |')
     md_output.append('| ------- | ---------- |')
     strings_emojilingo = [re.sub(' +\(\d+\)', '', el) for el in strings_emojilingo]
     pairs = list(set([(l,e) for l,e in zip(strings_lang, strings_emojilingo)]))
