@@ -26,19 +26,21 @@ def main(lang):
     strings_emojilingo = table_emojilingo.values()
     strings_lang = table_lang.values()
     
-    md_output = []
-    md_output.append(f'| {languages[lang]} | EmojiLingo |')
-    md_output.append('| ------- | ---------- |')
+    md_output = ['<table>']    
+    md_output.append(f'<tr>  <th>{languages[lang]}</th>  <th>EmojiLingo</th> </tr>')        
+    md_output.append(
+        '<tr> <th colspan="2"> <input type="text" id="searchInput" onkeyup="searchFunction()" placeholder="Search..."> </th> </tr>'
+    )
     strings_emojilingo = [re.sub(' +\(\d+\)', '', el) for el in strings_emojilingo]
     pairs = list(set([(l,e) for l,e in zip(strings_lang, strings_emojilingo)]))
     pairs = sorted(pairs, key=lambda x: x[0].lower())
     for en,el in pairs:
         el = el.replace('\n','').replace("'","^") # "＇"
         md_output.append(
-            '| ' + en + ' | <span class="emojitext">' + el + '</span> |'
+            '<tr><td>' + en + '</td> <td><span class="emojitext">' + el + '</span></td></tr>'
         )
     
-    with open(f'_i18n/{lang}/glossary.md', 'w') as f:
+    with open(f'_i18n/{lang}/glossary.html', 'w') as f:
         f.write('\n'.join(md_output))
 
 

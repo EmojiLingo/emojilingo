@@ -5,5 +5,5 @@ namespace: glossary
 permalink: /glossary/
 ---
 
-{% translate_file glossary.md %}
+{% translate_file glossary.html %}
 
