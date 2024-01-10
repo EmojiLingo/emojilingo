@@ -1,6 +1,4 @@
-# EmojiLingo nei Media
-
-## [Pinocchio in Emojitaliano](https://www.scritturebrevi.it/2017/11/22/pinocchio-in-emojitaliano-il-libro-2/)
+# [Pinocchio in Emojitaliano](https://www.scritturebrevi.it/2017/11/22/pinocchio-in-emojitaliano-il-libro-2/)
 
 ## Dicono di Pinocchio in Emojitaliano:
 - 17 novembre 2017: Arriva Pinocchio in emojitaliano, Cittadini di Twitter.

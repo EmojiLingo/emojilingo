@@ -25,15 +25,13 @@ def main(lang):
     explanations = table['Explanations'].values()
     
     md_output = []
-    md_output.append('# Grammatica' if lang=='it' else '# Grammar')
-    md_output.append('')
     for r,e in zip(rules, explanations):
         r = str(r).replace('<','\<').replace('>','\>')
         e = str(e).replace('<','\<').replace('>','\>')
         if r!='nan':
-            md_output.append('* ' + str(r))
+            md_output.append('# ' + str(r))
         if e!='nan':
-            md_output.append('   - ' + str(e))
+            md_output.append('- ' + str(e))
         else:
             md_output.append('')
 

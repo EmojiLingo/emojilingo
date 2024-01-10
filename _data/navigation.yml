@@ -21,7 +21,7 @@ menu_items:
     - label: Media
       path_canonical: /media/
       path: /it/media/
-    - label: Contactti
+    - label: Contatti
       path_canonical: /contacts/
       path: /it/contacts/
   en:
