@@ -71,8 +71,8 @@ header {
 } 
 
 .toplogo {
-  padding-left: 20px;
-  padding-right: 20px;
+  /* padding-left: 20px; */
+  /* padding-right: 20px; */
   max-width: 100px; /* Set the maximum width for the logo */
   margin-right: 20px;
 }
