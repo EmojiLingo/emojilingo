@@ -1,5 +1,3 @@
-# EmojiLingo Contacts
-
 ## Francesca Chiusaroli 
 Full professor of General and Applied Linguistics and Media Linguistics at the University of Macerata (Italy). She has previously taught at the Universities of Udine and Rome "Tor Vergata." Among her research interests are writings, both in theoretical and historical perspectives, pasigraphies and shorthands. She is the author of the interdisciplinary research project "Scritture Brevi"(since 2009) and the devoted blog [scritturebrevi](https://www.scritturebrevi.it/) and an active community on Twitter (#scritturebrevi). She is the inventor of Emojitaliano and oversees its translations, starting with Pinocchio in Emojitaliano. She conceived Emojitaliano as a code for international auxiliary communication, believing that the power of the popular digital pictographic repertoire, combined with the establishment of conventional glossaries and grammar as shared in crowdsourcing, can serve as a mediating code capable of overcoming language barriers and simplifying communication.
 
