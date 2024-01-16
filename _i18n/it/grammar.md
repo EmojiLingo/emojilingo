@@ -12,8 +12,8 @@
 - L'**articolo indeterminativo** viene indicato con 1️⃣ prima del sostantivo: 1️⃣🏠 = una casa.
 
 # Regole dei pronomi personali
-- I **pronomi personali** al singolare sono: 🚹️ = io, 👆= tu, 🚹 = egli, 🚺 = ella, ⌊👆🎩⌋ = Voi, Ella (pronome di cortesia).
-- Il **plurale dei pronomi personali** si ottiene duplicando il singolare: ⌊🚹️🚹️⌋ = noi, ⌊👆👆⌋ = voi, ⌊🚹🚹⌋ = essi, ⌊🚺🚺⌋ = esse, ⌊👆🎩👆🎩⌋ = Voi, Elle (pronome di cortesia).
+- I **pronomi personali** al singolare sono: ℹ️ = io, 👆= tu, 🚹 = egli, 🚺 = ella, ⌊👆🎩⌋ = Voi, Ella (pronome di cortesia).
+- Il **plurale dei pronomi personali** si ottiene duplicando il singolare: ⌊ℹ️ℹ️⌋ = noi, ⌊👆👆⌋ = voi, ⌊🚹🚹⌋ = essi, ⌊🚺🚺⌋ = esse, ⌊👆🎩👆🎩⌋ = Voi, Elle (pronome di cortesia).
 - Questi pronomi valgono sia come **pronome soggetto** che come **pronome complemento**.
 - I **pronomi possessivi** si ottengono inserendo ⏩ prima del pronome personale: ⌊⏩🚹️⌋ = il mio (di me). I possessivi si collocano dopo il nome e sono invariabili.
 

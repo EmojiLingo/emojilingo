@@ -12,8 +12,8 @@
 - The **indefinite article** is expressed by 1️⃣ before the noun: 1️⃣🏠 = a house.
 
 # Personal pronouns
-- The **personal pronouns** in the singular are: 🚹️ = I, 👆 = you, 🚹 = he, 🚺 = she, ⌊👆🎩⌋ = you (courtesy pronoun).
-- The **personal pronouns in the plural** are obtained duplicating the singular: ⌊🚹️🚹️⌋ = we, ⌊👆👆⌋ = you, ⌊🚹🚹⌋ = they, ⌊🚺🚺⌋ = they, ⌊👆🎩👆🎩⌋ = you plural (pronoun of courtesy).
+- The **personal pronouns** in the singular are: ℹ️ = I, 👆 = you, 🚹 = he, 🚺 = she, ⌊👆🎩⌋ = you (courtesy pronoun).
+- The **personal pronouns in the plural** are obtained duplicating the singular: ⌊ℹ️ℹ️⌋ = we, ⌊👆👆⌋ = you, ⌊🚹🚹⌋ = they, ⌊🚺🚺⌋ = they, ⌊👆🎩👆🎩⌋ = you plural (pronoun of courtesy).
 - These pronouns function both as **subject pronouns** and as **complement pronouns**.
 - The **possessive pronouns** are obtained by inserting ⏩ before the personal pronoun: ⌊⏩🚹️⌋ = mine (of me). The owners are placed after the name and are invariable.
 
