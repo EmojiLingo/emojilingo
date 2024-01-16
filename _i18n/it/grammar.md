@@ -1,6 +1,6 @@
 # Regole generali
 - L'ordine di lettura è **da sinistra a destra**.
-- L'**ordine sintattico** di base è Soggetto Verbo Oggetto: 🚹^🍽🍮 = io mangio la polenta.
+- L'**ordine sintattico** di base è Soggetto Verbo Oggetto: ℹ️^🍽🍮 = io mangio la polenta.
 - La **frase passiva** viene trasformata in attiva per rispettare l'ordine di base.
 - Il soggetto va sempre espresso.
 - I due simboli **⌊** e **⌋** delimitano, a destra e a sinistra, i segni composti: ⌊🏠🛠⌋ = bottega, ^⌊👞🔙⌋ = tornare. In generale è delimitata da questi simboli ogni sequenza di segni (emoji e/o diacritici) il cui significato si definisce sinteticamente dalla sequenza stessa.
@@ -15,18 +15,18 @@
 - I **pronomi personali** al singolare sono: ℹ️ = io, 👆= tu, 🚹 = egli, 🚺 = ella, ⌊👆🎩⌋ = Voi, Ella (pronome di cortesia).
 - Il **plurale dei pronomi personali** si ottiene duplicando il singolare: ⌊ℹ️ℹ️⌋ = noi, ⌊👆👆⌋ = voi, ⌊🚹🚹⌋ = essi, ⌊🚺🚺⌋ = esse, ⌊👆🎩👆🎩⌋ = Voi, Elle (pronome di cortesia).
 - Questi pronomi valgono sia come **pronome soggetto** che come **pronome complemento**.
-- I **pronomi possessivi** si ottengono inserendo ⏩ prima del pronome personale: ⌊⏩🚹️⌋ = il mio (di me). I possessivi si collocano dopo il nome e sono invariabili.
+- I **pronomi possessivi** si ottengono inserendo ⏩ prima del pronome personale: ⌊⏩ℹ️⌋ = il mio (di me). I possessivi si collocano dopo il nome e sono invariabili.
 
 # Regole dei verbi
-- Il **verbo** è invariabile nella persona, con esplicitazione obbligatoria del soggetto: 🚹️^🈶 = io sono, 👆^🈶 = tu sei, ⌊👆👆⌋^🈶 = voi siete.
+- Il **verbo** è invariabile nella persona, con esplicitazione obbligatoria del soggetto: ℹ️^🈶 = io sono, 👆^🈶 = tu sei, ⌊👆👆⌋^🈶 = voi siete.
 - **Marcatore del verbo**: ^ (accento circonflesso a sinistra dell'emoji). Il verbo col solo marcatore (^) vale come infinito, indicativo semplice, e/o tempo presente. Esempio: 👞 = scarpa, ^👞 = andare.
-- Marcatore del **passato**: ◀️ Esempio: 🚹️^⌊👞◀️⌋ = io sono andato, io andavo, io andai, io ero andato (ecc.).
-- Marcatore del **futuro**: ▶️️ Esempio: 🚹️^⌊👞▶️️⌋ = io andrò, io sarò andato (ecc.).
+- Marcatore del **passato**: ◀️ Esempio: ℹ️^⌊👞◀️⌋ = io sono andato, io andavo, io andai, io ero andato (ecc.).
+- Marcatore del **futuro**: ▶️️ Esempio: ℹ️^⌊👞▶️️⌋ = io andrò, io sarò andato (ecc.).
 - Marcatore del **gerundio** e del participio presente: ⬅️ Esempio: ^⌊👞⬅️⌋ = andando, andante.
 - Marcatore del **causativo**: ➡️ Esempio: ^⌊➡️👞⌋ = far andare.
 - Marcatore del **riflessivo** (quando non esplicitato nella resa linguistica del verbo): 👈 posposto al verbo. Esempio: ^⌊🗣🔙👈⌋ = rispondersi.
 - Marcatore del **reciproco** (quando non esplicitato nella resa linguistica del verbo): 👥 posposto al verbo. Esempio: ^⌊👊👥⌋ = picchiarsi.
-- Marcatore del **condizionale**: 🎲 Esempio: 🚹️ ^⌊🎲👞⌋ = io andrei.
+- Marcatore del **condizionale**: 🎲 Esempio: ℹ️ ^⌊🎲👞⌋ = io andrei.
 - Marcatore dell'**imperativo e dell'esortativo**: ❗️ Esempio: 👆^⌊❗👞⌋ = vai!
 - Marcatore dell'**interrogativo**: ❓ Esempio: 👆^⌊❓👞⌋ = vai?
 - Marcatore dell'**impersonale**: 👉 Esempio: 👉^🌧 = piove
@@ -35,7 +35,7 @@
 - L'**aggettivo** è collocato a **destra del sostantivo**: 🏠🔆= (la) bella casa, (la) casa bella.
 - Il **plurale** dei sostantivi e degli aggettivi si ottiene con la duplicazione del segno: 🏠= casa, ⌊🏠🏠⌋= case, ⌊🏠🛠⌋ = bottega, ⌊🏠🛠🏠🛠⌋ = botteghe, ⌊🏠🛠⌋ 🐽 = bottega sporca, ⌊🏠🛠🏠🛠⌋ ⌊🐽🐽⌋ = botteghe sporche.
 - Il marcatore ◀️ viene inserito a destra del verbo corrispondente ma senza diacritico ' per indicare il **participio passato** (con valore aggettivale o sostantivato). Esempio: ⌊👞◀️⌋ = andato.
-- Gli **aggettivi possessivi** si ottengono inserendo ⏩ prima del pronome personale: ⌊⏩🚹️⌋ = mio (di me).
+- Gli **aggettivi possessivi** si ottengono inserendo ⏩ prima del pronome personale: ⌊⏩ℹ️⌋ = mio (di me).
 - Il **diminutivo** si ottiene inserendo 👶 dopo l'aggettivo. Esempio: ⌊🐮👶⌋ = vitellino.
 - Lo **spregiativo** si ottiene inserendo 👹 dopo l'aggettivo. Esempio: ⌊👁👹⌋ = occhiacci.
 - **Comparativo di maggioranza**: 📶\<aggettivo\>➡️. Esempio: 📶🕸➡️ = più sottile di.
@@ -51,9 +51,9 @@
 - Che (**oggettivo**): ⏬. Esempio: 🚹^⌊👀◀️️⌋ ⏬🤖 ^⌊🔄◀️️⌋ = egli vide che il burattino si muoveva. Tale segno può essere omesso se incluso nel significato del verbo reggente.
 - Che (**relativo**): ↪️. Esempio: 🏃, ↪️ ^⌊😋◀️️⌋, ^⌊🍽◀️️⌋ = Pinocchio, che aveva fame, mangiò.
 - Di (**genitivo**): ⏩. Esempio: 👃⏩🏃 = il naso di Pinocchio; 🔩⏩🚪= pezzo di legno.
-- A (**direzione**) ▶️ Esempio: 🚹^👞▶️🏠 = io vado a casa.
-- Da (**provenienza**, derivazione): ◀️️. Esempio: 🚹^⌊👞👇⌋◀️️🏠 = io vengo da casa.
-- In (**dentro**): ⏺️. Esempio: 🚹^🍽⏺🏠 = io mangio in/a casa.
+- A (**direzione**) ▶️ Esempio: ℹ️^👞▶️🏠 = io vado a casa.
+- Da (**provenienza**, derivazione): ◀️️. Esempio: ℹ️^⌊👞👇⌋◀️️🏠 = io vengo da casa.
+- In (**dentro**): ⏺️. Esempio: ℹ️^🍽⏺🏠 = io mangio in/a casa.
 - Su (**sopra**): 🔼. Esempio: ^📈🔼 = salire su.
 - Giù (**sotto**): 🔽. Esempio: 📎👅🔽 = con la lingua giù.
 - **Sopra qualcosa**: ⤵️. Esempio: 🚹⌊📥◀️️⌋🔨⤵️⛩ = egli mise il martello sul tavolo.

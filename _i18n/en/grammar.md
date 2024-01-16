@@ -1,6 +1,6 @@
 # General reading rules
 - The reading order is from **left to right**.
-- The basic **syntactic order** is SVO: 🚹 ^🍽🍮 = I eat polenta.
+- The basic **syntactic order** is SVO: ℹ️ ^🍽🍮 = I eat polenta.
 - The **passive sentence** is transformed into active to respect the basic order.
 - The **subject** must always be expressed.
 - The two symbols ⌊ and ⌋ group, on the right and left, the compound signs: ⌊🏠🛠⌋ = shop, ^⌊👞🔙⌋ = return. In general, every symbols of signs (emojis and/or diacritics) whose meaning is synthetically defined from the sequence itself is delimited by these symbols.
@@ -15,18 +15,18 @@
 - The **personal pronouns** in the singular are: ℹ️ = I, 👆 = you, 🚹 = he, 🚺 = she, ⌊👆🎩⌋ = you (courtesy pronoun).
 - The **personal pronouns in the plural** are obtained duplicating the singular: ⌊ℹ️ℹ️⌋ = we, ⌊👆👆⌋ = you, ⌊🚹🚹⌋ = they, ⌊🚺🚺⌋ = they, ⌊👆🎩👆🎩⌋ = you plural (pronoun of courtesy).
 - These pronouns function both as **subject pronouns** and as **complement pronouns**.
-- The **possessive pronouns** are obtained by inserting ⏩ before the personal pronoun: ⌊⏩🚹️⌋ = mine (of me). The owners are placed after the name and are invariable.
+- The **verb** is invariable in the person, with compulsory explicit of the subject: ℹ️^🈶 = I am, 👆^🈶 = you are, ⌊👆👆⌋^🈶 = you are.
 
 # Verbs
-- The **verb** is invariable in the person, with compulsory explicit of the subject: 🚹️^🈶 = I am, 👆^🈶 = you are, ⌊👆👆⌋^🈶 = you are.
+- The **verb** is invariable in the person, with compulsory explicit of the subject: ℹ️^🈶 = I am, 👆^🈶 = you are, ⌊👆👆⌋^🈶 = you are.
 - Verb marker: ^ (circumflex to the left of the emoji). The verb with only the marker (^) applies as infinite, simple indicative, and/or present time. Example: 👞 = shoe, ^👞 = go.
-- **Past** marker: ◀️ Example: 🚹️ ^⌊👞◀️⌋ = I went, I had gone (etc.).
-- **Future** marker: ▶️️ Example: 🚹️ ^⌊👞▶️️⌋ = I will go, I will be gone (etc.).
+- **Past** marker: ◀️ Example: ℹ️ ^⌊👞◀️⌋ = I went, I had gone (etc.).
+- **Future** marker: ▶️️ Example: ℹ️ ^⌊👞▶️️⌋ = I will go, I will be gone (etc.).
 - **Gerund** and **present participle** marker: ⬅️ Example: ^⌊👞⬅️⌋ = going, been going.
 - **Causative** marker:  ➡️ Example: ^⌊➡️👞⌋ = to make it go.
 - **Reflexive** marker (when not explicit in the linguistic yield of the verb): 👈 postponed to the verb. Example: ^⌊🗣🔙👈⌋ = answer to oneself.
 - **Reciprocal** marker (when not explicit in the linguistic surrender of the verb): 👥 postponed to the verb. Example: ^⌊👊👥⌋ = beating each other.
-- **Conditional** marker: 🎲 Example: 🚹️ ^⌊🎲👞⌋ = I would go.
+- **Conditional** marker: 🎲 Example: ℹ️ ^⌊🎲👞⌋ = I would go.
 - Marker of the **imperative** and **exhortative**: ❗️ Example: 👆 ^⌊❗👞⌋ = Go!
 - **Interrogative** marker: ❓ Example: 👆 ^⌊❓👞⌋ = Are you going?
 - **Impersonal** marker: 👉 Example: 👉^🌧 = Piove
@@ -35,7 +35,7 @@
 - The **adjective** is placed to the **right of the noun**: 🏠🔆 = beautiful house.
 - The **plural** of nouns and adjectives is obtained with the duplication of the sign: 🏠 = house, ⌊🏠🏠⌋ = houses, ⌊🏠🛠⌋ = workshop, ⌊🏠🛠🏠🛠⌋ = workshops, ⌊🏠🛠⌋ 🐽 = dirty workshop, ⌊🏠🛠🏠🛠⌋ ⌊🐽🐽⌋ = dirty workshops.
 - The marker ◀️ is inserted to the right of the corresponding verb but without deacritic ^ to indicate the **past participle** (with adjective or substantive value). Example: ⌊👞◀️⌋ = gone.
-- The **possessive adjectives** are obtained by inserting ⏩ before the personal pronoun: ⌊⏩🚹️⌋ = mine (of me).
+- The **possessive adjectives** are obtained by inserting ⏩ before the personal pronoun: ⌊⏩ℹ️⌋ = mine (of me).
 - The **diminutive form** is obtained by inserting 👶 after the adjective. Example: ⌊🐮👶⌋ = calf.
 - The **pejorative form** is obtained by inserting 👹 after the adjective. Example: ⌊👁👹⌋ = stink eyes.
 - **Comparative**: 📶 \<adjective\> ➡️. Example: 📶🕸➡️ = more thin then.
@@ -51,9 +51,9 @@
 - That (**objective**): ⏬. Esempio: 🚹 ^⌊👀◀️️⌋ ⏬🤖 ^⌊🔄◀️️⌋ = he saw that the puppet moved. This sign can be omitted if included in the meaning of the regent verb.
 - That/who (**relative**) ↪️. Example: 🏃, ↪️ ^⌊😋◀️️⌋, ^⌊🍽◀️️⌋ = Pinocchio, who was hungry, ate.
 - Of (**specification**): ⏩. Example: 👃⏩🏃 = Pinocchio^s nose; 🔩⏩🚪 = piece of wood.
-- To (**direction**): ▶️️. ️Example: 🚹^👞 ▶️️ 🏠 = I go home.
-- From (**origin**, derivation): ◀️. ️ example: 🚹^⌊👞👇⌋◀️️🏠 = I come from home.
-- In (**inside**): ⏺️. Example: 🚹^🍽⏺🏠 = I eat in the house / at home.
+- To (**direction**): ▶️️. ️Example: ℹ️^👞 ▶️️ 🏠 = I go home.
+- From (**origin**, derivation): ◀️. ️ example: ℹ️^⌊👞👇⌋◀️️🏠 = I come from home.
+- In (**inside**): ⏺️. Example: ℹ️^🍽⏺🏠 = I eat in the house / at home.
 - On (**above**): 🔼. Example: ^📈🔼 = climb up.
 - Down (**below**): 🔽. Example: 📎👅🔽 = with the language down.
 - **Above something**: ⤵️. Example: 🚹⌊📥◀️️⌋🔨⤵️⛩ = he put the hammer on the table.
