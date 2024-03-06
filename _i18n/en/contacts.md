@@ -1,4 +1,4 @@
-## Francesca Chiusaroli 
+<!-- ## Francesca Chiusaroli 
 Full professor of General and Applied Linguistics and Media Linguistics at the University of Macerata (Italy). She has previously taught at the Universities of Udine and Rome "Tor Vergata." Among her research interests are writings, both in theoretical and historical perspectives, pasigraphies and shorthands. She is the author of the interdisciplinary research project "Scritture Brevi"(since 2009) and the devoted blog [scritturebrevi](https://www.scritturebrevi.it/) and an active community on Twitter (#scritturebrevi). She is the inventor of Emojitaliano and oversees its translations, starting with Pinocchio in Emojitaliano. She conceived Emojitaliano as a code for international auxiliary communication, believing that the power of the popular digital pictographic repertoire, combined with the establishment of conventional glossaries and grammar as shared in crowdsourcing, can serve as a mediating code capable of overcoming language barriers and simplifying communication.
 
 ## Johanna Monti 
@@ -6,4 +6,4 @@ Full professor of Translation Studies and Specialized Translation at the Univers
 
 ## Federico Sangati 
 Currently working as a research technician in the Cognitive Neurorobotics Research Unit at the Okinawa Institute of Science and Technology in Japan, where he supports researches in a variety of fields such as Robotics, Natural Language Processing, Computer Simulations, and Human-Computer Interaction. Since 2015 he has been actively exploring the field of conversational AI and developed a number of ChatBots. With his wide expertise in these fields, he enthusiastically joined the original Emojitaliano project from its birth, taking charge of creating the [@emojitalianobot](https://t.me/emojitalianobot), therefore providing the crucial technological support which preserves and makes available to the community the Emojitaliano glossary, grammar, and compelling and entertaining training games for reading the Emojitaliano code.
-
+ -->
