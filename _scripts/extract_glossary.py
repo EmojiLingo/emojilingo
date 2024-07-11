@@ -8,7 +8,7 @@ def download_table():
     spreadsheet_key = '1p6Uo9XzwKDO1R2eteoTKb6wOv6Bvgop5r0uz0f1tHXA'
     url = f'https://docs.google.com/spreadsheets/d/{spreadsheet_key}/export?gid=0&format=csv'
     r = requests.get(url, allow_redirects=True)
-    data = r.content    
+    data = r.content
     df = pd.read_csv(BytesIO(data))
     table = df.to_dict()
     return table
@@ -17,7 +17,7 @@ def main(lang):
     assert lang in ['IT','EN']
     languages = {
         'IT': 'Italiano',
-        'EN': 'English'    
+        'EN': 'English'
     }
     table = download_table()
     # print(json.dumps(table, indent=3))
@@ -25,9 +25,9 @@ def main(lang):
     table_lang = table[lang]
     strings_emojilingo = table_emojilingo.values()
     strings_lang = table_lang.values()
-    
-    md_output = ['<table>']    
-    md_output.append(f'<tr>  <th>{languages[lang]}</th>  <th>EmojiLingo</th> </tr>')        
+
+    md_output = ['<table>']
+    md_output.append(f'<tr>  <th>{languages[lang]}</th>  <th>EmojiLingo</th> </tr>')
     md_output.append(
         '<tr> <th colspan="2"> <input type="text" id="searchInput" onkeyup="searchFunction()" placeholder="Search..."> </th> </tr>'
     )
@@ -39,7 +39,7 @@ def main(lang):
         md_output.append(
             '<tr><td>' + en + '</td> <td><span class="emojitext">' + el + '</span></td></tr>'
         )
-    
+
     with open(f'_i18n/{lang}/glossary.html', 'w') as f:
         f.write('\n'.join(md_output))
 

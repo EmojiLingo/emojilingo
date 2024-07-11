@@ -15,6 +15,9 @@ menu_items:
     - label: Esempi
       path_canonical: /examples/
       path: /it/examples/
+    - label: "#WorldEmojiDay"
+      path_canonical: /worldemojiday/
+      path: /it/worldemojiday/
     - label: Pubblicazioni
       path_canonical: /publications/
       path: /it/publications/
@@ -40,12 +43,15 @@ menu_items:
     - label: Examples
       path_canonical: /examples/
       path: /examples/
+    - label: "#WorldEmojiDay"
+      path_canonical: /worldemojiday/
+      path: /worldemojiday/
     - label: Publications
       path_canonical: /publications/
       path: /publications/
     - label: Media
       path_canonical: /media/
       path: /media/
-    - label: Contacts 
+    - label: Contacts
       path_canonical: /contacts/
       path: /contacts/
