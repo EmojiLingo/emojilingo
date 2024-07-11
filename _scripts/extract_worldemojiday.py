@@ -73,8 +73,11 @@ def main(lang):
     )
 
     date_txt_el = [(d,t,e) for d,t,e in zip(dates, txt_lang, emojilingo)]
-    # date_txt_el_alpha = sorted(date_txt_el, key=lambda x: x[1].lower()) # sorted alpha by txt
-    for d,txt,el in date_txt_el:
+    date_txt_el_alpha = sorted(
+        # sorted alpha by txt (parenthesis at the end)
+        date_txt_el, key=lambda x: (not x[1][0].isalnum(), x[1].lower())
+    )
+    for d,txt,el in date_txt_el_alpha:
         # print(txt,el)
         el = el.replace('\n','').replace("'","^") # "＇"
         md_output.extend([
