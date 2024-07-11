@@ -19,7 +19,17 @@ body {
 
 .emojitext {
   font-family: 'AppleColorEmoji';
-  letter-spacing: 2px;
+  letter-spacing: 5px;
+}
+
+tr.notfirst:hover{
+  background:rgb(211, 150, 218);
+  background-clip: padding-box;
+  border-style: none;
+ }
+
+table {
+  border-collapse: collapse;  /* collaps border between cells */
 }
 
 td {

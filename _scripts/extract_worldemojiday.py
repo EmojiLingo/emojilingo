@@ -81,10 +81,10 @@ def main(lang):
         # print(txt,el)
         el = el.replace('\n','').replace("'","^") # "＇"
         md_output.extend([
-            '<tr>',
+            '<tr class = "notfirst">',
                 # '<td>' + d + '</td>',
                 '<td> <span>' + txt + '</span> </td>',
-                '<td> <span>' + el + '</span> </td>',
+                '<td> <span class=emojitext>' + el + '</span> </td>',
             '</tr>'
         ])
 

@@ -37,9 +37,9 @@ def main(lang):
     for txt_lang,el in pairs:
         el = el.replace('\n','').replace("'","^") # "＇"
         md_output.extend([
-            '<tr>',
+            '<tr class = "notfirst">',
                 '<td> <span>' + txt_lang + '</span> </td>',
-                '<td> <span>' + el + '</span> </td>',
+                '<td> <span class=emojitext>' + el + '</span> </td>',
             '</tr>'
         ])
 
