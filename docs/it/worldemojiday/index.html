@@ -36,14 +36,14 @@
   <script>
     document.addEventListener('click', function (event) {
       var menu = document.getElementById("DropdownMenu");
-      var hb_icon = document.querySelector('.hamburger-menu-icon');     
+      var hb_icon = document.querySelector('.hamburger-menu-icon');
       // Check if the clicked element is inside the hamburger-menu-icon or not
       if (!hb_icon.contains(event.target)) {
         menu.style.display = "none";
       }
     });
-    
-    function toggleDropdown() {      
+
+    function toggleDropdown() {
       var menu = document.getElementById("DropdownMenu");
       console.log("DropdownMenu: '" + menu.style.display + "'");
       if (menu.style.display === "none" || menu.style.display === "") {
@@ -60,26 +60,30 @@
     var input, filter, table, tr, td, i, txtValue;
     input = document.getElementById("searchInput");
     filter = input.value.toUpperCase();
-    // table = document.getElementsByTagName("table");
-    tr = document.getElementsByTagName("tr");
-    for (i = 2; i < tr.length; i++) {      
-      td0 = tr[i].getElementsByTagName("td")[0];
-      td1 = tr[i].getElementsByTagName("td")[1];
+    table = document.getElementsByTagName("table")[0];
+    tr = table.getElementsByTagName("tr");
+    // skip search and header
+    for (i = 2; i < tr.length; i++) {
+      td0 = tr[i].getElementsByTagName("span")[0];
+      td1 = tr[i].getElementsByTagName("span")[1];
       txtValue0 = td0.textContent || td0.innerText;
       txtValue1 = td1.textContent || td1.innerText;
-      if (txtValue0.toUpperCase().indexOf(filter) > -1 || txtValue1.indexOf(filter) > -1) {
+      if (
+        txtValue0.toUpperCase().indexOf(filter) > -1 ||
+        txtValue1.indexOf(filter) > -1)
+      {
         tr[i].style.display = "";
       } else {
-        tr[i].style.display = "none";          
+        tr[i].style.display = "none";
       }
     }
   }
   </script>
-  
+
 
 </head>
 <body>
-  <header>    
+  <header>
     <div class="nav-wrapper">
       <div class="toplogo">
         <img width="100px" height="auto" src="/assets/logos/speech-bubble-smile-celeste.png" alt="EmojiLingo" />
@@ -89,7 +93,7 @@
           <img src="/assets/burger-menu.svg" alt="Menu">
         </div>
         <div class="hamburger-menu-dropdown" id="DropdownMenu">
-                  
+          
           
             <a  href="/it/" onclick="hideDropdown()">Casa</a>
           
@@ -112,9 +116,9 @@
           <a  href="/it/" onclick="hideDropdown()">Casa</a>
 
         </div>
-      </div>        
+      </div>
       <div class="topnav">
-                
+        
         
           <a  href="/it/">Casa</a>
         
@@ -142,1846 +146,1484 @@
             
               <a href="/worldemojiday/" >English</a>
             
+
             
-            
-            
+
             
           
         
           
-            
-      </div>      
+        
+      </div>
     </div>
   </header>
 
-  <main>   
+  <main>
     <table>
-<tr>  <th>Data</th> <th>Italiano</th>  <th>EmojiLingo</th> </tr>
+<tr>
+<th>Italiano</th>
+<th>EmojiLingo</th>
+</tr>
 <tr> <th colspan="2"> <input type="text" id="searchInput" onkeyup="searchFunction()" placeholder="Search..." /> </th> </tr>
 <tr>
-<td>1.01</td>
-<td>trasumanar</td>
-<td> <span class="emojitext">🪐</span> </td>
+<td> <span>trasumanar</span> </td>
+<td> <span>🪐</span> </td>
 </tr>
 <tr>
-<td>2.01</td>
-<td>color che son sospesi</td>
-<td> <span class="emojitext">👥↪️^🕸</span> </td>
+<td> <span>color che son sospesi</span> </td>
+<td> <span>👥↪️^🕸</span> </td>
 </tr>
 <tr>
-<td>3.01</td>
-<td>bella persona</td>
-<td> <span class="emojitext">🧍🔆</span> </td>
+<td> <span>bella persona</span> </td>
+<td> <span>🧍🔆</span> </td>
 </tr>
 <tr>
-<td>4.01</td>
-<td>dolenti note</td>
-<td> <span class="emojitext">💬😰💬😰</span> </td>
+<td> <span>dolenti note</span> </td>
+<td> <span>💬😰💬😰</span> </td>
 </tr>
 <tr>
-<td>5.01</td>
-<td>tin tin</td>
-<td> <span class="emojitext">⚙️🕰🎶</span> </td>
+<td> <span>tin tin</span> </td>
+<td> <span>⚙️🕰🎶</span> </td>
 </tr>
 <tr>
-<td>6.01</td>
-<td>mirra</td>
-<td> <span class="emojitext">🧴🔥👑</span> </td>
+<td> <span>mirra</span> </td>
+<td> <span>🧴🔥👑</span> </td>
 </tr>
 <tr>
-<td>7.01</td>
-<td>cricchi</td>
-<td> <span class="emojitext">🧊💥</span> </td>
+<td> <span>cricchi</span> </td>
+<td> <span>🧊💥</span> </td>
 </tr>
 <tr>
-<td>8.01</td>
-<td>merda</td>
-<td> <span class="emojitext">💩</span> </td>
+<td> <span>merda</span> </td>
+<td> <span>💩</span> </td>
 </tr>
 <tr>
-<td>9.01</td>
-<td>imbestiarsi</td>
-<td> <span class="emojitext">🪄🐂</span> </td>
+<td> <span>imbestiarsi</span> </td>
+<td> <span>🪄🐂</span> </td>
 </tr>
 <tr>
-<td>10.01</td>
-<td>alo</td>
-<td> <span class="emojitext">🔅</span> </td>
+<td> <span>alo</span> </td>
+<td> <span>🔅</span> </td>
 </tr>
 <tr>
-<td>11.01</td>
-<td>alluminare</td>
-<td> <span class="emojitext">🖌🖼📖🤏</span> </td>
+<td> <span>alluminare</span> </td>
+<td> <span>🖌🖼📖🤏</span> </td>
 </tr>
 <tr>
-<td>12.01</td>
-<td>biancovestito</td>
-<td> <span class="emojitext">📎👗⚪️</span> </td>
+<td> <span>biancovestito</span> </td>
+<td> <span>📎👗⚪️</span> </td>
 </tr>
 <tr>
-<td>13.01</td>
-<td>intuarsi</td>
-<td> <span class="emojitext">🧍🪄👆</span> </td>
+<td> <span>intuarsi</span> </td>
+<td> <span>🧍🪄👆</span> </td>
 </tr>
 <tr>
-<td>14.01</td>
-<td>colubro</td>
-<td> <span class="emojitext">🐍☠️</span> </td>
+<td> <span>colubro</span> </td>
+<td> <span>🐍☠️</span> </td>
 </tr>
 <tr>
-<td>15.01</td>
-<td>concolore</td>
-<td> <span class="emojitext">🌈🔗🌈</span> </td>
+<td> <span>concolore</span> </td>
+<td> <span>🌈🔗🌈</span> </td>
 </tr>
 <tr>
-<td>16.01</td>
-<td>immegliarsi</td>
-<td> <span class="emojitext">🪄🔆</span> </td>
+<td> <span>immegliarsi</span> </td>
+<td> <span>🪄🔆</span> </td>
 </tr>
 <tr>
-<td>17.01</td>
-<td>incinquarsi</td>
-<td> <span class="emojitext">🪄5️⃣🔂🔂</span> </td>
+<td> <span>incinquarsi</span> </td>
+<td> <span>🪄5️⃣🔂🔂</span> </td>
 </tr>
 <tr>
-<td>18.01</td>
-<td>inforsarsi</td>
-<td> <span class="emojitext">🪄🤔</span> </td>
+<td> <span>inforsarsi</span> </td>
+<td> <span>🪄🤔</span> </td>
 </tr>
 <tr>
-<td>19.01</td>
-<td>inmillarsi</td>
-<td> <span class="emojitext">🪄💯💯</span> </td>
+<td> <span>inmillarsi</span> </td>
+<td> <span>🪄💯💯</span> </td>
 </tr>
 <tr>
-<td>20.01</td>
-<td>inverare</td>
-<td> <span class="emojitext">🪄✋📖</span> </td>
+<td> <span>inverare</span> </td>
+<td> <span>🪄✋📖</span> </td>
 </tr>
 <tr>
-<td>21.01</td>
-<td>baiulo</td>
-<td> <span class="emojitext">📌🏅👑👨‍⚖️</span> </td>
+<td> <span>baiulo</span> </td>
+<td> <span>📌🏅👑👨‍⚖️</span> </td>
 </tr>
 <tr>
-<td>22.01</td>
-<td>ammentarsi</td>
-<td> <span class="emojitext">💽</span> </td>
+<td> <span>ammentarsi</span> </td>
+<td> <span>💽</span> </td>
 </tr>
 <tr>
-<td>23.01</td>
-<td>minugia</td>
-<td> <span class="emojitext">🧶🎻</span> </td>
+<td> <span>minugia</span> </td>
+<td> <span>🧶🎻</span> </td>
 </tr>
 <tr>
-<td>24.01</td>
-<td>orza e poggia</td>
-<td> <span class="emojitext">🌬👌⛵️➕🌬🆚⛵️</span> </td>
+<td> <span>orza e poggia</span> </td>
+<td> <span>🌬👌⛵️➕🌬🆚⛵️</span> </td>
 </tr>
 <tr>
-<td>25.01</td>
-<td>il ‘pappo’ e ‘l ‘dindi</td>
-<td> <span class="emojitext">[🍲👶]➕[🪙🪙🎶]</span> </td>
+<td> <span>il ‘pappo’ e ‘l ‘dindi</span> </td>
+<td> <span>[🍲👶]➕[🪙🪙🎶]</span> </td>
 </tr>
 <tr>
-<td>26.01</td>
-<td>grifagno</td>
-<td> <span class="emojitext">👿🦅</span> </td>
+<td> <span>grifagno</span> </td>
+<td> <span>👿🦅</span> </td>
 </tr>
 <tr>
-<td>27.01</td>
-<td>lurco</td>
-<td> <span class="emojitext">🥩🐺</span> </td>
+<td> <span>lurco</span> </td>
+<td> <span>🥩🐺</span> </td>
 </tr>
 <tr>
-<td>28.01</td>
-<td>forcata</td>
-<td> <span class="emojitext">✂️🦵🦵</span> </td>
+<td> <span>forcata</span> </td>
+<td> <span>✂️🦵🦵</span> </td>
 </tr>
 <tr>
-<td>29.01</td>
-<td>occhi di bragia</td>
-<td> <span class="emojitext">👁👁🔥</span> </td>
+<td> <span>occhi di bragia</span> </td>
+<td> <span>👁👁🔥</span> </td>
 </tr>
 <tr>
-<td>30.01</td>
-<td>marra</td>
-<td> <span class="emojitext">🔧👨‍🌾</span> </td>
+<td> <span>marra</span> </td>
+<td> <span>🔧👨‍🌾</span> </td>
 </tr>
 <tr>
-<td>31.01</td>
-<td>vigilia</td>
-<td> <span class="emojitext">🕯👀</span> </td>
+<td> <span>vigilia</span> </td>
+<td> <span>🕯👀</span> </td>
 </tr>
 <tr>
-<td>1.02</td>
-<td>lonza</td>
-<td> <span class="emojitext">🐆</span> </td>
+<td> <span>lonza</span> </td>
+<td> <span>🐆</span> </td>
 </tr>
 <tr>
-<td>2.02</td>
-<td>dispitto</td>
-<td> <span class="emojitext">😒</span> </td>
+<td> <span>dispitto</span> </td>
+<td> <span>😒</span> </td>
 </tr>
 <tr>
-<td>3.02</td>
-<td>imborgarsi</td>
-<td> <span class="emojitext">🪄🏰</span> </td>
+<td> <span>imborgarsi</span> </td>
+<td> <span>🪄🏰</span> </td>
 </tr>
 <tr>
-<td>4.02</td>
-<td>infuturarsi</td>
-<td> <span class="emojitext">🪄🔮🔛</span> </td>
+<td> <span>infuturarsi</span> </td>
+<td> <span>🪄🔮🔛</span> </td>
 </tr>
 <tr>
-<td>5.02</td>
-<td>intepidare</td>
-<td> <span class="emojitext">🪄🌅〰️</span> </td>
+<td> <span>intepidare</span> </td>
+<td> <span>🪄🌅〰️</span> </td>
 </tr>
 <tr>
-<td>6.02</td>
-<td>adona</td>
-<td> <span class="emojitext">🪄🛐</span> </td>
+<td> <span>adona</span> </td>
+<td> <span>🪄🛐</span> </td>
 </tr>
 <tr>
-<td>7.02</td>
-<td>bieco</td>
-<td> <span class="emojitext">👺</span> </td>
+<td> <span>bieco</span> </td>
+<td> <span>👺</span> </td>
 </tr>
 <tr>
-<td>8.02</td>
-<td>bivero</td>
-<td> <span class="emojitext">🦫</span> </td>
+<td> <span>bivero</span> </td>
+<td> <span>🦫</span> </td>
 </tr>
 <tr>
-<td>9.02</td>
-<td>intrearsi</td>
-<td> <span class="emojitext">🪄😇🕊😇</span> </td>
+<td> <span>intrearsi</span> </td>
+<td> <span>🪄😇🕊😇</span> </td>
 </tr>
 <tr>
-<td>10.02</td>
-<td>burchio</td>
-<td> <span class="emojitext">🚣</span> </td>
+<td> <span>burchio</span> </td>
+<td> <span>🚣</span> </td>
 </tr>
 <tr>
-<td>11.02</td>
-<td>tremolar</td>
-<td> <span class="emojitext">🍃</span> </td>
+<td> <span>tremolar</span> </td>
+<td> <span>🍃</span> </td>
 </tr>
 <tr>
-<td>12.02</td>
-<td>cirro negletto</td>
-<td> <span class="emojitext">💇🏻‍♂️🏚</span> </td>
+<td> <span>cirro negletto</span> </td>
+<td> <span>💇🏻‍♂️🏚</span> </td>
 </tr>
 <tr>
-<td>13.02</td>
-<td>botolo</td>
-<td> <span class="emojitext">🐩🎺🎙</span> </td>
+<td> <span>botolo</span> </td>
+<td> <span>🐩🎺🎙</span> </td>
 </tr>
 <tr>
-<td>14.02</td>
-<td>amor</td>
-<td> <span class="emojitext">💘</span> </td>
+<td> <span>amor</span> </td>
+<td> <span>💘</span> </td>
 </tr>
 <tr>
-<td>15.02</td>
-<td>si fanno grassi</td>
-<td> <span class="emojitext">🪄 😈💰💰</span> </td>
+<td> <span>si fanno grassi</span> </td>
+<td> <span>🪄 😈💰💰</span> </td>
 </tr>
 <tr>
-<td>16.02</td>
-<td>grasso</td>
-<td> <span class="emojitext">🥓</span> </td>
+<td> <span>grasso</span> </td>
+<td> <span>🥓</span> </td>
 </tr>
 <tr>
-<td>17.02</td>
-<td>manicare</td>
-<td> <span class="emojitext">🍽</span> </td>
+<td> <span>manicare</span> </td>
+<td> <span>🍽</span> </td>
 </tr>
 <tr>
-<td>18.02</td>
-<td>il ben dell’intelletto</td>
-<td> <span class="emojitext">💡🧠</span> </td>
+<td> <span>il ben dell’intelletto</span> </td>
+<td> <span>💡🧠</span> </td>
 </tr>
 <tr>
-<td>19.02</td>
-<td>perso</td>
-<td> <span class="emojitext">🌑</span> </td>
+<td> <span>perso</span> </td>
+<td> <span>🌑</span> </td>
 </tr>
 <tr>
-<td>20.02</td>
-<td>introcque</td>
-<td> <span class="emojitext">🔜</span> </td>
+<td> <span>introcque</span> </td>
+<td> <span>🔜</span> </td>
 </tr>
 <tr>
-<td>21.02</td>
-<td>incielare</td>
-<td> <span class="emojitext">⤴️🌌😇</span> </td>
+<td> <span>incielare</span> </td>
+<td> <span>⤴️🌌😇</span> </td>
 </tr>
 <tr>
-<td>22.02</td>
-<td>rubro</td>
-<td> <span class="emojitext">🔴</span> </td>
+<td> <span>rubro</span> </td>
+<td> <span>🔴</span> </td>
 </tr>
 <tr>
-<td>23.02</td>
-<td>imparadisare</td>
-<td> <span class="emojitext">⤴️🌌👼</span> </td>
+<td> <span>imparadisare</span> </td>
+<td> <span>⤴️🌌👼</span> </td>
 </tr>
 <tr>
-<td>24.02</td>
-<td>inmiarsi</td>
-<td> <span class="emojitext">🧍‍♂️🪄🧍</span> </td>
+<td> <span>inmiarsi</span> </td>
+<td> <span>🧍‍♂️🪄🧍</span> </td>
 </tr>
 <tr>
-<td>25.02</td>
-<td>bruti</td>
-<td> <span class="emojitext">👹👹</span> </td>
+<td> <span>bruti</span> </td>
+<td> <span>👹👹</span> </td>
 </tr>
 <tr>
-<td>26.02</td>
-<td>tetragono</td>
-<td> <span class="emojitext">📐🤛🏻 🛡</span> </td>
+<td> <span>tetragono</span> </td>
+<td> <span>📐🤛🏻 🛡</span> </td>
 </tr>
 <tr>
-<td>27.02</td>
-<td>pieta</td>
-<td> <span class="emojitext">😓💓</span> </td>
+<td> <span>pieta</span> </td>
+<td> <span>😓💓</span> </td>
 </tr>
 <tr>
-<td>28.02</td>
-<td>lo bello stilo</td>
-<td> <span class="emojitext">🖋📖🔆</span> </td>
+<td> <span>lo bello stilo</span> </td>
+<td> <span>🖋📖🔆</span> </td>
 </tr>
 <tr>
-<td>1.03</td>
-<td>per li rami</td>
-<td> <span class="emojitext">🎋👨‍👩‍👧‍👦</span> </td>
+<td> <span>per li rami</span> </td>
+<td> <span>🎋👨‍👩‍👧‍👦</span> </td>
 </tr>
 <tr>
-<td>2.03</td>
-<td>cognazione</td>
-<td> <span class="emojitext">👨‍👧</span> </td>
+<td> <span>cognazione</span> </td>
+<td> <span>👨‍👧</span> </td>
 </tr>
 <tr>
-<td>3.03</td>
-<td>lussurioso</td>
-<td> <span class="emojitext">👩‍❤️‍👨💎</span> </td>
+<td> <span>lussurioso</span> </td>
+<td> <span>👩‍❤️‍👨💎</span> </td>
 </tr>
 <tr>
-<td>4.03</td>
-<td>invidiosi veri</td>
-<td> <span class="emojitext">👨⚔️👨👌👌</span> </td>
+<td> <span>invidiosi veri</span> </td>
+<td> <span>👨⚔️👨👌👌</span> </td>
 </tr>
 <tr>
-<td>5.03</td>
-<td>teodìa</td>
-<td> <span class="emojitext">🎶😇</span> </td>
+<td> <span>teodìa</span> </td>
+<td> <span>🎶😇</span> </td>
 </tr>
 <tr>
-<td>6.03</td>
-<td>innanellare</td>
-<td> <span class="emojitext">🪄💍👰‍♀️</span> </td>
+<td> <span>innanellare</span> </td>
+<td> <span>🪄💍👰‍♀️</span> </td>
 </tr>
 <tr>
-<td>7.03</td>
-<td>fiumana</td>
-<td> <span class="emojitext">🏞💦</span> </td>
+<td> <span>fiumana</span> </td>
+<td> <span>🏞💦</span> </td>
 </tr>
 <tr>
-<td>8.03</td>
-<td>donna</td>
-<td> <span class="emojitext">👩</span> </td>
+<td> <span>donna</span> </td>
+<td> <span>👩</span> </td>
 </tr>
 <tr>
-<td>9.03</td>
-<td>accaffi</td>
-<td> <span class="emojitext">🦅</span> </td>
+<td> <span>accaffi</span> </td>
+<td> <span>🦅</span> </td>
 </tr>
 <tr>
-<td>10.03</td>
-<td>arte</td>
-<td> <span class="emojitext">🛠</span> </td>
+<td> <span>arte</span> </td>
+<td> <span>🛠</span> </td>
 </tr>
 <tr>
-<td>11.03</td>
-<td>apprensiva</td>
-<td> <span class="emojitext">🪄🧠</span> </td>
+<td> <span>apprensiva</span> </td>
+<td> <span>🪄🧠</span> </td>
 </tr>
 <tr>
-<td>12.03</td>
-<td>avaccio</td>
-<td> <span class="emojitext">🚀🔜</span> </td>
+<td> <span>avaccio</span> </td>
+<td> <span>🚀🔜</span> </td>
 </tr>
 <tr>
-<td>13.03</td>
-<td>amanza</td>
-<td> <span class="emojitext">🪄👩❤️</span> </td>
+<td> <span>amanza</span> </td>
+<td> <span>🪄👩❤️</span> </td>
 </tr>
 <tr>
-<td>14.03</td>
-<td>bulicame</td>
-<td> <span class="emojitext">🩸⛲️ 👿</span> </td>
+<td> <span>bulicame</span> </td>
+<td> <span>🩸⛲️ 👿</span> </td>
 </tr>
 <tr>
-<td>15.03</td>
-<td>cuticagna</td>
-<td> <span class="emojitext">🦅💇</span> </td>
+<td> <span>cuticagna</span> </td>
+<td> <span>🦅💇</span> </td>
 </tr>
 <tr>
-<td>16.03</td>
-<td>archimandrita</td>
-<td> <span class="emojitext">👨⛪️</span> </td>
+<td> <span>archimandrita</span> </td>
+<td> <span>👨⛪️</span> </td>
 </tr>
 <tr>
-<td>17.03</td>
-<td>il Bel Paese</td>
-<td> <span class="emojitext">🇮🇹🔆</span> </td>
+<td> <span>il Bel Paese</span> </td>
+<td> <span>🇮🇹🔆</span> </td>
 </tr>
 <tr>
-<td>18.03</td>
-<td>assenzo</td>
-<td> <span class="emojitext">🌿🧪</span> </td>
+<td> <span>assenzo</span> </td>
+<td> <span>🌿🧪</span> </td>
 </tr>
 <tr>
-<td>19.03</td>
-<td>babbo</td>
-<td> <span class="emojitext">👨💟</span> </td>
+<td> <span>babbo</span> </td>
+<td> <span>👨💟</span> </td>
 </tr>
 <tr>
-<td>20.03</td>
-<td>stenebrare</td>
-<td> <span class="emojitext">🌑➡️☀️</span> </td>
+<td> <span>stenebrare</span> </td>
+<td> <span>🌑➡️☀️</span> </td>
 </tr>
 <tr>
-<td>21.03</td>
-<td>aggirata</td>
-<td> <span class="emojitext">🔄</span> </td>
+<td> <span>aggirata</span> </td>
+<td> <span>🔄</span> </td>
 </tr>
 <tr>
-<td>22.03</td>
-<td>rubino</td>
-<td> <span class="emojitext">💎🔴</span> </td>
+<td> <span>rubino</span> </td>
+<td> <span>💎🔴</span> </td>
 </tr>
 <tr>
-<td>23.03</td>
-<td>delusa</td>
-<td> <span class="emojitext">😧</span> </td>
+<td> <span>delusa</span> </td>
+<td> <span>😧</span> </td>
 </tr>
 <tr>
-<td>24.03</td>
-<td>adimare</td>
-<td> <span class="emojitext">👀⤵️</span> </td>
+<td> <span>adimare</span> </td>
+<td> <span>👀⤵️</span> </td>
 </tr>
 <tr>
-<td>25.03</td>
-<td>cammino</td>
-<td> <span class="emojitext">🕰🥾</span> </td>
+<td> <span>cammino</span> </td>
+<td> <span>🕰🥾</span> </td>
 </tr>
 <tr>
-<td>26.03</td>
-<td>nato</td>
-<td> <span class="emojitext">🐣</span> </td>
+<td> <span>nato</span> </td>
+<td> <span>🐣</span> </td>
 </tr>
 <tr>
-<td>27.03</td>
-<td>gramo</td>
-<td> <span class="emojitext">🥺</span> </td>
+<td> <span>gramo</span> </td>
+<td> <span>🥺</span> </td>
 </tr>
 <tr>
-<td>28.03</td>
-<td>quinci e quindi</td>
-<td> <span class="emojitext">👈👉</span> </td>
+<td> <span>quinci e quindi</span> </td>
+<td> <span>👈👉</span> </td>
 </tr>
 <tr>
-<td>29.03</td>
-<td>antomata</td>
-<td> <span class="emojitext">🐛</span> </td>
+<td> <span>antomata</span> </td>
+<td> <span>🐛</span> </td>
 </tr>
 <tr>
-<td>30.03</td>
-<td>contingenza</td>
-<td> <span class="emojitext">🗑</span> </td>
+<td> <span>contingenza</span> </td>
+<td> <span>🗑</span> </td>
 </tr>
 <tr>
-<td>31.03</td>
-<td>cortesia</td>
-<td> <span class="emojitext">🩰</span> </td>
+<td> <span>cortesia</span> </td>
+<td> <span>🩰</span> </td>
 </tr>
 <tr>
-<td>1.04</td>
-<td>culo</td>
-<td> <span class="emojitext">🍑</span> </td>
+<td> <span>culo</span> </td>
+<td> <span>🍑</span> </td>
 </tr>
 <tr>
-<td>2.04</td>
-<td>speranza</td>
-<td> <span class="emojitext">⚓️</span> </td>
+<td> <span>speranza</span> </td>
+<td> <span>⚓️</span> </td>
 </tr>
 <tr>
-<td>3.04</td>
-<td>brancolare</td>
-<td> <span class="emojitext">🖐👣🌌</span> </td>
+<td> <span>brancolare</span> </td>
+<td> <span>🖐👣🌌</span> </td>
 </tr>
 <tr>
-<td>4.04</td>
-<td>resurrezione</td>
-<td> <span class="emojitext">🌅</span> </td>
+<td> <span>resurrezione</span> </td>
+<td> <span>🌅</span> </td>
 </tr>
 <tr>
-<td>5.04</td>
-<td>angelo</td>
-<td> <span class="emojitext">👼</span> </td>
+<td> <span>angelo</span> </td>
+<td> <span>👼</span> </td>
 </tr>
 <tr>
-<td>6.04</td>
-<td>fiche</td>
-<td> <span class="emojitext">🌷🌷</span> </td>
+<td> <span>fiche</span> </td>
+<td> <span>🌷🌷</span> </td>
 </tr>
 <tr>
-<td>7.04</td>
-<td>barba</td>
-<td> <span class="emojitext">|🧍↔️👩‍👦</span> </td>
+<td> <span>barba</span> </td>
+<td> <span>|🧍↔️👩‍👦</span> </td>
 </tr>
 <tr>
-<td>8.04</td>
-<td>oscuro/scuro</td>
-<td> <span class="emojitext">🌑</span> </td>
+<td> <span>oscuro/scuro</span> </td>
+<td> <span>🌑</span> </td>
 </tr>
 <tr>
-<td>9.04</td>
-<td>aggueffarsi</td>
-<td> <span class="emojitext">🪄🧶</span> </td>
+<td> <span>aggueffarsi</span> </td>
+<td> <span>🪄🧶</span> </td>
 </tr>
 <tr>
-<td>10.04</td>
-<td>maestro</td>
-<td> <span class="emojitext">🎓📚</span> </td>
+<td> <span>maestro</span> </td>
+<td> <span>🎓📚</span> </td>
 </tr>
 <tr>
-<td>11.04</td>
-<td>rubécchio</td>
-<td> <span class="emojitext">⭕️</span> </td>
+<td> <span>rubécchio</span> </td>
+<td> <span>⭕️</span> </td>
 </tr>
 <tr>
-<td>12.04</td>
-<td>aquila</td>
-<td> <span class="emojitext">🦅</span> </td>
+<td> <span>aquila</span> </td>
+<td> <span>🦅</span> </td>
 </tr>
 <tr>
-<td>13.04</td>
-<td>nicchia</td>
-<td> <span class="emojitext">😩🤰🏻</span> </td>
+<td> <span>nicchia</span> </td>
+<td> <span>😩🤰🏻</span> </td>
 </tr>
 <tr>
-<td>14.04</td>
-<td>accline</td>
-<td> <span class="emojitext">📈</span> </td>
+<td> <span>accline</span> </td>
+<td> <span>📈</span> </td>
 </tr>
 <tr>
-<td>15.04</td>
-<td>aggrato</td>
-<td> <span class="emojitext">👍</span> </td>
+<td> <span>aggrato</span> </td>
+<td> <span>👍</span> </td>
 </tr>
 <tr>
-<td>16.04</td>
-<td>arzanà</td>
-<td> <span class="emojitext">🏗🚧</span> </td>
+<td> <span>arzanà</span> </td>
+<td> <span>🏗🚧</span> </td>
 </tr>
 <tr>
-<td>17.04</td>
-<td>berze</td>
-<td> <span class="emojitext">👟💨</span> </td>
+<td> <span>berze</span> </td>
+<td> <span>👟💨</span> </td>
 </tr>
 <tr>
-<td>18.04</td>
-<td>letargo</td>
-<td> <span class="emojitext">🙅‍♀️💾</span> </td>
+<td> <span>letargo</span> </td>
+<td> <span>🙅‍♀️💾</span> </td>
 </tr>
 <tr>
-<td>19.04</td>
-<td>accismare</td>
-<td> <span class="emojitext">🎀</span> </td>
+<td> <span>accismare</span> </td>
+<td> <span>🎀</span> </td>
 </tr>
 <tr>
-<td>20.04</td>
-<td>ramogna</td>
-<td> <span class="emojitext">⛲️</span> </td>
+<td> <span>ramogna</span> </td>
+<td> <span>⛲️</span> </td>
 </tr>
 <tr>
-<td>21.04</td>
-<td>denso</td>
-<td> <span class="emojitext">🍮</span> </td>
+<td> <span>denso</span> </td>
+<td> <span>🍮</span> </td>
 </tr>
 <tr>
-<td>22.04</td>
-<td>muffa</td>
-<td> <span class="emojitext">🧫</span> </td>
+<td> <span>muffa</span> </td>
+<td> <span>🧫</span> </td>
 </tr>
 <tr>
-<td>23.04</td>
-<td>libro</td>
-<td> <span class="emojitext">📖</span> </td>
+<td> <span>libro</span> </td>
+<td> <span>📖</span> </td>
 </tr>
 <tr>
-<td>24.04</td>
-<td>scoglio</td>
-<td> <span class="emojitext">🪨🌊</span> </td>
+<td> <span>scoglio</span> </td>
+<td> <span>🪨🌊</span> </td>
 </tr>
 <tr>
-<td>25.04</td>
-<td>libertà</td>
-<td> <span class="emojitext">🗽</span> </td>
+<td> <span>libertà</span> </td>
+<td> <span>🗽</span> </td>
 </tr>
 <tr>
-<td>26.04</td>
-<td>scardova</td>
-<td> <span class="emojitext">🐟</span> </td>
+<td> <span>scardova</span> </td>
+<td> <span>🐟</span> </td>
 </tr>
 <tr>
-<td>27.04</td>
-<td>ora</td>
-<td> <span class="emojitext">🌬</span> </td>
+<td> <span>ora</span> </td>
+<td> <span>🌬</span> </td>
 </tr>
 <tr>
-<td>28.04</td>
-<td>ancoi</td>
-<td> <span class="emojitext">👇📆</span> </td>
+<td> <span>ancoi</span> </td>
+<td> <span>👇📆</span> </td>
 </tr>
 <tr>
-<td>29.04</td>
-<td>sanza ‘nfamia e sanza lodo</td>
-<td> <span class="emojitext">🆖</span> </td>
+<td> <span>sanza ‘nfamia e sanza lodo</span> </td>
+<td> <span>🆖</span> </td>
 </tr>
 <tr>
-<td>30.04</td>
-<td>piluccare</td>
-<td> <span class="emojitext">🥢🍇</span> </td>
+<td> <span>piluccare</span> </td>
+<td> <span>🥢🍇</span> </td>
 </tr>
 <tr>
-<td>1.05</td>
-<td>lavoro</td>
-<td> <span class="emojitext">|✋🛠️🖊️</span> </td>
+<td> <span>lavoro</span> </td>
+<td> <span>|✋🛠️🖊️</span> </td>
 </tr>
 <tr>
-<td>2.05</td>
-<td>fersa</td>
-<td> <span class="emojitext">⚡️</span> </td>
+<td> <span>fersa</span> </td>
+<td> <span>⚡️</span> </td>
 </tr>
 <tr>
-<td>3.05</td>
-<td>gabbo</td>
-<td> <span class="emojitext">🤡</span> </td>
+<td> <span>gabbo</span> </td>
+<td> <span>🤡</span> </td>
 </tr>
 <tr>
-<td>4.05</td>
-<td>co</td>
-<td> <span class="emojitext">👤</span> </td>
+<td> <span>co</span> </td>
+<td> <span>👤</span> </td>
 </tr>
 <tr>
-<td>5.05</td>
-<td>pina</td>
-<td> <span class="emojitext">👶🌲</span> </td>
+<td> <span>pina</span> </td>
+<td> <span>👶🌲</span> </td>
 </tr>
 <tr>
-<td>6.05</td>
-<td>masnada</td>
-<td> <span class="emojitext">👿🥁👿🥁</span> </td>
+<td> <span>masnada</span> </td>
+<td> <span>👿🥁👿🥁</span> </td>
 </tr>
 <tr>
-<td>7.05</td>
-<td>sciorina</td>
-<td> <span class="emojitext">🏃‍♂️⤴️</span> </td>
+<td> <span>sciorina</span> </td>
+<td> <span>🏃‍♂️⤴️</span> </td>
 </tr>
 <tr>
-<td>8.05</td>
-<td>vanni</td>
-<td> <span class="emojitext">🦇</span> </td>
+<td> <span>vanni</span> </td>
+<td> <span>🦇</span> </td>
 </tr>
 <tr>
-<td>9.05</td>
-<td>mamma</td>
-<td> <span class="emojitext">👩💟</span> </td>
+<td> <span>mamma</span> </td>
+<td> <span>👩💟</span> </td>
 </tr>
 <tr>
-<td>10.05</td>
-<td>Alichino</td>
-<td> <span class="emojitext">👿🌈</span> </td>
+<td> <span>Alichino</span> </td>
+<td> <span>👿🌈</span> </td>
 </tr>
 <tr>
-<td>11.05</td>
-<td>attuia</td>
-<td> <span class="emojitext">🏎️🔁🏎️</span> </td>
+<td> <span>attuia</span> </td>
+<td> <span>🏎️🔁🏎️</span> </td>
 </tr>
 <tr>
-<td>12.05</td>
-<td>degno di nota</td>
-<td> <span class="emojitext">🏆</span> </td>
+<td> <span>degno di nota</span> </td>
+<td> <span>🏆</span> </td>
 </tr>
 <tr>
-<td>13.05</td>
-<td>indiarsi</td>
-<td> <span class="emojitext">🧘‍♀️</span> </td>
+<td> <span>indiarsi</span> </td>
+<td> <span>🧘‍♀️</span> </td>
 </tr>
 <tr>
-<td>14.05</td>
-<td>biscazza</td>
-<td> <span class="emojitext">|🃏💸</span> </td>
+<td> <span>biscazza</span> </td>
+<td> <span>|🃏💸</span> </td>
 </tr>
 <tr>
-<td>15.05</td>
-<td>inurbarsi</td>
-<td> <span class="emojitext">👩‍🌾➡️🏙</span> </td>
+<td> <span>inurbarsi</span> </td>
+<td> <span>👩‍🌾➡️🏙</span> </td>
 </tr>
 <tr>
-<td>16.05</td>
-<td>luce</td>
-<td> <span class="emojitext">🌅</span> </td>
+<td> <span>luce</span> </td>
+<td> <span>🌅</span> </td>
 </tr>
 <tr>
-<td>17.05</td>
-<td>invetriato</td>
-<td> <span class="emojitext">❄️🪟</span> </td>
+<td> <span>invetriato</span> </td>
+<td> <span>❄️🪟</span> </td>
 </tr>
 <tr>
-<td>18.05</td>
-<td>nuca</td>
-<td> <span class="emojitext">👤🧣</span> </td>
+<td> <span>nuca</span> </td>
+<td> <span>👤🧣</span> </td>
 </tr>
 <tr>
-<td>19.05</td>
-<td>perizoma</td>
-<td> <span class="emojitext">🩲</span> </td>
+<td> <span>perizoma</span> </td>
+<td> <span>🩲</span> </td>
 </tr>
 <tr>
-<td>20.05</td>
-<td>sacrato poema</td>
-<td> <span class="emojitext">📜🛐</span> </td>
+<td> <span>sacrato poema</span> </td>
+<td> <span>📜🛐</span> </td>
 </tr>
 <tr>
-<td>21.05</td>
-<td>scerpare</td>
-<td> <span class="emojitext">✂️🍃</span> </td>
+<td> <span>scerpare</span> </td>
+<td> <span>✂️🍃</span> </td>
 </tr>
 <tr>
-<td>22.05</td>
-<td>vanità</td>
-<td> <span class="emojitext">🍂</span> </td>
+<td> <span>vanità</span> </td>
+<td> <span>🍂</span> </td>
 </tr>
 <tr>
-<td>23.05</td>
-<td>solecchio</td>
-<td> <span class="emojitext">⛺️</span> </td>
+<td> <span>solecchio</span> </td>
+<td> <span>⛺️</span> </td>
 </tr>
 <tr>
-<td>24.05</td>
-<td>ventilare</td>
-<td> <span class="emojitext">🌬</span> </td>
+<td> <span>ventilare</span> </td>
+<td> <span>🌬</span> </td>
 </tr>
 <tr>
-<td>25.05</td>
-<td>zara</td>
-<td> <span class="emojitext">🎲🎲🎲</span> </td>
+<td> <span>zara</span> </td>
+<td> <span>🎲🎲🎲</span> </td>
 </tr>
 <tr>
-<td>26.05</td>
-<td>alfa</td>
-<td> <span class="emojitext">🎬</span> </td>
+<td> <span>alfa</span> </td>
+<td> <span>🎬</span> </td>
 </tr>
 <tr>
-<td>27.05</td>
-<td>indragare</td>
-<td> <span class="emojitext">🪄🐉</span> </td>
+<td> <span>indragare</span> </td>
+<td> <span>🪄🐉</span> </td>
 </tr>
 <tr>
-<td>28.05</td>
-<td>anguinaia</td>
-<td> <span class="emojitext">🩳</span> </td>
+<td> <span>anguinaia</span> </td>
+<td> <span>🩳</span> </td>
 </tr>
 <tr>
-<td>29.05</td>
-<td>eclissi</td>
-<td> <span class="emojitext">🌑</span> </td>
+<td> <span>eclissi</span> </td>
+<td> <span>🌑</span> </td>
 </tr>
 <tr>
-<td>30.05</td>
-<td>bordone</td>
-<td> <span class="emojitext">🐝🪕</span> </td>
+<td> <span>bordone</span> </td>
+<td> <span>🐝🪕</span> </td>
 </tr>
 <tr>
-<td>31.05</td>
-<td>adorare</td>
-<td> <span class="emojitext">🛐</span> </td>
+<td> <span>adorare</span> </td>
+<td> <span>🛐</span> </td>
 </tr>
 <tr>
-<td>1.06</td>
-<td>broda</td>
-<td> <span class="emojitext">🍜</span> </td>
+<td> <span>broda</span> </td>
+<td> <span>🍜</span> </td>
 </tr>
 <tr>
-<td>2.06</td>
-<td>Italia</td>
-<td> <span class="emojitext">🇮🇹</span> </td>
+<td> <span>Italia</span> </td>
+<td> <span>🇮🇹</span> </td>
 </tr>
 <tr>
-<td>3.06</td>
-<td>cenìt</td>
-<td> <span class="emojitext">🧭</span> </td>
+<td> <span>cenìt</span> </td>
+<td> <span>🧭</span> </td>
 </tr>
 <tr>
-<td>4.06</td>
-<td>dotta</td>
-<td> <span class="emojitext">🤔</span> </td>
+<td> <span>dotta</span> </td>
+<td> <span>🤔</span> </td>
 </tr>
 <tr>
-<td>5.06</td>
-<td>acquistare</td>
-<td> <span class="emojitext">💰</span> </td>
+<td> <span>acquistare</span> </td>
+<td> <span>💰</span> </td>
 </tr>
 <tr>
-<td>6.06</td>
-<td>condiscendere</td>
-<td> <span class="emojitext">📉</span> </td>
+<td> <span>condiscendere</span> </td>
+<td> <span>📉</span> </td>
 </tr>
 <tr>
-<td>7.06</td>
-<td>congratulare</td>
-<td> <span class="emojitext">🥳</span> </td>
+<td> <span>congratulare</span> </td>
+<td> <span>🥳</span> </td>
 </tr>
 <tr>
-<td>8.06</td>
-<td>correggere</td>
-<td> <span class="emojitext">🤴🔗👸</span> </td>
+<td> <span>correggere</span> </td>
+<td> <span>🤴🔗👸</span> </td>
 </tr>
 <tr>
-<td>9.06</td>
-<td>discetti</td>
-<td> <span class="emojitext">🗑</span> </td>
+<td> <span>discetti</span> </td>
+<td> <span>🗑</span> </td>
 </tr>
 <tr>
-<td>10.06</td>
-<td>divenire</td>
-<td> <span class="emojitext">👞👇</span> </td>
+<td> <span>divenire</span> </td>
+<td> <span>👞👇</span> </td>
 </tr>
 <tr>
-<td>11.06</td>
-<td>festinare</td>
-<td> <span class="emojitext">🚀</span> </td>
+<td> <span>festinare</span> </td>
+<td> <span>🚀</span> </td>
 </tr>
 <tr>
-<td>12.06</td>
-<td>garrire</td>
-<td> <span class="emojitext">🗣️🔊🆚</span> </td>
+<td> <span>garrire</span> </td>
+<td> <span>🗣️🔊🆚</span> </td>
 </tr>
 <tr>
-<td>13.06</td>
-<td>meritare</td>
-<td> <span class="emojitext">🏅</span> </td>
+<td> <span>meritare</span> </td>
+<td> <span>🏅</span> </td>
 </tr>
 <tr>
-<td>14.06</td>
-<td>stilo</td>
-<td> <span class="emojitext">🖋⚜️</span> </td>
+<td> <span>stilo</span> </td>
+<td> <span>🖋⚜️</span> </td>
 </tr>
 <tr>
-<td>15.06</td>
-<td>aiutare</td>
-<td> <span class="emojitext">🛡</span> </td>
+<td> <span>aiutare</span> </td>
+<td> <span>🛡</span> </td>
 </tr>
 <tr>
-<td>16.06</td>
-<td>allumare</td>
-<td> <span class="emojitext">🪄🔥</span> </td>
+<td> <span>allumare</span> </td>
+<td> <span>🪄🔥</span> </td>
 </tr>
 <tr>
-<td>17.06</td>
-<td>stare freschi</td>
-<td> <span class="emojitext">🧊</span> </td>
+<td> <span>stare freschi</span> </td>
+<td> <span>🧊</span> </td>
 </tr>
 <tr>
-<td>18.06</td>
-<td>caligine</td>
-<td> <span class="emojitext">😶‍🌫️</span> </td>
+<td> <span>caligine</span> </td>
+<td> <span>😶‍🌫️</span> </td>
 </tr>
 <tr>
-<td>19.06</td>
-<td>folgoreggiare</td>
-<td> <span class="emojitext">🎢⚡️</span> </td>
+<td> <span>folgoreggiare</span> </td>
+<td> <span>🎢⚡️</span> </td>
 </tr>
 <tr>
-<td>20.06</td>
-<td>zavorra</td>
-<td> <span class="emojitext">⛓⬇️</span> </td>
+<td> <span>zavorra</span> </td>
+<td> <span>⛓⬇️</span> </td>
 </tr>
 <tr>
-<td>21.06</td>
-<td>rimbombare</td>
-<td> <span class="emojitext">🌊🪘</span> </td>
+<td> <span>rimbombare</span> </td>
+<td> <span>🌊🪘</span> </td>
 </tr>
 <tr>
-<td>22.06</td>
-<td>vita</td>
-<td> <span class="emojitext">☀️🌱</span> </td>
+<td> <span>vita</span> </td>
+<td> <span>☀️🌱</span> </td>
 </tr>
 <tr>
-<td>23.06</td>
-<td>modo</td>
-<td> <span class="emojitext">🎭</span> </td>
+<td> <span>modo</span> </td>
+<td> <span>🎭</span> </td>
 </tr>
 <tr>
-<td>24.06</td>
-<td>batisteo</td>
-<td> <span class="emojitext">⛪️⛲️</span> </td>
+<td> <span>batisteo</span> </td>
+<td> <span>⛪️⛲️</span> </td>
 </tr>
 <tr>
-<td>25.06</td>
-<td>antelucano</td>
-<td> <span class="emojitext">🌄</span> </td>
+<td> <span>antelucano</span> </td>
+<td> <span>🌄</span> </td>
 </tr>
 <tr>
-<td>26.06</td>
-<td>burro</td>
-<td> <span class="emojitext">🧈</span> </td>
+<td> <span>burro</span> </td>
+<td> <span>🧈</span> </td>
 </tr>
 <tr>
-<td>27.06</td>
-<td>convenire</td>
-<td> <span class="emojitext">🪄🧑‍⚖️</span> </td>
+<td> <span>convenire</span> </td>
+<td> <span>🪄🧑‍⚖️</span> </td>
 </tr>
 <tr>
-<td>28.06</td>
-<td>appulcrare</td>
-<td> <span class="emojitext">💅</span> </td>
+<td> <span>appulcrare</span> </td>
+<td> <span>💅</span> </td>
 </tr>
 <tr>
-<td>29.06</td>
-<td>ghiottoni</td>
-<td> <span class="emojitext">😋👿😋👿</span> </td>
+<td> <span>ghiottoni</span> </td>
+<td> <span>😋👿😋👿</span> </td>
 </tr>
 <tr>
-<td>30.06</td>
-<td>gaetta</td>
-<td> <span class="emojitext">🐯</span> </td>
+<td> <span>gaetta</span> </td>
+<td> <span>🐯</span> </td>
 </tr>
 <tr>
-<td>1.07</td>
-<td>pepe</td>
-<td> <span class="emojitext">🧂⚫️</span> </td>
+<td> <span>pepe</span> </td>
+<td> <span>🧂⚫️</span> </td>
 </tr>
 <tr>
-<td>2.07</td>
-<td>viro</td>
-<td> <span class="emojitext">👨</span> </td>
+<td> <span>viro</span> </td>
+<td> <span>👨</span> </td>
 </tr>
 <tr>
-<td>3.07</td>
-<td>fame</td>
-<td> <span class="emojitext">😋🍫🔝</span> </td>
+<td> <span>fame</span> </td>
+<td> <span>😋🍫🔝</span> </td>
 </tr>
 <tr>
-<td>4.07</td>
-<td>voi</td>
-<td> <span class="emojitext">👆🎩</span> </td>
+<td> <span>voi</span> </td>
+<td> <span>👆🎩</span> </td>
 </tr>
 <tr>
-<td>5.07</td>
-<td>tegghia</td>
-<td> <span class="emojitext">🫕</span> </td>
+<td> <span>tegghia</span> </td>
+<td> <span>🫕</span> </td>
 </tr>
 <tr>
-<td>6.07</td>
-<td>pane</td>
-<td> <span class="emojitext">🍞</span> </td>
+<td> <span>pane</span> </td>
+<td> <span>🍞</span> </td>
 </tr>
 <tr>
-<td>7.07</td>
-<td>spiga</td>
-<td> <span class="emojitext">🌾</span> </td>
+<td> <span>spiga</span> </td>
+<td> <span>🌾</span> </td>
 </tr>
 <tr>
-<td>8.07</td>
-<td>balba</td>
-<td> <span class="emojitext">🗣♒️</span> </td>
+<td> <span>balba</span> </td>
+<td> <span>🗣♒️</span> </td>
 </tr>
 <tr>
-<td>9.07</td>
-<td>vernaccia</td>
-<td> <span class="emojitext">🍷</span> </td>
+<td> <span>vernaccia</span> </td>
+<td> <span>🍷</span> </td>
 </tr>
 <tr>
-<td>10.07</td>
-<td>coagulare</td>
-<td> <span class="emojitext">☯️</span> </td>
+<td> <span>coagulare</span> </td>
+<td> <span>☯️</span> </td>
 </tr>
 <tr>
-<td>11.07</td>
-<td>belletta</td>
-<td> <span class="emojitext">🐽</span> </td>
+<td> <span>belletta</span> </td>
+<td> <span>🐽</span> </td>
 </tr>
 <tr>
-<td>12.07</td>
-<td>parlasia</td>
-<td> <span class="emojitext">👨‍🦼</span> </td>
+<td> <span>parlasia</span> </td>
+<td> <span>👨‍🦼</span> </td>
 </tr>
 <tr>
-<td>13.07</td>
-<td>ché</td>
-<td> <span class="emojitext">↙️</span> </td>
+<td> <span>ché</span> </td>
+<td> <span>↙️</span> </td>
 </tr>
 <tr>
-<td>14.07</td>
-<td>agrume</td>
-<td> <span class="emojitext">🧅</span> </td>
+<td> <span>agrume</span> </td>
+<td> <span>🧅</span> </td>
 </tr>
 <tr>
-<td>15.07</td>
-<td>cintola</td>
-<td> <span class="emojitext">🥋</span> </td>
+<td> <span>cintola</span> </td>
+<td> <span>🥋</span> </td>
 </tr>
 <tr>
-<td>16.07</td>
-<td>agosta</td>
-<td> <span class="emojitext">🤴🏻</span> </td>
+<td> <span>agosta</span> </td>
+<td> <span>🤴🏻</span> </td>
 </tr>
 <tr>
-<td>17.07</td>
-<td>addio</td>
-<td> <span class="emojitext">👋</span> </td>
+<td> <span>addio</span> </td>
+<td> <span>👋</span> </td>
 </tr>
 <tr>
-<td>18.07</td>
-<td>aceto</td>
-<td> <span class="emojitext">🍇🧪</span> </td>
+<td> <span>aceto</span> </td>
+<td> <span>🍇🧪</span> </td>
 </tr>
 <tr>
-<td>19.07</td>
-<td>talento</td>
-<td> <span class="emojitext">🙏💓‼️</span> </td>
+<td> <span>talento</span> </td>
+<td> <span>🙏💓‼️</span> </td>
 </tr>
 <tr>
-<td>20.07</td>
-<td>scacchi</td>
-<td> <span class="emojitext">♟</span> </td>
+<td> <span>scacchi</span> </td>
+<td> <span>♟</span> </td>
 </tr>
 <tr>
-<td>21.07</td>
-<td>stormo</td>
-<td> <span class="emojitext">⚔️🛡⚔️</span> </td>
+<td> <span>stormo</span> </td>
+<td> <span>⚔️🛡⚔️</span> </td>
 </tr>
 <tr>
-<td>22.07</td>
-<td>rogna</td>
-<td> <span class="emojitext">🦠</span> </td>
+<td> <span>rogna</span> </td>
+<td> <span>🦠</span> </td>
 </tr>
 <tr>
-<td>23.07</td>
-<td>stormire</td>
-<td> <span class="emojitext">🍃🎶</span> </td>
+<td> <span>stormire</span> </td>
+<td> <span>🍃🎶</span> </td>
 </tr>
 <tr>
-<td>24.07</td>
-<td>squillo</td>
-<td> <span class="emojitext">🔔😇</span> </td>
+<td> <span>squillo</span> </td>
+<td> <span>🔔😇</span> </td>
 </tr>
 <tr>
-<td>25.07</td>
-<td>quartana</td>
-<td> <span class="emojitext">🤒</span> </td>
+<td> <span>quartana</span> </td>
+<td> <span>🤒</span> </td>
 </tr>
 <tr>
-<td>26.07</td>
-<td>squilla</td>
-<td> <span class="emojitext">🔔</span> </td>
+<td> <span>squilla</span> </td>
+<td> <span>🔔</span> </td>
 </tr>
 <tr>
-<td>27.07</td>
-<td>oppilazione</td>
-<td> <span class="emojitext">🫀🔐</span> </td>
+<td> <span>oppilazione</span> </td>
+<td> <span>🫀🔐</span> </td>
 </tr>
 <tr>
-<td>28.07</td>
-<td>mammella</td>
-<td> <span class="emojitext">🤱🏻</span> </td>
+<td> <span>mammella</span> </td>
+<td> <span>🤱🏻</span> </td>
 </tr>
 <tr>
-<td>29.07</td>
-<td>intoppare</td>
-<td> <span class="emojitext">🪨🌊</span> </td>
+<td> <span>intoppare</span> </td>
+<td> <span>🪨🌊</span> </td>
 </tr>
 <tr>
-<td>30.07</td>
-<td>disio</td>
-<td> <span class="emojitext">❤️↗️</span> </td>
+<td> <span>disio</span> </td>
+<td> <span>❤️↗️</span> </td>
 </tr>
 <tr>
-<td>31.07</td>
-<td>idropesì</td>
-<td> <span class="emojitext">🩺💧</span> </td>
+<td> <span>idropesì</span> </td>
+<td> <span>🩺💧</span> </td>
 </tr>
 <tr>
-<td>1.08</td>
-<td>giuntura</td>
-<td> <span class="emojitext">🦾🦿</span> </td>
+<td> <span>giuntura</span> </td>
+<td> <span>🦾🦿</span> </td>
 </tr>
 <tr>
-<td>2.08</td>
-<td>complessione</td>
-<td> <span class="emojitext">🫀🧠</span> </td>
+<td> <span>complessione</span> </td>
+<td> <span>🫀🧠</span> </td>
 </tr>
 <tr>
-<td>3.08</td>
-<td>saetta</td>
-<td> <span class="emojitext">🏹</span> </td>
+<td> <span>saetta</span> </td>
+<td> <span>🏹</span> </td>
 </tr>
 <tr>
-<td>4.08</td>
-<td>sale</td>
-<td> <span class="emojitext">🧂</span> </td>
+<td> <span>sale</span> </td>
+<td> <span>🧂</span> </td>
 </tr>
 <tr>
-<td>5.08</td>
-<td>fiamma</td>
-<td> <span class="emojitext">🔥</span> </td>
+<td> <span>fiamma</span> </td>
+<td> <span>🔥</span> </td>
 </tr>
 <tr>
-<td>6.08</td>
-<td>corno</td>
-<td> <span class="emojitext">🦏</span> </td>
+<td> <span>corno</span> </td>
+<td> <span>🦏</span> </td>
 </tr>
 <tr>
-<td>7.08</td>
-<td>ago</td>
-<td> <span class="emojitext">🧭</span> </td>
+<td> <span>ago</span> </td>
+<td> <span>🧭</span> </td>
 </tr>
 <tr>
-<td>8.08</td>
-<td>effetto</td>
-<td> <span class="emojitext">🪄</span> </td>
+<td> <span>effetto</span> </td>
+<td> <span>🪄</span> </td>
 </tr>
 <tr>
-<td>9.08</td>
-<td>manso</td>
-<td> <span class="emojitext">🪄🏇</span> </td>
+<td> <span>manso</span> </td>
+<td> <span>🪄🏇</span> </td>
 </tr>
 <tr>
-<td>10.08</td>
-<td>magagna</td>
-<td> <span class="emojitext">🚹🚺🍎</span> </td>
+<td> <span>magagna</span> </td>
+<td> <span>🚹🚺🍎</span> </td>
 </tr>
 <tr>
-<td>11.08</td>
-<td>ferrigno</td>
-<td> <span class="emojitext">🎨⚙️</span> </td>
+<td> <span>ferrigno</span> </td>
+<td> <span>🎨⚙️</span> </td>
 </tr>
 <tr>
-<td>12.08</td>
-<td>terragno</td>
-<td> <span class="emojitext">🎚🌱</span> </td>
+<td> <span>terragno</span> </td>
+<td> <span>🎚🌱</span> </td>
 </tr>
 <tr>
-<td>13.08</td>
-<td>gente nuova</td>
-<td> <span class="emojitext">🧑‍🌾🌆</span> </td>
+<td> <span>gente nuova</span> </td>
+<td> <span>🧑‍🌾🌆</span> </td>
 </tr>
 <tr>
-<td>14.08</td>
-<td>trombetta</td>
-<td> <span class="emojitext">🦨🎺</span> </td>
+<td> <span>trombetta</span> </td>
+<td> <span>🦨🎺</span> </td>
 </tr>
 <tr>
-<td>15.08</td>
-<td>temprare</td>
-<td> <span class="emojitext">🎚🎶</span> </td>
+<td> <span>temprare</span> </td>
+<td> <span>🎚🎶</span> </td>
 </tr>
 <tr>
-<td>16.08</td>
-<td>palagio</td>
-<td> <span class="emojitext">🏰</span> </td>
+<td> <span>palagio</span> </td>
+<td> <span>🏰</span> </td>
 </tr>
 <tr>
-<td>17.08</td>
-<td>scandere</td>
-<td> <span class="emojitext">🧗‍♀️</span> </td>
+<td> <span>scandere</span> </td>
+<td> <span>🧗‍♀️</span> </td>
 </tr>
 <tr>
-<td>18.08</td>
-<td>sacco</td>
-<td> <span class="emojitext">💰</span> </td>
+<td> <span>sacco</span> </td>
+<td> <span>💰</span> </td>
 </tr>
 <tr>
-<td>19.08</td>
-<td>scemo</td>
-<td> <span class="emojitext">📴</span> </td>
+<td> <span>scemo</span> </td>
+<td> <span>📴</span> </td>
 </tr>
 <tr>
-<td>20.08</td>
-<td>protervo</td>
-<td> <span class="emojitext">🐈</span> </td>
+<td> <span>protervo</span> </td>
+<td> <span>🐈</span> </td>
 </tr>
 <tr>
-<td>21.08</td>
-<td>farina</td>
-<td> <span class="emojitext">🌾🥖</span> </td>
+<td> <span>farina</span> </td>
+<td> <span>🌾🥖</span> </td>
 </tr>
 <tr>
-<td>22.08</td>
-<td>passeggiare</td>
-<td> <span class="emojitext">🚶‍♀️</span> </td>
+<td> <span>passeggiare</span> </td>
+<td> <span>🚶‍♀️</span> </td>
 </tr>
 <tr>
-<td>23.08</td>
-<td>inebriare</td>
-<td> <span class="emojitext">🪄😵‍💫</span> </td>
+<td> <span>inebriare</span> </td>
+<td> <span>🪄😵‍💫</span> </td>
 </tr>
 <tr>
-<td>24.08</td>
-<td>involare</td>
-<td> <span class="emojitext">🐒😈</span> </td>
+<td> <span>involare</span> </td>
+<td> <span>🐒😈</span> </td>
 </tr>
 <tr>
-<td>25.08</td>
-<td>gire</td>
-<td> <span class="emojitext">👞</span> </td>
+<td> <span>gire</span> </td>
+<td> <span>👞</span> </td>
 </tr>
 <tr>
-<td>26.08</td>
-<td>gaggio</td>
-<td> <span class="emojitext">🏆</span> </td>
+<td> <span>gaggio</span> </td>
+<td> <span>🏆</span> </td>
 </tr>
 <tr>
-<td>27.08</td>
-<td>aiuola</td>
-<td> <span class="emojitext">🌎👶</span> </td>
+<td> <span>aiuola</span> </td>
+<td> <span>🌎👶</span> </td>
 </tr>
 <tr>
-<td>28.08</td>
-<td>galla</td>
-<td> <span class="emojitext">🌰🐿</span> </td>
+<td> <span>galla</span> </td>
+<td> <span>🌰🐿</span> </td>
 </tr>
 <tr>
-<td>29.08</td>
-<td>credere</td>
-<td> <span class="emojitext">👂✋</span> </td>
+<td> <span>credere</span> </td>
+<td> <span>👂✋</span> </td>
 </tr>
 <tr>
-<td>30.08</td>
-<td>corata</td>
-<td> <span class="emojitext">🫀🫁</span> </td>
+<td> <span>corata</span> </td>
+<td> <span>🫀🫁</span> </td>
 </tr>
 <tr>
-<td>31.08</td>
-<td>atro</td>
-<td> <span class="emojitext">⚫️</span> </td>
+<td> <span>atro</span> </td>
+<td> <span>⚫️</span> </td>
 </tr>
 <tr>
-<td>1.09</td>
-<td>onde</td>
-<td> <span class="emojitext">✔️</span> </td>
+<td> <span>onde</span> </td>
+<td> <span>✔️</span> </td>
 </tr>
 <tr>
-<td>2.09</td>
-<td>pandere</td>
-<td> <span class="emojitext">🪧</span> </td>
+<td> <span>pandere</span> </td>
+<td> <span>🪧</span> </td>
 </tr>
 <tr>
-<td>3.09</td>
-<td>galassia</td>
-<td> <span class="emojitext">🌌</span> </td>
+<td> <span>galassia</span> </td>
+<td> <span>🌌</span> </td>
 </tr>
 <tr>
-<td>4.09</td>
-<td>offensione</td>
-<td> <span class="emojitext">👊</span> </td>
+<td> <span>offensione</span> </td>
+<td> <span>👊</span> </td>
 </tr>
 <tr>
-<td>5.09</td>
-<td>nosco</td>
-<td> <span class="emojitext">📎👯</span> </td>
+<td> <span>nosco</span> </td>
+<td> <span>📎👯</span> </td>
 </tr>
 <tr>
-<td>6.09</td>
-<td>necessitate</td>
-<td> <span class="emojitext">☝️</span> </td>
+<td> <span>necessitate</span> </td>
+<td> <span>☝️</span> </td>
 </tr>
 <tr>
-<td>7.09</td>
-<td>margarita</td>
-<td> <span class="emojitext">💎🦪</span> </td>
+<td> <span>margarita</span> </td>
+<td> <span>💎🦪</span> </td>
 </tr>
 <tr>
-<td>8.09</td>
-<td>magnanimo</td>
-<td> <span class="emojitext">🏅</span> </td>
+<td> <span>magnanimo</span> </td>
+<td> <span>🏅</span> </td>
 </tr>
 <tr>
-<td>9.09</td>
-<td>litare</td>
-<td> <span class="emojitext">🐐💘</span> </td>
+<td> <span>litare</span> </td>
+<td> <span>🐐💘</span> </td>
 </tr>
 <tr>
-<td>10.09</td>
-<td>lunghesso</td>
-<td> <span class="emojitext">🤥</span> </td>
+<td> <span>lunghesso</span> </td>
+<td> <span>🤥</span> </td>
 </tr>
 <tr>
-<td>11.09</td>
-<td>lasso</td>
-<td> <span class="emojitext">😓</span> </td>
+<td> <span>lasso</span> </td>
+<td> <span>😓</span> </td>
 </tr>
 <tr>
-<td>12.09</td>
-<td>gradire</td>
-<td> <span class="emojitext">🔬</span> </td>
+<td> <span>gradire</span> </td>
+<td> <span>🔬</span> </td>
 </tr>
 <tr>
-<td>13.09</td>
-<td>s’etterna</td>
-<td> <span class="emojitext">⏳♾👈</span> </td>
+<td> <span>s’etterna</span> </td>
+<td> <span>⏳♾👈</span> </td>
 </tr>
 <tr>
-<td>14.09</td>
-<td>morto</td>
-<td> <span class="emojitext">💀</span> </td>
+<td> <span>morto</span> </td>
+<td> <span>💀</span> </td>
 </tr>
 <tr>
-<td>15.09</td>
-<td>zaffiro</td>
-<td> <span class="emojitext">💎🔹</span> </td>
+<td> <span>zaffiro</span> </td>
+<td> <span>💎🔹</span> </td>
 </tr>
 <tr>
-<td>16.09</td>
-<td>trasvolare</td>
-<td> <span class="emojitext">✈️</span> </td>
+<td> <span>trasvolare</span> </td>
+<td> <span>✈️</span> </td>
 </tr>
 <tr>
-<td>17.09</td>
-<td>porci</td>
-<td> <span class="emojitext">🐖🐖</span> </td>
+<td> <span>porci</span> </td>
+<td> <span>🐖🐖</span> </td>
 </tr>
 <tr>
-<td>18.09</td>
-<td>ortolano</td>
-<td> <span class="emojitext">🧑‍🌾</span> </td>
+<td> <span>ortolano</span> </td>
+<td> <span>🧑‍🌾</span> </td>
 </tr>
 <tr>
-<td>19.09</td>
-<td>male e peggio</td>
-<td> <span class="emojitext">👎➕👎👎</span> </td>
+<td> <span>male e peggio</span> </td>
+<td> <span>👎➕👎👎</span> </td>
 </tr>
 <tr>
-<td>20.09</td>
-<td>livido</td>
-<td> <span class="emojitext">🎨🔩</span> </td>
+<td> <span>livido</span> </td>
+<td> <span>🎨🔩</span> </td>
 </tr>
 <tr>
-<td>21.09</td>
-<td>tacersi</td>
-<td> <span class="emojitext">🤐</span> </td>
+<td> <span>tacersi</span> </td>
+<td> <span>🤐</span> </td>
 </tr>
 <tr>
-<td>22.09</td>
-<td>gola</td>
-<td> <span class="emojitext">🤤</span> </td>
+<td> <span>gola</span> </td>
+<td> <span>🤤</span> </td>
 </tr>
 <tr>
-<td>23.09</td>
-<td>ma guarda e passa</td>
-<td> <span class="emojitext">🚶😒</span> </td>
+<td> <span>ma guarda e passa</span> </td>
+<td> <span>🚶😒</span> </td>
 </tr>
 <tr>
-<td>24.09</td>
-<td>carne</td>
-<td> <span class="emojitext">🥩</span> </td>
+<td> <span>carne</span> </td>
+<td> <span>🥩</span> </td>
 </tr>
 <tr>
-<td>25.09</td>
-<td>inoltrarsi</td>
-<td> <span class="emojitext">👞⤵️</span> </td>
+<td> <span>inoltrarsi</span> </td>
+<td> <span>👞⤵️</span> </td>
 </tr>
 <tr>
-<td>26.09</td>
-<td>bruno</td>
-<td> <span class="emojitext">🎨🌰</span> </td>
+<td> <span>bruno</span> </td>
+<td> <span>🎨🌰</span> </td>
 </tr>
 <tr>
-<td>27.09</td>
-<td>cosa fatta capo ha</td>
-<td> <span class="emojitext">🪢✅</span> </td>
+<td> <span>cosa fatta capo ha</span> </td>
+<td> <span>🪢✅</span> </td>
 </tr>
 <tr>
-<td>28.09</td>
-<td>bollore</td>
-<td> <span class="emojitext">🌋</span> </td>
+<td> <span>bollore</span> </td>
+<td> <span>🌋</span> </td>
 </tr>
 <tr>
-<td>29.09</td>
-<td>bolgia</td>
-<td> <span class="emojitext">🕳👿</span> </td>
+<td> <span>bolgia</span> </td>
+<td> <span>🕳👿</span> </td>
 </tr>
 <tr>
-<td>30.09</td>
-<td>bigio</td>
-<td> <span class="emojitext">🌫</span> </td>
+<td> <span>bigio</span> </td>
+<td> <span>🌫</span> </td>
 </tr>
 <tr>
-<td>1.1</td>
-<td>﻿﻿﻿﻿a viso aperto</td>
-<td> <span class="emojitext">🆔</span> </td>
+<td> <span>﻿﻿﻿﻿a viso aperto</span> </td>
+<td> <span>🆔</span> </td>
 </tr>
 <tr>
-<td>2.1</td>
-<td>assetare</td>
-<td> <span class="emojitext">🪄🤑</span> </td>
+<td> <span>assetare</span> </td>
+<td> <span>🪄🤑</span> </td>
 </tr>
 <tr>
-<td>3.1</td>
-<td>loquela</td>
-<td> <span class="emojitext">🗣</span> </td>
+<td> <span>loquela</span> </td>
+<td> <span>🗣</span> </td>
 </tr>
 <tr>
-<td>4.1</td>
-<td>quisquilia</td>
-<td> <span class="emojitext">🆖</span> </td>
+<td> <span>quisquilia</span> </td>
+<td> <span>🆖</span> </td>
 </tr>
 <tr>
-<td>5.1</td>
-<td>latino</td>
-<td> <span class="emojitext">🗣🇮🇹</span> </td>
+<td> <span>latino</span> </td>
+<td> <span>🗣🇮🇹</span> </td>
 </tr>
 <tr>
-<td>6.1</td>
-<td>dislaga</td>
-<td> <span class="emojitext">⛲️</span> </td>
+<td> <span>dislaga</span> </td>
+<td> <span>⛲️</span> </td>
 </tr>
 <tr>
-<td>7.1</td>
-<td>quatto quatto</td>
-<td> <span class="emojitext">🙇‍♀️</span> </td>
+<td> <span>quatto quatto</span> </td>
+<td> <span>🙇‍♀️</span> </td>
 </tr>
 <tr>
-<td>8.1</td>
-<td>piaggia</td>
-<td> <span class="emojitext">🏖</span> </td>
+<td> <span>piaggia</span> </td>
+<td> <span>🏖</span> </td>
 </tr>
 <tr>
-<td>9.1</td>
-<td>mi taccio</td>
-<td> <span class="emojitext">🧍^🤐</span> </td>
+<td> <span>mi taccio</span> </td>
+<td> <span>🧍^🤐</span> </td>
 </tr>
 <tr>
-<td>10.1</td>
-<td>epa</td>
-<td> <span class="emojitext">🫀🫁</span> </td>
+<td> <span>epa</span> </td>
+<td> <span>🫀🫁</span> </td>
 </tr>
 <tr>
-<td>11.1</td>
-<td>fiata</td>
-<td> <span class="emojitext">🔂</span> </td>
+<td> <span>fiata</span> </td>
+<td> <span>🔂</span> </td>
 </tr>
 <tr>
-<td>12.1</td>
-<td>etico</td>
-<td> <span class="emojitext">🤒</span> </td>
+<td> <span>etico</span> </td>
+<td> <span>🤒</span> </td>
 </tr>
 <tr>
-<td>13.1</td>
-<td>mesto</td>
-<td> <span class="emojitext">😢😔</span> </td>
+<td> <span>mesto</span> </td>
+<td> <span>😢😔</span> </td>
 </tr>
 <tr>
-<td>14.1</td>
-<td>tigna</td>
-<td> <span class="emojitext">🚮</span> </td>
+<td> <span>tigna</span> </td>
+<td> <span>🚮</span> </td>
 </tr>
 <tr>
-<td>15.1</td>
-<td>ventraia</td>
-<td> <span class="emojitext">🐡</span> </td>
+<td> <span>ventraia</span> </td>
+<td> <span>🐡</span> </td>
 </tr>
 <tr>
-<td>16.1</td>
-<td>zeba</td>
-<td> <span class="emojitext">🐐</span> </td>
+<td> <span>zeba</span> </td>
+<td> <span>🐐</span> </td>
 </tr>
 <tr>
-<td>17.1</td>
-<td>vaneggiare</td>
-<td> <span class="emojitext">🦄</span> </td>
+<td> <span>vaneggiare</span> </td>
+<td> <span>🦄</span> </td>
 </tr>
 <tr>
-<td>18.1</td>
-<td>zanzara</td>
-<td> <span class="emojitext">🦟</span> </td>
+<td> <span>zanzara</span> </td>
+<td> <span>🦟</span> </td>
 </tr>
 <tr>
-<td>19.1</td>
-<td>costura</td>
-<td> <span class="emojitext">🪡</span> </td>
+<td> <span>costura</span> </td>
+<td> <span>🪡</span> </td>
 </tr>
 <tr>
-<td>20.1</td>
-<td>urlare</td>
-<td> <span class="emojitext">🐺🔊</span> </td>
+<td> <span>urlare</span> </td>
+<td> <span>🐺🔊</span> </td>
 </tr>
 <tr>
-<td>21.1</td>
-<td>trangugiare</td>
-<td> <span class="emojitext">🦬🍽</span> </td>
+<td> <span>trangugiare</span> </td>
+<td> <span>🦬🍽</span> </td>
 </tr>
 <tr>
-<td>22.1</td>
-<td>spedale</td>
-<td> <span class="emojitext">🏥</span> </td>
+<td> <span>spedale</span> </td>
+<td> <span>🏥</span> </td>
 </tr>
 <tr>
-<td>23.1</td>
-<td>universo</td>
-<td> <span class="emojitext">🪐🌎✨</span> </td>
+<td> <span>universo</span> </td>
+<td> <span>🪐🌎✨</span> </td>
 </tr>
 <tr>
-<td>24.1</td>
-<td>schianza</td>
-<td> <span class="emojitext">🩹</span> </td>
+<td> <span>schianza</span> </td>
+<td> <span>🩹</span> </td>
 </tr>
 <tr>
-<td>25.1</td>
-<td>smarrire</td>
-<td> <span class="emojitext">🧭🎈</span> </td>
+<td> <span>smarrire</span> </td>
+<td> <span>🧭🎈</span> </td>
 </tr>
 <tr>
-<td>26.1</td>
-<td>scabbia</td>
-<td> <span class="emojitext">🚱🩹</span> </td>
+<td> <span>scabbia</span> </td>
+<td> <span>🚱🩹</span> </td>
 </tr>
 <tr>
-<td>27.1</td>
-<td>serocchia</td>
-<td> <span class="emojitext">🧍‍♀️🧬🧍‍♀️</span> </td>
+<td> <span>serocchia</span> </td>
+<td> <span>🧍‍♀️🧬🧍‍♀️</span> </td>
 </tr>
 <tr>
-<td>28.1</td>
-<td>gonna</td>
-<td> <span class="emojitext">👗</span> </td>
+<td> <span>gonna</span> </td>
+<td> <span>👗</span> </td>
 </tr>
 <tr>
-<td>29.1</td>
-<td>suso</td>
-<td> <span class="emojitext">⬆️🔝</span> </td>
+<td> <span>suso</span> </td>
+<td> <span>⬆️🔝</span> </td>
 </tr>
 <tr>
-<td>30.1</td>
-<td>sorrise parolette</td>
-<td> <span class="emojitext">💬🙂</span> </td>
+<td> <span>sorrise parolette</span> </td>
+<td> <span>💬🙂</span> </td>
 </tr>
 <tr>
-<td>31.1</td>
-<td>strega</td>
-<td> <span class="emojitext">🧙‍♀️</span> </td>
+<td> <span>strega</span> </td>
+<td> <span>🧙‍♀️</span> </td>
 </tr>
 <tr>
-<td>1.11</td>
-<td>santo</td>
-<td> <span class="emojitext">😇</span> </td>
+<td> <span>santo</span> </td>
+<td> <span>😇</span> </td>
 </tr>
 <tr>
-<td>2.11</td>
-<td>defunto</td>
-<td> <span class="emojitext">🪦</span> </td>
+<td> <span>defunto</span> </td>
+<td> <span>🪦</span> </td>
 </tr>
 <tr>
-<td>3.11</td>
-<td>lebbre</td>
-<td> <span class="emojitext">🤕</span> </td>
+<td> <span>lebbre</span> </td>
+<td> <span>🤕</span> </td>
 </tr>
 <tr>
-<td>4.11</td>
-<td>orto e occaso</td>
-<td> <span class="emojitext">🌄➕🌆</span> </td>
+<td> <span>orto e occaso</span> </td>
+<td> <span>🌄➕🌆</span> </td>
 </tr>
 <tr>
-<td>5.11</td>
-<td>ipocrita</td>
-<td> <span class="emojitext">🎭😈</span> </td>
+<td> <span>ipocrita</span> </td>
+<td> <span>🎭😈</span> </td>
 </tr>
 <tr>
-<td>6.11</td>
-<td>indonnarsi</td>
-<td> <span class="emojitext">🪄🎩</span> </td>
+<td> <span>indonnarsi</span> </td>
+<td> <span>🪄🎩</span> </td>
 </tr>
 <tr>
-<td>7.11</td>
-<td>gratuito</td>
-<td> <span class="emojitext">🎁</span> </td>
+<td> <span>gratuito</span> </td>
+<td> <span>🎁</span> </td>
 </tr>
 <tr>
-<td>8.11</td>
-<td>Galeotto</td>
-<td> <span class="emojitext">🪄👩‍❤️‍👨</span> </td>
+<td> <span>Galeotto</span> </td>
+<td> <span>🪄👩‍❤️‍👨</span> </td>
 </tr>
 <tr>
-<td>9.11</td>
-<td>ingegno</td>
-<td> <span class="emojitext">💡</span> </td>
+<td> <span>ingegno</span> </td>
+<td> <span>💡</span> </td>
 </tr>
 <tr>
-<td>10.11</td>
-<td>femmine da conio</td>
-<td> <span class="emojitext">👯‍♀️💰</span> </td>
+<td> <span>femmine da conio</span> </td>
+<td> <span>👯‍♀️💰</span> </td>
 </tr>
 <tr>
-<td>11.11</td>
-<td>febbre</td>
-<td> <span class="emojitext">🤒</span> </td>
+<td> <span>febbre</span> </td>
+<td> <span>🤒</span> </td>
 </tr>
 <tr>
-<td>12.11</td>
-<td>baratto</td>
-<td> <span class="emojitext">💰🔁🆖</span> </td>
+<td> <span>baratto</span> </td>
+<td> <span>💰🔁🆖</span> </td>
 </tr>
 <tr>
-<td>13.11</td>
-<td>drago</td>
-<td> <span class="emojitext">🐉</span> </td>
+<td> <span>drago</span> </td>
+<td> <span>🐉</span> </td>
 </tr>
 <tr>
-<td>14.11</td>
-<td>fanciulla / fanciullo</td>
-<td> <span class="emojitext">🧍‍♀️/🧍‍♂️</span> </td>
+<td> <span>fanciulla / fanciullo</span> </td>
+<td> <span>🧍‍♀️/🧍‍♂️</span> </td>
 </tr>
 <tr>
-<td>15.11</td>
-<td>contigiato</td>
-<td> <span class="emojitext">⚜️🏵</span> </td>
+<td> <span>contigiato</span> </td>
+<td> <span>⚜️🏵</span> </td>
 </tr>
 <tr>
-<td>16.11</td>
-<td>cintura</td>
-<td> <span class="emojitext">🥋</span> </td>
+<td> <span>cintura</span> </td>
+<td> <span>🥋</span> </td>
 </tr>
 <tr>
-<td>17.11</td>
-<td>caro</td>
-<td> <span class="emojitext">🙅‍♀️🥖</span> </td>
+<td> <span>caro</span> </td>
+<td> <span>🙅‍♀️🥖</span> </td>
 </tr>
 <tr>
-<td>18.11</td>
-<td>catenella</td>
-<td> <span class="emojitext">📿</span> </td>
+<td> <span>catenella</span> </td>
+<td> <span>📿</span> </td>
 </tr>
 <tr>
-<td>19.11</td>
-<td>circunscrivere</td>
-<td> <span class="emojitext">✍🏽⭕️</span> </td>
+<td> <span>circunscrivere</span> </td>
+<td> <span>✍🏽⭕️</span> </td>
 </tr>
 <tr>
-<td>20.11</td>
-<td>cappello</td>
-<td> <span class="emojitext">🎓</span> </td>
+<td> <span>cappello</span> </td>
+<td> <span>🎓</span> </td>
 </tr>
 <tr>
-<td>21.11</td>
-<td>assommare</td>
-<td> <span class="emojitext">🪄✅</span> </td>
+<td> <span>assommare</span> </td>
+<td> <span>🪄✅</span> </td>
 </tr>
 <tr>
-<td>22.11</td>
-<td>camiscia</td>
-<td> <span class="emojitext">🥼</span> </td>
+<td> <span>camiscia</span> </td>
+<td> <span>🥼</span> </td>
 </tr>
 <tr>
-<td>23.11</td>
-<td>menare</td>
-<td> <span class="emojitext">🚛</span> </td>
+<td> <span>menare</span> </td>
+<td> <span>🚛</span> </td>
 </tr>
 <tr>
-<td>24.11</td>
-<td>mezzo</td>
-<td> <span class="emojitext">🎯</span> </td>
+<td> <span>mezzo</span> </td>
+<td> <span>🎯</span> </td>
 </tr>
 <tr>
-<td>25.11</td>
-<td>puzza / puzzo</td>
-<td> <span class="emojitext">👃💩</span> </td>
+<td> <span>puzza / puzzo</span> </td>
+<td> <span>👃💩</span> </td>
 </tr>
 <tr>
-<td>26.11</td>
-<td>lupa / lupo</td>
-<td> <span class="emojitext">🐺</span> </td>
+<td> <span>lupa / lupo</span> </td>
+<td> <span>🐺</span> </td>
 </tr>
 <tr>
-<td>27.11</td>
-<td>peltro</td>
-<td> <span class="emojitext">🏺</span> </td>
+<td> <span>peltro</span> </td>
+<td> <span>🏺</span> </td>
 </tr>
 <tr>
-<td>28.11</td>
-<td>sospetto</td>
-<td> <span class="emojitext">🙅‍♀️🔮</span> </td>
+<td> <span>sospetto</span> </td>
+<td> <span>🙅‍♀️🔮</span> </td>
 </tr>
 <tr>
-<td>29.11</td>
-<td>invenzione</td>
-<td> <span class="emojitext">🪄</span> </td>
+<td> <span>invenzione</span> </td>
+<td> <span>🪄</span> </td>
 </tr>
 <tr>
-<td>30.11</td>
-<td>innocente</td>
-<td> <span class="emojitext">🙅‍♀️🚹🚺🍎</span> </td>
+<td> <span>innocente</span> </td>
+<td> <span>🙅‍♀️🚹🚺🍎</span> </td>
 </tr>
 <tr>
-<td>1.12</td>
-<td>indovarsi</td>
-<td> <span class="emojitext">🪄👉</span> </td>
+<td> <span>indovarsi</span> </td>
+<td> <span>🪄👉</span> </td>
 </tr>
 <tr>
-<td>2.12</td>
-<td>fantasia</td>
-<td> <span class="emojitext">💭🦄</span> </td>
+<td> <span>fantasia</span> </td>
+<td> <span>💭🦄</span> </td>
 </tr>
 <tr>
-<td>3.12</td>
-<td>atleta</td>
-<td> <span class="emojitext">🤼‍♂️</span> </td>
+<td> <span>atleta</span> </td>
+<td> <span>🤼‍♂️</span> </td>
 </tr>
 <tr>
-<td>4.12</td>
-<td>paura</td>
-<td> <span class="emojitext">😱</span> </td>
+<td> <span>paura</span> </td>
+<td> <span>😱</span> </td>
 </tr>
 <tr>
-<td>5.12</td>
-<td>dove il sì suona</td>
-<td> <span class="emojitext">👉🎶🇮🇹</span> </td>
+<td> <span>dove il sì suona</span> </td>
+<td> <span>👉🎶🇮🇹</span> </td>
 </tr>
 <tr>
-<td>6.12</td>
-<td>zucca</td>
-<td> <span class="emojitext">🧑‍🦲</span> </td>
+<td> <span>zucca</span> </td>
+<td> <span>🧑‍🦲</span> </td>
 </tr>
 <tr>
-<td>7.12</td>
-<td>scroscio</td>
-<td> <span class="emojitext">💦💥</span> </td>
+<td> <span>scroscio</span> </td>
+<td> <span>💦💥</span> </td>
 </tr>
 <tr>
-<td>8.12</td>
-<td>ringavagnare</td>
-<td> <span class="emojitext">🧺↩️</span> </td>
+<td> <span>ringavagnare</span> </td>
+<td> <span>🧺↩️</span> </td>
 </tr>
 <tr>
-<td>9.12</td>
-<td>bizzarro</td>
-<td> <span class="emojitext">😠</span> </td>
+<td> <span>bizzarro</span> </td>
+<td> <span>😠</span> </td>
 </tr>
 <tr>
-<td>10.12</td>
-<td>gratulare</td>
-<td> <span class="emojitext">🤝👏</span> </td>
+<td> <span>gratulare</span> </td>
+<td> <span>🤝👏</span> </td>
 </tr>
 <tr>
-<td>11.12</td>
-<td>rosseggiare</td>
-<td> <span class="emojitext">🪄🖍</span> </td>
+<td> <span>rosseggiare</span> </td>
+<td> <span>🪄🖍</span> </td>
 </tr>
 <tr>
-<td>12.12</td>
-<td>scolorare</td>
-<td> <span class="emojitext">😨</span> </td>
+<td> <span>scolorare</span> </td>
+<td> <span>😨</span> </td>
 </tr>
 <tr>
-<td>13.12</td>
-<td>prato</td>
-<td> <span class="emojitext">🌱🌱🌱</span> </td>
+<td> <span>prato</span> </td>
+<td> <span>🌱🌱🌱</span> </td>
 </tr>
 <tr>
-<td>14.12</td>
-<td>golare</td>
-<td> <span class="emojitext">❤️‍🔥</span> </td>
+<td> <span>golare</span> </td>
+<td> <span>❤️‍🔥</span> </td>
 </tr>
 <tr>
-<td>15.12</td>
-<td>porpora</td>
-<td> <span class="emojitext">🎨🔴</span> </td>
+<td> <span>porpora</span> </td>
+<td> <span>🎨🔴</span> </td>
 </tr>
 <tr>
-<td>16.12</td>
-<td>patria</td>
-<td> <span class="emojitext">🇮🇹</span> </td>
+<td> <span>patria</span> </td>
+<td> <span>🇮🇹</span> </td>
 </tr>
 <tr>
-<td>17.12</td>
-<td>nastro</td>
-<td> <span class="emojitext">🎗</span> </td>
+<td> <span>nastro</span> </td>
+<td> <span>🎗</span> </td>
 </tr>
 <tr>
-<td>18.12</td>
-<td>affocare</td>
-<td> <span class="emojitext">🪄🔥</span> </td>
+<td> <span>affocare</span> </td>
+<td> <span>🪄🔥</span> </td>
 </tr>
 <tr>
-<td>19.12</td>
-<td>doccia</td>
-<td> <span class="emojitext">🚿</span> </td>
+<td> <span>doccia</span> </td>
+<td> <span>🚿</span> </td>
 </tr>
 <tr>
-<td>20.12</td>
-<td>gioviale</td>
-<td> <span class="emojitext">⚡️</span> </td>
+<td> <span>gioviale</span> </td>
+<td> <span>⚡️</span> </td>
 </tr>
 <tr>
-<td>21.12</td>
-<td>arrossare</td>
-<td> <span class="emojitext">🪄🙈</span> </td>
+<td> <span>arrossare</span> </td>
+<td> <span>🪄🙈</span> </td>
 </tr>
 <tr>
-<td>22.12</td>
-<td>impinguare</td>
-<td> <span class="emojitext">🪄🤑</span> </td>
+<td> <span>impinguare</span> </td>
+<td> <span>🪄🤑</span> </td>
 </tr>
 <tr>
-<td>23.12</td>
-<td>abbagliare</td>
-<td> <span class="emojitext">😎</span> </td>
+<td> <span>abbagliare</span> </td>
+<td> <span>😎</span> </td>
 </tr>
 <tr>
-<td>24.12</td>
-<td>cometa</td>
-<td> <span class="emojitext">💫</span> </td>
+<td> <span>cometa</span> </td>
+<td> <span>💫</span> </td>
 </tr>
 <tr>
-<td>25.12</td>
-<td>fantolino</td>
-<td> <span class="emojitext">👶</span> </td>
+<td> <span>fantolino</span> </td>
+<td> <span>👶</span> </td>
 </tr>
 <tr>
-<td>26.12</td>
-<td>strenna</td>
-<td> <span class="emojitext">🎁</span> </td>
+<td> <span>strenna</span> </td>
+<td> <span>🎁</span> </td>
 </tr>
 <tr>
-<td>27.12</td>
-<td>fulgore</td>
-<td> <span class="emojitext">💥</span> </td>
+<td> <span>fulgore</span> </td>
+<td> <span>💥</span> </td>
 </tr>
 <tr>
-<td>28.12</td>
-<td>topazio</td>
-<td> <span class="emojitext">💎🎇</span> </td>
+<td> <span>topazio</span> </td>
+<td> <span>💎🎇</span> </td>
 </tr>
 <tr>
-<td>29.12</td>
-<td>smeraldo</td>
-<td> <span class="emojitext">💎🟢</span> </td>
+<td> <span>smeraldo</span> </td>
+<td> <span>💎🟢</span> </td>
 </tr>
 <tr>
-<td>30.12</td>
-<td>famiglia</td>
-<td> <span class="emojitext">👨‍👩‍👦</span> </td>
+<td> <span>famiglia</span> </td>
+<td> <span>👨‍👩‍👦</span> </td>
 </tr>
 <tr>
-<td>31.12</td>
-<td>stelle</td>
-<td> <span class="emojitext">✨</span> </td>
+<td> <span>stelle</span> </td>
+<td> <span>✨</span> </td>
 </tr>
 
 </table>

@@ -61,7 +61,13 @@ def main(lang):
     txt_lang = list(table_lang.values())
 
     md_output = ['<table>']
-    md_output.append(f'<tr>  <th>{date_header[lang]}</th> <th>{languages[lang]}</th>  <th>EmojiLingo</th> </tr>')
+    md_output.extend([
+        '<tr>',
+            # f'<th>{date_header[lang]}</th>',
+            f'<th>{languages[lang]}</th>',
+            f'<th>EmojiLingo</th>',
+        '</tr>'
+    ])
     md_output.append(
         '<tr> <th colspan="2"> <input type="text" id="searchInput" onkeyup="searchFunction()" placeholder="Search..."> </th> </tr>'
     )
@@ -73,9 +79,9 @@ def main(lang):
         el = el.replace('\n','').replace("'","^") # "＇"
         md_output.extend([
             '<tr>',
-                '<td>' + d + '</td>',
-                '<td>' + txt + '</td>',
-                '<td> <span class="emojitext">' + el + '</span> </td>',
+                # '<td>' + d + '</td>',
+                '<td> <span>' + txt + '</span> </td>',
+                '<td> <span>' + el + '</span> </td>',
             '</tr>'
         ])
 

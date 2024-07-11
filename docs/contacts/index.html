@@ -36,14 +36,14 @@
   <script>
     document.addEventListener('click', function (event) {
       var menu = document.getElementById("DropdownMenu");
-      var hb_icon = document.querySelector('.hamburger-menu-icon');     
+      var hb_icon = document.querySelector('.hamburger-menu-icon');
       // Check if the clicked element is inside the hamburger-menu-icon or not
       if (!hb_icon.contains(event.target)) {
         menu.style.display = "none";
       }
     });
-    
-    function toggleDropdown() {      
+
+    function toggleDropdown() {
       var menu = document.getElementById("DropdownMenu");
       console.log("DropdownMenu: '" + menu.style.display + "'");
       if (menu.style.display === "none" || menu.style.display === "") {
@@ -60,26 +60,30 @@
     var input, filter, table, tr, td, i, txtValue;
     input = document.getElementById("searchInput");
     filter = input.value.toUpperCase();
-    // table = document.getElementsByTagName("table");
-    tr = document.getElementsByTagName("tr");
-    for (i = 2; i < tr.length; i++) {      
-      td0 = tr[i].getElementsByTagName("td")[0];
-      td1 = tr[i].getElementsByTagName("td")[1];
+    table = document.getElementsByTagName("table")[0];
+    tr = table.getElementsByTagName("tr");
+    // skip search and header
+    for (i = 2; i < tr.length; i++) {
+      td0 = tr[i].getElementsByTagName("span")[0];
+      td1 = tr[i].getElementsByTagName("span")[1];
       txtValue0 = td0.textContent || td0.innerText;
       txtValue1 = td1.textContent || td1.innerText;
-      if (txtValue0.toUpperCase().indexOf(filter) > -1 || txtValue1.indexOf(filter) > -1) {
+      if (
+        txtValue0.toUpperCase().indexOf(filter) > -1 ||
+        txtValue1.indexOf(filter) > -1)
+      {
         tr[i].style.display = "";
       } else {
-        tr[i].style.display = "none";          
+        tr[i].style.display = "none";
       }
     }
   }
   </script>
-  
+
 
 </head>
 <body>
-  <header>    
+  <header>
     <div class="nav-wrapper">
       <div class="toplogo">
         <img width="100px" height="auto" src="/assets/logos/speech-bubble-smile-celeste.png" alt="EmojiLingo" />
@@ -89,7 +93,7 @@
           <img src="/assets/burger-menu.svg" alt="Menu">
         </div>
         <div class="hamburger-menu-dropdown" id="DropdownMenu">
-                  
+          
           
             <a  href="/" onclick="hideDropdown()">Home</a>
           
@@ -112,9 +116,9 @@
           <a  href="/" onclick="hideDropdown()">Home</a>
 
         </div>
-      </div>        
+      </div>
       <div class="topnav">
-                
+        
         
           <a  href="/">Home</a>
         
@@ -144,17 +148,17 @@
             
               <a href="/it/contacts/" >Italiano</a>
             
+
             
-            
-            
+
             
           
-            
-      </div>      
+        
+      </div>
     </div>
   </header>
 
-  <main>   
+  <main>
     <h2 id="francesca-chiusaroli">Francesca Chiusaroli</h2>
 <p>Full professor of General and Applied Linguistics and Media Linguistics at the University of Macerata (Italy). She has previously taught at the Universities of Udine and Rome “Tor Vergata.” Among her research interests are writings, both in theoretical and historical perspectives, pasigraphies and shorthands. She is the author of the interdisciplinary research project “Scritture Brevi”(since 2009) and the devoted blog <a href="https://www.scritturebrevi.it/">scritturebrevi</a> and an active community on Twitter (#scritturebrevi). She is the inventor of Emojitaliano and oversees its translations, starting with Pinocchio in Emojitaliano. She conceived Emojitaliano as a code for international auxiliary communication, believing that the power of the popular digital pictographic repertoire, combined with the establishment of conventional glossaries and grammar as shared in crowdsourcing, can serve as a mediating code capable of overcoming language barriers and simplifying communication.</p>
 

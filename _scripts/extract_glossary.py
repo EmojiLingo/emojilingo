@@ -34,11 +34,14 @@ def main(lang):
     strings_emojilingo = [re.sub(' +\(\d+\)', '', el) for el in strings_emojilingo]
     pairs = list(set([(l,e) for l,e in zip(strings_lang, strings_emojilingo)]))
     pairs = sorted(pairs, key=lambda x: x[0].lower())
-    for en,el in pairs:
+    for txt_lang,el in pairs:
         el = el.replace('\n','').replace("'","^") # "＇"
-        md_output.append(
-            '<tr><td>' + en + '</td> <td><span class="emojitext">' + el + '</span></td></tr>'
-        )
+        md_output.extend([
+            '<tr>',
+                '<td> <span>' + txt_lang + '</span> </td>',
+                '<td> <span>' + el + '</span> </td>',
+            '</tr>'
+        ])
 
     with open(f'_i18n/{lang}/glossary.html', 'w') as f:
         f.write('\n'.join(md_output))
