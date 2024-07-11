@@ -29,7 +29,7 @@ def main(lang):
     md_output = ['<table>']
     md_output.append(f'<tr>  <th>{languages[lang]}</th>  <th>EmojiLingo</th> </tr>')
     md_output.append(
-        '<tr> <th colspan="2"> <input type="text" id="searchInput" onkeyup="searchFunction()" placeholder="Search..."> </th> </tr>'
+        '<tr> <th colspan="100%"> <input type="text" id="searchInput" onkeyup="searchFunction()" placeholder="Search..."> </th> </tr>'
     )
     strings_emojilingo = [re.sub(' +\(\d+\)', '', el) for el in strings_emojilingo]
     pairs = list(set([(l,e) for l,e in zip(strings_lang, strings_emojilingo)]))

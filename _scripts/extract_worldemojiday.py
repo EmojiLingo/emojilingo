@@ -69,7 +69,7 @@ def main(lang):
         '</tr>'
     ])
     md_output.append(
-        '<tr> <th colspan="2"> <input type="text" id="searchInput" onkeyup="searchFunction()" placeholder="Search..."> </th> </tr>'
+        '<tr> <th colspan="100%"> <input type="text" id="searchInput" onkeyup="searchFunction()" placeholder="Search..."> </th> </tr>'
     )
 
     date_txt_el = [(d,t,e) for d,t,e in zip(dates, txt_lang, emojilingo)]

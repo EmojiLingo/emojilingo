@@ -14,7 +14,7 @@ body {
   /* font-family: 'Calistoga', sans-serif; */
   font-family: 'Noto Sans';
   font-size: 20px;
-  line-height: 1.6;  
+  line-height: 1.6;
 }
 
 .emojitext {
@@ -39,9 +39,10 @@ th{
 }
 
 #searchInput {
-  width: 65%;
+  width: 100%;
+  box-sizing: border-box;
   margin: auto;
-  background-image: url('/assets/searchicon.png'); 
+  background-image: url('/assets/searchicon.png');
   background-size: 20px;
   background-position: 10px 10px;  /* Position the search icon */
   background-repeat: no-repeat; /* Do not repeat the icon image */
@@ -50,7 +51,7 @@ th{
   margin-bottom: 20ox;
   padding: 10px 40px 10px 40px; /* Add some padding */
   border: 1px solid #ddd; /* Add a grey border */
-  
+
 }
 
 header {
@@ -60,7 +61,7 @@ header {
   /* padding: 10px; */
   justify-content: space-between;
   align-items: center;
-  background-color: #5c7187;  
+  background-color: #5c7187;
   z-index: 1000; /* Adjust the z-index based on your needs */
   border-bottom: 30px solid #1a1a1a;
 }
@@ -68,7 +69,7 @@ header {
 .nav-wrapper {
   display: flex;
   align-items: center;
-} 
+}
 
 .toplogo {
   /* padding-left: 20px; */
@@ -83,7 +84,7 @@ header {
 }
 
 .topnav a {
-  margin-right: 5px; 
+  margin-right: 5px;
   text-decoration: none;
   color: black;
 }
@@ -101,7 +102,7 @@ header {
 
 .topnav-lang a {
   text-decoration: none;
-  color: black; /* Set the desired color for the language links */  
+  color: black; /* Set the desired color for the language links */
 }
 
 /* style the separator between language links */
@@ -151,7 +152,7 @@ color: white;
 
 main{
   justify-content: center;
-  flex-direction: column;  
+  flex-direction: column;
   max-width: 60%;
   margin: auto;
   margin-top: 60px;
@@ -182,10 +183,10 @@ main{
     width: 200px;
   }
 
-  .hamburger-menu-icon {    
+  .hamburger-menu-icon {
     display: block;
     width: 50px;
-    height: 50px;    
+    height: 50px;
     cursor: pointer;
   }
 
@@ -231,7 +232,7 @@ main{
     max-width: 90%;
     margin-left: 5%;
     margin-right: 5%;
-  }    
+  }
 }
 
 footer {
