@@ -33,6 +33,10 @@ def main(lang):
         'IT': 'Italiano',
         'EN': 'English'
     }
+    date_header = {
+        'IT': 'Data', # (giorno.mese)
+        'EN': 'Date' # (day.month)
+    }
     table = download_table()
     # print(json.dumps(table, indent=3))
 
@@ -50,31 +54,30 @@ def main(lang):
     ]
     '''
 
+    dates = list(ensure_strings_dict(table['Day']).values())
     table_emojilingo = ensure_strings_dict(table['EmojiLingo'])
     table_lang = ensure_strings_dict(table[lang])
-    strings_emojilingo = table_emojilingo.values()
-    strings_lang = table_lang.values()
+    emojilingo = list(table_emojilingo.values())
+    txt_lang = list(table_lang.values())
 
     md_output = ['<table>']
-    md_output.append(f'<tr>  <th>{languages[lang]}</th>  <th>EmojiLingo</th> </tr>')
+    md_output.append(f'<tr>  <th>{date_header[lang]}</th> <th>{languages[lang]}</th>  <th>EmojiLingo</th> </tr>')
     md_output.append(
         '<tr> <th colspan="2"> <input type="text" id="searchInput" onkeyup="searchFunction()" placeholder="Search..."> </th> </tr>'
     )
 
-    # for i, el in enumerate(strings_emojilingo):
-    #     if type(el) is float and math.isnan(el):
-    #         strings_emojilingo = ''
-    #     else:
-    #         strings_emojilingo = re.sub(' +\(\d+\)', '', el)
-
-    pairs = list(set([(l,e) for l,e in zip(strings_lang, strings_emojilingo)]))
-    pairs_alpha = sorted(pairs, key=lambda x: x[0].lower())
-    for txt,el in pairs_alpha:
+    date_txt_el = [(d,t,e) for d,t,e in zip(dates, txt_lang, emojilingo)]
+    # date_txt_el_alpha = sorted(date_txt_el, key=lambda x: x[1].lower()) # sorted alpha by txt
+    for d,txt,el in date_txt_el:
         # print(txt,el)
         el = el.replace('\n','').replace("'","^") # "＇"
-        md_output.append(
-            '<tr><td>' + txt + '</td> <td><span class="emojitext">' + el + '</span></td></tr>'
-        )
+        md_output.extend([
+            '<tr>',
+                '<td>' + d + '</td>',
+                '<td>' + txt + '</td>',
+                '<td> <span class="emojitext">' + el + '</span> </td>',
+            '</tr>'
+        ])
 
     with open(f'_i18n/{lang.lower()}/worldemojiday.html', 'w') as f:
         f.write('\n'.join(md_output))
