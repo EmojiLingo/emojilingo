@@ -41,7 +41,53 @@
       if (!hb_icon.contains(event.target)) {
         menu.style.display = "none";
       }
+      // check control in table
+      // https://datatables.net/examples/server_side/row_details.html
+      var controls = document.getElementsByClassName("dt-control");
+      let table = document.getElementsByTagName("table")
+      for (i = 0; i < controls.length; i++) {
+        let ctrl = controls[i];
+        if (ctrl.contains(event.target)) {
+          // show extra info on row control
+          let tr = ctrl.parentElement;
+          // Check if the next sibling is an extra info row
+          let nextTr = tr.nextElementSibling;
+          if (nextTr && nextTr.classList.contains('extra-info')) {
+              // Toggle visibility of the extra info row
+              nextTr.style.display = nextTr.style.display === 'table-row' ? 'none' : 'table-row';
+          } else {
+              // Create a new row with extra information
+              let newTr = document.createElement('tr');
+              newTr.classList.add('extra-info');
+              newTr.innerHTML = '<td colspan="100%">Extra information goes here...</td>';
+
+              // Insert the new row after the current row
+              tr.parentNode.insertBefore(newTr, tr.nextElementSibling);
+          }
+
+          // let row = table.row(tr);
+          // let idx = detailRows.indexOf(tr.id);
+
+          // if (tr.child.isShown()) {
+          //   tr.classList.remove('details');
+          //   row.child.hide();
+
+          //   // Remove from the 'open' array
+          //   detailRows.splice(idx, 1);
+          // }
+          // else {
+          //   tr.classList.add('details');
+          //   row.child(addRowDetails(row.data())).show();
+
+          //   // Add to the 'open' array
+          //   if (idx === -1) {
+          //     detailRows.push(tr.id);
+          //   }
+          // }
+        }
+      }
     });
+
 
     function toggleDropdown() {
       var menu = document.getElementById("DropdownMenu");
@@ -56,6 +102,8 @@
   </script>
 
 <script>
+
+  // search functionality in glossary and worldemojiday
   function searchFunction() {
     var input, filter, table, tr, td, i, txtValue;
     input = document.getElementById("searchInput");
@@ -78,6 +126,24 @@
       }
     }
   }
+
+  function addRowDetails(d) {
+    return (
+        'Full name: ' +
+        d.first_name +
+        ' ' +
+        d.last_name +
+        '<br>' +
+        'Salary: ' +
+        d.salary +
+        '<br>' +
+        'The child row can contain any data you wish, including links, images, inner tables etc.'
+    );
+  }
+
+
+
+
   </script>
 
 
@@ -144,7 +210,7 @@
         
           
             
-              <a href="/worldemojiday/" >English</a>
+              <a href="/worldemojiday/" >🇬🇧 English</a>
             
 
             
@@ -160,1470 +226,4391 @@
 
   <main>
     <table>
-<tr>
+<tr class="table-header">
+<th></th>
 <th>Italiano</th>
 <th>EmojiLingo</th>
 </tr>
 <tr> <th colspan="100%"> <input type="text" id="searchInput" onkeyup="searchFunction()" placeholder="Search..." /> </th> </tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>abbagliare</span> </td>
 <td> <span class="emojitext">😎</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso XXV, 122<br />
+<strong>Source</strong>: [...] tal mi fec'io a quell'ultimo foco / mentre che detto fu: "Perché t'abbagli / per veder cosa che qui non ha loco?"<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>accaffi</span> </td>
 <td> <span class="emojitext">🦅</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XXI, 54<br />
+<strong>Source</strong>: Poi l'addentar con più di cento raffi, / disser: "Coverto convien che qui balli, / sì che, se puoi, nascosamente accaffi".<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>accismare</span> </td>
 <td> <span class="emojitext">🎀</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XXVIII, 37<br />
+<strong>Source</strong>: Un diavolo è qua dietro che n'accisma / sì crudelmente, al taglio de la spada / rimettendo ciascun di questa risma [...]<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>accline</span> </td>
 <td> <span class="emojitext">📈</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso I, 109<br />
+<strong>Source</strong>: Ne l'ordine ch'io dico sono accline / tutte nature, per diverse sorti, / più al principio loro e men vicine [...]<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>aceto</span> </td>
 <td> <span class="emojitext">🍇🧪</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatorio XX, 89<br />
+<strong>Source</strong>: Veggiolo un'altra volta esser deriso; / veggio rinovellar l'aceto e 'l fiele, / e tra vivi ladroni esser anciso.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>acquistare</span> </td>
 <td> <span class="emojitext">💰</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno I, 55<br />
+<strong>Source</strong>: E qual è quei che volontieri acquista, / e giugne 'l tempo che perder lo face, / che 'n tutt' i suoi pensier piange e s' attrista [...]<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>addio</span> </td>
 <td> <span class="emojitext">👋</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatorio VIII, 3<br />
+<strong>Source</strong>: Era già l’ora che volge il disio / ai navicanti e ’ntenerisce il core / lo dì c’han detto ai dolci amici addio [...]<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>adimare</span> </td>
 <td> <span class="emojitext">👀⤵️</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso XXVII, 77<br />
+<strong>Source</strong>: Onde la donna, che mi vide assolto / de l'attendere in su, mi disse: "Adima / il viso e guarda come tu se' vòlto".<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>adona</span> </td>
 <td> <span class="emojitext">🪄🛐</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno, VI, 34<br />
+<strong>Source</strong>: Noi passavam su per l'ombre che adona / la greve pioggia, e ponavam le piante / sovra lor vanità che par persona. <br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>adorare</span> </td>
 <td> <span class="emojitext">🛐</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatorio V, 71<br />
+<strong>Source</strong>: [...] che tu mi sie di tuoi prieghi cortese / in Fano, sì che ben per me s'adori / pur ch'i' possa purgar le gravi offese.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>affocare</span> </td>
 <td> <span class="emojitext">🪄🔥</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso XXVIII, 17<br />
+<strong>Source</strong>: [...] un punto vidi che raggiava lume / acuto sì, che 'l viso ch'elli affoca / chiuder conviensi per lo forte acume [...]<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>aggirata</span> </td>
 <td> <span class="emojitext">🔄</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno VIII, 79<br />
+<strong>Source</strong>: Non sanza prima far grande aggirata, / venimmo in parte dove il nocchier forte / "Usciteci", gridò: "qui è l'intrata".<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>aggrato</span> </td>
 <td> <span class="emojitext">👍</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso XXIII, 6<br />
+<strong>Source</strong>: [...] che, per veder li aspetti disiati / e per trovar lo cibo onde li pasca, / in che gravi labor li sono aggrati [...]<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>aggueffarsi</span> </td>
 <td> <span class="emojitext">🪄🧶</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XXIII, 16<br />
+<strong>Source</strong>: Se l'ira sovra 'l mal voler s'aggueffa, / ei ne verranno dietro più crudeli / che 'l cane a quella lievre ch'elli acceffa.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>ago</span> </td>
 <td> <span class="emojitext">🧭</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso XII, 29<br />
+<strong>Source</strong>: [...] del cor de l'una de le luci nove / si mosse voce, che l'ago a la stella / parer mi fece in volgermi al suo dove<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>agosta</span> </td>
 <td> <span class="emojitext">🤴🏻</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso XXX, 136<br />
+<strong>Source</strong>: [...] sederà l'alma, che fia giù agosta, / de l'alto Arrigo, ch'a drizzare Italia / verrà in prima ch'ella sia disposta.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>agrume</span> </td>
 <td> <span class="emojitext">🧅</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso XVII, 117<br />
+<strong>Source</strong>: [...] e poscia per lo ciel, di lume in lume, / ho io appreso quel che s'io ridico, / a molti fia sapor di forte agrume [...]<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>aiuola</span> </td>
 <td> <span class="emojitext">🌎👶</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso XXII, 151<br />
+<strong>Source</strong>: L'aiuola che ci fa tanto feroci, / volgendom'io con li etterni Gemelli, / tutta m'apparve da' colli a le foci [...]<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>aiutare</span> </td>
 <td> <span class="emojitext">🛡</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno I, 89<br />
+<strong>Source</strong>: Vedi la bestia per cu' io mi volsi: / aiutami da lei, famoso saggio, / ch'ella mi fa tremar le vene e i polsi.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>alfa</span> </td>
 <td> <span class="emojitext">🎬</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso XXVI, 17<br />
+<strong>Source</strong>: Lo ben che fa contenta questa corte, / Alfa e O è di quanta scrittura / mi legge Amore o lievemente o forte.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>Alichino</span> </td>
 <td> <span class="emojitext">👿🌈</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XXI,118<br />
+<strong>Source</strong>: Tra' ti avante, Alichino, e Calcabrina, / cominciò elli a dire, e tu, Cagnazzo; / e Barbariccia guidi la decina.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>allumare</span> </td>
 <td> <span class="emojitext">🪄🔥</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso XX, 1<br />
+<strong>Source</strong>: Quando colui che tutto 'l mondo alluma / de l'emisperio nostro sì discende, / che 'l giorno d'ogne parte si consuma […]<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>alluminare</span> </td>
 <td> <span class="emojitext">🖌🖼📖🤏</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatorio XI, 81<br />
+<strong>Source</strong>: "Oh!", diss'io lui, "non se' tu Oderisi, / l'onor d'Agobbio e l'onor di quell'arte / ch'alluminar chiamata è in Parisi?"<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>alo</span> </td>
 <td> <span class="emojitext">🔅</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso, XXVIII, 23<br />
+<strong>Source</strong>: Forse cotanto quanto pare appresso / alo cigner la luce che 'l dipigne / quando 'l vapor che 'l porta più è spesso [...]<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>amanza</span> </td>
 <td> <span class="emojitext">🪄👩❤️</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso IV, 118<br />
+<strong>Source</strong>: "O amanza del primo amante, o diva", / diss'io appresso, "il cui parlar m'inonda / e scalda sì, che più e più m'avviva [...]"<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>ammentarsi</span> </td>
 <td> <span class="emojitext">💽</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatorio XIV, 56<br />
+<strong>Source</strong>: Né lascerò di dir perch'altri m'oda; / e buon sarà costui, s'ancor s'ammenta / di ciò che vero spirto mi disnoda.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>amor</span> </td>
 <td> <span class="emojitext">💘</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno V, 103<br />
+<strong>Source</strong>: Amor, ch'a nullo amato amar perdona, / mi prese del costui piacer sì forte, / che, come vedi, ancor non m'abbandona.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>ancoi</span> </td>
 <td> <span class="emojitext">👇📆</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatorio XIII, 52<br />
+<strong>Source</strong>: Non credo che per terra vada ancoi / omo sì duro, che non fosse punto / per compassion di quel ch'i' vidi poi [...]<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>angelo</span> </td>
 <td> <span class="emojitext">👼</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso XXXI, 131<br />
+<strong>Source</strong>: [...] e a quel mezzo, con le penne sparte, / vid’io più di mille angeli festanti, / ciascun distinto di fulgore e d’arte.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>anguinaia</span> </td>
 <td> <span class="emojitext">🩳</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XXX, 50<br />
+<strong>Source</strong>: Io vidi un, fatto a guisa di leuto, / pur ch'elli avesse avuta l'anguinaia / tronca da l'altro che l'uomo ha forcuto.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>antelucano</span> </td>
 <td> <span class="emojitext">🌄</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatorio XXVII, 109<br />
+<strong>Source</strong>: E già per li splendori antelucani, / che tanto a’ pellegrin surgon più grati, / quanto, tornando, albergan men lontani [...]<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>antomata</span> </td>
 <td> <span class="emojitext">🐛</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatorio X, 128<br />
+<strong>Source</strong>: Di che l' animo vostro in alto galla, / poi siete quasi antomata in difetto, / sì come vermo in cui formazion falla?<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>apprensiva</span> </td>
 <td> <span class="emojitext">🪄🧠</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatorio XVIII, 22<br />
+<strong>Source</strong>: Vostra apprensiva da esser verace / tragge intenzione, e dentro a voi la spiega, / sì che l'animo ad essa volger face [...]<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>appulcrare</span> </td>
 <td> <span class="emojitext">💅</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno VII, 60<br />
+<strong>Source</strong>: Mal dare e mal tener lo mondo pulcro / ha tolto loro, e posti a questa zuffa: / qual ella sia, parole non ci appulcro.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>aquila</span> </td>
 <td> <span class="emojitext">🦅</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno IV, 96<br />
+<strong>Source</strong>: Così vid'i' adunar la bella scola / di quel segnor de l'altissimo canto / che sovra li altri com'aquila vola.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>archimandrita</span> </td>
 <td> <span class="emojitext">👨⛪️</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso XI, 99<br />
+<strong>Source</strong>: [...] di seconda corona redimita / fu per Onorio da l'Etterno Spiro / la santa voglia d'esto archimandrita.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>arrossare</span> </td>
 <td> <span class="emojitext">🪄🙈</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso XVI, 103<br />
+<strong>Source</strong>: Grand'era già la colonna del Vaio, / Sacchetti, Giuochi, Fifanti e Barucci / e Galli e quei ch'arrossan per lo staio.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>arte</span> </td>
 <td> <span class="emojitext">🛠</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno X, 81<br />
+<strong>Source</strong>: Ma non cinquanta volte fia raccesa / la faccia de la donna che qui regge, che tu saprai quanto quell'arte pesa.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>arzanà</span> </td>
 <td> <span class="emojitext">🏗🚧</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XXI, 7<br />
+<strong>Source</strong>: Quale ne l'arzanà de' Viniziani / bolle l'inverno la tenace pece / a rimpalmare i legni lor non sani [...]<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>assenzo</span> </td>
 <td> <span class="emojitext">🌿🧪</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatorio XXIII, 86<br />
+<strong>Source</strong>: Ond'elli a me: "Sì tosto m'ha condotto / a ber lo dolce assenzo d'i martìri / la Nella mia con suo pianger dirotto.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>assetare</span> </td>
 <td> <span class="emojitext">🪄🤑</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatorio XXXI, 129<br />
+<strong>Source</strong>: Mentre che piena di stupore e lieta / l'anima mia gustava di quel cibo / che, saziando di sé, di sé asseta [...]<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>assommare</span> </td>
 <td> <span class="emojitext">🪄✅</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatorio XXI, 112<br />
+<strong>Source</strong>: [...] e "Se tanto labore in bene assommi", / disse, "perché la tua faccia testeso / un lampeggiar di riso dimostrommi?".<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>atleta</span> </td>
 <td> <span class="emojitext">🤼‍♂️</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso XII, 56<br />
+<strong>Source</strong>: […] dentro vi nacque l'amoroso drudo / de la fede cristiana, il santo atleta / benigno a' suoi e a' nemici crudo […]<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>atro</span> </td>
 <td> <span class="emojitext">⚫️</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatorio XXX, 54<br />
+<strong>Source</strong>: [...] né quantunque perdeo l'antica matre, / valse a le guance nette di rugiada / che, lagrimando, non tornasser atre.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>attuia</span> </td>
 <td> <span class="emojitext">🏎️🔁🏎️</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatorio XXXIII, 48<br />
+<strong>Source</strong>: E forse che la mia narrazion buia, / qual Temi e Sfinge, men ti persuade, / perch'a lor modo lo 'ntelletto attuia [...]<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>avaccio</span> </td>
 <td> <span class="emojitext">🚀🔜</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XXXIII, 106<br />
+<strong>Source</strong>: Ond'elli a me: "Avaccio sarai dove / di ciò ti farà l'occhio la risposta, veggendo la cagion che 'l fiato piove".<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>babbo</span> </td>
 <td> <span class="emojitext">👨💟</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XXXII, 9<br />
+<strong>Source</strong>: [...] ché non è impresa da pigliare a gabbo / discriver fondo a tutto l'universo, né da lingua che chiami mamma o babbo.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>baiulo</span> </td>
 <td> <span class="emojitext">📌🏅👑👨‍⚖️</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso VI, 73<br />
+<strong>Source</strong>: Di quel che fé col baiulo seguente, / Bruto con Cassio ne l'inferno latra, / e Modena e Perugia fu dolente.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>balba</span> </td>
 <td> <span class="emojitext">🗣♒️</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatorio XIX, 7<br />
+<strong>Source</strong>: [...] mi venne in sogno una femmina balba, / ne li occhi guercia, e sovra i piè distorta, / con le man monche, e di colore scialba.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>baratto</span> </td>
 <td> <span class="emojitext">💰🔁🆖</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XI, 60<br />
+<strong>Source</strong>: […] ipocresia, lusinghe e chi affattura, / falsità, ladroneccio e simonia, / ruffian, baratti e simile lordura.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>barba</span> </td>
 <td> <span class="emojitext">|🧍↔️👩‍👦</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso XIX, 137<br />
+<strong>Source</strong>: E parranno a ciascun l'opere sozze / del barba e del fratel, che tanto egregia / nazione e due corone han fatte bozze.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>batisteo</span> </td>
 <td> <span class="emojitext">⛪️⛲️</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso XV, 134<br />
+<strong>Source</strong>: Maria mi diè, chiamata in alte grida; / e ne l'antico vostro Batisteo / insieme fui cristiano e Cacciaguida.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>bella persona</span> </td>
 <td> <span class="emojitext">🧍🔆</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno, V, 101<br />
+<strong>Source</strong>: Amor, ch'al cor gentil ratto s'apprende, / prese costui de la bella persona / che mi fu tolta; e 'l modo ancor m'offende<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>belletta</span> </td>
 <td> <span class="emojitext">🐽</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno VII, 124<br />
+<strong>Source</strong>: [...] ne l’aere dolce che dal sol s’allegra, / portando dentro accidïoso fummo: / or ci attristiam ne la belletta negra.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>berze</span> </td>
 <td> <span class="emojitext">👟💨</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XVIII, 37<br />
+<strong>Source</strong>: Ahi come facean lor levar le berze / a le prime percosse! già nessuno / le seconde aspettava né le terze.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>biancovestito</span> </td>
 <td> <span class="emojitext">📎👗⚪️</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatorio, XII, 89<br />
+<strong>Source</strong>: A noi venìa la creatura bella, / biancovestito e ne la faccia quale / par tremolando mattutina stella.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>bieco</span> </td>
 <td> <span class="emojitext">👺</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XXV, 31<br />
+<strong>Source</strong>: [...] onde cessar le sue opere biece / sotto la mazza d'Ercule, che forse / gliene diè cento, e non sentì le diece.  <br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>bigio</span> </td>
 <td> <span class="emojitext">🌫</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno VII, 104<br />
+<strong>Source</strong>: L'acqua era buia assai più che persa; / e noi, in compagnia de l'onde bige, / intrammo giù per una via diversa.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>biscazza</span> </td>
 <td> <span class="emojitext">|🃏💸</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XI, 44<br />
+<strong>Source</strong>: [...] qualunque priva sé del vostro mondo, / biscazza e fonde la sua facultade, / e piange là dov'esser de' giocondo.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>bivero</span> </td>
 <td> <span class="emojitext">🦫</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XVII, 22<br />
+<strong>Source</strong>: [...] che parte sono in acqua e parte in terra, / e come là tra li Tedeschi lurchi / lo bivero s'assetta a far sua guerra [...]  <br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>bizzarro</span> </td>
 <td> <span class="emojitext">😠</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno VIII, 62<br />
+<strong>Source</strong>: Tutti gridavano: "A Filippo Argenti!"; / e 'l fiorentino spirito bizzarro / in sé medesmo si volvea co' denti.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>bolgia</span> </td>
 <td> <span class="emojitext">🕳👿</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XVIII, 24<br />
+<strong>Source</strong>: A la man destra vidi nova pieta, / novo tormento e novi frustatori, / di che la prima bolgia era repleta.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>bollore</span> </td>
 <td> <span class="emojitext">🌋</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XXI, 20<br />
+<strong>Source</strong>: I' vedea lei, ma non vedea in essa / mai che le bolle che 'l bollor levava, / e gonfiar tutta, e riseder compressa.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>bordone</span> </td>
 <td> <span class="emojitext">🐝🪕</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatorio XXVIII, 18<br />
+<strong>Source</strong>: [...] ma con piena letizia l'ore prime, / cantando, ricevieno intra le foglie, / che tenevan bordone a le sue rime [...]<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>botolo</span> </td>
 <td> <span class="emojitext">🐩🎺🎙</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatorio XIV, 46<br />
+<strong>Source</strong>: Botoli trova poi, venendo giuso, / ringhiosi più che non chiede lor possa, / e da lor disdegnosa torce il muso. <br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>brancolare</span> </td>
 <td> <span class="emojitext">🖐👣🌌</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XXXIII, 73<br />
+<strong>Source</strong>: [...] vid'io cascar li tre ad uno ad uno / tra 'l quinto dì e 'l sesto; ond'io mi diedi, / già cieco, a brancolar sovra ciascuno [...]<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>broda</span> </td>
 <td> <span class="emojitext">🍜</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno VIII, 53<br />
+<strong>Source</strong>: E io: "Maestro, molto sarei vago / di vederlo attuffare in questa broda, / prima che noi uscissimo del lago."<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>bruno</span> </td>
 <td> <span class="emojitext">🎨🌰</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno II, 1<br />
+<strong>Source</strong>: Lo giorno se n'andava, e l'aere bruno / toglieva li animai che sono in terra / da le fatiche loro; e io sol uno [...]<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>bruti</span> </td>
 <td> <span class="emojitext">👹👹</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XXVI, 119<br />
+<strong>Source</strong>: Considerate la vostra semenza: / fatti non foste a viver come bruti, / ma per seguir virtute e canoscenza.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>bulicame</span> </td>
 <td> <span class="emojitext">🩸⛲️ 👿</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XII, 117<br />
+<strong>Source</strong>: Poco più oltre il centauro s'affisse / sovr'una gente che 'nfino a la gola / parea che di quel bulicame uscisse.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>burchio</span> </td>
 <td> <span class="emojitext">🚣</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XVII, 19<br />
+<strong>Source</strong>: Come talvolta stanno a riva i burchi, / che parte sono in acqua e parte in terra, / e come là tra li Tedeschi lurchi [...]  <br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>burro</span> </td>
 <td> <span class="emojitext">🧈</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XVII, 63<br />
+<strong>Source</strong>: Poi, procedendo di mio sguardo il curro, / vidine un'altra come sangue rossa, / mostrando un'oca bianca più che burro.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>caligine</span> </td>
 <td> <span class="emojitext">😶‍🌫️</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatorio XI, 30<br />
+<strong>Source</strong>: […] disparmente angosciate tutte a tondo / e lasse su per la prima cornice, / purgando la caligine del mondo.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>camiscia</span> </td>
 <td> <span class="emojitext">🥼</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XXIII, 42<br />
+<strong>Source</strong>: [...] che prende il figlio e fugge e non s’arresta, / avendo più di lui che di sé cura, / tanto che solo una camiscia vesta [...]<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>cammino</span> </td>
 <td> <span class="emojitext">🕰🥾</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno I, 1<br />
+<strong>Source</strong>: Nel mezzo del cammin di nostra vita / mi ritrovai per una selva oscura, / ché la diritta via era smarrita.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>cappello</span> </td>
 <td> <span class="emojitext">🎓</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XXXII, 126<br />
+<strong>Source</strong>: Noi eravam partiti già da ello, / ch’io vidi due ghiacciati in una buca, / sì che l’un capo a l’altro era cappello [...]<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>carne</span> </td>
 <td> <span class="emojitext">🥩</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XXI, 57<br />
+<strong>Source</strong>: Non altrimenti i cuoci a' lor vassalli / fanno attuffare in mezzo la caldaia / la carne con li uncin, perché non galli.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>caro</span> </td>
 <td> <span class="emojitext">🙅‍♀️🥖</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatorio XXII, 141<br />
+<strong>Source</strong>: Li due poeti a l’alber s’appressaro; / e una voce per entro le fronde / gridò: “Di questo cibo avrete caro”.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>catenella</span> </td>
 <td> <span class="emojitext">📿</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso XV, 100<br />
+<strong>Source</strong>: Non avea catenella, non corona, / non gonne contigiate, non cintura / che fosse a veder più che la persona.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>cenìt</span> </td>
 <td> <span class="emojitext">🧭</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso XXIX, 4<br />
+<strong>Source</strong>: quant' è dal punto che 'l cenìt inlibra / infin che l'uno e l'altro da quel cinto, / cambiando l'emisperio, si dilibra,<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>ché</span> </td>
 <td> <span class="emojitext">↙️</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno I, 3<br />
+<strong>Source</strong>: Nel mezzo del cammin di nostra vita / mi ritrovai per una selva oscura / ché la diritta via era smarrita.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>cintola</span> </td>
 <td> <span class="emojitext">🥋</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno X, 33<br />
+<strong>Source</strong>: Ed el mi disse: "Volgiti! Che fai? / Vedi là Farinata che s'è dritto: / da la cintola in su tutto 'l vedrai".<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>cintura</span> </td>
 <td> <span class="emojitext">🥋</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso XXX, 105<br />
+<strong>Source</strong>: E’ si distende in circular figura, / in tanto che la sua circunferenza / sarebbe al sol troppo larga cintura.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>circunscrivere</span> </td>
 <td> <span class="emojitext">✍🏽⭕️</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso XIV, 30<br />
+<strong>Source</strong>: Quell’ uno e due e tre che sempre vive / e regna sempre in tre e ’n due e ’n uno, / non circunscritto, e tutto circunscrive […]<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>cirro negletto</span> </td>
 <td> <span class="emojitext">💇🏻‍♂️🏚</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso VI, 46-47<br />
+<strong>Source</strong>: [...] onde Torquato e Quinzio, che dal cirro / negletto fu nomato, i Deci e ' Fabi / ebber la fama che volontier mirro. <br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>co</span> </td>
 <td> <span class="emojitext">👤</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatorio III, 128<br />
+<strong>Source</strong>: L’ossa del corpo mio sarieno ancora / in co del ponte, presso a Benevento, / sotto la guardia della grave mora. <br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>coagulare</span> </td>
 <td> <span class="emojitext">☯️</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatorio XXV, 50<br />
+<strong>Source</strong>: [...] e, giunto lui, comincia ad operare / coagulando prima, e poi avviva / ciò che per sua matera fé constare.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>cognazione</span> </td>
 <td> <span class="emojitext">👨‍👧</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso XV, 92<br />
+<strong>Source</strong>: Poscia mi disse: "Quel da cui si dice / tua cognazione e che cent'anni e piùe / girato ha 'l monte in la prima cornice [...]<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>color che son sospesi</span> </td>
 <td> <span class="emojitext">👥↪️^🕸</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno, II, 52<br />
+<strong>Source</strong>: Io era tra color che son sospesi, / e donna mi chiamò beata e bella, / tal che di comandare io la richiesi.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>colubro</span> </td>
 <td> <span class="emojitext">🐍☠️</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso VI, 77 <br />
+<strong>Source</strong>: Piangene ancor la trista Cleopatra, / che, fuggendoli innanzi, dal colubro / la morte prese subitana e atra.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>cometa</span> </td>
 <td> <span class="emojitext">💫</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso XXIV, 12<br />
+<strong>Source</strong>: Così Beatrice; e quelle anime liete / si fero spere sopra fissi poli, / fiammando, volte, a guisa di comete.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>complessione</span> </td>
 <td> <span class="emojitext">🫀🧠</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso VII, 140<br />
+<strong>Source</strong>: L'anima d'ogne bruto e de le piante / di complession potenziata tirais / lo raggio e 'l moto de le luci sante.                                  <br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>concolore</span> </td>
 <td> <span class="emojitext">🌈🔗🌈</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso XII, 11 <br />
+<strong>Source</strong>: Come si volgon per tenera nube / due archi paralelli e concolori, / quando Iunone a sua ancella iube [...]<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>condiscendere</span> </td>
 <td> <span class="emojitext">📉</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso IV, 43<br />
+<strong>Source</strong>: Per questo la Scrittura condescende / a vostra facultate, e piedi e mano / attribuisce a Dio, e altro intende [...]<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>congratulare</span> </td>
 <td> <span class="emojitext">🥳</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso XVIII, 74<br />
+<strong>Source</strong>: E come augelli surti di rivera, / quasi congratulando a lor pasture, / fanno di sé or tonda or altra schiera [...]<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>contigiato</span> </td>
 <td> <span class="emojitext">⚜️🏵</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso XV, 101<br />
+<strong>Source</strong>: Non avea catenella, non corona, / non gonne contigiate, non cintura / che fosse a veder più che la persona.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>contingenza</span> </td>
 <td> <span class="emojitext">🗑</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso, XIII, 63<br />
+<strong>Source</strong>: Quindi discende a l'ultime potenze / giù d'atto in atto, tanto divenendo, / che più non fa che brevi contingenze [...]<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>convenire</span> </td>
 <td> <span class="emojitext">🪄🧑‍⚖️</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso XVII, 48<br />
+<strong>Source</strong>: Qual si partio Ipolito d'Atene / per la spietata e perfida noverca, / tal di Fiorenza partir ti convene.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>corata</span> </td>
 <td> <span class="emojitext">🫀🫁</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XXVIII, 26<br />
+<strong>Source</strong>: Tra le gambe pendevan le minugia; / la corata pareva e 'l tristo sacco / che merda fa di quel che si trangugia.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>corno</span> </td>
 <td> <span class="emojitext">🦏</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso VIII, 61<br />
+<strong>Source</strong>: [...] e quel corno d'Ausonia che s'imborga / di Bari e di Gaeta e di Catona, / da ove Tronto e Verde in mare sgorga.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>correggere</span> </td>
 <td> <span class="emojitext">🤴🔗👸</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno V, 60<br />
+<strong>Source</strong>: Ell'è Semiramìs, di cui si legge / che succedette a Nino e fu sua sposa: / tenne la terra che 'l Soldan corregge.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>cortesia</span> </td>
 <td> <span class="emojitext">🩰</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XXXIII, 150<br />
+<strong>Source</strong>: "Ma distendi oggimai in qua la mano; / aprimi li occhi". E io non gliel'apersi; / e cortesia fu lui esser villano.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>cosa fatta capo ha</span> </td>
 <td> <span class="emojitext">🪢✅</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XXVIII, 107<br />
+<strong>Source</strong>: [...] gridò: "Ricordera'ti anche del Mosca, / che disse, lasso!, "Capo ha cosa fatta", / che fu mal seme per la gente tosca".<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>costura</span> </td>
 <td> <span class="emojitext">🪡</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatorio XIII, 83<br />
+<strong>Source</strong>: [...] da l’altra parte m’eran le divote / ombre, che per l’orribile costura / premevan sì, che bagnavan le gote.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>credere</span> </td>
 <td> <span class="emojitext">👂✋</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatorio XXXII, 32<br />
+<strong>Source</strong>: Sì passeggiando l'alta selva vòta, / colpa di quella ch'al serpente crese, / temprava i passi un'angelica nota.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>cricchi</span> </td>
 <td> <span class="emojitext">🧊💥</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno, XXXII, 30<br />
+<strong>Source</strong>: [...] com' era quivi; che se Tambernicchi / vi fosse sù caduto, o Pietrapana, / non avria pur da l' orlo fatto cricchi.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>culo</span> </td>
 <td> <span class="emojitext">🍑</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XXI, 139<br />
+<strong>Source</strong>: [...] ma prima avea ciascun la lingua stretta / coi denti, verso lor duca, per cenno; / ed elli avea del cul fatto trombetta.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>cuticagna</span> </td>
 <td> <span class="emojitext">🦅💇</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XXXII, 97<br />
+<strong>Source</strong>: Allor lo presi per la cuticagna, / e dissi: "El converrà che tu ti nomi, / o che capel qui su non ti rimagna".<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>defunto</span> </td>
 <td> <span class="emojitext">🪦</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso XVII, 21<br />
+<strong>Source</strong>: [...] mentre ch’io era a Virgilio congiunto / su per lo monte che l’anime cura / e discendendo nel mondo defunto [...]<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>degno di nota</span> </td>
 <td> <span class="emojitext">🏆</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XX, 104<br />
+<strong>Source</strong>: Ma dimmi, de la gente che procede, / se tu ne vedi alcun degno di nota; / ché solo a ciò la mia mente rifiede.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>delusa</span> </td>
 <td> <span class="emojitext">😧</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso IX, 100<br />
+<strong>Source</strong>: [...] né quella Rodopea che delusa / fu da Demofoonte, né Alcide / quando Iole nel core ebbe rinchiusa.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>denso</span> </td>
 <td> <span class="emojitext">🍮</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso XXII, 141<br />
+<strong>Source</strong>: Vidi la figlia di Latona incensa / sanza quell'ombra che mi fu cagione / per che già la credetti rara e densa.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>discetti</span> </td>
 <td> <span class="emojitext">🗑</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso XXX, 46<br />
+<strong>Source</strong>: Come sùbito lampo che discetti / li spiriti visivi, sì che priva / da l'atto l'occhio di più forti obietti [...]<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>disio</span> </td>
 <td> <span class="emojitext">❤️↗️</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatorio VIII, 1<br />
+<strong>Source</strong>: Era già l’ora che volge il disio / ai navicanti e ’ntenerisce il core / lo dì c’han detto ai dolci amici addio [...]<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>dislaga</span> </td>
 <td> <span class="emojitext">⛲️</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatorio III, 15<br />
+<strong>Source</strong>: [...] la mente mia, che prima era ristretta, / lo ‘ntento rallargò, sì come vaga, / e diedi ‘l viso mio incontr’al poggio / che ‘nverso ‘l ciel più alto si dislaga.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>dispitto</span> </td>
 <td> <span class="emojitext">😒</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno X, 36<br />
+<strong>Source</strong>: Io avea già il mio viso nel suo fitto; / ed el s'ergea col petto e con la fronte / com'avesse l'inferno a gran dispitto. <br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>divenire</span> </td>
 <td> <span class="emojitext">👞👇</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XIV, 76<br />
+<strong>Source</strong>: Tacendo divenimmo là 've spiccia / fuor de la selva un picciol fiumicello, / lo cui rossore ancor mi raccapriccia.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>doccia</span> </td>
 <td> <span class="emojitext">🚿</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XXIII, 46<br />
+<strong>Source</strong>: Non corse mai sì tosto acqua per doccia / a volger ruota di molin terragno / quand’ella più verso le pale approccia […]<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>dolenti note</span> </td>
 <td> <span class="emojitext">💬😰💬😰</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno, V, 25<br />
+<strong>Source</strong>: Or incomincian le dolenti note / a farmisi sentire; or son venuto / là dove molto pianto mi percuote<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>donna</span> </td>
 <td> <span class="emojitext">👩</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso XXXIII, 13<br />
+<strong>Source</strong>: Donna, se' tanto grande e tanto vali, / che qual vuol grazia e a te non ricorre / sua disianza vuol volar sanz'ali.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>dotta</span> </td>
 <td> <span class="emojitext">🤔</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XXXI, 110<br />
+<strong>Source</strong>: Allor temett'io più che mai la morte, / e non v'era mestier più che la dotta, / s'io non avessi viste le ritorte.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>dove il sì suona</span> </td>
 <td> <span class="emojitext">👉🎶🇮🇹</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XXXIII, 80<br />
+<strong>Source</strong>: Ahia Pisa, vituperio de le genti / del bel paese là dove il sì suona, / poi che i vicini a te punir son lenti [...]<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>drago</span> </td>
 <td> <span class="emojitext">🐉</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatorio XXXII, 131<br />
+<strong>Source</strong>: Poi parve a me che la terra s’aprisse / tr’ambo le ruote, e vidi uscirne un drago / che per lo carro su la coda fisse […]<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>eclissi</span> </td>
 <td> <span class="emojitext">🌑</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso XXIX, 102<br />
+<strong>Source</strong>: [...] e mente, ché la luce si nascose / da sé: però a li Spani e a l'Indi / come a' Giudei tale eclissi rispuose.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>effetto</span> </td>
 <td> <span class="emojitext">🪄</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno II, 17<br />
+<strong>Source</strong>: Però, se l'avversario d'ogne male / cortese i fu, pensando l'alto effetto / ch'uscir dovea di lui, e 'l chi e 'l quale / non pare indegno ad omo d'intelletto           <br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>epa</span> </td>
 <td> <span class="emojitext">🫀🫁</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XXX, 102<br />
+<strong>Source</strong>: E l’un di lor, che si recò a noia / forse d’essere nomato sì oscuro, / col pugno li percosse l’epa croia.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>etico</span> </td>
 <td> <span class="emojitext">🤒</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XXX, 56<br />
+<strong>Source</strong>: [...] faceva lui tener le labbra aperte / come l’etico fa, che per la sete / l’un verso ’l mento e l’altro in su rinverte. <br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>fame</span> </td>
 <td> <span class="emojitext">😋🍫🔝</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatorio XXIII, 66<br />
+<strong>Source</strong>: Tutta esta gente che piangendo canta / per seguitar la gola oltra misura, / in fame e ’n sete qui si rifà santa.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>famiglia</span> </td>
 <td> <span class="emojitext">👨‍👩‍👦</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso XV, 106<br />
+<strong>Source</strong>: Non avea case di famiglia vòte; / non v'era giunto ancor Sardanapalo / a mostrar ciò che 'n camera si puote.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>fanciulla / fanciullo</span> </td>
 <td> <span class="emojitext">🧍‍♀️/🧍‍♂️</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatorio XVII, 34<br />
+<strong>Source</strong>: Surse in mia visione una fanciulla / piangendo forte, e dicea: “O regina, / perché per ira hai voluto esser nulla?"<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>fantasia</span> </td>
 <td> <span class="emojitext">💭🦄</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso X, 46<br />
+<strong>Source</strong>: E se le fantasie nostre son basse / a tanta altezza, non è maraviglia; / ché sopra ’l sol non fu occhio ch’andasse.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>fantolino</span> </td>
 <td> <span class="emojitext">👶</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso XXIII, 121<br />
+<strong>Source</strong>: E come fantolin che ’nver’ la mamma / tende le braccia, poi che ’l latte prese, / per l’animo che ’nfin di fuori s’infiamma [...]<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>farina</span> </td>
 <td> <span class="emojitext">🌾🥖</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso XXII, 78<br />
+<strong>Source</strong>: Le mura che solieno esser badia / fatte sono spelonche, e le cocolle / sacca son piene di farina ria.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>febbre</span> </td>
 <td> <span class="emojitext">🤒</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XXV, 90<br />
+<strong>Source</strong>: Lo trafitto ’l mirò, ma nulla disse; / anzi, co’ piè fermati, sbadigliava / pur come sonno o febbre l’assalisse [...]<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>femmine da conio</span> </td>
 <td> <span class="emojitext">👯‍♀️💰</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XVIII, 66<br />
+<strong>Source</strong>: Così parlando il percosse un demonio / de la sua scurïada, e disse: “Via, / ruffian! qui non son femmine da conio”.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>ferrigno</span> </td>
 <td> <span class="emojitext">🎨⚙️</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XVIII, 2<br />
+<strong>Source</strong>: Luogo è in inferno detto Malebolge, / tutto di pietra di color ferrigno, / come la cerchia che dintorno il volge.            <br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>fersa</span> </td>
 <td> <span class="emojitext">⚡️</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XXV, 79<br />
+<strong>Source</strong>: Come 'l ramarro sotto la gran fersa / dei dì canicular, cangiando sepe, / folgore par se la via attraversa [...]<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>festinare</span> </td>
 <td> <span class="emojitext">🚀</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatorio XXXIII, 90<br />
+<strong>Source</strong>: [...] e veggi vostra via da la divina / distar cotanto, quanto si discorda / da terra il ciel che più alto festina.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>fiamma</span> </td>
 <td> <span class="emojitext">🔥</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso I, 34<br />
+<strong>Source</strong>: Poca favilla gran fiamma seconda: / forse di retro a me con miglior voci / si pregherà perché Cirra risponda.                     <br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>fiata</span> </td>
 <td> <span class="emojitext">🔂</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso XXIV, 22<br />
+<strong>Source</strong>: [...] e tre fïate intorno di Beatrice / si volse con un canto tanto divo, / che la mia fantasia nol mi ridice.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>fiche</span> </td>
 <td> <span class="emojitext">🌷🌷</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XXV, 2<br />
+<strong>Source</strong>: Al fine de le sue parole il ladro / le mani alzò con amendue le fiche, / gridando: "Togli, Dio, ch'a te le squadro!".<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>fiumana</span> </td>
 <td> <span class="emojitext">🏞💦</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatorio XIX, 101<br />
+<strong>Source</strong>: Intra Siestri e Chiaveri s'adima / una fiumana bella, e del suo nome / lo titol del mio sangue fa sua cima. <br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>folgoreggiare</span> </td>
 <td> <span class="emojitext">🎢⚡️</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatorio XII, 27<br />
+<strong>Source</strong>: Vedea colui che fu nobil creato / più ch'altra creatura, giù dal cielo / folgoreggiando scender, da l'un lato.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>forcata</span> </td>
 <td> <span class="emojitext">✂️🦵🦵</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XIV, 108<br />
+<strong>Source</strong>: La sua testa è di fin oro formata, / e puro argento son le braccia e 'l petto, / poi è di rame infino a la forcata [...]<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>fulgore</span> </td>
 <td> <span class="emojitext">💥</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso XXX, 62<br />
+<strong>Source</strong>: [...] e vidi lume in forma di rivera / fulvido di fulgore, intra due rive / dipinte di mirabil primavera.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>gabbo</span> </td>
 <td> <span class="emojitext">🤡</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XXXII, 7<br />
+<strong>Source</strong>: [...] ché non è impresa da pigliare a gabbo / discriver fondo a tutto l'universo, / né da lingua che chiami mamma o babbo.             <br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>gaetta</span> </td>
 <td> <span class="emojitext">🐯</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno I, 42<br />
+<strong>Source</strong>: [...] mosse di prima quelle cose belle; / sì ch’a bene sperar m’era cagione / di quella fiera a la gaetta pelle [...]<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>gaggio</span> </td>
 <td> <span class="emojitext">🏆</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso VI, 118<br />
+<strong>Source</strong>: Ma nel commensurar d'i nostri gaggi / col merto è parte di nostra letizia, / perché non li vedem minor né maggi.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>galassia</span> </td>
 <td> <span class="emojitext">🌌</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso XIV, 99<br />
+<strong>Source</strong>: Galassia sì, che fa dubbiar ben saggi; / sì costellati facean nel profondo / Marte quei raggi il venerabil segno […]<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>Galeotto</span> </td>
 <td> <span class="emojitext">🪄👩‍❤️‍👨</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno V, 137<br />
+<strong>Source</strong>: “[...] la bocca mi basciò tutto tremante. / Galeotto fu ’l libro e chi lo scrisse: / quel giorno più non vi leggemmo avante”.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>galla</span> </td>
 <td> <span class="emojitext">🌰🐿</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatorio XIV, 43<br />
+<strong>Source</strong>: Tra brutti porci, più degni di galle / che d'altro cibo fatto in uman uso, / dirizza prima il suo povero calle.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>garrire</span> </td>
 <td> <span class="emojitext">🗣️🔊🆚</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XV, 92<br />
+<strong>Source</strong>: Tanto vogl'io che vi sia manifesto, / pur che mia coscienza non mi garra, / ch'a la Fortuna, come vuol, son presto.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>gente nuova</span> </td>
 <td> <span class="emojitext">🧑‍🌾🌆</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XVI, 73<br />
+<strong>Source</strong>: La gente nuova e i sùbiti guadagni / orgoglio e dismisura han generata, / Fiorenza, in te, sì che tu già ten piagni.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>ghiottoni</span> </td>
 <td> <span class="emojitext">😋👿😋👿</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XXII, 15<br />
+<strong>Source</strong>: Noi andavam con li diece demoni. / Ahi fiera compagnia! ma ne la chiesa / coi santi, e in taverna coi ghiottoni.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>gioviale</span> </td>
 <td> <span class="emojitext">⚡️</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso XVIII, 70<br />
+<strong>Source</strong>: Io vidi in quella giovial facella / lo sfavillar de l’amor che lì era / segnare a li occhi miei nostra favella.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>gire</span> </td>
 <td> <span class="emojitext">👞</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XXI, 117<br />
+<strong>Source</strong>: Io mando verso là di questi miei / a riguardar s'alcun se ne sciorina; / gite con lor, che non saranno rei.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>giuntura</span> </td>
 <td> <span class="emojitext">🦾🦿</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatorio XXVI, 57<br />
+<strong>Source</strong>: [...] non son rimase acerbe né mature / le membra mie di là, ma son qui meco / col sangue suo e con le sue giunture.       <br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>gola</span> </td>
 <td> <span class="emojitext">🤤</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso III, 92<br />
+<strong>Source</strong>: Ma sì com'elli avvien, s'un cibo sazia / e d'un altro rimane ancor la gola, / che quel si chere e di quel si ringrazia [...]<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>golare</span> </td>
 <td> <span class="emojitext">❤️‍🔥</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso X, 111<br />
+<strong>Source</strong>: La quinta luce, ch'è tra noi più bella, / spira di tale amor, che tutto 'l mondo / là giù ne gola di saper novella [...]<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>gonna</span> </td>
 <td> <span class="emojitext">👗</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso XXXII, 141<br />
+<strong>Source</strong>: Ma perché ’l tempo fugge che t’assonna, / qui farem punto, come buon sartore / che com’elli ha del panno fa la gonna [...]<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>gradire</span> </td>
 <td> <span class="emojitext">🔬</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatorio XXIV, 61<br />
+<strong>Source</strong>: […] che de le nostre certo non avvenne; / e qual più a gradire oltre si mette, / non vede più da l’uno a l’altro stilo.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>gramo</span> </td>
 <td> <span class="emojitext">🥺</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno I, 51<br />
+<strong>Source</strong>: Ed una lupa, che di tutte brame / sembiava carca ne la sua magrezza, / e molte genti fé già viver grame [...]<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>grasso</span> </td>
 <td> <span class="emojitext">🥓</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso II, 77<br />
+<strong>Source</strong>: [...] esto pianeto, o, sì come comparte / lo grasso e 'l magro un corpo, così questo / nel suo volume cangerebbe carte.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>gratuito</span> </td>
 <td> <span class="emojitext">🎁</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso XIV, 47<br />
+<strong>Source</strong>: [...] per che s'accrescerà ciò che ne dona / di gratüito lume il sommo bene, / lume ch'a lui veder ne condiziona [...]<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>gratulare</span> </td>
 <td> <span class="emojitext">🤝👏</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso XXV, 25<br />
+<strong>Source</strong>: Ma poi che 'l gratular si fu assolto, / tacito coram me ciascun s'affisse, / ignito sì che vincea 'l mio volto.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>grifagno</span> </td>
 <td> <span class="emojitext">👿🦅</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XXII, 139<br />
+<strong>Source</strong>: Ma l'altro fu bene sparvier grifagno / ad artigliar ben lui, e amendue / cadder nel mezzo del bogliente stagno.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>idropesì</span> </td>
 <td> <span class="emojitext">🩺💧</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XXX, 52<br />
+<strong>Source</strong>: La grave idropesì, che sì dispaia / le membra con l'omor che mal converte, / che 'l viso non risponde a la ventraia [...]<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>il Bel Paese</span> </td>
 <td> <span class="emojitext">🇮🇹🔆</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XXXIII, 80<br />
+<strong>Source</strong>: Ahi Pisa, vituperio de le genti / del bel paese là dove 'l sì suona, / poi che i vicini a te punir son lenti [...]<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>il ben dell’intelletto</span> </td>
 <td> <span class="emojitext">💡🧠</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno III, 18<br />
+<strong>Source</strong>: Noi siam venuti al loco ov'i' t'ho detto / che tu vedrai le genti dolorose / c'hanno perduto il ben de l'intelletto.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>il ‘pappo’ e ‘l ‘dindi</span> </td>
 <td> <span class="emojitext">[🍲👶]➕[🪙🪙🎶]</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatorio XI, 105<br />
+<strong>Source</strong>: Che voce avrai tu più, se vecchia scindi / da te la carne, che se fossi morto / anzi che tu lasciassi il "pappo" e 'l "dindi" [...]<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>imbestiarsi</span> </td>
 <td> <span class="emojitext">🪄🐂</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatorio XXVI, 87 <br />
+<strong>Source</strong>: [...] in obbrobrio di noi, per noi si legge, / quando partinci, il nome di colei / che s'imbestiò ne le 'mbestiate schegge. <br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>imborgarsi</span> </td>
 <td> <span class="emojitext">🪄🏰</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso VIII, 61<br />
+<strong>Source</strong>: [...] e quel corno d'Ausonia che s'imborga / di Bari e di Gaeta e di Catona, / da ove Tronto e Verde in mare sgorga.  <br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>immegliarsi</span> </td>
 <td> <span class="emojitext">🪄🔆</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso XXX, 87<br />
+<strong>Source</strong>: [...] come fec'io, per far migliori spegli / ancor de li occhi, chinandomi a l'onda / che si deriva perché vi s'immegli [...]<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>imparadisare</span> </td>
 <td> <span class="emojitext">⤴️🌌👼</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso XXVIII, 3<br />
+<strong>Source</strong>: Poscia che 'ncontro a la vita presente / d'i miseri mortali aperse 'l vero / quella che 'mparadisa la mia mente [...]<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>impinguare</span> </td>
 <td> <span class="emojitext">🪄🤑</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso X, 96<br />
+<strong>Source</strong>: Io fui de li agni de la santa greggia / che Domenico mena per cammino / u’ ben s’impingua se non si vaneggia.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>incielare</span> </td>
 <td> <span class="emojitext">⤴️🌌😇</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso III, 97<br />
+<strong>Source</strong>: "Perfetta vita e alto merto inciela / donna più su", mi disse, "a la cui norma / nel vostro mondo giù si veste e vela [...]<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>incinquarsi</span> </td>
 <td> <span class="emojitext">🪄5️⃣🔂🔂</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso IX, 40<br />
+<strong>Source</strong>: [...] del nostro cielo che più m'è propinqua, / grande fama rimase; e pria che moia, / questo centesimo anno ancor s'incinqua [...]<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>indiarsi</span> </td>
 <td> <span class="emojitext">🧘‍♀️</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso IV, 28<br />
+<strong>Source</strong>: D'i Serafin colui che più s'india, / Moisè, Samuel, e quel Giovanni / che prender vuoli, io dico, non Maria [...]<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>indonnarsi</span> </td>
 <td> <span class="emojitext">🪄🎩</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso VII, 13<br />
+<strong>Source</strong>: Ma quella reverenza che s'indonna / di tutto me, pur per Be e per ice, / mi richinava come l'uom ch'assonna.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>indovarsi</span> </td>
 <td> <span class="emojitext">🪄👉</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso XXXIII, 138<br />
+<strong>Source</strong>: […] tal era io a quella vista nova: / veder voleva come si convenne / l'imago al cerchio e come vi s'indova […]<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>indragare</span> </td>
 <td> <span class="emojitext">🪄🐉</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso XVI, 115<br />
+<strong>Source</strong>: L'oltracotata schiatta che s'indraca / dietro a chi fugge, e a chi mostra 'l dente / o ver la borsa, com' agnel si placa [...]<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>inebriare</span> </td>
 <td> <span class="emojitext">🪄😵‍💫</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XXIX, 2<br />
+<strong>Source</strong>: La molta gente e le diverse piaghe / avean le luci mie sì inebriate, / che de lo stare a piangere eran vaghe.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>inforsarsi</span> </td>
 <td> <span class="emojitext">🪄🤔</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso XXIV, 87<br />
+<strong>Source</strong>: [...] ma dimmi se tu l'hai ne la tua borsa". / Ond'io: "Sì ho, sì lucida e sì tonda, / che nel suo conio nulla mi s'inforsa"<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>infuturarsi</span> </td>
 <td> <span class="emojitext">🪄🔮🔛</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso XVII, 98<br />
+<strong>Source</strong>: Non vo' però ch'a' tuoi vicini invidie, / poscia che s'infutura la tua vita / vie più là che 'l punir di lor perfidie. <br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>ingegno</span> </td>
 <td> <span class="emojitext">💡</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatorio I, 2<br />
+<strong>Source</strong>: Per correr miglior acque alza le vele / omai la navicella del mio ingegno, / che lascia dietro a sé mar sì crudele [...]<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>inmiarsi</span> </td>
 <td> <span class="emojitext">🧍‍♂️🪄🧍</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso IX, 81<br />
+<strong>Source</strong>: [...] perché non satisface a' miei disii? / Già non attendere' io tua dimanda, / s'io m'intuassi, come tu t'inmii".<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>inmillarsi</span> </td>
 <td> <span class="emojitext">🪄💯💯</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso XXVIII, 93<br />
+<strong>Source</strong>: L'incendio suo seguiva ogne scintilla; / ed eran tante, che 'l numero loro / più che 'l doppiar de li scacchi s'inmilla.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>innanellare</span> </td>
 <td> <span class="emojitext">🪄💍👰‍♀️</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatorio, V, 135<br />
+<strong>Source</strong>: Siena mi fé, disfecemi Maremma: / salsi colui che 'nnanellata pria / disposando m'avea con la sua gemma.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>innocente</span> </td>
 <td> <span class="emojitext">🙅‍♀️🚹🚺🍎</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatorio XXVIII, 142<br />
+<strong>Source</strong>: Qui fu innocente l’umana radice; / qui primavera sempre e ogne frutto; / nettare è questo di che ciascun dice.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>inoltrarsi</span> </td>
 <td> <span class="emojitext">👞⤵️</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso XXI, 94<br />
+<strong>Source</strong>: [...] però che sì s'innoltra ne lo abisso / de l'etterno statuto quel che chiedi, / che da ogne creata vista è scisso.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>intepidare</span> </td>
 <td> <span class="emojitext">🪄🌅〰️</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatorio XIX, 2<br />
+<strong>Source</strong>: Ne l'ora che non può 'l calor dïurno / intepidar più 'l freddo de la luna, / vinto da terra, e talor da Saturno [...] <br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>intoppare</span> </td>
 <td> <span class="emojitext">🪨🌊</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno VII, 23<br />
+<strong>Source</strong>: Come fa l'onda là sovra Cariddi, / che si frange con quella in cui s'intoppa, / così convien che qui la gente riddi.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>intrearsi</span> </td>
 <td> <span class="emojitext">🪄😇🕊😇</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso XIII, 57<br />
+<strong>Source</strong>: [...] ché quella viva luce che sì mea / dal suo lucente, che non si disuna / da lui né da l'amor ch'a lor s'intrea [...] <br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>introcque</span> </td>
 <td> <span class="emojitext">🔜</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XX, 130<br />
+<strong>Source</strong>: "[...] ben ten de' ricordar, ché non ti nocque / alcuna volta per la selva fonda". / Sì mi parlava, e andavamo introcque.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>intuarsi</span> </td>
 <td> <span class="emojitext">🧍🪄👆</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso IX, 81<br />
+<strong>Source</strong>: [...] perché non satisface a' miei disii? / Già non attendere' io tua dimanda, / s'io m'intuassi, come tu t'inmii"<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>inurbarsi</span> </td>
 <td> <span class="emojitext">👩‍🌾➡️🏙</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatorio XXVI, 69<br />
+<strong>Source</strong>: Non altrimenti stupido si turba / lo montanaro, e rimirando ammuta, / quando rozzo e salvatico s'inurba [...]<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>invenzione</span> </td>
 <td> <span class="emojitext">🪄</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso XXIX, 95<br />
+<strong>Source</strong>: Per apparer ciascun s’ingegna e face / sue invenzioni; e quelle son trascorse / da’ predicanti e ’l Vangelio si tace.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>inverare</span> </td>
 <td> <span class="emojitext">🪄✋📖</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso XXVIII, 39<br />
+<strong>Source</strong>: [...] e quello avea la fiamma più sincera / cui men distava la favilla pura, / credo, però che più di lei s'invera.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>invetriato</span> </td>
 <td> <span class="emojitext">❄️🪟</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XXXIII, 128<br />
+<strong>Source</strong>: E perché tu più volontier mi rade / le 'nvetriate lagrime dal volto, / sappie che, tosto che l'anima trade [...]<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>invidiosi veri</span> </td>
 <td> <span class="emojitext">👨⚔️👨👌👌</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso X, 138<br />
+<strong>Source</strong>: [...] essa è la luce etterna di Sigieri, / che, leggendo nel Vico de li Strami, / silogizzò invidiosi veri.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>involare</span> </td>
 <td> <span class="emojitext">🐒😈</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XXVI, 42<br />
+<strong>Source</strong>: [...] tal si move ciascuna per la gola / del fosso, ché nessuna mostra 'l furto, / e ogne fiamma un peccatore invola.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>ipocrita</span> </td>
 <td> <span class="emojitext">🎭😈</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XXIII, 92<br />
+<strong>Source</strong>: Poi disser me: "O Tosco, ch’al collegio / de l’ipocriti tristi se’ venuto, / dir chi tu se’ non avere in dispregio".<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>Italia</span> </td>
 <td> <span class="emojitext">🇮🇹</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatorio VI, 76<br />
+<strong>Source</strong>: Ahi serva Italia, di dolore ostello, / nave sanza nocchiere in gran tempesta, / non donna di province, ma bordello!<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>lasso</span> </td>
 <td> <span class="emojitext">😓</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno I, 28<br />
+<strong>Source</strong>: Poi ch’èi posato un poco il corpo lasso, / ripresi via per la piaggia diserta, / sì che ‘l piè fermo sempre era ‘l più basso.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>latino</span> </td>
 <td> <span class="emojitext">🗣🇮🇹</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XXVII, 33<br />
+<strong>Source</strong>: Io era in giuso ancora attento e chino, / quando il mio duca mi tentò di costa, / dicendo: "Parla tu; questi è latino".<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>lavoro</span> </td>
 <td> <span class="emojitext">|✋🛠️🖊️</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso I, 13<br />
+<strong>Source</strong>: O buono Appollo, a l'ultimo lavoro / fammi del tuo valor sì fatto vaso, /come dimandi a dar l'amato alloro.                                                 <br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>lebbre</span> </td>
 <td> <span class="emojitext">🤕</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XXVII, 95<br />
+<strong>Source</strong>: Ma come Costantin chiese Silvestro / d’entro Siratti a guerir de la lebbre, / così mi chiese questi per maestro [...]<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>letargo</span> </td>
 <td> <span class="emojitext">🙅‍♀️💾</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso XXXIII, 94<br />
+<strong>Source</strong>: Un punto solo m'è maggior letargo / che venticinque secoli a la 'mpresa, / che fé Nettuno ammirar l'ombra d'Argo.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>libertà</span> </td>
 <td> <span class="emojitext">🗽</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatorio I, 71)<br />
+<strong>Source</strong>: Or ti piaccia gradir la sua venuta: / libertà va cercando, ch'è sì cara, / come sa chi per lei vita rifiuta.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>libro</span> </td>
 <td> <span class="emojitext">📖</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno V, 137<br />
+<strong>Source</strong>: [...] la bocca mi basciò tutto tremante. / Galeotto fu 'l libro e chi lo scrisse: / quel giorno più non vi leggemmo avante.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>litare</span> </td>
 <td> <span class="emojitext">🐐💘</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso XIV, 93<br />
+<strong>Source</strong>: E non er’anco del mio petto essausto / l’ardor del sacrificio, ch’io conobbi / esso litare stato accettato e fausto […]<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>livido</span> </td>
 <td> <span class="emojitext">🎨🔩</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XIX, 14<br />
+<strong>Source</strong>: Io vidi per le coste e per lo fondo / piena la pietra livida di fóri, / d'un largo tutti e ciascun era tondo.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>lo bello stilo</span> </td>
 <td> <span class="emojitext">🖋📖🔆</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno I, 87<br />
+<strong>Source</strong>: Tu se' lo mio maestro e 'l mio autore; / tu se' solo colui da cu' io tolsi / lo bello stilo che m' ha fatto onore.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>lonza</span> </td>
 <td> <span class="emojitext">🐆</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno I, 32<br />
+<strong>Source</strong>: Ed ecco, quasi al cominciar dell’erta, / una lonza leggera e presta molto, / che di pel macolato era coverta […] <br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>loquela</span> </td>
 <td> <span class="emojitext">🗣</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno X, 25<br />
+<strong>Source</strong>: La tua loquela ti fa manifesto / di quella nobil patria natio, / a la qual forse fui troppo molesto.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>luce</span> </td>
 <td> <span class="emojitext">🌅</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso II, 36<br />
+<strong>Source</strong>: Per entro sé l'etterna margarita / ne ricevette, com'acqua recepe / raggio di luce permanendo unita.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>lunghesso</span> </td>
 <td> <span class="emojitext">🤥</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatorio II, 10<br />
+<strong>Source</strong>: Noi eravam lunghesso mare ancora, / come gente che pensa a suo cammino, / che va col cuore e col corpo dimora.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>lupa / lupo</span> </td>
 <td> <span class="emojitext">🐺</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno I, 49<br />
+<strong>Source</strong>: Ed una lupa, che di tutte brame / sembiava carca ne la sua magrezza, / e molte genti fé già viver grame [...]<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>lurco</span> </td>
 <td> <span class="emojitext">🥩🐺</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XVII, 21<br />
+<strong>Source</strong>: Come talvolta stanno a riva i burchi, / che parte sono in acqua e parte in terra, / e come là tra li Tedeschi lurchi [...]<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>lussurioso</span> </td>
 <td> <span class="emojitext">👩‍❤️‍👨💎</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno V, 63<br />
+<strong>Source</strong>: L'altra è colei che s'ancise amorosa, / e ruppe fede al cener di Sicheo; / poi è Cleopatràs lussuriosa.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>ma guarda e passa</span> </td>
 <td> <span class="emojitext">🚶😒</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno III, 51<br />
+<strong>Source</strong>: Fama di loro il mondo esser non lassa; / misericordia e giustizia li sdegna: / non ragioniam di lor, ma guarda e passa.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>maestro</span> </td>
 <td> <span class="emojitext">🎓📚</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno I, 85<br />
+<strong>Source</strong>: Tu se' lo mio maestro e 'l mio autore, / tu se' solo colui da cu' io tolsi / lo bello stilo che m'ha fatto onore.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>magagna</span> </td>
 <td> <span class="emojitext">🚹🚺🍎</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XXXIII, 152<br />
+<strong>Source</strong>: Ahi Genovesi, uomini diversi / d'ogne costume e pien d'ogne magagna, / perché non siete voi del mondo spersi?    <br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>magnanimo</span> </td>
 <td> <span class="emojitext">🏅</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno X, 73<br />
+<strong>Source</strong>: Ma quell’altro magnanimo, a cui posta / restato m’era, non mutò aspetto, / né mosse collo, né piegò sua costa […]<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>male e peggio</span> </td>
 <td> <span class="emojitext">👎➕👎👎</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno I, 132<br />
+<strong>Source</strong>: E io a lui: "Poeta, io ti richeggio / per quello Dio che tu non conoscesti, / acciò ch'io fugga questo male e peggio [...]"<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>mamma</span> </td>
 <td> <span class="emojitext">👩💟</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatorio XXX, 44<br />
+<strong>Source</strong>: [...] volsimi a la sinistra col respitto / col quale il fantolin corre a la mamma / quando ha paura o quando elli è afflitto [...]<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>mammella</span> </td>
 <td> <span class="emojitext">🤱🏻</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso XXXIII, 108<br />
+<strong>Source</strong>: Omai sarà più corta mia favella, / pur a quel ch'io ricordo, che d'un fante / che bagni ancor la lingua a la mammella.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>manicare</span> </td>
 <td> <span class="emojitext">🍽</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XXXIII, 60<br />
+<strong>Source</strong>: [...] ed ei, pensando ch'io 'l fessi per voglia / di manicar, di sùbito levorsi / e disser: "Padre, assai ci fia men doglia [...]"<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>manso</span> </td>
 <td> <span class="emojitext">🪄🏇</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatorio XXVII, 76<br />
+<strong>Source</strong>: Quali si stanno ruminando manse / le capre, state rapide e proterve / sovra le cime avante che sien pranse <br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>margarita</span> </td>
 <td> <span class="emojitext">💎🦪</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso II, 34<br />
+<strong>Source</strong>: Per entro sé l’etterna margarita / ne ricevette, com’acqua recepe / raggio di luce permanendo unita.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>marra</span> </td>
 <td> <span class="emojitext">🔧👨‍🌾</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XV, 96<br />
+<strong>Source</strong>: Non è nuova a li orecchi miei tal arra: / però giri Fortuna la sua rota / come le piace, e 'l villan la sua marra.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>masnada</span> </td>
 <td> <span class="emojitext">👿🥁👿🥁</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XV, 41<br />
+<strong>Source</strong>: Però va oltre: i' ti verrò a' panni; / e poi rigiugnerò la mia masnada, / che va piangendo i suoi etterni danni.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>menare</span> </td>
 <td> <span class="emojitext">🚛</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno V, 32<br />
+<strong>Source</strong>: La bufera infernal, che mai non resta, / mena li spirti con la sua rapina; / voltando e percotendo li molesta.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>merda</span> </td>
 <td> <span class="emojitext">💩</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno, XVIII, 116 <br />
+<strong>Source</strong>: E mentre ch' io là giù con l'occhio cerco, / vidi un col capo sì di merda lordo, / che non parea s' era laico o cherco.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>meritare</span> </td>
 <td> <span class="emojitext">🏅</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XXVI, 80, 81<br />
+<strong>Source</strong>: O voi che siete due dentro ad un foco, / s'io meritai di voi mentre ch'io vissi, / s'io meritai di voi assai o poco [...]<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>mesto</span> </td>
 <td> <span class="emojitext">😢😔</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XIII, 106<br />
+<strong>Source</strong>: Qui le trascineremo, e per la mesta / selva saranno i nostri corpi appesi, / ciascuno al prun de l’ombra sua molesta.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>mezzo</span> </td>
 <td> <span class="emojitext">🎯</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno I, 1<br />
+<strong>Source</strong>: Nel mezzo del cammin di nostra vita / mi ritrovai per una selva oscura / ché la diritta via era smarrita.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>mi taccio</span> </td>
 <td> <span class="emojitext">🧍^🤐</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno X, 120<br />
+<strong>Source</strong>: Dissemi: "Qui con più di mille giaccio: / qua dentro è 'l secondo Federico / e 'l Cardinale; e de li altri mi taccio".<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>minugia</span> </td>
 <td> <span class="emojitext">🧶🎻</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XXVIII, 25<br />
+<strong>Source</strong>: Tra le gambe pendevan le minugia; / la corata pareva e 'l tristo sacco / che merda fa di quel che si trangugia. <br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>mirra</span> </td>
 <td> <span class="emojitext">🧴🔥👑</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno, XXIV, 111<br />
+<strong>Source</strong>: [...] erba né biado in sua vita non pasce, / ma sol d'incenso lagrime e d'amomo, / e nardo e mirra son l'ultime fasce.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>modo</span> </td>
 <td> <span class="emojitext">🎭</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno V, 102<br />
+<strong>Source</strong>: Amor, ch'al cor gentil ratto s'apprende, / prese costui de la bella persona / che mi fu tolta; e 'l modo ancor m'offende. <br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>morto</span> </td>
 <td> <span class="emojitext">💀</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno V, 142<br />
+<strong>Source</strong>: […] l’altro piangea; sì che di pietade / io venni men così com’io morisse. / E caddi come corpo morto cade.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>muffa</span> </td>
 <td> <span class="emojitext">🧫</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XVIII, 106<br />
+<strong>Source</strong>: Le ripe eran grommate d'una muffa, / per l'alito di giù che vi s'appasta, / che con li occhi e col naso facea zuffa.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>nastro</span> </td>
 <td> <span class="emojitext">🎗</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso XV, 22<br />
+<strong>Source</strong>: [...] né si partì la gemma dal suo nastro, / ma per la lista radial trascorse, / che parve foco dietro ad alabastro.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>nato</span> </td>
 <td> <span class="emojitext">🐣</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XXIII, 94<br />
+<strong>Source</strong>: E io a loro: "I' fui nato e cresciuto / sovra 'l bel fiume d'Arno a la gran villa, / e son col corpo ch'i' ho sempre avuto".<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>necessitate</span> </td>
 <td> <span class="emojitext">☝️</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatorio XVI, 69<br />
+<strong>Source</strong>: Voi che vivete ogne cagion recate / pur suso al cielo, pur come se tutto / movesse seco di necessitate.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>nicchia</span> </td>
 <td> <span class="emojitext">😩🤰🏻</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XVIII, 103<br />
+<strong>Source</strong>: Quindi sentimmo gente che si nicchia / ne l'altra bolgia e che col muso scuffa, / e sé medesma con le palme picchia.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>nosco</span> </td>
 <td> <span class="emojitext">📎👯</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatorio XIV, 105<br />
+<strong>Source</strong>: Non ti maravigliar s’io piango, Tosco, / quando rimembro, con Guido da Prata, / Ugolin d’Azzo che vivette nosco […]<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>nuca</span> </td>
 <td> <span class="emojitext">👤🧣</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XXXII, 129<br />
+<strong>Source</strong>: e come 'l pan per fame si manduca, / così 'l sovran li denti a l'altro pose / là 've 'l cervel s'aggiugne con la nuca [...]<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>occhi di bragia</span> </td>
 <td> <span class="emojitext">👁👁🔥</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno III, 109<br />
+<strong>Source</strong>: Caron dimonio, con occhi di bragia / loro accennando, tutte le raccoglie; / batte col remo qualunque s'adagia.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>offensione</span> </td>
 <td> <span class="emojitext">👊</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno VI, 66<br />
+<strong>Source</strong>: E quelli a me: “Dopo lunga tencione / verranno al sangue, e la parte selvaggia / caccerà l’altra con molta offensione”.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>onde</span> </td>
 <td> <span class="emojitext">✔️</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso VIII, 115<br />
+<strong>Source</strong>: Ond’elli ancora: “Or dì: sarebbe il peggio / per l’omo in terra, se non fosse cive?”. / “Sì”, rispuos’io; “e qui ragion non cheggio”.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>oppilazione</span> </td>
 <td> <span class="emojitext">🫀🔐</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XXIV, 114<br />
+<strong>Source</strong>: E qual è quel che cade, e non sa como, / per forza di demon ch'a terra il tira, / o d'altra oppilazion che lega l'omo [...]<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>ora</span> </td>
 <td> <span class="emojitext">🌬</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatorio I, 115<br />
+<strong>Source</strong>: L'alba vinceva l'ora mattutina / che fuggia innanzi, sì che di lontano / conobbi il tremolar de la marina.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>orto e occaso</span> </td>
 <td> <span class="emojitext">🌄➕🌆</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso IX, 91<br />
+<strong>Source</strong>: Ad un occaso quasi e ad un orto / Buggea siede e la terra ond’io fui, / che fé del sangue suo già caldo il porto.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>ortolano</span> </td>
 <td> <span class="emojitext">🧑‍🌾</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso XXVI, 65<br />
+<strong>Source</strong>: Le fronde onde s'infronda tutto l'orto / de l'ortolano etterno, am'io cotanto / quanto da lui a lor di bene è porto.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>orza e poggia</span> </td>
 <td> <span class="emojitext">🌬👌⛵️➕🌬🆚⛵️</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatorio XXXII, 117<br />
+<strong>Source</strong>: [...] e ferì 'l carro di tutta sua forza; / ond'el piegò come nave in fortuna, / vinta da l'onda, or da poggia, or da orza.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>oscuro/scuro</span> </td>
 <td> <span class="emojitext">🌑</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno I, 2<br />
+<strong>Source</strong>: Nel mezzo del cammin di nostra vita / mi ritrovai per una selva oscura, / ché la diritta via era smarrita.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>palagio</span> </td>
 <td> <span class="emojitext">🏰</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XXXIV, 97<br />
+<strong>Source</strong>: Non era camminata di palagio / là 'v'eravam, ma natural burella / ch'avea mal suolo e di lume disagio.     <br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>pandere</span> </td>
 <td> <span class="emojitext">🪧</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso XV, 63<br />
+<strong>Source</strong>: Tu credi ‘l vero; ché i minori e ‘ grandi / di questa vita miran ne lo speglio / in che, prima che pensi, il pensier pandi […]<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>pane</span> </td>
 <td> <span class="emojitext">🍞</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso XVII, 59<br />
+<strong>Source</strong>: Tu proverai sì come sa di sale / lo pane altrui, e come è duro calle / lo scendere e 'l salir per l'altrui scale.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>parlasia</span> </td>
 <td> <span class="emojitext">👨‍🦼</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XX, 16<br />
+<strong>Source</strong>: Forse per forza già di parlasia / si travolse così alcun del tutto; / ma io nol vidi, né credo che sia.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>passeggiare</span> </td>
 <td> <span class="emojitext">🚶‍♀️</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatorio XXXII, 31<br />
+<strong>Source</strong>: Sì passeggiando l'alta selva vòta, / colpa di quella ch'al serpente crese, / temprava i passi un'angelica nota.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>patria</span> </td>
 <td> <span class="emojitext">🇮🇹</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno X, 26<br />
+<strong>Source</strong>: La tua loquela ti fa manifesto / di quella nobil patria natio, / a la qual forse fui troppo molesto.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>paura</span> </td>
 <td> <span class="emojitext">😱</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno I, 6<br />
+<strong>Source</strong>: Ahi quanto a dir qual era è cosa dura / esta selva selvaggia e aspra e forte / che nel pensier rinova la paura!<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>peltro</span> </td>
 <td> <span class="emojitext">🏺</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno I, 103<br />
+<strong>Source</strong>: Questi non ciberà terra né peltro, / ma sapïenza, amore e virtute, / e sua nazion sarà tra feltro e feltro.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>pepe</span> </td>
 <td> <span class="emojitext">🧂⚫️</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XXV, 84<br />
+<strong>Source</strong>: [...] sì pareva, venendo verso l'epe / de li altri due, un serpentello acceso, / livido e nero come gran di pepe [...]<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>per li rami</span> </td>
 <td> <span class="emojitext">🎋👨‍👩‍👧‍👦</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatorio VII, 121<br />
+<strong>Source</strong>: Rade volte risurge per li rami / l'umana probitate; e questo vole / quei che la dà, perché da lui si chiami.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>perizoma</span> </td>
 <td> <span class="emojitext">🩲</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XXXI, 61<br />
+<strong>Source</strong>: [...] sì che la ripa, ch'era perizoma / dal mezzo in giù, ne mostrava ben tanto / di sovra, che di giugnere a la chioma [...]<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>perso</span> </td>
 <td> <span class="emojitext">🌑</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno V, 89<br />
+<strong>Source</strong>: O animal grazioso e benigno / che visitando vai per l'aere perso / noi che tignemmo il mondo di sanguigno [...]<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>piaggia</span> </td>
 <td> <span class="emojitext">🏖</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno I, 29<br />
+<strong>Source</strong>: Poi ch'èi posato un poco il corpo lasso, / ripresi via per la piaggia diserta, / sì che 'l piè fermo sempre era 'l più basso.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>pieta</span> </td>
 <td> <span class="emojitext">😓💓</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno I, 21<br />
+<strong>Source</strong>: Allor fu la paura un poco queta / che nel lago del cor m' era durata / la notte ch' i' passai con tanta pieta.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>piluccare</span> </td>
 <td> <span class="emojitext">🥢🍇</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatorio XXIV, 39<br />
+<strong>Source</strong>: El mormorava; e non so che "Gentucca" / sentiv'io là, ov'el sentia la piaga / de la giustizia che sì li pilucca.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>pina</span> </td>
 <td> <span class="emojitext">👶🌲</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XXXI, 59<br />
+<strong>Source</strong>: La faccia sua mi parea lunga e grossa / come la pina di San Pietro a Roma, / e a sua proporzione eran l’altr’ossa [...]                    <br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>porci</span> </td>
 <td> <span class="emojitext">🐖🐖</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatorio XIV, 43<br />
+<strong>Source</strong>: Tra brutti porci, più degni di galle / che d'altro cibo fatto in uman uso, / dirizza prima il suo povero calle.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>porpora</span> </td>
 <td> <span class="emojitext">🎨🔴</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatorio XXIX, 131<br />
+<strong>Source</strong>: Da la sinistra quattro facean festa, / in porpore vestite, dietro al modo / d'una di lor ch'avea tre occhi in testa.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>prato</span> </td>
 <td> <span class="emojitext">🌱🌱🌱</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso XXIII, 80<br />
+<strong>Source</strong>: Come a raggio di sol, che puro mei / per fratta nube, già prato di fiori / vider, coverti d'ombra, li occhi miei […].<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>protervo</span> </td>
 <td> <span class="emojitext">🐈</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatorio XXX, 70<br />
+<strong>Source</strong>: [...] regalmente ne l'atto ancor proterva / continuò come colui che dice / e 'l più caldo parlar dietro reserva.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>puzza / puzzo</span> </td>
 <td> <span class="emojitext">👃💩</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso XXVII, 26<br />
+<strong>Source</strong>: [...] fatt’ha del cimitero mio cloaca / del sangue e de la puzza; onde ’l perverso / che cadde di qua sù, là giù si placa [...]<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>quartana</span> </td>
 <td> <span class="emojitext">🤒</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XVII, 86<br />
+<strong>Source</strong>: Qual è colui che sì presso ha 'l riprezzo / de la quartana, c'ha già l'unghie smorte, / e triema tutto pur guardando 'l rezzo [...]<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>quatto quatto</span> </td>
 <td> <span class="emojitext">🙇‍♀️</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XXI, 89<br />
+<strong>Source</strong>: E 'l duca mio a me: "O tu che siedi / tra li scheggion del ponte quatto quatto, / sicuramente omai a me ti riedi".<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>quinci e quindi</span> </td>
 <td> <span class="emojitext">👈👉</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso XV, 33<br />
+<strong>Source</strong>: Così quel lume: ond’io m’attesi a lui; / poscia rivolsi a la mia donna il viso, / e quinci e quindi stupefatto fui [...].<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>quisquilia</span> </td>
 <td> <span class="emojitext">🆖</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso XXVI, 76<br />
+<strong>Source</strong>: [...] così de li occhi miei ogne quisquilia / fugò Beatrice col raggio d'i suoi, / che rifulgea da più di mille milia [...]<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>ramogna</span> </td>
 <td> <span class="emojitext">⛲️</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatorio XI, 25<br />
+<strong>Source</strong>: Così a sé e noi buona ramogna / quell'ombre orando, andavan sotto 'l pondo, / simile a quel che talvolta si sogna [...]<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>resurrezione</span> </td>
 <td> <span class="emojitext">🌅</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso VII, 146<br />
+<strong>Source</strong>: E quinci puoi argomentare ancora / vostra resurrezion, se tu ripensi / come l'umana carne fessi allora / che li primi parenti intrambo fensi.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>rimbombare</span> </td>
 <td> <span class="emojitext">🌊🪘</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno VI, 99<br />
+<strong>Source</strong>: […] ciascun rivederà la trista tomba, / ripiglierà sua carne e sua figura, / udirà quel ch'in etterno rimbomba.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>ringavagnare</span> </td>
 <td> <span class="emojitext">🧺↩️</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XXIV, 12<br />
+<strong>Source</strong>: [...] ritorna in casa, e qua e là si lagna, / come 'l tapin che non sa che si faccia; / poi riede, e la speranza ringavagna [...]<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>rogna</span> </td>
 <td> <span class="emojitext">🦠</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso XVII, 129<br />
+<strong>Source</strong>: Ma nondimen, rimossa ogne menzogna, / tutta tua vision fa manifesta; / e lascia pur grattar dov'è la rogna.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>rosseggiare</span> </td>
 <td> <span class="emojitext">🪄🖍</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatorio II, 14<br />
+<strong>Source</strong>: Ed ecco, qual, sorpreso dal mattino, / per li grossi vapor Marte rosseggia / giù nel ponente sovra 'l suol marino.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>rubino</span> </td>
 <td> <span class="emojitext">💎🔴</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso XXX, 66<br />
+<strong>Source</strong>: Di tal fiumana uscian faville vive, / e d'ogne parte si mettien ne' fiori, / quasi rubin che oro circunscrive [...]<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>rubro</span> </td>
 <td> <span class="emojitext">🔴</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso VI, 79<br />
+<strong>Source</strong>: Con costui corse infino al lito rubro; / con costui puose il mondo in tanta pace, / che fu serrato a Giano il suo delubro.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>rubécchio</span> </td>
 <td> <span class="emojitext">⭕️</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatorio IV, 64<br />
+<strong>Source</strong>: [...] tu vedresti il Zodiaco rubecchio / ancora a l'Orse più stretto rotare, / se non uscisse fuor del cammin vecchio.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>sacco</span> </td>
 <td> <span class="emojitext">💰</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XXVIII, 26<br />
+<strong>Source</strong>: Tra le gambe pendevan le minugia; / la corata pareva e 'l tristo sacco / che merda fa di quel che si trangugia.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>sacrato poema</span> </td>
 <td> <span class="emojitext">📜🛐</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso XXIII, 62<br />
+<strong>Source</strong>: [...] e così, figurando il paradiso, / convien saltar lo sacrato poema, / come chi trova suo cammin riciso.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>saetta</span> </td>
 <td> <span class="emojitext">🏹</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso XVII, 27<br />
+<strong>Source</strong>: [...] per che la voglia mia saria contenta / d'intender qual fortuna mi s'appressa: ché saetta previsa vien più lenta.         <br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>sale</span> </td>
 <td> <span class="emojitext">🧂</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso XVII, 58<br />
+<strong>Source</strong>: Tu proverai sì come sa di sale / lo pane altri, e come è duro calle / lo scendere e ’l salir per l’altrui scale<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>santo</span> </td>
 <td> <span class="emojitext">😇</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatorio XIII, 51<br />
+<strong>Source</strong>: E poi che fummo un poco più avanti, / udia gridar: "Maria, òra per noi" / gridar "Michele" e "Pietro" e "Tutti santi".<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>sanza ‘nfamia e sanza lodo</span> </td>
 <td> <span class="emojitext">🆖</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno III, 36<br />
+<strong>Source</strong>: Ed elli a me: "Questo misero modo / tegnon l'anime triste di coloro / che visser sanza 'nfamia e sanza lodo".<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>scabbia</span> </td>
 <td> <span class="emojitext">🚱🩹</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatorio XXIII, 49<br />
+<strong>Source</strong>: “Deh, non contendere a l’asciutta scabbia / che mi scolora”, pregava, “la pelle, / né a difetto di carne ch’io abbia” [...]<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>scacchi</span> </td>
 <td> <span class="emojitext">♟</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso XXVIII, 93<br />
+<strong>Source</strong>: L'incendio suo seguiva ogne scintilla; / ed eran tante, che 'l numero loro / più che 'l doppiar de li scacchi s'inmilla.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>scandere</span> </td>
 <td> <span class="emojitext">🧗‍♀️</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso VIII, 97<br />
+<strong>Source</strong>: Lo ben che tutto il regno che tu scandi / volge e contenta, fa esser virtute / sua provedenza in questi corpi grandi.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>scardova</span> </td>
 <td> <span class="emojitext">🐟</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XXIX, 83<br />
+<strong>Source</strong>: […] e sì traevan giù l’unghie la scabbia, / come coltel di scardova le scaglie / o d’altro pesce che più larghe l’abbia.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>scemo</span> </td>
 <td> <span class="emojitext">📴</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso XVI, 145<br />
+<strong>Source</strong>: Ma conveniesi, a quella pietra scema / che guarda 'l ponte, che Fiorenza fesse / vittima ne la sua pace postrema.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>scerpare</span> </td>
 <td> <span class="emojitext">✂️🍃</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XIII, 35<br />
+<strong>Source</strong>: Da che fatto fu poi di sangue bruno, / ricominciò a dir: "Perché mi scerpi? / non hai tu spirto di pietade alcuno?"<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>schianza</span> </td>
 <td> <span class="emojitext">🩹</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XXIX, 75<br />
+<strong>Source</strong>: Io vidi due sedere a sé poggiati, / com’ a scaldar si poggia tegghia a tegghia, / dal capo al piè di schianze macolati [...]<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>sciorina</span> </td>
 <td> <span class="emojitext">🏃‍♂️⤴️</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XXI, 116<br />
+<strong>Source</strong>: Io mando verso là di questi miei / a riguardar s'alcun se ne sciorina; / gite con lor, che non saranno rei.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>scoglio</span> </td>
 <td> <span class="emojitext">🪨🌊</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XVIII, 16<br />
+<strong>Source</strong>: [...] così da imo de la roccia scogli / movien che ricidien li argini e' fossi / infino al pozzo che i tronca e raccogli.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>scolorare</span> </td>
 <td> <span class="emojitext">😨</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno V, 131<br />
+<strong>Source</strong>: Per più fiate li occhi ci sospinse / quella lettura, e scolorocci il viso; / ma solo un punto fu quel che ci vinse.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>scroscio</span> </td>
 <td> <span class="emojitext">💦💥</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XVII, 119<br />
+<strong>Source</strong>: Io sentia già da la man destra il gorgo / far sotto noi un orribile scroscio, / per che con li occhi 'n giù la testa sporgo.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>serocchia</span> </td>
 <td> <span class="emojitext">🧍‍♀️🧬🧍‍♀️</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatorio IV, 111<br />
+<strong>Source</strong>: “O dolce segnor mio”, diss’io, “adocchia / colui che mostra sé più negligente / che se pigrizia fosse sua serocchia”.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>si fanno grassi</span> </td>
 <td> <span class="emojitext">🪄 😈💰💰</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso XVI, 114<br />
+<strong>Source</strong>: Così facieno i padri di coloro / che, sempre che la vostra chiesa vaca, / si fanno grassi stando a consistoro.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>smarrire</span> </td>
 <td> <span class="emojitext">🧭🎈</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno I, 3<br />
+<strong>Source</strong>: Nel mezzo del cammin di nostra vita / mi ritrovai per una selva oscura, / ché la diritta via era smarrita.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>smeraldo</span> </td>
 <td> <span class="emojitext">💎🟢</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatorio XXXI, 116<br />
+<strong>Source</strong>: Disser: “Fa che le viste non risparmi; / posto t'avem dinanzi a li smeraldi / ond'Amor già ti trasse le sue armi”.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>solecchio</span> </td>
 <td> <span class="emojitext">⛺️</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatorio XV, 14)<br />
+<strong>Source</strong>: [...] ond' io levai le mani inver' la cima / de le mie ciglia, e fecimi 'l solecchio, / che del soverchio visibile lima.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>sorrise parolette</span> </td>
 <td> <span class="emojitext">💬🙂</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso I, 95<br />
+<strong>Source</strong>: S’io fui del primo dubbio disvestito / per le sorrise parolette brevi, / dentro ad un nuovo più fu’ inretito [...]<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>sospetto</span> </td>
 <td> <span class="emojitext">🙅‍♀️🔮</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno V, 129<br />
+<strong>Source</strong>: Noi leggiavamo un giorno per diletto / di Lancialotto come amor lo strinse; / soli eravamo e sanza alcun sospetto<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>spedale</span> </td>
 <td> <span class="emojitext">🏥</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XXIX, 46<br />
+<strong>Source</strong>: Qual dolor fora, se de li spedali / di Valdichiana tra ’l luglio e ’l settembre / e di Maremma e di Sardigna i mali [...]<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>speranza</span> </td>
 <td> <span class="emojitext">⚓️</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno III, 9<br />
+<strong>Source</strong>: Dinanzi a me non fuor cose create / se non etterne, e io etterno duro. / Lasciate ogne speranza, voi ch'intrate.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>spiga</span> </td>
 <td> <span class="emojitext">🌾</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatorio XVI, 113<br />
+<strong>Source</strong>: [...] però che, giunti, l'un l'altro non teme: / se non mi credi, pon mente a la spiga, / ch'ogn'erba si conosce per lo seme.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>squilla</span> </td>
 <td> <span class="emojitext">🔔</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatorio VIII, 5<br />
+<strong>Source</strong>: [...] e che lo novo peregrin d'amore / punge, se ode squilla di lontano / che paia il giorno pianger che si more [...]<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>squillo</span> </td>
 <td> <span class="emojitext">🔔😇</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso XX, 18<br />
+<strong>Source</strong>: Poscia che i cari e lucidi lapilli / ond'io vidi ingemmato il sesto lume / puoser silenzio a li angelici squilli [...]<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>stare freschi</span> </td>
 <td> <span class="emojitext">🧊</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XXXII, 117<br />
+<strong>Source</strong>: El piange qui l'argento de' Franceschi: / "Io vidi", potrai dir, "quel da Duera / là dove i peccatori stanno freschi".<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>stelle</span> </td>
 <td> <span class="emojitext">✨</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XXXIV, 139<br />
+<strong>Source</strong>: [...] salimmo su, el primo e io secondo, / tanto ch'i' vidi de le cose belle / che porta 'l ciel, per un pertugio tondo. / E quindi uscimmo a riveder le stelle.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>stenebrare</span> </td>
 <td> <span class="emojitext">🌑➡️☀️</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatorio XXII, 62<br />
+<strong>Source</strong>: Se così è, qual sole o quai candele / ti stenebraron sì, che tu drizzasti / poscia di retro al pescator le vele?<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>stilo</span> </td>
 <td> <span class="emojitext">🖋⚜️</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno I, 87<br />
+<strong>Source</strong>: Tu se' lo mio maestro e 'l mio autore; / tu se' solo colui da cu' io tolsi / lo bello stilo che m' ha fatto onore.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>stormire</span> </td>
 <td> <span class="emojitext">🍃🎶</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XIII, 114<br />
+<strong>Source</strong>: [...] similemente a colui che venire / sente 'l porco e la caccia a la sua posta, / ch'ode le bestie, e le frasche stormire.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>stormo</span> </td>
 <td> <span class="emojitext">⚔️🛡⚔️</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XXII, 2<br />
+<strong>Source</strong>: Io vidi già cavalier muover campo, / e cominciare stormo e far lor mostra, / e talvolta partir per loro scampo [...]<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>strega</span> </td>
 <td> <span class="emojitext">🧙‍♀️</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatorio XIX, 58<br />
+<strong>Source</strong>: Vedesti, disse, quell'antica strega / che sola sovr'a noi omai si piagne; / vedesti come l'uom da lei si slega.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>strenna</span> </td>
 <td> <span class="emojitext">🎁</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatorio XXVII, 119<br />
+<strong>Source</strong>: Virgilio inverso me queste cotali / parole usò; e mai non furo strenne / che fosser di piacere a queste iguali.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>suso</span> </td>
 <td> <span class="emojitext">⬆️🔝</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XX, 61<br />
+<strong>Source</strong>: Suso in Italia bella giace un laco, / a piè de l’Alpe che serra Lamagna / sovra Tiralli, c’ha nome Benaco.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>s’etterna</span> </td>
 <td> <span class="emojitext">⏳♾👈</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XV, 85<br />
+<strong>Source</strong>: […] m’insegnavate come l’uom s’etterna: / e quant’io l’abbia in grado, mentr’io vivo / convien che ne la mia lingua si scerna.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>tacersi</span> </td>
 <td> <span class="emojitext">🤐</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno X, 120<br />
+<strong>Source</strong>: Dissemi: "Qui con più di mille giaccio: / qua dentro è 'l secondo Federico / e 'l Cardinale; e de li altri mi taccio".<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>talento</span> </td>
 <td> <span class="emojitext">🙏💓‼️</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno V, 39<br />
+<strong>Source</strong>: Intesi ch'a così fatto tormento / enno dannati i peccator carnali, / che la ragion sommettono al talento.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>tegghia</span> </td>
 <td> <span class="emojitext">🫕</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XXIX, 74<br />
+<strong>Source</strong>: Io vidi due sedere a sé poggiati, / com'a scaldar si poggia tegghia a tegghia, / dal capo al piè di schianze macolati [...]<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>temprare</span> </td>
 <td> <span class="emojitext">🎚🎶</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatorio XXXII, 33<br />
+<strong>Source</strong>: Sì passeggiando l'alta selva vòta, / colpa di quella ch'al serpente crese, / temprava i passi un'angelica nota.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>teodìa</span> </td>
 <td> <span class="emojitext">🎶😇</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso XXV, 73<br />
+<strong>Source</strong>: "Sperino in te", ne la sua teodia / dice, "color che sanno il nome tuo": / e chi nol sa, s'elli ha la fede mia?<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>terragno</span> </td>
 <td> <span class="emojitext">🎚🌱</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatorio XII, 17<br />
+<strong>Source</strong>: Come, perché di lor memoria sia, / sovra i sepolti le tombe terragne / portan segnato quel ch'elli eran pria <br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>tetragono</span> </td>
 <td> <span class="emojitext">📐🤛🏻 🛡</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso XVII, 24<br />
+<strong>Source</strong>: [...] dette mi fuor di mia vita futura / parole gravi, avvegna ch'io mi senta / ben tetragono ai colpi di ventura [...]<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>tigna</span> </td>
 <td> <span class="emojitext">🚮</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XXII, 93<br />
+<strong>Source</strong>: Omè, vedete l’altro che digrigna; / i’ direi anche, ma i’ temo ch’ello / non s’apparecchi a grattarmi la tigna.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>tin tin</span> </td>
 <td> <span class="emojitext">⚙️🕰🎶</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso, X, 143<br />
+<strong>Source</strong>: [...] che l'una parte e l'altra tira e urge, / tin tin sonando con sì dolce nota, / che 'l ben disposto spirto d'amor turge [...]<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>topazio</span> </td>
 <td> <span class="emojitext">💎🎇</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso XV, 85<br />
+<strong>Source</strong>: Ben supplico io a te, vivo topazio / che questa gioia preziosa ingemmi, / perché mi facci del tuo nome sazio.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>trangugiare</span> </td>
 <td> <span class="emojitext">🦬🍽</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XXVIII, 27<br />
+<strong>Source</strong>: Tra le gambe pendevan le minugia; / la corata pareva e ’l tristo sacco / che merda fa di quel che si trangugia.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>trasumanar</span> </td>
 <td> <span class="emojitext">🪐</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso, I, 70<br />
+<strong>Source</strong>: Trasumanar significar per verba / non si poria; però l' essemplo basti / a cui esperienza grazia serba<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>trasvolare</span> </td>
 <td> <span class="emojitext">✈️</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso XXXII, 90<br />
+<strong>Source</strong>: Io vidi sopra lei tanta allegrezza / piover, portata ne le menti sante / create a trasvolar per quella altezza [...]<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>tremolar</span> </td>
 <td> <span class="emojitext">🍃</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatorio I, 117<br />
+<strong>Source</strong>: L'alba vinceva l'ora mattutina / che fuggia innanzi, sì che di lontano / conobbi il tremolar de la marina [...] <br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>trombetta</span> </td>
 <td> <span class="emojitext">🦨🎺</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XXI, 139<br />
+<strong>Source</strong>: [...] ma prima avea ciascun la lingua stretta / coi denti, verso lor duca, per cenno; / ed elli avea del cul fatto trombetta. <br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>universo</span> </td>
 <td> <span class="emojitext">🪐🌎✨</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso XXXIII, 87<br />
+<strong>Source</strong>: Nel suo profondo vidi che s’interna, / legato con amore in un volume, / ciò che per l’universo si squaderna […]<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>urlare</span> </td>
 <td> <span class="emojitext">🐺🔊</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno VI, 19<br />
+<strong>Source</strong>: Urlar li fa la pioggia come cani; / de l’un de’ lati fanno a l’altro schermo; / volgonsi spesso i miseri profani.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>vaneggiare</span> </td>
 <td> <span class="emojitext">🦄</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso X, 96<br />
+<strong>Source</strong>: Io fui de li agni de la santa greggia / che Domenico mena per cammino / u’ ben s’impingua se non si vaneggia.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>vanità</span> </td>
 <td> <span class="emojitext">🍂</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno VI, 36<br />
+<strong>Source</strong>: Noi passavam su per l'ombre che adona / la greve pioggia, e ponavam le piante / sovra lor vanità che par persona.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>vanni</span> </td>
 <td> <span class="emojitext">🦇</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XXVII, 42<br />
+<strong>Source</strong>: Ravenna sta come stata è molt'anni: / l'aguglia da Polenta la si cova, / sì che Cervia ricuopre co' suoi vanni.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>ventilare</span> </td>
 <td> <span class="emojitext">🌬</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatorio VIII, 30<br />
+<strong>Source</strong>: Verdi come fogliette pur mo nate / erano in veste, che da verdi penne / percosse traean dietro e ventilate.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>ventraia</span> </td>
 <td> <span class="emojitext">🐡</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XXX, 54<br />
+<strong>Source</strong>: La grave idropesì, che sì dispaia / le membra con l’omor che mal converte, / che ’l viso non risponde a la ventraia [...]<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>vernaccia</span> </td>
 <td> <span class="emojitext">🍷</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatorio XXIV, 24<br />
+<strong>Source</strong>: [...] ebbe la Santa Chiesa in le sue braccia: / dal Torso fu, e purga per digiuno / l'anguille di Bolsena e la vernaccia.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>vigilia</span> </td>
 <td> <span class="emojitext">🕯👀</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XXVI, 114<br />
+<strong>Source</strong>: [...] a questa tanto picciola vigilia / d'i nostri sensi ch'è del rimanente / non vogliate negar l'esperïenza [...]<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>viro</span> </td>
 <td> <span class="emojitext">👨</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradiso XXIV, 34<br />
+<strong>Source</strong>: Ed ella: "O luce etterna del gran viro / a cui Nostro Segnor lasciò le chiavi, / ch’ei portò giù, di questo gaudio miro [...]"<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>vita</span> </td>
 <td> <span class="emojitext">☀️🌱</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno I, 1<br />
+<strong>Source</strong>: Nel mezzo del cammin di nostra vita / mi ritrovai per una selva oscura, / ché la diritta via era smarrita.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>voi</span> </td>
 <td> <span class="emojitext">👆🎩</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XV, 30<br />
+<strong>Source</strong>: [...] la conoscenza sua al mio ’ntelletto; / e chinando la mano a la sua faccia, / rispuosi: “Siete voi qui, ser Brunetto?”<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>zaffiro</span> </td>
 <td> <span class="emojitext">💎🔹</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatorio I, 13<br />
+<strong>Source</strong>: Dolce color d’oriental zaffiro, / che s’accoglieva nel sereno aspetto / del mezzo, puro infino al primo giro […]<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>zanzara</span> </td>
 <td> <span class="emojitext">🦟</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XXVI, 28<br />
+<strong>Source</strong>: [...] come la mosca cede alla zanzara, / vede lucciole giù per la vallea, / forse colà dov’e’ vendemmia e ara [...]<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>zara</span> </td>
 <td> <span class="emojitext">🎲🎲🎲</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatorio VI, 1<br />
+<strong>Source</strong>: Quando si parte il gioco de la zara, / colui che perde si riman dolente, / repetendo le volte, e tristo impara [...]<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>zavorra</span> </td>
 <td> <span class="emojitext">⛓⬇️</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XXV, 142<br />
+<strong>Source</strong>: Così vid'io la settima zavorra / mutare e trasmutare; e qui mi scusi / la novità se fior la penna abborra.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>zeba</span> </td>
 <td> <span class="emojitext">🐐</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XXXII, 15<br />
+<strong>Source</strong>: Oh sovra tutte mal creata plebe / che stai nel loco onde parlare è duro, / mei foste state qui pecore o zebe! <br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>zucca</span> </td>
 <td> <span class="emojitext">🧑‍🦲</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno XVIII, 124<br />
+<strong>Source</strong>: Ed elli allor, battendosi la zucca: / Qua giù m' hanno sommerso le lusinghe / ond'io non ebbi mai la lingua stucca.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>﻿﻿﻿﻿a viso aperto</span> </td>
 <td> <span class="emojitext">🆔</span> </td>
+</tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Inferno X, 93<br />
+<strong>Source</strong>: Ma fu' io solo, là dove sofferto / fu per ciascun di tòrre via Fiorenza, / colui che la difesi a viso aperto.<br />
+</td>
 </tr>
 
 </table>

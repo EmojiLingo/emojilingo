@@ -41,7 +41,53 @@
       if (!hb_icon.contains(event.target)) {
         menu.style.display = "none";
       }
+      // check control in table
+      // https://datatables.net/examples/server_side/row_details.html
+      var controls = document.getElementsByClassName("dt-control");
+      let table = document.getElementsByTagName("table")
+      for (i = 0; i < controls.length; i++) {
+        let ctrl = controls[i];
+        if (ctrl.contains(event.target)) {
+          // show extra info on row control
+          let tr = ctrl.parentElement;
+          // Check if the next sibling is an extra info row
+          let nextTr = tr.nextElementSibling;
+          if (nextTr && nextTr.classList.contains('extra-info')) {
+              // Toggle visibility of the extra info row
+              nextTr.style.display = nextTr.style.display === 'table-row' ? 'none' : 'table-row';
+          } else {
+              // Create a new row with extra information
+              let newTr = document.createElement('tr');
+              newTr.classList.add('extra-info');
+              newTr.innerHTML = '<td colspan="100%">Extra information goes here...</td>';
+
+              // Insert the new row after the current row
+              tr.parentNode.insertBefore(newTr, tr.nextElementSibling);
+          }
+
+          // let row = table.row(tr);
+          // let idx = detailRows.indexOf(tr.id);
+
+          // if (tr.child.isShown()) {
+          //   tr.classList.remove('details');
+          //   row.child.hide();
+
+          //   // Remove from the 'open' array
+          //   detailRows.splice(idx, 1);
+          // }
+          // else {
+          //   tr.classList.add('details');
+          //   row.child(addRowDetails(row.data())).show();
+
+          //   // Add to the 'open' array
+          //   if (idx === -1) {
+          //     detailRows.push(tr.id);
+          //   }
+          // }
+        }
+      }
     });
+
 
     function toggleDropdown() {
       var menu = document.getElementById("DropdownMenu");
@@ -56,6 +102,8 @@
   </script>
 
 <script>
+
+  // search functionality in glossary and worldemojiday
   function searchFunction() {
     var input, filter, table, tr, td, i, txtValue;
     input = document.getElementById("searchInput");
@@ -78,6 +126,24 @@
       }
     }
   }
+
+  function addRowDetails(d) {
+    return (
+        'Full name: ' +
+        d.first_name +
+        ' ' +
+        d.last_name +
+        '<br>' +
+        'Salary: ' +
+        d.salary +
+        '<br>' +
+        'The child row can contain any data you wish, including links, images, inner tables etc.'
+    );
+  }
+
+
+
+
   </script>
 
 
@@ -146,7 +212,7 @@
         
           
             
-              <a href="/it/worldemojiday/" >Italiano</a>
+              <a href="/it/worldemojiday/" >🇮🇹 Italiano</a>
             
 
             
@@ -160,1470 +226,4391 @@
 
   <main>
     <table>
-<tr>
+<tr class="table-header">
+<th></th>
 <th>English</th>
 <th>EmojiLingo</th>
 </tr>
 <tr> <th colspan="100%"> <input type="text" id="searchInput" onkeyup="searchFunction()" placeholder="Search..." /> </th> </tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>a done deed finds its purpose</span> </td>
 <td> <span class="emojitext">🪢✅</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XXVIII, 107<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>a Galeotto</span> </td>
 <td> <span class="emojitext">🪄👩‍❤️‍👨</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell V, 137<br />
+<strong>Source</strong>: all trembling, kissed me on my mouth. A Galeotto was the book and he that wrote it. That day we read in it no further.'<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>a person parched with hectic fever </span> </td>
 <td> <span class="emojitext">🤒</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XXX, 56<br />
+<strong>Source</strong>: forced his lips to draw apart as a person parched with hectic fever curls one lip to his chin and twists the other up.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>accompaniment</span> </td>
 <td> <span class="emojitext">🐝🪕</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatory XXVIII, 18<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>acorn</span> </td>
 <td> <span class="emojitext">🌰🐿</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatory XIV, 43<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>Alichino</span> </td>
 <td> <span class="emojitext">👿🌈</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XXI,118<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>alpha</span> </td>
 <td> <span class="emojitext">🎬</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise XXVI, 17<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>among us</span> </td>
 <td> <span class="emojitext">📎👯</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatory XIV, 105<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>and</span> </td>
 <td> <span class="emojitext">✔️</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise VIII, 115<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>angel</span> </td>
 <td> <span class="emojitext">👼</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise XXXI, 131<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>approach</span> </td>
 <td> <span class="emojitext">🔄</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell VIII, 79<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>apron</span> </td>
 <td> <span class="emojitext">🩲</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XXXI, 61<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>arrow</span> </td>
 <td> <span class="emojitext">🏹</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise XVII, 27<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>arsenal</span> </td>
 <td> <span class="emojitext">🏗🚧</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XXI, 7<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>asp</span> </td>
 <td> <span class="emojitext">🐍☠️</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise VI, 77<br />
+<strong>Source</strong>: Wretched Cleopatra still weeps because of it. She, fleeing before its advancing front, took from the asp her quick and baleful death.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>asshole</span> </td>
 <td> <span class="emojitext">🍑</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XXI, 139<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>athlete</span> </td>
 <td> <span class="emojitext">🤼‍♂️</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise XII, 56<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>attack</span> </td>
 <td> <span class="emojitext">⚔️🛡⚔️</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XXII, 2<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>baby</span> </td>
 <td> <span class="emojitext">👶</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise XXIII, 121<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>band</span> </td>
 <td> <span class="emojitext">👿🥁👿🥁</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XV, 41<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>Baptistry</span> </td>
 <td> <span class="emojitext">⛪️⛲️</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise XV, 134<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>barge</span> </td>
 <td> <span class="emojitext">🚣</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XVII, 19<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>barrator</span> </td>
 <td> <span class="emojitext">💰🔁🆖</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XI, 60<br />
+<strong>Source</strong>: hypocrisy, flatteries, and sorcerers; lies, theft, and simony; panders, barrators, and all such filth.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>be intrined</span> </td>
 <td> <span class="emojitext">🪄😇🕊😇</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise XIII, 57<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>beaver</span> </td>
 <td> <span class="emojitext">🦫</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XVII, 22<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>bell</span> </td>
 <td> <span class="emojitext">🔔</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatory VIII, 5<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>belly</span> </td>
 <td> <span class="emojitext">🐡</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XXX, 54<br />
+<strong>Source</strong>: The heavy dropsy, which afflicts the body with its ill-digesting humor so that the face and belly do not match,<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>beloved</span> </td>
 <td> <span class="emojitext">🪄👩❤️</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise IV, 118<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>betterment</span> </td>
 <td> <span class="emojitext">🪄🔆</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise XXX, 87<br />
+<strong>Source</strong>: than I, to make still better mirrors of my eyes, inclined my head down toward the water that flows there for our betterment [...]<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>billow out</span> </td>
 <td> <span class="emojitext">🌬</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatory VIII, 30<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>bitter</span> </td>
 <td> <span class="emojitext">🧅</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise XVII, 117<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>boiling</span> </td>
 <td> <span class="emojitext">🌋</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XXI, 20<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>boiling stream</span> </td>
 <td> <span class="emojitext">🩸⛲️ 👿</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XII, 117<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>book</span> </td>
 <td> <span class="emojitext">📖</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell V, 137<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>border</span> </td>
 <td> <span class="emojitext">🪄🏰</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise VIII, 61<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>born</span> </td>
 <td> <span class="emojitext">🐣</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XXIII, 94<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>bracelet</span> </td>
 <td> <span class="emojitext">📿</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise XV, 100<br />
+<strong>Source</strong>: No bracelet, no tiara did she wear, no embroidered gown, no waistband more striking to the eye than was its wearer.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>bread</span> </td>
 <td> <span class="emojitext">🍞</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise XVII, 59<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>bream</span> </td>
 <td> <span class="emojitext">🐟</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XXIX, 83<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>breast</span> </td>
 <td> <span class="emojitext">🤱🏻</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise XXXIII, 108<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>brutes or beasts</span> </td>
 <td> <span class="emojitext">👹👹</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XXVI, 119<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>butter</span> </td>
 <td> <span class="emojitext">🧈</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XVII, 63<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>by the</span> </td>
 <td> <span class="emojitext">🤥</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatory II, 10<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>chessboard</span> </td>
 <td> <span class="emojitext">♟</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise XXVIII, 93<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>city</span> </td>
 <td> <span class="emojitext">🇮🇹</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell X, 26<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>cloak</span> </td>
 <td> <span class="emojitext">👗</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise XXXII, 141<br />
+<strong>Source</strong>: But since the time runs short that readies you for sleep, let us stop here, as a good tailor would, who cuts the cloak as he is stocked with cloth.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>cloud</span> </td>
 <td> <span class="emojitext">🏎️🔁🏎️</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatory XXXIII, 48<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>coagulate</span> </td>
 <td> <span class="emojitext">☯️</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatory XXV, 50<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>come again five times</span> </td>
 <td> <span class="emojitext">🪄5️⃣🔂🔂</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise IX, 40<br />
+<strong>Source</strong>: [...] in this heaven, great fame was left on earth And, before it dies away completely, 'this centennial year will come again five times [...]<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>come into a town</span> </td>
 <td> <span class="emojitext">👩‍🌾➡️🏙</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatory XXVI, 69<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>comet</span> </td>
 <td> <span class="emojitext">💫</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise XXIV, 12<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>compass needle</span> </td>
 <td> <span class="emojitext">🧭</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise XII, 29<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>complession</span> </td>
 <td> <span class="emojitext">🫀🧠</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise VII, 140<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>confonds</span> </td>
 <td> <span class="emojitext">🗑</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise XXX, 46<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>contingency</span> </td>
 <td> <span class="emojitext">🗑</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise, XIII, 63<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>courtesy</span> </td>
 <td> <span class="emojitext">🩰</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XXXIII, 150<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>cowering</span> </td>
 <td> <span class="emojitext">🙇‍♀️</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XXI, 89<br />
+<strong>Source</strong>: And my leader said to me: 'You there, cowering among the broken boulders of the bridge, now you may come back to me in safety.'<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>creaked</span> </td>
 <td> <span class="emojitext">🧊💥</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell, XXXII, 30<br />
+<strong>Source</strong>: as I saw there. For had Tambernic fallen on it, or Pietrapana, the ice would not have creaked, not even at the edge.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>daddy</span> </td>
 <td> <span class="emojitext">👨💟</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XXXII, 9<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>dark</span> </td>
 <td> <span class="emojitext">🌑</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell I, 2<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>darkened</span> </td>
 <td> <span class="emojitext">🎨🌰</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell II, 1<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>darkness</span> </td>
 <td> <span class="emojitext">😶‍🌫️</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatory XI, 30<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>dead</span> </td>
 <td> <span class="emojitext">💀</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell V, 142<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>dead</span> </td>
 <td> <span class="emojitext">🪦</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise XVII, 21<br />
+<strong>Source</strong>: While I was still in Virgil's company, both on the mountain that restores our souls and during our descent into the region of the dead,<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>deceived</span> </td>
 <td> <span class="emojitext">😧</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise IX, 100<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>defective creature</span> </td>
 <td> <span class="emojitext">🐛</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatory X, 128<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>demonstrated enviable truths.</span> </td>
 <td> <span class="emojitext">👨⚔️👨👌👌</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise X, 138<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>dense</span> </td>
 <td> <span class="emojitext">🍮</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise XXII, 141<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>desire</span> </td>
 <td> <span class="emojitext">🙏💓‼️</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell V, 39<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>dice</span> </td>
 <td> <span class="emojitext">🎲🎲🎲</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatory VI, 1<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>dismal</span> </td>
 <td> <span class="emojitext">😢😔</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XIII, 106<br />
+<strong>Source</strong>: Here shall we drag it, and in this dismal wood our bodies will be hung, each one upon the thorn-bush of its painful shade.'<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>dispel one's darkness</span> </td>
 <td> <span class="emojitext">🌑➡️☀️</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatory XXII, 62<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>distress</span> </td>
 <td> <span class="emojitext">😓💓</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell I, 21<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>ditch</span> </td>
 <td> <span class="emojitext">🕳👿</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XVIII, 24<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>dragon</span> </td>
 <td> <span class="emojitext">🐉</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatory XXXII, 131<br />
+<strong>Source</strong>: Then it seemed to me the earth was cleft between the wheels, and I saw a dragon issue, thrust its tail up through the car,<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>dropsy</span> </td>
 <td> <span class="emojitext">🩺💧</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XXX, 52<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>eagle</span> </td>
 <td> <span class="emojitext">🦅</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell IV, 96<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>eclipse</span> </td>
 <td> <span class="emojitext">🌑</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise XXIX, 102<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>embroidered</span> </td>
 <td> <span class="emojitext">⚜️🏵</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise XV, 101<br />
+<strong>Source</strong>: No bracelet, no tiara did she wear, no embroidered gown, no waistband more striking to the eye than was its wearer.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>emerald</span> </td>
 <td> <span class="emojitext">💎🟢</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatory XXXI, 116<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>emperor</span> </td>
 <td> <span class="emojitext">🤴🏻</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise XXX, 136<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>emptiness</span> </td>
 <td> <span class="emojitext">🍂</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell VI, 36<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>entrail</span> </td>
 <td> <span class="emojitext">🧶🎻</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XXVIII, 25<br />
+<strong>Source</strong>: Between the legs the entrails dangled. I saw the innards and the loathsome sack that turns what one has swallowed into shit.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>eyes of glowing coals</span> </td>
 <td> <span class="emojitext">👁👁🔥</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell III, 109<br />
+<strong>Source</strong>: Charon the demon, with eyes of glowing coals, beckons to them, herds them all aboard, striking anyone who slackens with his oar.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>farewell</span> </td>
 <td> <span class="emojitext">👋</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatory VIII, 3<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>fat</span> </td>
 <td> <span class="emojitext">🥓</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise II, 77<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>fatten oneself</span> </td>
 <td> <span class="emojitext">🪄 😈💰💰</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise XVI, 114<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>fear</span> </td>
 <td> <span class="emojitext">🤔</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XXXI, 110<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>fear</span> </td>
 <td> <span class="emojitext">😱</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell I, 6<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>fever</span> </td>
 <td> <span class="emojitext">🤒</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XXV, 90<br />
+<strong>Source</strong>: The one transfixed just stared, said nothing. Indeed, with his feet stock-still, he yawned, as if deep sleep or fever had assailed him.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>field</span> </td>
 <td> <span class="emojitext">🌱🌱🌱</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise XXIII, 80<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>fig</span> </td>
 <td> <span class="emojitext">🌷🌷</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XXV, 2<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>filth</span> </td>
 <td> <span class="emojitext">👃💩</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise XXVII, 26<br />
+<strong>Source</strong>: has made my tomb a sewer of blood and filth, so that the Evil One, who fell from here above, takes satisfaction there below.'<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>fire</span> </td>
 <td> <span class="emojitext">🔥</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise I, 34<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>flour</span> </td>
 <td> <span class="emojitext">🌾🥖</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise XXII, 78<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>for</span> </td>
 <td> <span class="emojitext">↙️</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell I, 3<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>fork</span> </td>
 <td> <span class="emojitext">✂️🦵🦵</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XIV, 108<br />
+<strong>Source</strong>: His head is fashioned of fine gold, his breast and arms of purest silver, then to the fork he’s made of brass [...]<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>foursquare</span> </td>
 <td> <span class="emojitext">📐🤛🏻 🛡</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise XVII, 24<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>from hunger</span> </td>
 <td> <span class="emojitext">🍽</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XXXIII, 60<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>gamble away</span> </td>
 <td> <span class="emojitext">|🃏💸</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XI, 44<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>garbed in white</span> </td>
 <td> <span class="emojitext">📎👗⚪️</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatory, XII, 89<br />
+<strong>Source</strong>: The fair creature, garbed in white, came toward us. In his face there was what seemed the shimmering of the morning star.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>Gardener</span> </td>
 <td> <span class="emojitext">🧑‍🌾</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise XXVI, 65<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>gaudy</span> </td>
 <td> <span class="emojitext">🐯</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell I, 42<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>gazzling</span> </td>
 <td> <span class="emojitext">🥩🐺</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XVII, 21<br />
+<strong>Source</strong>: As sometimes barges lie ashore, partly in water, partly on the land, and as among the guzzling Germans [...]<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>gift</span> </td>
 <td> <span class="emojitext">🎁</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatory XXVII, 119<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>girl</span> </td>
 <td> <span class="emojitext">🧍‍♀️/🧍‍♂️</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatory XVII, 34<br />
+<strong>Source</strong>: in my vision there arose a girl. She was weeping bitterly, crying: 'O Queen, why, in your anger, have you chosen not to be?<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>glazed</span> </td>
 <td> <span class="emojitext">❄️🪟</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XXXIII, 128<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>goat</span> </td>
 <td> <span class="emojitext">🐐</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XXXII, 15<br />
+<strong>Source</strong>: O you misgotten rabble, worse than all the rest, who fill that place so hard to speak of, better had you here been sheep or goats!<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>God song</span> </td>
 <td> <span class="emojitext">🎶😇</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise XXV, 73<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>grain of wheat</span> </td>
 <td> <span class="emojitext">🌾</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatory XVI, 113<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>granted to someone freely</span> </td>
 <td> <span class="emojitext">🎁</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise XIV, 47<br />
+<strong>Source</strong>: so that the light, granted to us freely by the Highest Good, shall increase, the light that makes us fit to see Him.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>gravestone</span> </td>
 <td> <span class="emojitext">🎚🌱</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatory XII, 17<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>great soul</span> </td>
 <td> <span class="emojitext">🏅</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell X, 73<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>groin</span> </td>
 <td> <span class="emojitext">🩳</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XXX, 50<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>guzzler</span> </td>
 <td> <span class="emojitext">😋👿😋👿</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XXII, 15<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>halo</span> </td>
 <td> <span class="emojitext">🔅</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise, XXVIII, 23<br />
+<strong>Source</strong>: As near, perhaps, as a halo seems to be when it encircles the light that colors it, where the vapor that forms it is most dense,<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>harm</span> </td>
 <td> <span class="emojitext">👊</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell VI, 66<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>harm and worse</span> </td>
 <td> <span class="emojitext">👎➕👎👎</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell I, 132<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>hat</span> </td>
 <td> <span class="emojitext">🎓</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XXXII, 126<br />
+<strong>Source</strong>: We had left him behind when I took note of two souls so frozen in a single hole the head of one served as the other's hat.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>hawk</span> </td>
 <td> <span class="emojitext">👿🦅</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XXII, 139<br />
+<strong>Source</strong>: But the other was indeed a full-fledged hawk, Fierce with his talons, and the pair of them Went tumbling down into the scalding pond.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>He from whom your house derives its name </span> </td>
 <td> <span class="emojitext">👨‍👧</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise XV, 92<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>head</span> </td>
 <td> <span class="emojitext">👤</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatory III, 128<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>heartfelt prayers</span> </td>
 <td> <span class="emojitext">🛐</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatory V, 71<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>heels</span> </td>
 <td> <span class="emojitext">👟💨</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XVIII, 37<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>high</span> </td>
 <td> <span class="emojitext">⬆️🔝</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XX, 61<br />
+<strong>Source</strong>: High in fair Italy, at the foot of the alps that form a border with Germany near Tyrol, lies a lake they call Benàco.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>hoe</span> </td>
 <td> <span class="emojitext">🔧👨‍🌾</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XV, 96<br />
+<strong>Source</strong>: Such prophecy is not unknown to me. Let Fortune spin her wheel just as she pleases, and let the loutish peasant ply his hoe.'<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>hogs</span> </td>
 <td> <span class="emojitext">🐖🐖</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatory XIV, 43<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>hope</span> </td>
 <td> <span class="emojitext">⚓️</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell III, 9<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>horn</span> </td>
 <td> <span class="emojitext">🦏</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise VIII, 61<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>hospital</span> </td>
 <td> <span class="emojitext">🏥</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XXIX, 46<br />
+<strong>Source</strong>: If the contagion of every hospital in Valdichiana, from July until September, and in the Maremma and Sardegna, were amassed<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>hour</span> </td>
 <td> <span class="emojitext">🌬</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatory I, 115<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>hunger</span> </td>
 <td> <span class="emojitext">😋🍫🔝</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatory XXIII, 66<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>hypocrite</span> </td>
 <td> <span class="emojitext">🎭😈</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XXIII, 92<br />
+<strong>Source</strong>: and then to me: 'O Tuscan, who have come to this assembly of sad hypocrites, do not disdain to tell us who you are.'<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>idea</span> </td>
 <td> <span class="emojitext">🪄</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise XXIX, 95<br />
+<strong>Source</strong>: Each strives to gain attention by inventing new ideas, expounded by the preachers at some length -- but the Gospel remains silent.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>illumination</span> </td>
 <td> <span class="emojitext">🖌🖼📖🤏</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatory XI, 81<br />
+<strong>Source</strong>: Oh,' I said to him, 'are you not Oderisi, the honor of Gubbio and of that art which they in Paris call illumination?'<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>imagination</span> </td>
 <td> <span class="emojitext">💭🦄</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise X, 46<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>imparadise</span> </td>
 <td> <span class="emojitext">⤴️🌌👼</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise XXVIII, 3<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>in-me'd</span> </td>
 <td> <span class="emojitext">🧍‍♂️🪄🧍</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise IX, 81<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>in-you</span> </td>
 <td> <span class="emojitext">🧍🪄👆</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise IX, 81<br />
+<strong>Source</strong>: not offer my desires their satisfaction? I would not await your question if I in-you'd me as you in-me'd you.'<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>ingod oneself</span> </td>
 <td> <span class="emojitext">🧘‍♀️</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise IV, 28<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>innard</span> </td>
 <td> <span class="emojitext">🫀🫁</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XXVIII, 26<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>innocent</span> </td>
 <td> <span class="emojitext">🙅‍♀️🚹🚺🍎</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatory XXVIII, 142<br />
+<strong>Source</strong>: Here the root of humankind was innocent, here it is always spring, with every fruit in season. This is the nectar of which the ancients tell.'<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>intruth</span> </td>
 <td> <span class="emojitext">🪄✋📖</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise XXVIII, 39<br />
+<strong>Source</strong>: And that one least removed from the blazing point of light possessed the clearest flame, because, I think, it was the one that is the most intruthed by it.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>iron colored</span> </td>
 <td> <span class="emojitext">🎨⚙️</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XVIII, 2<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>is out to take the air</span> </td>
 <td> <span class="emojitext">🏃‍♂️⤴️</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XXI, 116<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>it finds its where in it</span> </td>
 <td> <span class="emojitext">🪄👉</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise XXXIII, 138<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>Italian</span> </td>
 <td> <span class="emojitext">🗣🇮🇹</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XXVII, 33<br />
+<strong>Source</strong>: I still stood bending down to hear, when my leader nudged my side and said: 'It's up to you to speak -- this one is Italian.'<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>Italy</span> </td>
 <td> <span class="emojitext">🇮🇹</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatory VI, 76<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>joint</span> </td>
 <td> <span class="emojitext">🦾🦿</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatory XXVI, 57<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>journey of one's life</span> </td>
 <td> <span class="emojitext">🕰🥾</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell I, 1<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>keep in mind</span> </td>
 <td> <span class="emojitext">💽</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatory XIV, 56<br />
+<strong>Source</strong>: Nor will I hold my peace because another hears me. It will be wise of him to keep in mind The truth the Spirit has revealed.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>labor</span> </td>
 <td> <span class="emojitext">|✋🛠️🖊️</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise I, 13<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>lady</span> </td>
 <td> <span class="emojitext">👩</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise XXXIII, 13<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>lash</span> </td>
 <td> <span class="emojitext">⚡️</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XXV, 79<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>leeward, windward</span> </td>
 <td> <span class="emojitext">🌬👌⛵️➕🌬🆚⛵️</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatory XXXII, 117<br />
+<strong>Source</strong>: It struck the chariot with its full force so that it reeled like a ship tossed in a tempest, now leeward, now windward, driven by the waves.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>leopard</span> </td>
 <td> <span class="emojitext">🐆</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell I, 32<br />
+<strong>Source</strong>: But now, near the beginning of the steep, / a leopard light and swift / and covered with a spotted pelt<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>leprous sore</span> </td>
 <td> <span class="emojitext">🤕</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XXVII, 95<br />
+<strong>Source</strong>: As Constantine once had Sylvester summoned from Soracte to cure his leprous sores, so this man called on me to be his doctor<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>liberty</span> </td>
 <td> <span class="emojitext">🗽</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatory I, 71)<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>life</span> </td>
 <td> <span class="emojitext">☀️🌱</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell I, 1<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>light</span> </td>
 <td> <span class="emojitext">🌅</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise II, 36<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>lightly</span> </td>
 <td> <span class="emojitext">🤡</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XXXII, 7<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>like lightning</span> </td>
 <td> <span class="emojitext">🎢⚡️</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatory XII, 27<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>little patch of earth</span> </td>
 <td> <span class="emojitext">🌎👶</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise XXII, 151<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>livid</span> </td>
 <td> <span class="emojitext">🎨🔩</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XIX, 14<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>longing</span> </td>
 <td> <span class="emojitext">❤️↗️</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatory VIII, 1<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>look and pass by</span> </td>
 <td> <span class="emojitext">🚶😒</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell III, 51<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>love</span> </td>
 <td> <span class="emojitext">💘</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell V, 103<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>lovely stream</span> </td>
 <td> <span class="emojitext">🏞💦</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatory XIX, 101<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>lucre</span> </td>
 <td> <span class="emojitext">🏺</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell I, 103<br />
+<strong>Source</strong>: He shall not feed on lands or lucre	but on wisdom, love, and power. Between felt and felt shall be his birth.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>mamma</span> </td>
 <td> <span class="emojitext">👩💟</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatory XXX, 44<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>man</span> </td>
 <td> <span class="emojitext">👨</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise XXIV, 34<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>mange</span> </td>
 <td> <span class="emojitext">🚮</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XXII, 93<br />
+<strong>Source</strong>: Oh, look at that one there, gnashing his teeth! I would say more, but I'm afraid that demon's getting set to give my mange a scratching.'<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>measure</span> </td>
 <td> <span class="emojitext">🎚🎶</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatory XXXII, 33<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>meat</span> </td>
 <td> <span class="emojitext">🥩</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XXI, 57<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>meet</span> </td>
 <td> <span class="emojitext">🪨🌊</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell VII, 23<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>midway</span> </td>
 <td> <span class="emojitext">🎯</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell I, 1<br />
+<strong>Source</strong>: Midway in the journey of our life I came to myself in a dark wood, for the straight way was lost.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>mire</span> </td>
 <td> <span class="emojitext">🐽</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell VII, 124<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>misgiving</span> </td>
 <td> <span class="emojitext">🙅‍♀️🔮</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell V, 129<br />
+<strong>Source</strong>: One day, to pass the time in pleasure, we read of Lancelot, how love enthralled him. We were alone, without the least misgiving.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>mosquito</span> </td>
 <td> <span class="emojitext">🦟</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XXVI, 28<br />
+<strong>Source</strong>: at the hour when the fly gives way to the mosquito -- sees fireflies that glimmer in the valley where perhaps he harvests grapes and ploughs his fields,<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>mote</span> </td>
 <td> <span class="emojitext">🆖</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise XXVI, 76<br />
+<strong>Source</strong>: exactly thus did Beatrice drive away each mote from my eyes with the radiance of her own, which could be seen a thousand miles away,<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>move on</span> </td>
 <td> <span class="emojitext">🔜</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XX, 130<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>murky</span> </td>
 <td> <span class="emojitext">🌫</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell VII, 104<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>myrrh</span> </td>
 <td> <span class="emojitext">🧴🔥👑</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell, XXIV, 111<br />
+<strong>Source</strong>: lifelong it feeds on neither grain nor grasses, but thrives on drops of frankincense and cardamom, while nard and myrrh make up its winding sheet --<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>necessary path</span> </td>
 <td> <span class="emojitext">☝️</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatory XVI, 69<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>new crowd</span> </td>
 <td> <span class="emojitext">🧑‍🌾🌆</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XVI, 73<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>of Jupiter</span> </td>
 <td> <span class="emojitext">⚡️</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise XVIII, 70<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>offering</span> </td>
 <td> <span class="emojitext">🐐💘</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise XIV, 93<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>outlast</span> </td>
 <td> <span class="emojitext">🪄🔮🔛</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise XVII, 98<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>paddle</span> </td>
 <td> <span class="emojitext">🚿</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XXIII, 46<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>palace</span> </td>
 <td> <span class="emojitext">🏰</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XXXIV, 97<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>palsy</span> </td>
 <td> <span class="emojitext">👨‍🦼</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XX, 16<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>pans</span> </td>
 <td> <span class="emojitext">🫕</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XXIX, 74<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>pappo and dindi</span> </td>
 <td> <span class="emojitext">[🍲👶]➕[🪙🪙🎶]</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatory XI, 105<br />
+<strong>Source</strong>: Will greater fame be yours if you put off your flesh when it is old than had you died with pappo and dindi still upon your lips [...]<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>parallel in color</span> </td>
 <td> <span class="emojitext">🌈🔗🌈</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise XII, 11<br />
+<strong>Source</strong>: As twin rainbows, parallel in shape and color, arc in their pathway through translucent clouds when Juno gives the order to her handmaid --<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>pate</span> </td>
 <td> <span class="emojitext">🧑‍🦲</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XVIII, 124<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>paunch</span> </td>
 <td> <span class="emojitext">🫀🫁</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XXX, 102<br />
+<strong>Source</strong>: And one of them, who took offense, perhaps	at being named so vilely, hit him with a fist right on his rigid paunch.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>peacefully</span> </td>
 <td> <span class="emojitext">🪄🏇</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatory XXVII, 76<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>pearl</span> </td>
 <td> <span class="emojitext">💎🦪</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise II, 34<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>peppercorn</span> </td>
 <td> <span class="emojitext">🧂⚫️</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XXV, 84<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>pilfer</span> </td>
 <td> <span class="emojitext">🦅</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XXI, 54<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>pine cone</span> </td>
 <td> <span class="emojitext">👶🌲</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XXXI, 59<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>play the dragon</span> </td>
 <td> <span class="emojitext">🪄🐉</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise XVI, 115<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>pre-dawn</span> </td>
 <td> <span class="emojitext">🌄</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatory XXVII, 109<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>purple</span> </td>
 <td> <span class="emojitext">🎨🔴</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatory XXIX, 131<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>quartan fever</span> </td>
 <td> <span class="emojitext">🤒</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XVII, 86<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>rabble</span> </td>
 <td> <span class="emojitext">⛓⬇️</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XXV, 142<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>real forms</span> </td>
 <td> <span class="emojitext">🪄🧠</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatory XVIII, 22<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>red</span> </td>
 <td> <span class="emojitext">🔴</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise VI, 79<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>resurrection</span> </td>
 <td> <span class="emojitext">🌅</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise VII, 146<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>reward</span> </td>
 <td> <span class="emojitext">🏆</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise VI, 118<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>ribbon</span> </td>
 <td> <span class="emojitext">🎗</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise XV, 22<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>ridge</span> </td>
 <td> <span class="emojitext">🪨🌊</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XVIII, 16<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>roar</span> </td>
 <td> <span class="emojitext">💦💥</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XVII, 119<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>ruby</span> </td>
 <td> <span class="emojitext">💎🔴</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise XXX, 66<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>run to thousand</span> </td>
 <td> <span class="emojitext">🪄💯💯</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise XXVIII, 93<br />
+<strong>Source</strong>: each spark keeping to its flaming ring. They were so many that their number ran to thousands more than the successive doubling of a chessboard's squares.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>sack</span> </td>
 <td> <span class="emojitext">💰</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XXVIII, 26<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>sacred poem</span> </td>
 <td> <span class="emojitext">📜🛐</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise XXIII, 62<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>safe heaven</span> </td>
 <td> <span class="emojitext">⛲️</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatory XI, 25<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>saint</span> </td>
 <td> <span class="emojitext">😇</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatory XIII, 51<br />
+<strong>Source</strong>: We had gone a little farther on, when I heard voices crying: 'Mary, pray for us,'  then 'Michael,' 'Peter,' and 'All saints.'<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>salt</span> </td>
 <td> <span class="emojitext">🧂</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise XVII, 58<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>sapphire</span> </td>
 <td> <span class="emojitext">💎🔹</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatory I, 13<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>scab</span> </td>
 <td> <span class="emojitext">🩹</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XXIX, 75<br />
+<strong>Source</strong>: Two I saw seated, propped against each other as pans are propped to warm before the fire, each of them blotched with scabs from head to foot.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>scab</span> </td>
 <td> <span class="emojitext">🚱🩹</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatory XXIII, 49<br />
+<strong>Source</strong>: Ah,' he begged, 'pay no attention to the withered scab discoloring my skin nor to this lack of flesh on me,<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>scorn</span> </td>
 <td> <span class="emojitext">😒</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell X, 36<br />
+<strong>Source</strong>: Already I had fixed my gaze on his. / And he was rising, lifting chest and brow / as though he held all Hell in utter scorn.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>scratch</span> </td>
 <td> <span class="emojitext">🦠</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise XVII, 129<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>scruff of the neck</span> </td>
 <td> <span class="emojitext">🦅💇</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XXXII, 97<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>seam</span> </td>
 <td> <span class="emojitext">🪡</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatory XIII, 83<br />
+<strong>Source</strong>: At my other side were the shades in prayer who, through those dreadful seams, were wringing tears that bathed their cheeks.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>sequel</span> </td>
 <td> <span class="emojitext">🪄</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell II, 17<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>set in a higher sphere</span> </td>
 <td> <span class="emojitext">⤴️🌌😇</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise III, 97<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>shade</span> </td>
 <td> <span class="emojitext">⛺️</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatory XV, 14)<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>shall</span> </td>
 <td> <span class="emojitext">🪄🧑‍⚖️</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise XVII, 48<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>shattered</span> </td>
 <td> <span class="emojitext">📴</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise XVI, 145<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>she-wolf </span> </td>
 <td> <span class="emojitext">🐺</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell I, 49<br />
+<strong>Source</strong>: And then a she-wolf who, all hide and bones, seemed charged with all the appetites that have made many live in wretchedness<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>shepard</span> </td>
 <td> <span class="emojitext">👨⛪️</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise XI, 99<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>shift</span> </td>
 <td> <span class="emojitext">🥼</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XXIII, 42<br />
+<strong>Source</strong>: snatches up her child and flees, and, more concerned for him than for herself, does not delay to put a shift on.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>shit</span> </td>
 <td> <span class="emojitext">💩</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell, XVIII, 116<br />
+<strong>Source</strong>: Searching the bottom with my eyes I saw a man, his head so smeared with shit one could not tell if he were priest or layman.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>sickness</span> </td>
 <td> <span class="emojitext">🫀🔐</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XXIV, 114<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>sister</span> </td>
 <td> <span class="emojitext">🧍‍♀️🧬🧍‍♀️</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatory IV, 111<br />
+<strong>Source</strong>: O my dear lord,' I said, 'just look at him.	He shows himself more indolent than if sloth had been his very sister.'<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>skill</span> </td>
 <td> <span class="emojitext">🛠</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell X, 81<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>slope</span> </td>
 <td> <span class="emojitext">🏖</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell I, 29<br />
+<strong>Source</strong>: After I rested my wearied flesh a while, I took my way again along the desert slope, my firm foot always lower than the other.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>smiling words</span> </td>
 <td> <span class="emojitext">💬🙂</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise I, 95<br />
+<strong>Source</strong>: If I was stripped of my earlier confusion by her brief and smiling words, I was the more entangled in new doubt<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>somber</span> </td>
 <td> <span class="emojitext">🌑</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell V, 89<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>soon enough</span> </td>
 <td> <span class="emojitext">🚀🔜</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XXXIII, 106<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>soup</span> </td>
 <td> <span class="emojitext">🍜</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell VIII, 53<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>sphere</span> </td>
 <td> <span class="emojitext">🥋</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise XXX, 105<br />
+<strong>Source</strong>: It spreads itself into so vast a circle that its circumference would be larger than the sphere that is the sun.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>spinal cord</span> </td>
 <td> <span class="emojitext">👤🧣</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XXXII, 129<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>spiteful</span> </td>
 <td> <span class="emojitext">😠</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell VIII, 62<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>splendor</span> </td>
 <td> <span class="emojitext">💥</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise XXX, 62<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>sprawl</span> </td>
 <td> <span class="emojitext">🪄🛐</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell, VI, 34<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>stained</span> </td>
 <td> <span class="emojitext">⚫️</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatory XXX, 54<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>stammering</span> </td>
 <td> <span class="emojitext">🗣♒️</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatory XIX, 7<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>stars</span> </td>
 <td> <span class="emojitext">✨</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XXXIV, 139<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>sticky vapor</span> </td>
 <td> <span class="emojitext">🧫</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XVIII, 106<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>style</span> </td>
 <td> <span class="emojitext">🖋⚜️</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell I, 87<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>sunset and dawn</span> </td>
 <td> <span class="emojitext">🌄➕🌆</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise IX, 91<br />
+<strong>Source</strong>: So close they nearly share sunset and dawn lie Bougie and the city that I came from. Once it made its harbor warm with its own blood.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>teacher</span> </td>
 <td> <span class="emojitext">🎓📚</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell I, 85<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>tear</span> </td>
 <td> <span class="emojitext">✂️🍃</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XIII, 35<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>temper</span> </td>
 <td> <span class="emojitext">🪄🌅〰️</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatory XIX, 2<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>the fair form</span> </td>
 <td> <span class="emojitext">🧍🔆</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell, V, 101<br />
+<strong>Source</strong>: Love, quick to kindle in the gentle heart, seized this man with the fair form taken from me, The way of it afflicts me still.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>the fair land</span> </td>
 <td> <span class="emojitext">🇮🇹🔆</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XXXIII, 80<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>the good of the intellect</span> </td>
 <td> <span class="emojitext">💡🧠</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell III, 18<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>the milky way</span> </td>
 <td> <span class="emojitext">🌌</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise XIV, 99<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>The next is wanton Cleopatra</span> </td>
 <td> <span class="emojitext">👩‍❤️‍👨💎</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell V, 63<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>the noble stile</span> </td>
 <td> <span class="emojitext">🖋📖🔆</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell I, 87<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>the one who bear</span> </td>
 <td> <span class="emojitext">📌🏅👑👨‍⚖️</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise VI, 73<br />
+<strong>Source</strong>: For what it wrought with the one who bore it next Brutus and Cassius bark in Hell, and both Modena and Perugia were aggrieved.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>the ones who are suspended</span> </td>
 <td> <span class="emojitext">👥↪️^🕸</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell, II, 52<br />
+<strong>Source</strong>: I was among the ones who are suspended, when a lady called me, so blessèd and so fair that I implored her to command me<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>the red part of</span> </td>
 <td> <span class="emojitext">⭕️</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatory IV, 64<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>the screams of agony</span> </td>
 <td> <span class="emojitext">💬😰💬😰</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell, V, 25<br />
+<strong>Source</strong>: Now I can hear the screams of agony. Now I have come where a great wailing beats upon me.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>through the branches</span> </td>
 <td> <span class="emojitext">🎋👨‍👩‍👧‍👦</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatory VII, 121<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>time</span> </td>
 <td> <span class="emojitext">🔂</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise XXIV, 22<br />
+<strong>Source</strong>: Three times it circled Beatrice, its song so filled with heavenly delight my phantasy cannot repeat it<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>ting-ting</span> </td>
 <td> <span class="emojitext">⚙️🕰🎶</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise, X, 143<br />
+<strong>Source</strong>: when a cog pulls one wheel and drives another, chiming its ting-ting with notes so sweet that the willing spirit swells with love,<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>to be added</span> </td>
 <td> <span class="emojitext">🪄🧶</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XXIII, 16<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>to be fattened</span> </td>
 <td> <span class="emojitext">🪄🤑</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise X, 96<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>to be greedy</span> </td>
 <td> <span class="emojitext">❤️‍🔥</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise X, 111<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>to be hidden </span> </td>
 <td> <span class="emojitext">👞⤵️</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise XXI, 94<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>to be in doubt</span> </td>
 <td> <span class="emojitext">🪄🤔</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise XXIV, 87<br />
+<strong>Source</strong>: […]'but tell me if you have it in your purse.' And I: 'I do indie, so bright and round That of its coinage I am not in doubt.'<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>to be lost</span> </td>
 <td> <span class="emojitext">🙅‍♀️💾</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise XXXIII, 94<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>to be mistress over someone</span> </td>
 <td> <span class="emojitext">🪄🎩</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise VII, 13<br />
+<strong>Source</strong>: But the reverence that is mistress over me at the mere sound of Be or ice bowed down my head, as when a man nods off.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>to blind one's eyes</span> </td>
 <td> <span class="emojitext">😎</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise XXV, 122<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>to blush</span> </td>
 <td> <span class="emojitext">🪄🙈</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise XVI, 103<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>to burn</span> </td>
 <td> <span class="emojitext">🪄🔥</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise XXVIII, 17<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>to cast</span> </td>
 <td> <span class="emojitext">👀⤵️</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise XXVII, 77<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>to celebrate</span> </td>
 <td> <span class="emojitext">🥳</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise XVIII, 74<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>to chide</span> </td>
 <td> <span class="emojitext">🗣️🔊🆚</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XV, 92<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>to circumscribe</span> </td>
 <td> <span class="emojitext">✍🏽⭕️</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise XIV, 30<br />
+<strong>Source</strong>: That ever-living One and Two and Three who reigns forever in Three and Two and One, uncircumscribed and circumscribing all,<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>to climb</span> </td>
 <td> <span class="emojitext">🧗‍♀️</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise VIII, 97<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>to conceal</span> </td>
 <td> <span class="emojitext">🐒😈</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XXVI, 42<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>to consescend</span> </td>
 <td> <span class="emojitext">📉</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise IV, 43<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>to crave</span> </td>
 <td> <span class="emojitext">🤤</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise III, 92<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>to create a greater craving</span> </td>
 <td> <span class="emojitext">🪄🤑</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatory XXXI, 129<br />
+<strong>Source</strong>: While my soul, filled with wonder and with joy, tasted the food that, satisfying in itself yet for itself creates a greater craving,<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>to dare speak out</span> </td>
 <td> <span class="emojitext">🆔</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell X, 93<br />
+<strong>Source</strong>: But it was I alone, when all agreed to make an end of Florence, I alone who dared speak out in her defense.'<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>to drain the color from</span> </td>
 <td> <span class="emojitext">😨</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell V, 131<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>to dress</span> </td>
 <td> <span class="emojitext">🎀</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XXVIII, 37<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>to earn</span> </td>
 <td> <span class="emojitext">🏅</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XXVI, 80, 81<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>to end </span> </td>
 <td> <span class="emojitext">🪄✅</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatory XXI, 112<br />
+<strong>Source</strong>: So your great labor may end in good,' he said, 'why did your face just now give off the sudden glimmer of a smile?'<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>to flood with one's light</span> </td>
 <td> <span class="emojitext">🪄🔥</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise XX, 1<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>to gain</span> </td>
 <td> <span class="emojitext">💰</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell I, 55<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>to give joy</span> </td>
 <td> <span class="emojitext">👍</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise XXIII, 6<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>to go</span> </td>
 <td> <span class="emojitext">👞</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XXI, 117<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>to go on</span> </td>
 <td> <span class="emojitext">👞👇</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XIV, 76<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>to grope</span> </td>
 <td> <span class="emojitext">🖐👣🌌</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XXXIII, 73<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>to have one's bent</span> </td>
 <td> <span class="emojitext">📈</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise I, 109<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>to howl</span> </td>
 <td> <span class="emojitext">🐺🔊</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell VI, 19<br />
+<strong>Source</strong>: The rain makes them howl like dogs. The unholy wretches often turn their bodies, making of one side a shield for the other.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>to intoxicate</span> </td>
 <td> <span class="emojitext">🪄😵‍💫</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XXIX, 2<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>to lack</span> </td>
 <td> <span class="emojitext">🙅‍♀️🥖</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatory XXII, 141<br />
+<strong>Source</strong>: As the two poets neared the tree a voice from among the boughs called out: 'This is a food that you shall lack.'<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>to lose</span> </td>
 <td> <span class="emojitext">🧭🎈</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell I, 3<br />
+<strong>Source</strong>: Midway in the journey of our life I came to myself in a dark wood, for the straight way was lost.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>to make oneself immortal</span> </td>
 <td> <span class="emojitext">⏳♾👈</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XV, 85<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>to make onself a beast</span> </td>
 <td> <span class="emojitext">🪄🐂</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatory XXVI, 87<br />
+<strong>Source</strong>: when, in our disgrace, we move off from the others we shout her name who made herself a beast inside the beast-shaped rough-hewn wood.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>to marry</span> </td>
 <td> <span class="emojitext">🪄💍👰‍♀️</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatory, V, 135<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>to not speak</span> </td>
 <td> <span class="emojitext">🤐</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell X, 120<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>to not speak</span> </td>
 <td> <span class="emojitext">🧍^🤐</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell X, 120<br />
+<strong>Source</strong>: His answer was: 'More than a thousand lie here with me: both the second Frederick and the Cardinal. Of the rest I do not speak.'<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>to pass on</span> </td>
 <td> <span class="emojitext">🚶‍♀️</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatory XXXII, 31<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>to prettify</span> </td>
 <td> <span class="emojitext">💅</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell VII, 60<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>to resound</span> </td>
 <td> <span class="emojitext">🌊🪘</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell VI, 99<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>to restore</span> </td>
 <td> <span class="emojitext">🧺↩️</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XXIV, 12<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>to rise</span> </td>
 <td> <span class="emojitext">⛲️</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatory III, 15<br />
+<strong>Source</strong>: my mind, at first withdrawn into itself, now eagerly took in the wider landscape. I fixed my gaze upon the highest hill rising from the sea into the sky.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>to rule</span> </td>
 <td> <span class="emojitext">🤴🔗👸</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell V, 60<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>to save</span> </td>
 <td> <span class="emojitext">🛡</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell I, 89<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>to set put to cool</span> </td>
 <td> <span class="emojitext">🧊</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XXXII, 117<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>to shed reddish light</span> </td>
 <td> <span class="emojitext">🪄🖍</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatory II, 14<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>to shine clear</span> </td>
 <td> <span class="emojitext">🪧</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise XV, 63<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>to show pleasure</span> </td>
 <td> <span class="emojitext">🤝👏</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise XXV, 25<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>to snap</span> </td>
 <td> <span class="emojitext">🍃🎶</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XIII, 114<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>to soar </span> </td>
 <td> <span class="emojitext">✈️</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise XXXII, 90<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>to soar beyond the human</span> </td>
 <td> <span class="emojitext">🪐</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise, I, 70<br />
+<strong>Source</strong>: To soar beyond the human cannot be described in words. Let the example be enough to one  for whom grace holds this experience in store.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>to spin</span> </td>
 <td> <span class="emojitext">🚀</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatory XXXIII, 90<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>to stray</span> </td>
 <td> <span class="emojitext">🦄</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise X, 96<br />
+<strong>Source</strong>: I was a lamb among the holy flock led by Dominic along the road where sheep are fattened if they do not stray.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>to swallow</span> </td>
 <td> <span class="emojitext">🦬🍽</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XXVIII, 27<br />
+<strong>Source</strong>: Between the legs the entrails dangled. I saw the innards and the loathsome sack that turns what one has swallowed into shit.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>to sweep</span> </td>
 <td> <span class="emojitext">🚛</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell V, 32<br />
+<strong>Source</strong>: The hellish squall, which never rests, sweeps spirits in its headlong rush, tormenting, whirls and strikes them.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>to take the step</span> </td>
 <td> <span class="emojitext">🔬</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatory XXIV, 61<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>to trust</span> </td>
 <td> <span class="emojitext">👂✋</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatory XXXII, 32<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>to waste</span> </td>
 <td> <span class="emojitext">🥢🍇</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatory XXIV, 39<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>today</span> </td>
 <td> <span class="emojitext">👇📆</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatory XIII, 52<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>tone</span> </td>
 <td> <span class="emojitext">🔔😇</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise XX, 18<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>topaz</span> </td>
 <td> <span class="emojitext">💎🎇</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise XV, 85<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>tremble</span> </td>
 <td> <span class="emojitext">🍃</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatory I, 117<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>trumpet</span> </td>
 <td> <span class="emojitext">🦨🎺</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XXI, 139<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>uncle</span> </td>
 <td> <span class="emojitext">|🧍↔️👩‍👦</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise XIX, 137<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>universe</span> </td>
 <td> <span class="emojitext">🪐🌎✨</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise XXXIII, 87<br />
+<strong>Source</strong>: In its depth I saw contained, by love into a single volume bound, the pages scattered through the universe:<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>unkempt lock</span> </td>
 <td> <span class="emojitext">💇🏻‍♂️🏚</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise VI, 46-47<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>vernaccia</span> </td>
 <td> <span class="emojitext">🍷</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatory XXIV, 24<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>vice</span> </td>
 <td> <span class="emojitext">🚹🚺🍎</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XXXIII, 152<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>vinegar</span> </td>
 <td> <span class="emojitext">🍇🧪</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatory XX, 89<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>waist</span> </td>
 <td> <span class="emojitext">🥋</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell X, 33<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>wakefulness</span> </td>
 <td> <span class="emojitext">🕯👀</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XXVI, 114<br />
+<strong>Source</strong>: [...] have reached the west, to such brief wakefulness' "of our senses as remains to us, do not deny yourselves the chance to know -- [...]<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>way</span> </td>
 <td> <span class="emojitext">🎭</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell V, 102<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>way of speaking</span> </td>
 <td> <span class="emojitext">🗣</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell X, 25<br />
+<strong>Source</strong>: Your way of speaking makes it clear that you are native to that noble city to which I was perhaps too cruel.'<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>wearied</span> </td>
 <td> <span class="emojitext">😓</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell I, 28<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>whelp</span> </td>
 <td> <span class="emojitext">🐩🎺🎙</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatory XIV, 46<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>where 'sì' is heard</span> </td>
 <td> <span class="emojitext">👉🎶🇮🇹</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XXXIII, 80<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>whichever way</span> </td>
 <td> <span class="emojitext">👈👉</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise XV, 33<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>whimpering</span> </td>
 <td> <span class="emojitext">😩🤰🏻</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XVIII, 103<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>wily</span> </td>
 <td> <span class="emojitext">👺</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XXV, 31<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>wings</span> </td>
 <td> <span class="emojitext">🦇</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XXVII, 42<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>wit</span> </td>
 <td> <span class="emojitext">💡</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatory I, 2<br />
+<strong>Source</strong>: To run its course through smoother water the small bark of my wit now hoists its sail, leaving that cruel sea behind.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>witch</span> </td>
 <td> <span class="emojitext">🧙‍♀️</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatory XIX, 58<br />
+<strong>Source</strong>: You saw,' he said, 'that ancient witch who alone is purged with tears above us here. And you saw how man is freed from her.<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>with scorn</span> </td>
 <td> <span class="emojitext">🐈</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatory XXX, 70<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>without disgrace yet without praise</span> </td>
 <td> <span class="emojitext">🆖</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell III, 36<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>women to trick</span> </td>
 <td> <span class="emojitext">👯‍♀️💰</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XVIII, 66<br />
+<strong>Source</strong>: While he was speaking a demon struck him with his lash and said: 'Away, pimp! there are no women here to trick.'<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>wormwood</span> </td>
 <td> <span class="emojitext">🌿🧪</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Purgatory XXIII, 86<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>worty of notice</span> </td>
 <td> <span class="emojitext">🏆</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XX, 104<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>wretchedness</span> </td>
 <td> <span class="emojitext">🥺</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell I, 51<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>you</span> </td>
 <td> <span class="emojitext">👆🎩</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Hell XV, 30<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>zenith</span> </td>
 <td> <span class="emojitext">🧭</span> </td>
 </tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise XXIX, 4<br />
+<strong>Source</strong>: nan<br />
+</td>
+</tr>
 <tr class="notfirst">
+<td class="dt-control"></td>
 <td> <span>(un)inhabited</span> </td>
 <td> <span class="emojitext">👨‍👩‍👦</span> </td>
+</tr>
+<tr style="display:none" class="extra-info">
+<td></td>
+<td colspan="2">
+<strong>Ref</strong>: Paradise XV, 106<br />
+<strong>Source</strong>: nan<br />
+</td>
 </tr>
 
 </table>

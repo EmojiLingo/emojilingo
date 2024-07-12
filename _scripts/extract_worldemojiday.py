@@ -59,11 +59,14 @@ def main(lang):
     table_lang = ensure_strings_dict(table[lang])
     emojilingo = list(table_emojilingo.values())
     txt_lang = list(table_lang.values())
+    ref_lang = list(table[f'Ref {lang}'].values())
+    source_lang = list(table[f'Source {lang}'].values())
 
     md_output = ['<table>']
     md_output.extend([
-        '<tr>',
+        '<tr class="table-header">',
             # f'<th>{date_header[lang]}</th>',
+            '<th></th>',
             f'<th>{languages[lang]}</th>',
             f'<th>EmojiLingo</th>',
         '</tr>'
@@ -72,19 +75,31 @@ def main(lang):
         '<tr> <th colspan="100%"> <input type="text" id="searchInput" onkeyup="searchFunction()" placeholder="Search..."> </th> </tr>'
     )
 
-    date_txt_el = [(d,t,e) for d,t,e in zip(dates, txt_lang, emojilingo)]
-    date_txt_el_alpha = sorted(
+    date_txt_el_ref_source = [
+        (d,t,e,r,s) for d,t,e,r,s in
+        zip(dates, txt_lang, emojilingo, ref_lang, source_lang)
+    ]
+    date_txt_el_ref_source_alpha = sorted(
         # sorted alpha by txt (parenthesis at the end)
-        date_txt_el, key=lambda x: (not x[1][0].isalnum(), x[1].lower())
+        date_txt_el_ref_source, key=lambda x: (not x[1][0].isalnum(), x[1].lower())
     )
-    for d,txt,el in date_txt_el_alpha:
+    for d,txt,el,ref,source in date_txt_el_ref_source_alpha:
         # print(txt,el)
         el = el.replace('\n','').replace("'","^") # "＇"
         md_output.extend([
-            '<tr class = "notfirst">',
+            '<tr class="notfirst">',
                 # '<td>' + d + '</td>',
+                '<td class="dt-control"></td>',
                 '<td> <span>' + txt + '</span> </td>',
                 '<td> <span class=emojitext>' + el + '</span> </td>',
+            '</tr>',
+            '<tr style="display:none" class="extra-info">',
+                '<td></td>',
+                '<td colspan=2>',
+                    # 'Extra Information:<br>',
+                    f'<strong>Ref</strong>: {ref}<br>',
+                    f'<strong>Source</strong>: {source}<br>',
+                '</td>',
             '</tr>'
         ])
 

@@ -41,7 +41,53 @@
       if (!hb_icon.contains(event.target)) {
         menu.style.display = "none";
       }
+      // check control in table
+      // https://datatables.net/examples/server_side/row_details.html
+      var controls = document.getElementsByClassName("dt-control");
+      let table = document.getElementsByTagName("table")
+      for (i = 0; i < controls.length; i++) {
+        let ctrl = controls[i];
+        if (ctrl.contains(event.target)) {
+          // show extra info on row control
+          let tr = ctrl.parentElement;
+          // Check if the next sibling is an extra info row
+          let nextTr = tr.nextElementSibling;
+          if (nextTr && nextTr.classList.contains('extra-info')) {
+              // Toggle visibility of the extra info row
+              nextTr.style.display = nextTr.style.display === 'table-row' ? 'none' : 'table-row';
+          } else {
+              // Create a new row with extra information
+              let newTr = document.createElement('tr');
+              newTr.classList.add('extra-info');
+              newTr.innerHTML = '<td colspan="100%">Extra information goes here...</td>';
+
+              // Insert the new row after the current row
+              tr.parentNode.insertBefore(newTr, tr.nextElementSibling);
+          }
+
+          // let row = table.row(tr);
+          // let idx = detailRows.indexOf(tr.id);
+
+          // if (tr.child.isShown()) {
+          //   tr.classList.remove('details');
+          //   row.child.hide();
+
+          //   // Remove from the 'open' array
+          //   detailRows.splice(idx, 1);
+          // }
+          // else {
+          //   tr.classList.add('details');
+          //   row.child(addRowDetails(row.data())).show();
+
+          //   // Add to the 'open' array
+          //   if (idx === -1) {
+          //     detailRows.push(tr.id);
+          //   }
+          // }
+        }
+      }
     });
+
 
     function toggleDropdown() {
       var menu = document.getElementById("DropdownMenu");
@@ -56,6 +102,8 @@
   </script>
 
 <script>
+
+  // search functionality in glossary and worldemojiday
   function searchFunction() {
     var input, filter, table, tr, td, i, txtValue;
     input = document.getElementById("searchInput");
@@ -78,6 +126,24 @@
       }
     }
   }
+
+  function addRowDetails(d) {
+    return (
+        'Full name: ' +
+        d.first_name +
+        ' ' +
+        d.last_name +
+        '<br>' +
+        'Salary: ' +
+        d.salary +
+        '<br>' +
+        'The child row can contain any data you wish, including links, images, inner tables etc.'
+    );
+  }
+
+
+
+
   </script>
 
 
@@ -144,7 +210,7 @@
         
           
             
-              <a href="/404.html" >English</a>
+              <a href="/404.html" >🇬🇧 English</a>
             
 
             

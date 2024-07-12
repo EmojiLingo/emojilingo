@@ -2,8 +2,8 @@ global:
   tagline: English
   # about: About
 langs:
-  it: Italiano
-  en: English
+  it: 🇮🇹 Italiano
+  en: 🇬🇧 English
 pages:
   home: Home
   about: About

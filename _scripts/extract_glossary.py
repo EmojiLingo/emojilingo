@@ -27,7 +27,12 @@ def main(lang):
     strings_lang = table_lang.values()
 
     md_output = ['<table>']
-    md_output.append(f'<tr>  <th>{languages[lang]}</th>  <th>EmojiLingo</th> </tr>')
+    md_output.extend([
+        '<tr class="table-header">',
+            f'<th>{languages[lang]}</th>',
+            '<th>EmojiLingo</th>',
+        '</tr>'
+    ])
     md_output.append(
         '<tr> <th colspan="100%"> <input type="text" id="searchInput" onkeyup="searchFunction()" placeholder="Search..."> </th> </tr>'
     )
