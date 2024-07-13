@@ -1,16 +1,6 @@
 import re
-import roman
 import json
 import os
-'''
-# to roman
-number = int(input('> ')) # 10
-print(roman.toRoman(number))
-
-# from roman
-number = input('> ') # X
-print(roman.fromRoman(number))
-'''
 
 
 def process_file_lines_canto(filepath):
@@ -35,8 +25,8 @@ def process_file_lines_canto(filepath):
     return result
 
 def process_IT_EN():
-    dirpath = '../_sources/dc_Hollander'
-    books = ['hell','purgatory','paradise']
+    dirpath = '_sources/dc_Hollander'
+    books = ['Hell','Purgatory','Paradise']
     full_json = {}
     '''
     {
@@ -59,7 +49,7 @@ def process_IT_EN():
     '''
     for book in books:
         full_json[book] = {}
-        len_canti = 34 if book=='hell' else 33
+        len_canti = 34 if book=='Hell' else 33
         for canto_num in range(1,len_canti+1):
             canto_num_str = f'{canto_num}'.zfill(2) # two digits
             filepath = os.path.join(dirpath, f'{book}{canto_num_str}.txt')
@@ -68,7 +58,7 @@ def process_IT_EN():
                 'IT': it_json,
                 'EN': en_json,
             }
-    output_file_json = '../_sources/dc_Hollander.json'
+    output_file_json = '_sources/dc_Hollander.json'
     with open(output_file_json, 'w') as fout:
         json.dump(full_json, fout, indent=3, ensure_ascii=False)
 

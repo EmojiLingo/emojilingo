@@ -6,6 +6,7 @@ from io import BytesIO
 import json
 import re
 import math
+import roman
 
 def download_table():
     spreadsheet_key = '13vkH3a-C0OpVTm9r5daFg_y0MN8lPASwGICaa72zaGg'
@@ -26,6 +27,25 @@ def ensure_strings_dict(d):
         for k,v in d.items()
     }
     return new_dict
+
+dc_json_file = '_sources/dc_Hollander.json'
+with open(dc_json_file) as fin:
+    dc_json = json.load(fin)
+
+def get_terzina(lang, book_en, canto_num,  line):
+    line_pos_terzina = line % 3 # position of line in terzina (e.g., 1 -> beginning)
+    start_line_terzina = line - line_pos_terzina + 1
+    canto_lang = dc_json[book_en][str(canto_num)][lang]
+    islast = len(canto_lang) == start_line_terzina
+    result = [
+        canto_lang[str(start_line_terzina)]
+    ]
+    if not islast:
+        result.extend([
+            canto_lang[str(start_line_terzina+1)],
+            canto_lang[str(start_line_terzina+2)]
+        ])
+    return result
 
 def main(lang):
     assert lang in ['IT','EN']
@@ -59,7 +79,7 @@ def main(lang):
     table_lang = ensure_strings_dict(table[lang])
     emojilingo = list(table_emojilingo.values())
     txt_lang = list(table_lang.values())
-    ref_lang = list(table[f'Ref {lang}'].values())
+    ref_EN= list(table[f'Ref EN'].values())
     source_lang = list(table[f'Source {lang}'].values())
 
     md_output = ['<table>']
@@ -77,7 +97,7 @@ def main(lang):
 
     date_txt_el_ref_source = [
         (d,t,e,r,s) for d,t,e,r,s in
-        zip(dates, txt_lang, emojilingo, ref_lang, source_lang)
+        zip(dates, txt_lang, emojilingo, ref_EN, source_lang)
     ]
     date_txt_el_ref_source_alpha = sorted(
         # sorted alpha by txt (parenthesis at the end)
@@ -85,6 +105,11 @@ def main(lang):
     )
     for d,txt,el,ref,source in date_txt_el_ref_source_alpha:
         # print(txt,el)
+        ref_book_EN, ref_canto_roman, ref_line_num = ref.split(',')
+        ref_book_EN = ref_book_EN.strip()
+        ref_canto_num = roman.fromRoman(ref_canto_roman.strip())
+        ref_line_num = int(ref_line_num)
+        terzina_lang = get_terzina(lang, ref_book_EN, ref_canto_num, ref_line_num)
         el = el.replace('\n','').replace("'","^") # "＇"
         md_output.extend([
             '<tr class="notfirst">',
@@ -97,8 +122,9 @@ def main(lang):
                 '<td></td>',
                 '<td colspan=2>',
                     # 'Extra Information:<br>',
-                    f'<strong>Ref</strong>: {ref}<br>',
-                    f'<strong>Source</strong>: {source}<br>',
+                    f'<strong>{ref}</strong><br>',
+                    # f'<strong>Source</strong>:<br>',
+                    ''.join(f'<em>{verso}</em><br> ' for verso in terzina_lang),
                 '</td>',
             '</tr>'
         ])
