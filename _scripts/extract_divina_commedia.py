@@ -25,7 +25,8 @@ def process_file_lines_canto(filepath):
     return result
 
 def process_IT_EN():
-    dirpath = '_sources/dc_Hollander'
+    dirname = os.path.dirname(__file__)
+    dirpath = os.path.join(dirname, '../_sources/dc_Hollander')
     books = ['Hell','Purgatory','Paradise']
     full_json = {}
     '''
@@ -58,10 +59,10 @@ def process_IT_EN():
                 'IT': it_json,
                 'EN': en_json,
             }
-    output_file_json = '_sources/dc_Hollander.json'
+    dirname = os.path.dirname(__file__)
+    output_file_json = os.path.join(dirname, '../_sources/dc_Hollander.json')
     with open(output_file_json, 'w') as fout:
         json.dump(full_json, fout, indent=3, ensure_ascii=False)
 
 if __name__ == "__main__":
     process_IT_EN()
-    # process_file_lines_canto('/Users/fedja/Code/emojilingo/_sources/dc_Hollander/hell01.txt')

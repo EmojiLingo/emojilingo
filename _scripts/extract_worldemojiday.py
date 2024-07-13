@@ -1,12 +1,14 @@
 # WorldEmojiDay 2024 - Parole di Dante
-
+import os
 import requests
 import pandas as pd
 from io import BytesIO
 import json
-import re
-import math
 import roman
+from sortedcontainers import SortedSet
+from Levenshtein import ratio
+
+from collections import OrderedDict
 
 def download_table():
     spreadsheet_key = '13vkH3a-C0OpVTm9r5daFg_y0MN8lPASwGICaa72zaGg'
@@ -28,20 +30,46 @@ def ensure_strings_dict(d):
     }
     return new_dict
 
-dc_json_file = '_sources/dc_Hollander.json'
+dirname = os.path.dirname(__file__)
+dc_json_file = os.path.join(dirname, '../_sources/dc_Hollander.json')
 with open(dc_json_file) as fin:
     dc_json = json.load(fin)
+
+def fuzzy_enhence(term, terzina):
+    num_chars_terzina = len(terzina)
+    # sorted candidates by best match
+    # * -score
+    # * span
+    # * result
+    candidates = SortedSet()
+    counter = 0
+    for span_start in range(num_chars_terzina):
+        for span_end in range(span_start+1, num_chars_terzina):
+            counter += 1
+            span = terzina[span_start:span_end]
+            # Using fuzz library to span ratio
+            score = ratio(term, span)
+            before = terzina[:span_start]
+            after = terzina[span_end:]
+            result =  f'{before}<em>{span}</em>{after}'
+            # sorted in tuple
+            # - by score from big to small (in absolute terms)
+            # - and then by span alphabetical order)
+            candidates.add((-score, span, result))
+            if counter > 100:
+                candidates.pop() # remove last one
+    return candidates[0][-1] # get last element in tuple (result)
 
 def get_terzina(lang, book_en, canto_num,  line, txt):
     line_pos_terzina = line % 3 # position of line in terzina
 
     match line_pos_terzina:
-        case 0: # 0 -> last one
-            start_line_terzina = line - 2
         case 1: # 1 -> beginning
             start_line_terzina = line
         case 2: # 2 -> middle
             start_line_terzina = line - 1
+        case 0: # 0 -> last one
+            start_line_terzina = line - 2
 
     canto_lang = dc_json[book_en][str(canto_num)][lang]
     islast = len(canto_lang) == start_line_terzina
@@ -54,10 +82,13 @@ def get_terzina(lang, book_en, canto_num,  line, txt):
             canto_lang[str(start_line_terzina+2)]
         ])
 
+    result = '<br>'.join(result)
+    result = fuzzy_enhence(txt, result)
     # search txt_lang in result and Emphasized text (with <em>)
-    for i, line in enumerate(result):
-        if txt in line:
-            result[i] = line.replace(txt, f'<em> {txt} </em>')
+    # for i, line in enumerate(result):
+    #     if txt in line:
+    #         result[i] = line.replace(txt, f'<em> {txt} </em>')
+
     return result
 
 def main(lang):
@@ -92,6 +123,7 @@ def main(lang):
     table_lang = ensure_strings_dict(table[lang])
     emojilingo = list(table_emojilingo.values())
     txt_lang = list(table_lang.values())
+    ref_lang= list(table[f'Ref {lang}'].values())
     ref_EN= list(table[f'Ref EN'].values())
     source_lang = list(table[f'Source {lang}'].values())
 
@@ -109,22 +141,25 @@ def main(lang):
     )
 
     date_txt_el_ref_source = [
-        (d,t,e,r,s) for d,t,e,r,s in
-        zip(dates, txt_lang, emojilingo, ref_EN, source_lang)
+        (d,t,e,r_en,r_lang,s) for d,t,e,r_en,r_lang,s in
+        zip(dates, txt_lang, emojilingo, ref_EN, ref_lang, source_lang)
     ]
     date_txt_el_ref_source_alpha = sorted(
         # sorted alpha by txt (parenthesis at the end)
         date_txt_el_ref_source, key=lambda x: (not x[1][0].isalnum(), x[1].lower())
     )
-    for d,txt,el,ref,source in date_txt_el_ref_source_alpha:
+    for d,txt,el,ref_en,ref_lang,source in date_txt_el_ref_source_alpha:
         # print(txt,el)
-        ref_book_EN, ref_canto_roman, ref_line_num = ref.split(',')
+        ref_book_EN, ref_canto_roman, ref_line_num = ref_en.split(',')
         ref_book_EN = ref_book_EN.strip()
         ref_canto_num = roman.fromRoman(ref_canto_roman.strip())
         ref_line_num = int(ref_line_num)
-        terzina_lang = get_terzina(
-            lang, ref_book_EN, ref_canto_num, ref_line_num, txt)
         el = el.replace('\n','').replace("'","^") # "＇"
+
+        terzina_lang = get_terzina(
+            lang, ref_book_EN, ref_canto_num, ref_line_num, txt
+        )
+
         md_output.extend([
             '<tr class="notfirst">',
                 # '<td>' + d + '</td>',
@@ -136,10 +171,11 @@ def main(lang):
                 '<td></td>',
                 '<td colspan=2>',
                     # 'Extra Information:<br>',
-                    f'<strong>{ref}</strong><br>',
+                    f'<strong>{ref_lang}</strong><br>',
                     # f'<strong>Source</strong>:<br>',
                     '<blockquote>' +
-                        ''.join(f'{verso}<br> ' for verso in terzina_lang) +
+                        # ''.join(f'{verso}<br> ' for verso in terzina_lang) +
+                        terzina_lang +
                     '</blockquote>',
                 '</td>',
             '</tr>'
@@ -153,3 +189,7 @@ def main(lang):
 if __name__ == "__main__":
     main('IT')
     main('EN')
+    # print(fuzzy_enhence(
+    #     "abbaglio",
+    #     "tal mi fec'ïo a quell' ultimo foco\nmentre che detto fu: \"Perché t'abbagli\nper veder cosa che qui non ha loco?",
+    # ))
