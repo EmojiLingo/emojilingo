@@ -34,6 +34,8 @@
   </style>
 
   <script>
+
+    // when clicking somewhere in the document
     document.addEventListener('click', function (event) {
       var menu = document.getElementById("DropdownMenu");
       var hb_icon = document.querySelector('.hamburger-menu-icon');
@@ -64,26 +66,6 @@
               // Insert the new row after the current row
               tr.parentNode.insertBefore(newTr, tr.nextElementSibling);
           }
-
-          // let row = table.row(tr);
-          // let idx = detailRows.indexOf(tr.id);
-
-          // if (tr.child.isShown()) {
-          //   tr.classList.remove('details');
-          //   row.child.hide();
-
-          //   // Remove from the 'open' array
-          //   detailRows.splice(idx, 1);
-          // }
-          // else {
-          //   tr.classList.add('details');
-          //   row.child(addRowDetails(row.data())).show();
-
-          //   // Add to the 'open' array
-          //   if (idx === -1) {
-          //     detailRows.push(tr.id);
-          //   }
-          // }
         }
       }
     });
@@ -109,9 +91,10 @@
     input = document.getElementById("searchInput");
     filter = input.value.toUpperCase();
     table = document.getElementsByTagName("table")[0];
-    tr = table.getElementsByTagName("tr");
+    tr = document.querySelectorAll("tr.notfirst"); // class notfirst
+    // tr = table.getElementsByTagName("tr");
     // skip search and header
-    for (i = 2; i < tr.length; i++) {
+    for (i = 0; i < tr.length; i++) {
       td0 = tr[i].getElementsByTagName("span")[0];
       td1 = tr[i].getElementsByTagName("span")[1];
       txtValue0 = td0.textContent || td0.innerText;
