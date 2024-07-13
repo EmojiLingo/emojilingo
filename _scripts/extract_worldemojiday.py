@@ -32,7 +32,7 @@ dc_json_file = '_sources/dc_Hollander.json'
 with open(dc_json_file) as fin:
     dc_json = json.load(fin)
 
-def get_terzina(lang, book_en, canto_num,  line):
+def get_terzina(lang, book_en, canto_num,  line, txt):
     line_pos_terzina = line % 3 # position of line in terzina
 
     match line_pos_terzina:
@@ -53,6 +53,11 @@ def get_terzina(lang, book_en, canto_num,  line):
             canto_lang[str(start_line_terzina+1)],
             canto_lang[str(start_line_terzina+2)]
         ])
+
+    # search txt_lang in result and Emphasized text (with <em>)
+    for i, line in enumerate(result):
+        if txt in line:
+            result[i] = line.replace(txt, f'<em> {txt} </em>')
     return result
 
 def main(lang):
@@ -117,7 +122,8 @@ def main(lang):
         ref_book_EN = ref_book_EN.strip()
         ref_canto_num = roman.fromRoman(ref_canto_roman.strip())
         ref_line_num = int(ref_line_num)
-        terzina_lang = get_terzina(lang, ref_book_EN, ref_canto_num, ref_line_num)
+        terzina_lang = get_terzina(
+            lang, ref_book_EN, ref_canto_num, ref_line_num, txt)
         el = el.replace('\n','').replace("'","^") # "＇"
         md_output.extend([
             '<tr class="notfirst">',
@@ -132,7 +138,9 @@ def main(lang):
                     # 'Extra Information:<br>',
                     f'<strong>{ref}</strong><br>',
                     # f'<strong>Source</strong>:<br>',
-                    ''.join(f'<em>{verso}</em><br> ' for verso in terzina_lang),
+                    '<blockquote>' +
+                        ''.join(f'{verso}<br> ' for verso in terzina_lang) +
+                    '</blockquote>',
                 '</td>',
             '</tr>'
         ])
