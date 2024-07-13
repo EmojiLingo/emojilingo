@@ -33,8 +33,16 @@ with open(dc_json_file) as fin:
     dc_json = json.load(fin)
 
 def get_terzina(lang, book_en, canto_num,  line):
-    line_pos_terzina = line % 3 # position of line in terzina (e.g., 1 -> beginning)
-    start_line_terzina = line - line_pos_terzina + 1
+    line_pos_terzina = line % 3 # position of line in terzina
+
+    match line_pos_terzina:
+        case 0: # 0 -> last one
+            start_line_terzina = line - 2
+        case 1: # 1 -> beginning
+            start_line_terzina = line
+        case 2: # 2 -> middle
+            start_line_terzina = line - 1
+
     canto_lang = dc_json[book_en][str(canto_num)][lang]
     islast = len(canto_lang) == start_line_terzina
     result = [
