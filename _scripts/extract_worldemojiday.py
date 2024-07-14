@@ -327,10 +327,16 @@ def main(lang):
         'IT': 'Italiano',
         'EN': 'English'
     }
-    date_header = {
-        'IT': 'Data', # (giorno.mese)
-        'EN': 'Date' # (day.month)
+    # date_header = {
+    #     'IT': 'Data', # (giorno.mese)
+    #     'EN': 'Date' # (day.month)
+    # }
+
+    intro = {
+        'IT': "<p>Emojilingo partecipa alla Giornata Mondiale degli Emoji 2024 con Parole di Dante, un glossario della Divina Commedia di Dante Alighieri tradotto in emoji con corrispondenze in italiano e in inglese, e con un esperimento di AI di traduzione dalla lingua alla emoji-lingua. Per più informazioni <a href=\"../parole_di_dante\">clicca qua</a>.</p>",
+        'EN': "<p>Emojilingo celebrates World Emoji Day 2024 with Parole di Dante (Dante’s words), a glossary of Dante Alighieri's Divine Comedy translated into emoji with correspondences in Italian and English, and with an AI experiment of translation from language to the emoji-language. For more info <a href=\"../parole_di_dante\">click here</a>.</p>"
     }
+
     table = download_table()
     # print(json.dumps(table, indent=3))
 
@@ -348,7 +354,18 @@ def main(lang):
     ref_EN= list(table[f'Ref EN'].values())
     source_lang = list(table[f'Source {lang}'].values())
 
-    md_output = ['<table>']
+    # page html output
+    md_output = []
+
+    md_output.extend([
+        '<div class="wed">',
+        intro[lang],
+        '</div>'
+    ])
+
+    md_output.append(
+        '<table class="wed">'
+    )
     md_output.extend([
         '<tr class="table-header">',
             # f'<th>{date_header[lang]}</th>',
@@ -402,6 +419,10 @@ def main(lang):
                 '</td>',
             '</tr>'
         ])
+
+    md_output.append(
+        '</table>'
+    )
 
     with open(f'_i18n/{lang.lower()}/worldemojiday.html', 'w') as f:
         f.write('\n'.join(md_output))

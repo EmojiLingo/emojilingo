@@ -60,13 +60,29 @@ em {
   border-style: none;
  } */
 
- tr.table-header {
+ div.wed {
+  background-color: #2b1987;
+  border: 2px solid #52c0b4;
+  padding: 20px;
+  margin: 20px 0;
+  text-align: center;
+  border-radius: 10px;
+  font-size: 1.0em;
+}
+
+table.wed {
+  margin: 20px 0; /* Add margin here to separate from the div above */
+}
+
+
+tr.table-header {
   font-size: 20px;
  }
 
 table {
   border-collapse: collapse;  /* collaps border between cells */
 }
+
 
 table td.dt-control {
   text-align: center;
@@ -159,12 +175,6 @@ header {
   display: flex;
 }
 
-.topnav a {
-  margin-right: 5px;
-  text-decoration: none;
-  color: black;
-}
-
 /* Style for the active menu item */
 .topnav a.active {
   font-weight: bold;
@@ -192,9 +202,11 @@ header {
   float: left;
   color: #f2f2f2;
   text-align: center;
-  padding: 14px 16px;
+  padding: 5px 10px;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 18px;
+  margin-right: 2px;
+  text-decoration: none;
 }
 
 /* Change the color of links on hover */
@@ -240,6 +252,7 @@ main{
   padding: 20px;
 }
 
+/* for smaller screen or when screen shrinks */
 @media only screen and (max-width: 950px) {
 
   body {
