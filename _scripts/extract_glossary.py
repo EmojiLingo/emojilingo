@@ -30,7 +30,7 @@ def main(lang):
     md_output.extend([
         '<tr class="table-header">',
             f'<th>{languages[lang]}</th>',
-            '<th>EmojiLingo</th>',
+            '<th>Emojilingo</th>',
         '</tr>'
     ])
     md_output.append(

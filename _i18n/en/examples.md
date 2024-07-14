@@ -1,6 +1,6 @@
 # Pinocchio
 
-| English | EmojiLingo |
+| English | Emojilingo |
 | ------- | ---------- |
 | CHAPTER 1 | <span class="emojitext">📖1️⃣</span> |
 | How it came to pass that Master Cherry the carpenter found a piece of wood that laughed and cried like a child. | <span class="emojitext">⌊🤔⁉️⌋👉^⌊🈶◀️⌋⏬⌊🎓🛠🍒⌋,👨‍🔧^⌊🕵️‍♂️◀️⌋1️⃣🔩⏩🚪↪️^⌊😭◀️⌋➕^⌊😂◀️⌋↔️1️⃣👶.</span> |

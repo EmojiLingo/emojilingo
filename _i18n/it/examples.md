@@ -1,6 +1,6 @@
 # Pinocchio
 
-| Italiano | EmojiLingo |
+| Italiano | Emojilingo |
 | ------- | ---------- |
 | CAPITOLO 1 | <span class="emojitext">📖1️⃣</span> |
 | Come andò che Maestro Ciliegia, falegname trovò un pezzo di legno che piangeva e rideva come un bambino. | <span class="emojitext">⌊🤔⁉️⌋👉^⌊🈶◀️⌋⏬⌊🎓🛠🍒⌋,👨‍🔧^⌊🕵️‍♂️◀️⌋1️⃣🔩⏩🚪↪️^⌊😭◀️⌋➕^⌊😂◀️⌋↔️1️⃣👶.</span> |

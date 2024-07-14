@@ -1,4 +1,4 @@
-# Riguardo EmojiLingo
+# Riguardo Emojilingo
 
 Attualmente composto da oltre tremila pittogrammi e simboli, e regolarmente aggiornato dal Consorzio Unicode, il catalogo internazionale degli emoji contiene segni per espressioni facciali (smiley) e gesti umani, ritratti di persone, piante e animali, riproduzioni di cibo e oggetti per le attività quotidiane e lo sport, simboli di viaggio e luoghi, bandiere, numeri, forme geometriche.
 

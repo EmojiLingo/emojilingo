@@ -24,7 +24,7 @@ table.keys(): [
     'Day', # {0: 1.01, 1: 2.01, ..., 363: 30.12, 364: 31.12}
     'IT',  # {0: 'trasumanar', 1: 'color che son sospesi', ..., 364: 'stelle'}
     'EN',  # same above
-    'EmojiLingo', # {0: '🪐', 1: "👥↪️'🕸", 2: '🧍🔆', ..., '👨\u200d👩\u200d👦', 364: '✨'}
+    'Emojilingo', # {0: '🪐', 1: "👥↪️'🕸", 2: '🧍🔆', ..., '👨\u200d👩\u200d👦', 364: '✨'}
     'Chat-GPT\n(Manuale)',          # same above
     'Chat-GPT\n(API)',          # same above
     'Chat-GPT\n(Spiegazione',          # same above
@@ -335,7 +335,7 @@ def main(lang):
     # print(json.dumps(table, indent=3))
 
     dates = list(ensure_strings_dict(table['Day']).values())
-    table_emojilingo = ensure_strings_dict(table['EmojiLingo'])
+    table_emojilingo = ensure_strings_dict(table['Emojilingo'])
     # table_chatgpt_manuale = ensure_strings_dict(table['Chat-GPT\n(Manuale)'])
     table_chatgpt_api = ensure_strings_dict(table['Chat-GPT\n(API)'])
     # table_chatgpt_spiegazione = ensure_strings_dict(table['Chat-GPT\n(Spiegazione'])
@@ -354,7 +354,7 @@ def main(lang):
             # f'<th>{date_header[lang]}</th>',
             '<th></th>', # dt-control
             f'<th>{languages[lang]}</th>',
-            f'<th>EmojiLingo</th>',
+            f'<th>Emojilingo</th>',
             f'<th>Chat-GPT</th>',
         '</tr>'
     ])
