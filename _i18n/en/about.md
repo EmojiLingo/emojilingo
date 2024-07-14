@@ -1,10 +1,10 @@
 # About Emojilingo
 
-Consisting today in over three thousand pictograms and symbols, and regularly updated by Unicode Consortium, the emoji international catalog contains signs for facial expressions (smileys) and for human gestures, portraits of people, plants and animals, reproductions of food and objects for everyday activities and sports, symbols of travel and places, flags, numbers, geometrical forms.
+Consisting today in over three thousand pictograms and symbols, and regularly updated by [Unicode Consortium](https://unicode.org), the emoji international catalog contains signs for facial expressions (smileys) and for human gestures, portraits of people, plants and animals, reproductions of food and objects for everyday activities and sports, symbols of travel and places, flags, numbers, geometrical forms.
 
 Whereas the visual content seems to provide an encyclopedic catalog with a universal status, ideally able to signify language-independent meanings, the interpretation of emojis is, on the contrary, heavily arbitrary, subject to ambiguities and differences due to linguistic and cultural specificities.
 
-Among the projects aiming at developing an emoji based language to express meanings through translation in emoji of a literary text (the most popular, Emoji Dick), Emojitaliano was created specifically to counteract the natural polysemy of emojis by a social community on Twitter (#scritturebrevi #emojitaliano), devoted to the experimental crowdsourcing construction of an international emoji code.
+Among the projects aiming at developing an emoji based language to express meanings through translation in emoji of a literary text (the most popular, [Emoji Dick](https://emojidick.com)), Emojitaliano was created specifically to counteract the natural polysemy of emojis by a social community on Twitter (#scritturebrevi #emojitaliano), devoted to the experimental crowdsourcing construction of an international emoji code.
 
 Born with the translation of Collodi’s Pinocchio, The Story of a Puppet, the structure and glossary of Emojitaliano have been later usefully reapplied for the translation of texts of different genres such as the technical declaratory prose of the Italian Constitution, the narrative prose of moral tales (i.e. The Wolf and the Lamb), Dante’s allegorical poetry of The Comedy, Giacomo Leopardi’s lyrical poem The infinite.
 
