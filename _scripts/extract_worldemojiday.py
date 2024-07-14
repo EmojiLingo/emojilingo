@@ -16,12 +16,18 @@ import openai
 from openai import OpenAI
 
 '''
-table keys: [
+SPREADSHEET
+https://docs.google.com/spreadsheets/d/13vkH3a-C0OpVTm9r5daFg_y0MN8lPASwGICaa72zaGg/edit?SPREADSHEET_GID=262347955#SPREADSHEET_GID=262347955
+
+table.keys(): [
+    'id', # 0-based index
     'Day', # {0: 1.01, 1: 2.01, ..., 363: 30.12, 364: 31.12}
     'IT',  # {0: 'trasumanar', 1: 'color che son sospesi', ..., 364: 'stelle'}
     'EN',  # same above
     'EmojiLingo', # {0: '🪐', 1: "👥↪️'🕸", 2: '🧍🔆', ..., '👨\u200d👩\u200d👦', 364: '✨'}
-    'Chat-GPT',          # same above
+    'Chat-GPT\n(Manuale)',          # same above
+    'Chat-GPT\n(API)',          # same above
+    'Chat-GPT\n(Spiegazione',          # same above
     'Ref IT', # {0: 'Paradiso, I, 70', 1: 'Inferno, II, 52', ...,  364: 'Inferno XXXIV, 139'}
     'Ref EN', # same above
     'Source IT', # {0: "Trasumanar significar ...', 364: '...'}
@@ -29,10 +35,14 @@ table keys: [
 ]
 '''
 
+CURRENT_DIR = os.path.dirname(__file__)
+CHATGPT_JSON = os.path.join(CURRENT_DIR, '../_chatgpt/', 'chatgpt.json')
+DC_JSON = os.path.join(CURRENT_DIR, '../_sources/dc_Hollander.json')
+SPREADSHEET_KEY = '13vkH3a-C0OpVTm9r5daFg_y0MN8lPASwGICaa72zaGg'
+SPREADSHEET_GID = 262347955
+
 def download_table():
-    spreadsheet_key = '13vkH3a-C0OpVTm9r5daFg_y0MN8lPASwGICaa72zaGg'
-    gid = 262347955
-    url = f'https://docs.google.com/spreadsheets/d/{spreadsheet_key}/export?gid={gid}&format=csv'
+    url = f'https://docs.google.com/spreadsheets/d/{SPREADSHEET_KEY}/export?SPREADSHEET_GID={SPREADSHEET_GID}&format=csv'
     r = requests.get(url, allow_redirects=True)
     data = r.content
     df = pd.read_csv(BytesIO(data))
@@ -48,11 +58,6 @@ def ensure_strings_dict(d):
         for k,v in d.items()
     }
     return new_dict
-
-dirname = os.path.dirname(__file__)
-dc_json_file = os.path.join(dirname, '../_sources/dc_Hollander.json')
-with open(dc_json_file) as fin:
-    dc_json = json.load(fin)
 
 def fuzzy_enhence(term, terzina):
     num_chars_terzina = len(terzina)
@@ -79,7 +84,7 @@ def fuzzy_enhence(term, terzina):
                 candidates.pop() # remove last one
     return candidates[0][-1] # get last element in tuple (result)
 
-def get_terzina(lang, book_en, canto_num,  line, txt):
+def get_terzina(dc_json, lang, book_en, canto_num,  line, txt):
     line_pos_terzina = line % 3 # position of line in terzina
 
     match line_pos_terzina:
@@ -109,85 +114,6 @@ def get_terzina(lang, book_en, canto_num,  line, txt):
     #         result[i] = line.replace(txt, f'<em> {txt} </em>')
 
     return result
-
-def main(lang):
-    assert lang in ['IT','EN']
-    languages = {
-        'IT': 'Italiano',
-        'EN': 'English'
-    }
-    date_header = {
-        'IT': 'Data', # (giorno.mese)
-        'EN': 'Date' # (day.month)
-    }
-    table = download_table()
-    # print(json.dumps(table, indent=3))
-
-    dates = list(ensure_strings_dict(table['Day']).values())
-    table_emojilingo = ensure_strings_dict(table['EmojiLingo'])
-    table_lang = ensure_strings_dict(table[lang])
-    emojilingo = list(table_emojilingo.values())
-    txt_lang = list(table_lang.values())
-    ref_lang= list(table[f'Ref {lang}'].values())
-    ref_EN= list(table[f'Ref EN'].values())
-    source_lang = list(table[f'Source {lang}'].values())
-
-    md_output = ['<table>']
-    md_output.extend([
-        '<tr class="table-header">',
-            # f'<th>{date_header[lang]}</th>',
-            '<th></th>',
-            f'<th>{languages[lang]}</th>',
-            f'<th>EmojiLingo</th>',
-        '</tr>'
-    ])
-    md_output.append(
-        '<tr> <th colspan="100%"> <input type="text" id="searchInput" onkeyup="searchFunction()" placeholder="Search..."> </th> </tr>'
-    )
-
-    date_txt_el_ref_source = [
-        (d,t,e,r_en,r_lang,s) for d,t,e,r_en,r_lang,s in
-        zip(dates, txt_lang, emojilingo, ref_EN, ref_lang, source_lang)
-    ]
-    date_txt_el_ref_source_alpha = sorted(
-        # sorted alpha by txt (parenthesis at the end)
-        date_txt_el_ref_source, key=lambda x: (not x[1][0].isalnum(), x[1].lower())
-    )
-    for d,txt,el,ref_en,ref_lang,source in date_txt_el_ref_source_alpha:
-        # print(txt,el)
-        ref_book_EN, ref_canto_roman, ref_line_num = ref_en.split(',')
-        ref_book_EN = ref_book_EN.strip()
-        ref_canto_num = roman.fromRoman(ref_canto_roman.strip())
-        ref_line_num = int(ref_line_num)
-        el = el.replace('\n','').replace("'","^") # "＇"
-
-        terzina_lang = get_terzina(
-            lang, ref_book_EN, ref_canto_num, ref_line_num, txt
-        )
-
-        md_output.extend([
-            '<tr class="notfirst">',
-                # '<td>' + d + '</td>',
-                '<td class="dt-control"></td>',
-                '<td> <span>' + txt + '</span> </td>',
-                '<td> <span class=emojitext>' + el + '</span> </td>',
-            '</tr>',
-            '<tr style="display:none" class="extra-info">',
-                '<td></td>',
-                '<td colspan=2>',
-                    # 'Extra Information:<br>',
-                    f'<strong>{ref_lang}</strong><br>',
-                    # f'<strong>Source</strong>:<br>',
-                    '<blockquote>' +
-                        # ''.join(f'{verso}<br> ' for verso in terzina_lang) +
-                        terzina_lang +
-                    '</blockquote>',
-                '</td>',
-            '</tr>'
-        ])
-
-    with open(f'_i18n/{lang.lower()}/worldemojiday.html', 'w') as f:
-        f.write('\n'.join(md_output))
 
 def retry_with_exponential_backoff(
     func,
@@ -335,9 +261,8 @@ def main_ChatGPT(debug=True):
 
     num_termini_it = len(termini_it)
 
-    filepath_json = 'chatgpt.json'
-    if os.path.exists(filepath_json):
-        with open(filepath_json) as fin:
+    if os.path.exists(CHATGPT_JSON):
+        with open(CHATGPT_JSON) as fin:
             full_result_json = json.load(fin)
             if debug:
                 print(f'Found {len(full_result_json)} stored terms')
@@ -347,7 +272,7 @@ def main_ChatGPT(debug=True):
 
     num_terms_stored = len(full_result_json)
 
-    for index in range(num_terms_stored, num_termini_it+1):
+    for index in range(num_terms_stored, num_termini_it):
 
         term = termini_it[index]
 
@@ -361,7 +286,7 @@ def main_ChatGPT(debug=True):
             print('\n-----------------------\n')
 
         # rewrite full json file for every term
-        with open(filepath_json, 'w') as fout:
+        with open(CHATGPT_JSON, 'w') as fout:
             json.dump(
                 full_result_json,
                 fout,
@@ -369,10 +294,125 @@ def main_ChatGPT(debug=True):
                 ensure_ascii=False
             )
 
-if __name__ == "__main__":
-    # main('IT')
-    # main('EN')
+'''
+Create a test.txt file with a field from chatgpt.json
+'''
+def extract_chatgpt_manual():
 
-    term = 'trasumanar'
-    # chat_with_gpt(term)
-    main_ChatGPT()
+    with open(CHATGPT_JSON) as fin:
+        full_result_json = json.load(fin)
+
+    with open('test.txt', 'w') as fout:
+        emojilingo_chatgpt = [
+            value['response_processed']['emojilingo_chatgpt']
+            for term, value in full_result_json.items()
+        ]
+        explanation = [
+            value['response_processed']['explanation']
+            for term, value in full_result_json.items()
+        ]
+        fout.write(
+            '\n'.join(explanation)
+        )
+
+
+def main(lang):
+
+    assert lang in ['IT','EN']
+
+    with open(DC_JSON) as fin:
+        dc_json = json.load(fin)
+
+    languages = {
+        'IT': 'Italiano',
+        'EN': 'English'
+    }
+    date_header = {
+        'IT': 'Data', # (giorno.mese)
+        'EN': 'Date' # (day.month)
+    }
+    table = download_table()
+    # print(json.dumps(table, indent=3))
+
+    dates = list(ensure_strings_dict(table['Day']).values())
+    table_emojilingo = ensure_strings_dict(table['EmojiLingo'])
+    # table_chatgpt_manuale = ensure_strings_dict(table['Chat-GPT\n(Manuale)'])
+    table_chatgpt_api = ensure_strings_dict(table['Chat-GPT\n(API)'])
+    # table_chatgpt_spiegazione = ensure_strings_dict(table['Chat-GPT\n(Spiegazione'])
+
+    table_lang = ensure_strings_dict(table[lang])
+    emojilingo = list(table_emojilingo.values())
+    chatgpt = list(table_chatgpt_api.values())
+    txt_lang = list(table_lang.values())
+    ref_lang= list(table[f'Ref {lang}'].values())
+    ref_EN= list(table[f'Ref EN'].values())
+    source_lang = list(table[f'Source {lang}'].values())
+
+    md_output = ['<table>']
+    md_output.extend([
+        '<tr class="table-header">',
+            # f'<th>{date_header[lang]}</th>',
+            '<th></th>', # dt-control
+            f'<th>{languages[lang]}</th>',
+            f'<th>EmojiLingo</th>',
+            f'<th>Chat-GPT</th>',
+        '</tr>'
+    ])
+    md_output.append(
+        '<tr> <th colspan="100%"> <input type="text" id="searchInput" onkeyup="searchFunction()" placeholder="Search..."> </th> </tr>'
+    )
+
+    date_txt_el_ref_source = [
+        (d, t, e, gpt, r_en, r_lang, s) for d, t, e, gpt, r_en, r_lang, s in
+        zip(dates, txt_lang, emojilingo, chatgpt, ref_EN, ref_lang, source_lang)
+    ]
+    date_txt_el_ref_source_alpha = sorted(
+        # sorted alpha by txt (parenthesis at the end)
+        date_txt_el_ref_source, key=lambda x: (not x[1][0].isalnum(), x[1].lower())
+    )
+    for d, txt, el, gpt, ref_en, ref_lang, source in date_txt_el_ref_source_alpha:
+        ref_book_EN, ref_canto_roman, ref_line_num = ref_en.split(',')
+        ref_book_EN = ref_book_EN.strip()
+        ref_canto_num = roman.fromRoman(ref_canto_roman.strip())
+        ref_line_num = int(ref_line_num)
+        el = el.replace('\n','').replace("'","^") # "＇"
+
+        terzina_lang = get_terzina(
+            dc_json, lang, ref_book_EN, ref_canto_num, ref_line_num, txt
+        )
+
+        md_output.extend([
+            '<tr class="notfirst">',
+                # '<td>' + d + '</td>', # date (better not)
+                '<td class="dt-control"></td>',
+                '<td> <span>' + txt + '</span> </td>',
+                '<td> <span class=emojitext>' + el + '</span> </td>',
+                '<td> <span class=emojitext>' +gpt + '</span> </td>',
+            '</tr>',
+            '<tr style="display:none" class="extra-info">',
+                '<td></td>', # dt-control
+                '<td colspan=3>',
+                    # 'Extra Information:<br>',
+                    f'<strong>{ref_lang}</strong><br>',
+                    # f'<strong>Source</strong>:<br>',
+                    '<blockquote>' +
+                        # ''.join(f'{verso}<br> ' for verso in terzina_lang) +
+                        terzina_lang +
+                    '</blockquote>',
+                '</td>',
+            '</tr>'
+        ])
+
+    with open(f'_i18n/{lang.lower()}/worldemojiday.html', 'w') as f:
+        f.write('\n'.join(md_output))
+
+
+
+
+if __name__ == "__main__":
+    main('IT')
+    main('EN')
+
+    # chat_with_gpt('trasumanar')
+    # main_ChatGPT()
+    # extract_chatgpt_manual() # create a temp.txt file with a field from chatgpt.json
