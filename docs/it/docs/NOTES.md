@@ -4,6 +4,9 @@ Based on [Jekyll](https://jekyllrb.com/)
 # Run
 `bundle exec jekyll serve`
 
+# ChatGPT
+https://platform.openai.com/docs/overview
+
 # Sources
 - `dc_Hollander.json` (IT/EN Text)
   - extracted from https://dante.princeton.edu/pdp
