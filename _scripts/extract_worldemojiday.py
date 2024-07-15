@@ -369,9 +369,9 @@ def main(lang):
             '<table>'
                 '<colgroup>',
                     '<col width="5%">',
-                    '<col width="45%">',
-                    '<col width="25%">',
-                    '<col width="25%">',
+                    '<col width="35%">',
+                    '<col width="28%">',
+                    '<col width="32%">',
                 '</colgroup>'
     ])
 
