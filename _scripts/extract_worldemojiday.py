@@ -366,7 +366,7 @@ def main(lang):
     # start div with table
     md_output.extend([
         '<div class="tableFixHeadScrollBody">',
-            '<table class="wed">'
+            '<table>'
                 '<colgroup>',
                     '<col width="5%">',
                     '<col width="45%">',

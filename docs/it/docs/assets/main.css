@@ -144,7 +144,7 @@ main {
 div.wed-announcement {
   position:sticky;
   background-color: #2b1987;
-  border: 2px solid #52c0b4;
+  border: 2px solid #a18fff;
   padding: 20px;
   text-align: center;
   border-radius: 10px;
@@ -226,7 +226,6 @@ html.dark table tr.dt-hasChild td.dt-control:before,
   background-clip: padding-box;
   border-style: none;
  } */
-
 
  .tableFixHeadScrollBody {
   position: relative;

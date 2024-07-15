@@ -101,11 +101,13 @@
       td2 = td_elements[2]; // chatgpt
       txtValue0 = td0.textContent || td0.innerText;
       txtValue1 = td1.textContent || td1.innerText;
-      txtValue2 = td2.textContent || td2.innerText;
+      if (td_elements.length == 3) {
+        txtValue2 = td2.textContent || td2.innerText;
+      }
       if (
         txtValue0.toUpperCase().indexOf(filter) > -1 ||
         txtValue1.indexOf(filter) > -1 ||
-        txtValue2.indexOf(filter) > -1
+        td_elements.length == 3 && txtValue2.indexOf(filter) > -1
       )
       {
         tr[i].style.display = "";
@@ -217,7 +219,7 @@
 <p>Emojilingo celebrates World Emoji Day 2024 with Parole di Dante (Dante’s words), a glossary of Dante Alighieri's Divine Comedy translated into emoji with correspondences in Italian and English, and with an AI experiment of translation from language to the emoji-language. For more info <a href="../parole_di_dante">click here</a>.</p>
 </div>
 <div class="tableFixHeadScrollBody">
-<table class="wed"><colgroup>
+<table><colgroup>
 <col width="5%" />
 <col width="45%" />
 <col width="25%" />

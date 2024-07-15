@@ -101,11 +101,13 @@
       td2 = td_elements[2]; // chatgpt
       txtValue0 = td0.textContent || td0.innerText;
       txtValue1 = td1.textContent || td1.innerText;
-      txtValue2 = td2.textContent || td2.innerText;
+      if (td_elements.length == 3) {
+        txtValue2 = td2.textContent || td2.innerText;
+      }
       if (
         txtValue0.toUpperCase().indexOf(filter) > -1 ||
         txtValue1.indexOf(filter) > -1 ||
-        txtValue2.indexOf(filter) > -1
+        td_elements.length == 3 && txtValue2.indexOf(filter) > -1
       )
       {
         tr[i].style.display = "";
@@ -213,12 +215,24 @@
   </header>
 
   <main>
-    <table>
+    <div class="tableFixHeadScrollBody">
+<table>
+<colgroup>
+<col width="60%" />
+<col width="40%" />
+</colgroup>
+<thead>
 <tr class="table-header">
 <th>English</th>
 <th>Emojilingo</th>
 </tr>
-<tr> <th colspan="100%"> <input type="text" id="searchInput" onkeyup="searchFunction()" placeholder="Search..." /> </th> </tr>
+<tr>
+<th colspan="100%">
+<input type="text" id="searchInput" onkeyup="searchFunction()" placeholder="Search..." />
+</th>
+</tr>
+</thead>
+<tbody>
 <tr class="notfirst">
 <td> <span>a</span> </td>
 <td> <span class="emojitext">1️⃣</span> </td>
@@ -329,11 +343,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>accepted</span> </td>
-<td> <span class="emojitext">👍◀️</span> </td>
+<td> <span class="emojitext">👍</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>accepted</span> </td>
-<td> <span class="emojitext">👍</span> </td>
+<td> <span class="emojitext">👍◀️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>accisted</span> </td>
@@ -405,11 +419,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>acute</span> </td>
-<td> <span class="emojitext">🤕🔝</span> </td>
+<td> <span class="emojitext">🤕</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>acute</span> </td>
-<td> <span class="emojitext">🤕</span> </td>
+<td> <span class="emojitext">🤕🔝</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>adapt</span> </td>
@@ -565,11 +579,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>Almost</span> </td>
-<td> <span class="emojitext">↔️</span> </td>
+<td> <span class="emojitext">〰️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>Almost</span> </td>
-<td> <span class="emojitext">〰️</span> </td>
+<td> <span class="emojitext">↔️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>alms</span> </td>
@@ -580,12 +594,12 @@
 <td> <span class="emojitext">🔅</span> </td>
 </tr>
 <tr class="notfirst">
-<td> <span>alone</span> </td>
-<td> <span class="emojitext">🙌</span> </td>
-</tr>
-<tr class="notfirst">
 <td> <span>Alone</span> </td>
 <td> <span class="emojitext">1️⃣⬅️</span> </td>
+</tr>
+<tr class="notfirst">
+<td> <span>alone</span> </td>
+<td> <span class="emojitext">🙌</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>along the way</span> </td>
@@ -597,11 +611,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>Already</span> </td>
-<td> <span class="emojitext">🔜</span> </td>
+<td> <span class="emojitext">◀️⏲️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>Already</span> </td>
-<td> <span class="emojitext">◀️⏲️</span> </td>
+<td> <span class="emojitext">🔜</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>Also</span> </td>
@@ -761,7 +775,7 @@
 </tr>
 <tr class="notfirst">
 <td> <span>approach</span> </td>
-<td> <span class="emojitext">🔓</span> </td>
+<td> <span class="emojitext">🤲</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>approach</span> </td>
@@ -769,7 +783,7 @@
 </tr>
 <tr class="notfirst">
 <td> <span>approach</span> </td>
-<td> <span class="emojitext">🤲</span> </td>
+<td> <span class="emojitext">🔓</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>approach</span> </td>
@@ -801,11 +815,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>arouse</span> </td>
-<td> <span class="emojitext">➡️</span> </td>
+<td> <span class="emojitext">🌬️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>arouse</span> </td>
-<td> <span class="emojitext">🌬️</span> </td>
+<td> <span class="emojitext">➡️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>arrival</span> </td>
@@ -821,11 +835,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>art</span> </td>
-<td> <span class="emojitext">🖐️🛠️</span> </td>
+<td> <span class="emojitext">🛠️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>art</span> </td>
-<td> <span class="emojitext">🛠️</span> </td>
+<td> <span class="emojitext">🖐️🛠️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>artisan</span> </td>
@@ -853,11 +867,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>as</span> </td>
-<td> <span class="emojitext">🤔⁉️</span> </td>
+<td> <span class="emojitext">↔️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>as</span> </td>
-<td> <span class="emojitext">↔️</span> </td>
+<td> <span class="emojitext">🤔⁉️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>as always</span> </td>
@@ -869,11 +883,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>as soon as</span> </td>
-<td> <span class="emojitext">🔜</span> </td>
+<td> <span class="emojitext">🔻</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>as soon as</span> </td>
-<td> <span class="emojitext">🔻</span> </td>
+<td> <span class="emojitext">🔜</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>as such</span> </td>
@@ -889,11 +903,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>ask</span> </td>
-<td> <span class="emojitext">🗣️❓</span> </td>
+<td> <span class="emojitext">🙏</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>ask</span> </td>
-<td> <span class="emojitext">🙏</span> </td>
+<td> <span class="emojitext">🗣️❓</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>ask for grace</span> </td>
@@ -948,16 +962,16 @@
 <td> <span class="emojitext">✔️</span> </td>
 </tr>
 <tr class="notfirst">
+<td> <span>At that time</span> </td>
+<td> <span class="emojitext">👉🕰️</span> </td>
+</tr>
+<tr class="notfirst">
 <td> <span>at that time</span> </td>
 <td> <span class="emojitext">👉🕰️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>At that time</span> </td>
 <td> <span class="emojitext">✔️</span> </td>
-</tr>
-<tr class="notfirst">
-<td> <span>At that time</span> </td>
-<td> <span class="emojitext">👉🕰️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>at the foot of</span> </td>
@@ -1049,11 +1063,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>bad</span> </td>
-<td> <span class="emojitext">🤕</span> </td>
+<td> <span class="emojitext">👿</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>bad</span> </td>
-<td> <span class="emojitext">👿</span> </td>
+<td> <span class="emojitext">🤕</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>bad</span> </td>
@@ -1129,11 +1143,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>basket</span> </td>
-<td> <span class="emojitext">🗑️🍞</span> </td>
+<td> <span class="emojitext">🗑️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>basket</span> </td>
-<td> <span class="emojitext">🗑️</span> </td>
+<td> <span class="emojitext">🗑️🍞</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>bath</span> </td>
@@ -1157,18 +1171,6 @@
 </tr>
 <tr class="notfirst">
 <td> <span>be</span> </td>
-<td> <span class="emojitext">🔧</span> </td>
-</tr>
-<tr class="notfirst">
-<td> <span>be</span> </td>
-<td> <span class="emojitext">🧍🪄👆</span> </td>
-</tr>
-<tr class="notfirst">
-<td> <span>be</span> </td>
-<td> <span class="emojitext">🎬</span> </td>
-</tr>
-<tr class="notfirst">
-<td> <span>be</span> </td>
 <td> <span class="emojitext">➿</span> </td>
 </tr>
 <tr class="notfirst">
@@ -1177,7 +1179,19 @@
 </tr>
 <tr class="notfirst">
 <td> <span>be</span> </td>
+<td> <span class="emojitext">🎬</span> </td>
+</tr>
+<tr class="notfirst">
+<td> <span>be</span> </td>
 <td> <span class="emojitext">🪄</span> </td>
+</tr>
+<tr class="notfirst">
+<td> <span>be</span> </td>
+<td> <span class="emojitext">🧍🪄👆</span> </td>
+</tr>
+<tr class="notfirst">
+<td> <span>be</span> </td>
+<td> <span class="emojitext">🔧</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>be a verse</span> </td>
@@ -1201,11 +1215,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>be comfortable</span> </td>
-<td> <span class="emojitext">🎁</span> </td>
+<td> <span class="emojitext">🆘</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>be comfortable</span> </td>
-<td> <span class="emojitext">🆘</span> </td>
+<td> <span class="emojitext">🎁</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>be dead</span> </td>
@@ -1325,11 +1339,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>beach</span> </td>
-<td> <span class="emojitext">🏖️</span> </td>
+<td> <span class="emojitext">⛱️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>beach</span> </td>
-<td> <span class="emojitext">⛱️</span> </td>
+<td> <span class="emojitext">🏖️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>bean pot</span> </td>
@@ -1353,18 +1367,6 @@
 </tr>
 <tr class="notfirst">
 <td> <span>beat</span> </td>
-<td> <span class="emojitext">👊🔔</span> </td>
-</tr>
-<tr class="notfirst">
-<td> <span>beat</span> </td>
-<td> <span class="emojitext">🏏</span> </td>
-</tr>
-<tr class="notfirst">
-<td> <span>beat</span> </td>
-<td> <span class="emojitext">😾</span> </td>
-</tr>
-<tr class="notfirst">
-<td> <span>beat</span> </td>
 <td> <span class="emojitext">⚠️</span> </td>
 </tr>
 <tr class="notfirst">
@@ -1373,7 +1375,19 @@
 </tr>
 <tr class="notfirst">
 <td> <span>beat</span> </td>
+<td> <span class="emojitext">👊🔔</span> </td>
+</tr>
+<tr class="notfirst">
+<td> <span>beat</span> </td>
 <td> <span class="emojitext">🔨</span> </td>
+</tr>
+<tr class="notfirst">
+<td> <span>beat</span> </td>
+<td> <span class="emojitext">🏏</span> </td>
+</tr>
+<tr class="notfirst">
+<td> <span>beat</span> </td>
+<td> <span class="emojitext">😾</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>beat</span> </td>
@@ -1401,15 +1415,15 @@
 </tr>
 <tr class="notfirst">
 <td> <span>become</span> </td>
-<td> <span class="emojitext">🪄</span> </td>
-</tr>
-<tr class="notfirst">
-<td> <span>become</span> </td>
 <td> <span class="emojitext">👞👇</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>become</span> </td>
 <td> <span class="emojitext">➿</span> </td>
+</tr>
+<tr class="notfirst">
+<td> <span>become</span> </td>
+<td> <span class="emojitext">🪄</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>Bed</span> </td>
@@ -1420,6 +1434,10 @@
 <td> <span class="emojitext">👣</span> </td>
 </tr>
 <tr class="notfirst">
+<td> <span>Before</span> </td>
+<td> <span class="emojitext">⏮️</span> </td>
+</tr>
+<tr class="notfirst">
 <td> <span>before</span> </td>
 <td> <span class="emojitext">🆚</span> </td>
 </tr>
@@ -1428,20 +1446,16 @@
 <td> <span class="emojitext">⏮️</span> </td>
 </tr>
 <tr class="notfirst">
-<td> <span>Before</span> </td>
-<td> <span class="emojitext">⏮️</span> </td>
+<td> <span>behind</span> </td>
+<td> <span class="emojitext">🆚</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>behind</span> </td>
 <td> <span class="emojitext">⏭️</span> </td>
 </tr>
 <tr class="notfirst">
-<td> <span>behind</span> </td>
-<td> <span class="emojitext">🆚</span> </td>
-</tr>
-<tr class="notfirst">
 <td> <span>believe</span> </td>
-<td> <span class="emojitext">🤔</span> </td>
+<td> <span class="emojitext">📽️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>believe</span> </td>
@@ -1449,7 +1463,7 @@
 </tr>
 <tr class="notfirst">
 <td> <span>believe</span> </td>
-<td> <span class="emojitext">📽️</span> </td>
+<td> <span class="emojitext">🤔</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>bell</span> </td>
@@ -1477,11 +1491,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>bend</span> </td>
-<td> <span class="emojitext">🚛</span> </td>
+<td> <span class="emojitext">🎎</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>bend</span> </td>
-<td> <span class="emojitext">🎎</span> </td>
+<td> <span class="emojitext">🚛</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>benefit</span> </td>
@@ -1505,10 +1519,6 @@
 </tr>
 <tr class="notfirst">
 <td> <span>between</span> </td>
-<td> <span class="emojitext">⤵️</span> </td>
-</tr>
-<tr class="notfirst">
-<td> <span>between</span> </td>
 <td> <span class="emojitext">👈</span> </td>
 </tr>
 <tr class="notfirst">
@@ -1517,6 +1527,10 @@
 </tr>
 <tr class="notfirst">
 <td> <span>Between</span> </td>
+<td> <span class="emojitext">⤵️</span> </td>
+</tr>
+<tr class="notfirst">
+<td> <span>between</span> </td>
 <td> <span class="emojitext">⤵️</span> </td>
 </tr>
 <tr class="notfirst">
@@ -1561,11 +1575,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>bird</span> </td>
-<td> <span class="emojitext">🐦</span> </td>
+<td> <span class="emojitext">🐧</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>bird</span> </td>
-<td> <span class="emojitext">🐧</span> </td>
+<td> <span class="emojitext">🐦</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>biscation</span> </td>
@@ -1573,7 +1587,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>bite</span> </td>
-<td> <span class="emojitext">👅</span> </td>
+<td> <span class="emojitext">🐲</span> </td>
+</tr>
+<tr class="notfirst">
+<td> <span>bite</span> </td>
+<td> <span class="emojitext">😬</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>bite</span> </td>
@@ -1585,11 +1603,7 @@
 </tr>
 <tr class="notfirst">
 <td> <span>bite</span> </td>
-<td> <span class="emojitext">😬</span> </td>
-</tr>
-<tr class="notfirst">
-<td> <span>bite</span> </td>
-<td> <span class="emojitext">🐲</span> </td>
+<td> <span class="emojitext">👅</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>bitterness</span> </td>
@@ -1597,22 +1611,22 @@
 </tr>
 <tr class="notfirst">
 <td> <span>bizarre</span> </td>
-<td> <span class="emojitext">😡</span> </td>
+<td> <span class="emojitext">😠</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>bizarre</span> </td>
-<td> <span class="emojitext">😠</span> </td>
+<td> <span class="emojitext">😡</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>black</span> </td>
 <td> <span class="emojitext">⚫</span> </td>
 </tr>
 <tr class="notfirst">
-<td> <span>blackbird</span> </td>
+<td> <span>Blackbird</span> </td>
 <td> <span class="emojitext">🐦</span> </td>
 </tr>
 <tr class="notfirst">
-<td> <span>Blackbird</span> </td>
+<td> <span>blackbird</span> </td>
 <td> <span class="emojitext">🐦</span> </td>
 </tr>
 <tr class="notfirst">
@@ -1761,11 +1775,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>break</span> </td>
-<td> <span class="emojitext">🔨💥</span> </td>
+<td> <span class="emojitext">🤡</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>break</span> </td>
-<td> <span class="emojitext">🤡</span> </td>
+<td> <span class="emojitext">🔨💥</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>break</span> </td>
@@ -1801,10 +1815,6 @@
 </tr>
 <tr class="notfirst">
 <td> <span>brilliant</span> </td>
-<td> <span class="emojitext">🔆</span> </td>
-</tr>
-<tr class="notfirst">
-<td> <span>brilliant</span> </td>
 <td> <span class="emojitext">💎</span> </td>
 </tr>
 <tr class="notfirst">
@@ -1812,8 +1822,8 @@
 <td> <span class="emojitext">💡🔝</span> </td>
 </tr>
 <tr class="notfirst">
-<td> <span>bring</span> </td>
-<td> <span class="emojitext">🚛</span> </td>
+<td> <span>brilliant</span> </td>
+<td> <span class="emojitext">🔆</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>bring</span> </td>
@@ -1822,6 +1832,10 @@
 <tr class="notfirst">
 <td> <span>bring</span> </td>
 <td> <span class="emojitext">✊</span> </td>
+</tr>
+<tr class="notfirst">
+<td> <span>bring</span> </td>
+<td> <span class="emojitext">🚛</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>bring back</span> </td>
@@ -1861,11 +1875,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>brute</span> </td>
-<td> <span class="emojitext">👹👹</span> </td>
+<td> <span class="emojitext">👹</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>brute</span> </td>
-<td> <span class="emojitext">👹</span> </td>
+<td> <span class="emojitext">👹👹</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>bucket</span> </td>
@@ -1893,7 +1907,7 @@
 </tr>
 <tr class="notfirst">
 <td> <span>burn</span> </td>
-<td> <span class="emojitext">🔥</span> </td>
+<td> <span class="emojitext">🗣️💬♒</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>burn</span> </td>
@@ -1901,7 +1915,7 @@
 </tr>
 <tr class="notfirst">
 <td> <span>burn</span> </td>
-<td> <span class="emojitext">🗣️💬♒</span> </td>
+<td> <span class="emojitext">🔥</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>burnt</span> </td>
@@ -1921,19 +1935,19 @@
 </tr>
 <tr class="notfirst">
 <td> <span>but</span> </td>
-<td> <span class="emojitext">🤔</span> </td>
-</tr>
-<tr class="notfirst">
-<td> <span>but</span> </td>
 <td> <span class="emojitext">✋</span> </td>
 </tr>
 <tr class="notfirst">
-<td> <span>butter</span> </td>
-<td> <span class="emojitext">🧈</span> </td>
+<td> <span>but</span> </td>
+<td> <span class="emojitext">🤔</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>butter</span> </td>
 <td> <span class="emojitext">🍚</span> </td>
+</tr>
+<tr class="notfirst">
+<td> <span>butter</span> </td>
+<td> <span class="emojitext">🧈</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>butterfly</span> </td>
@@ -2005,7 +2019,7 @@
 </tr>
 <tr class="notfirst">
 <td> <span>call</span> </td>
-<td> <span class="emojitext">🏷️</span> </td>
+<td> <span class="emojitext">🗣️🏷️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>call</span> </td>
@@ -2013,7 +2027,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>call</span> </td>
-<td> <span class="emojitext">🗣️🏷️</span> </td>
+<td> <span class="emojitext">🏷️</span> </td>
+</tr>
+<tr class="notfirst">
+<td> <span>calm</span> </td>
+<td> <span class="emojitext">♨️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>calm</span> </td>
@@ -2022,10 +2040,6 @@
 <tr class="notfirst">
 <td> <span>Calm</span> </td>
 <td> <span class="emojitext">😌</span> </td>
-</tr>
-<tr class="notfirst">
-<td> <span>calm</span> </td>
-<td> <span class="emojitext">♨️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>Camiscia</span> </td>
@@ -2037,11 +2051,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>candies</span> </td>
-<td> <span class="emojitext">💪</span> </td>
+<td> <span class="emojitext">👌</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>candies</span> </td>
-<td> <span class="emojitext">👌</span> </td>
+<td> <span class="emojitext">💪</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>candle</span> </td>
@@ -2081,11 +2095,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>careful</span> </td>
-<td> <span class="emojitext">🙇‍♂️</span> </td>
+<td> <span class="emojitext">🙇‍♀️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>careful</span> </td>
-<td> <span class="emojitext">🙇‍♀️</span> </td>
+<td> <span class="emojitext">🙇‍♂️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>careful!</span> </td>
@@ -2124,12 +2138,12 @@
 <td> <span class="emojitext">🦄</span> </td>
 </tr>
 <tr class="notfirst">
-<td> <span>Cat</span> </td>
-<td> <span class="emojitext">😼👿</span> </td>
-</tr>
-<tr class="notfirst">
 <td> <span>cat</span> </td>
 <td> <span class="emojitext">🐱</span> </td>
+</tr>
+<tr class="notfirst">
+<td> <span>Cat</span> </td>
+<td> <span class="emojitext">😼👿</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>Cat</span> </td>
@@ -2253,11 +2267,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>child</span> </td>
-<td> <span class="emojitext">👶</span> </td>
+<td> <span class="emojitext">🧍‍♂️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>child</span> </td>
-<td> <span class="emojitext">🧍‍♂️</span> </td>
+<td> <span class="emojitext">👶</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>childhood</span> </td>
@@ -2273,11 +2287,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>chip</span> </td>
-<td> <span class="emojitext">♻️🚪</span> </td>
+<td> <span class="emojitext">🔩🚪</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>chip</span> </td>
-<td> <span class="emojitext">🔩🚪</span> </td>
+<td> <span class="emojitext">♻️🚪</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>chips</span> </td>
@@ -2349,7 +2363,7 @@
 </tr>
 <tr class="notfirst">
 <td> <span>close</span> </td>
-<td> <span class="emojitext">🔒</span> </td>
+<td> <span class="emojitext">🔒🔙</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>close</span> </td>
@@ -2357,7 +2371,7 @@
 </tr>
 <tr class="notfirst">
 <td> <span>close</span> </td>
-<td> <span class="emojitext">🔒🔙</span> </td>
+<td> <span class="emojitext">🔒</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>Close eyes</span> </td>
@@ -2437,11 +2451,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>comb</span> </td>
-<td> <span class="emojitext">💆‍♂️</span> </td>
+<td> <span class="emojitext">💆‍♀️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>comb</span> </td>
-<td> <span class="emojitext">💆‍♀️</span> </td>
+<td> <span class="emojitext">💆‍♂️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>combat</span> </td>
@@ -2449,11 +2463,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>come</span> </td>
-<td> <span class="emojitext">👞👇</span> </td>
+<td> <span class="emojitext">➿</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>come</span> </td>
-<td> <span class="emojitext">➿</span> </td>
+<td> <span class="emojitext">👞👇</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>come the border</span> </td>
@@ -2497,19 +2511,19 @@
 </tr>
 <tr class="notfirst">
 <td> <span>companions</span> </td>
-<td> <span class="emojitext">👫</span> </td>
-</tr>
-<tr class="notfirst">
-<td> <span>companions</span> </td>
 <td> <span class="emojitext">👨‍❤️‍👨</span> </td>
 </tr>
 <tr class="notfirst">
-<td> <span>company</span> </td>
-<td> <span class="emojitext">👦💗</span> </td>
+<td> <span>companions</span> </td>
+<td> <span class="emojitext">👫</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>company</span> </td>
 <td> <span class="emojitext">🎭🎪</span> </td>
+</tr>
+<tr class="notfirst">
+<td> <span>company</span> </td>
+<td> <span class="emojitext">👦💗</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>compare</span> </td>
@@ -2585,11 +2599,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>confidence</span> </td>
-<td> <span class="emojitext">🙊</span> </td>
+<td> <span class="emojitext">🙈🙉🙊</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>confidence</span> </td>
-<td> <span class="emojitext">🙈🙉🙊</span> </td>
+<td> <span class="emojitext">🙊</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>confirmed</span> </td>
@@ -2649,11 +2663,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>cooked</span> </td>
-<td> <span class="emojitext">🍳</span> </td>
+<td> <span class="emojitext">♨️🍱</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>cooked</span> </td>
-<td> <span class="emojitext">♨️🍱</span> </td>
+<td> <span class="emojitext">🍳</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>cor</span> </td>
@@ -2709,11 +2723,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>crack</span> </td>
-<td> <span class="emojitext">✂️🍃</span> </td>
+<td> <span class="emojitext">💥</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>crack</span> </td>
-<td> <span class="emojitext">💥</span> </td>
+<td> <span class="emojitext">✂️🍃</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>craft</span> </td>
@@ -2757,11 +2771,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>cross</span> </td>
-<td> <span class="emojitext">✖️</span> </td>
+<td> <span class="emojitext">🦫</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>cross</span> </td>
-<td> <span class="emojitext">🦫</span> </td>
+<td> <span class="emojitext">✖️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>cross the road</span> </td>
@@ -2797,11 +2811,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>cry</span> </td>
-<td> <span class="emojitext">😭</span> </td>
+<td> <span class="emojitext">💧</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>cry</span> </td>
-<td> <span class="emojitext">💧</span> </td>
+<td> <span class="emojitext">😭</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>cry</span> </td>
@@ -2901,11 +2915,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>deal with</span> </td>
-<td> <span class="emojitext">🤴</span> </td>
+<td> <span class="emojitext">👀</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>deal with</span> </td>
-<td> <span class="emojitext">👀</span> </td>
+<td> <span class="emojitext">🤴</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>deal with every wine</span> </td>
@@ -3033,11 +3047,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>died</span> </td>
-<td> <span class="emojitext">☠️</span> </td>
+<td> <span class="emojitext">💀</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>died</span> </td>
-<td> <span class="emojitext">💀</span> </td>
+<td> <span class="emojitext">☠️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>diet</span> </td>
@@ -3101,11 +3115,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>discuss</span> </td>
-<td> <span class="emojitext">🗑️</span> </td>
+<td> <span class="emojitext">🗣️🆚</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>discuss</span> </td>
-<td> <span class="emojitext">🗣️🆚</span> </td>
+<td> <span class="emojitext">🗑️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>disdain</span> </td>
@@ -3169,11 +3183,7 @@
 </tr>
 <tr class="notfirst">
 <td> <span>Do</span> </td>
-<td> <span class="emojitext">🔧</span> </td>
-</tr>
-<tr class="notfirst">
-<td> <span>Do</span> </td>
-<td> <span class="emojitext">🎁</span> </td>
+<td> <span class="emojitext">➿</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>Do</span> </td>
@@ -3185,15 +3195,19 @@
 </tr>
 <tr class="notfirst">
 <td> <span>Do</span> </td>
-<td> <span class="emojitext">➡️</span> </td>
-</tr>
-<tr class="notfirst">
-<td> <span>Do</span> </td>
 <td> <span class="emojitext">🛎️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>Do</span> </td>
-<td> <span class="emojitext">➿</span> </td>
+<td> <span class="emojitext">🎁</span> </td>
+</tr>
+<tr class="notfirst">
+<td> <span>Do</span> </td>
+<td> <span class="emojitext">➡️</span> </td>
+</tr>
+<tr class="notfirst">
+<td> <span>Do</span> </td>
+<td> <span class="emojitext">🔧</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>do not come true</span> </td>
@@ -3233,15 +3247,15 @@
 </tr>
 <tr class="notfirst">
 <td> <span>Done</span> </td>
-<td> <span class="emojitext">✅</span> </td>
-</tr>
-<tr class="notfirst">
-<td> <span>Done</span> </td>
 <td> <span class="emojitext">🔧</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>Done</span> </td>
 <td> <span class="emojitext">🈺</span> </td>
+</tr>
+<tr class="notfirst">
+<td> <span>Done</span> </td>
+<td> <span class="emojitext">✅</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>donkey</span> </td>
@@ -3273,11 +3287,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>dramatic</span> </td>
-<td> <span class="emojitext">🎥</span> </td>
+<td> <span class="emojitext">👺</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>dramatic</span> </td>
-<td> <span class="emojitext">👺</span> </td>
+<td> <span class="emojitext">🎥</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>draw</span> </td>
@@ -3301,11 +3315,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>drinking</span> </td>
-<td> <span class="emojitext">😛💧</span> </td>
+<td> <span class="emojitext">🍷</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>drinking</span> </td>
-<td> <span class="emojitext">🍷</span> </td>
+<td> <span class="emojitext">😛💧</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>dripping wet</span> </td>
@@ -3321,19 +3335,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>drowned</span> </td>
-<td> <span class="emojitext">🌊🔽</span> </td>
-</tr>
-<tr class="notfirst">
-<td> <span>drowned</span> </td>
 <td> <span class="emojitext">🌊</span> </td>
 </tr>
 <tr class="notfirst">
-<td> <span>dry</span> </td>
-<td> <span class="emojitext">🍂</span> </td>
-</tr>
-<tr class="notfirst">
-<td> <span>dry</span> </td>
-<td> <span class="emojitext">🆖</span> </td>
+<td> <span>drowned</span> </td>
+<td> <span class="emojitext">🌊🔽</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>dry</span> </td>
@@ -3341,11 +3347,19 @@
 </tr>
 <tr class="notfirst">
 <td> <span>dry</span> </td>
-<td> <span class="emojitext">🗡️⤴️</span> </td>
+<td> <span class="emojitext">🍂</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>dry</span> </td>
 <td> <span class="emojitext">🌞🌬️</span> </td>
+</tr>
+<tr class="notfirst">
+<td> <span>dry</span> </td>
+<td> <span class="emojitext">🗡️⤴️</span> </td>
+</tr>
+<tr class="notfirst">
+<td> <span>dry</span> </td>
+<td> <span class="emojitext">🆖</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>duct</span> </td>
@@ -3529,11 +3543,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>encourage</span> </td>
-<td> <span class="emojitext">🦁</span> </td>
+<td> <span class="emojitext">🆘</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>encourage</span> </td>
-<td> <span class="emojitext">🆘</span> </td>
+<td> <span class="emojitext">🦁</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>end</span> </td>
@@ -3541,11 +3555,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>end up</span> </td>
-<td> <span class="emojitext">👞</span> </td>
+<td> <span class="emojitext">⤵️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>end up</span> </td>
-<td> <span class="emojitext">⤵️</span> </td>
+<td> <span class="emojitext">👞</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>enemy</span> </td>
@@ -3597,11 +3611,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>escape</span> </td>
-<td> <span class="emojitext">💨</span> </td>
+<td> <span class="emojitext">👞</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>escape</span> </td>
-<td> <span class="emojitext">👞</span> </td>
+<td> <span class="emojitext">💨</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>especially</span> </td>
@@ -3717,7 +3731,7 @@
 </tr>
 <tr class="notfirst">
 <td> <span>face</span> </td>
-<td> <span class="emojitext">🎭</span> </td>
+<td> <span class="emojitext">🤘</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>face</span> </td>
@@ -3725,7 +3739,7 @@
 </tr>
 <tr class="notfirst">
 <td> <span>face</span> </td>
-<td> <span class="emojitext">🤘</span> </td>
+<td> <span class="emojitext">🎭</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>face</span> </td>
@@ -3809,15 +3823,15 @@
 </tr>
 <tr class="notfirst">
 <td> <span>feel</span> </td>
+<td> <span class="emojitext">😳</span> </td>
+</tr>
+<tr class="notfirst">
+<td> <span>feel</span> </td>
 <td> <span class="emojitext">👂</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>feel</span> </td>
 <td> <span class="emojitext">💌</span> </td>
-</tr>
-<tr class="notfirst">
-<td> <span>feel</span> </td>
-<td> <span class="emojitext">😳</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>feel</span> </td>
@@ -3921,11 +3935,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>find</span> </td>
-<td> <span class="emojitext">🕵️‍♂️</span> </td>
+<td> <span class="emojitext">👀</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>find</span> </td>
-<td> <span class="emojitext">👀</span> </td>
+<td> <span class="emojitext">🕵️‍♂️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>find yourself in mind</span> </td>
@@ -3957,11 +3971,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>finished</span> </td>
-<td> <span class="emojitext">😩</span> </td>
+<td> <span class="emojitext">🗡️⤴️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>finished</span> </td>
-<td> <span class="emojitext">🗡️⤴️</span> </td>
+<td> <span class="emojitext">😩</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>finished doing</span> </td>
@@ -3973,27 +3987,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>fireplace</span> </td>
-<td> <span class="emojitext">🏭</span> </td>
-</tr>
-<tr class="notfirst">
-<td> <span>fireplace</span> </td>
 <td> <span class="emojitext">♨️</span> </td>
 </tr>
 <tr class="notfirst">
-<td> <span>first</span> </td>
-<td> <span class="emojitext">🥇</span> </td>
-</tr>
-<tr class="notfirst">
-<td> <span>first</span> </td>
-<td> <span class="emojitext">🎬</span> </td>
-</tr>
-<tr class="notfirst">
-<td> <span>first</span> </td>
-<td> <span class="emojitext">🔜</span> </td>
-</tr>
-<tr class="notfirst">
-<td> <span>first</span> </td>
-<td> <span class="emojitext">📮🔜</span> </td>
+<td> <span>fireplace</span> </td>
+<td> <span class="emojitext">🏭</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>first</span> </td>
@@ -4001,7 +3999,23 @@
 </tr>
 <tr class="notfirst">
 <td> <span>first</span> </td>
+<td> <span class="emojitext">🥇</span> </td>
+</tr>
+<tr class="notfirst">
+<td> <span>first</span> </td>
 <td> <span class="emojitext">1️⃣</span> </td>
+</tr>
+<tr class="notfirst">
+<td> <span>first</span> </td>
+<td> <span class="emojitext">📮🔜</span> </td>
+</tr>
+<tr class="notfirst">
+<td> <span>first</span> </td>
+<td> <span class="emojitext">🔜</span> </td>
+</tr>
+<tr class="notfirst">
+<td> <span>first</span> </td>
+<td> <span class="emojitext">🎬</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>first name</span> </td>
@@ -4145,11 +4159,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>foolish</span> </td>
-<td> <span class="emojitext">🙅‍♀️🦀</span> </td>
+<td> <span class="emojitext">🏹</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>foolish</span> </td>
-<td> <span class="emojitext">🏹</span> </td>
+<td> <span class="emojitext">🙅‍♀️🦀</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>foot</span> </td>
@@ -4208,12 +4222,12 @@
 <td> <span class="emojitext">↔️</span> </td>
 </tr>
 <tr class="notfirst">
-<td> <span>Force</span> </td>
-<td> <span class="emojitext">💪</span> </td>
-</tr>
-<tr class="notfirst">
 <td> <span>force</span> </td>
 <td> <span class="emojitext">💪⛓️</span> </td>
+</tr>
+<tr class="notfirst">
+<td> <span>Force</span> </td>
+<td> <span class="emojitext">💪</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>forehead</span> </td>
@@ -4241,11 +4255,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>forgive</span> </td>
-<td> <span class="emojitext">🆘👍</span> </td>
+<td> <span class="emojitext">🤬</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>forgive</span> </td>
-<td> <span class="emojitext">🤬</span> </td>
+<td> <span class="emojitext">🆘👍</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>fork</span> </td>
@@ -4253,11 +4267,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>form</span> </td>
-<td> <span class="emojitext">〽️</span> </td>
+<td> <span class="emojitext">🗡️⤴️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>form</span> </td>
-<td> <span class="emojitext">🗡️⤴️</span> </td>
+<td> <span class="emojitext">〽️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>formicola</span> </td>
@@ -4292,12 +4306,12 @@
 <td> <span class="emojitext">1️⃣4️⃣</span> </td>
 </tr>
 <tr class="notfirst">
-<td> <span>Fox</span> </td>
-<td> <span class="emojitext">🐺👿</span> </td>
-</tr>
-<tr class="notfirst">
 <td> <span>fox</span> </td>
 <td> <span class="emojitext">🐺</span> </td>
+</tr>
+<tr class="notfirst">
+<td> <span>Fox</span> </td>
+<td> <span class="emojitext">🐺👿</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>Fox</span> </td>
@@ -4329,11 +4343,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>free</span> </td>
-<td> <span class="emojitext">🆓</span> </td>
+<td> <span class="emojitext">🤝👏</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>free</span> </td>
-<td> <span class="emojitext">🤝👏</span> </td>
+<td> <span class="emojitext">🆓</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>freedom</span> </td>
@@ -4421,19 +4435,19 @@
 </tr>
 <tr class="notfirst">
 <td> <span>full</span> </td>
-<td> <span class="emojitext">🌕</span> </td>
-</tr>
-<tr class="notfirst">
-<td> <span>full</span> </td>
 <td> <span class="emojitext">📶</span> </td>
 </tr>
 <tr class="notfirst">
-<td> <span>full of</span> </td>
-<td> <span class="emojitext">📎💯</span> </td>
+<td> <span>full</span> </td>
+<td> <span class="emojitext">🌕</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>full of</span> </td>
 <td> <span class="emojitext">📎</span> </td>
+</tr>
+<tr class="notfirst">
+<td> <span>full of</span> </td>
+<td> <span class="emojitext">📎💯</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>function</span> </td>
@@ -4525,15 +4539,15 @@
 </tr>
 <tr class="notfirst">
 <td> <span>gather</span> </td>
-<td> <span class="emojitext">✊⏫</span> </td>
-</tr>
-<tr class="notfirst">
-<td> <span>gather</span> </td>
 <td> <span class="emojitext">🗃️⤴️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>gather</span> </td>
 <td> <span class="emojitext">✊⤴️</span> </td>
+</tr>
+<tr class="notfirst">
+<td> <span>gather</span> </td>
+<td> <span class="emojitext">✊⏫</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>gather together</span> </td>
@@ -4549,11 +4563,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>genius</span> </td>
-<td> <span class="emojitext">🈶🆗</span> </td>
+<td> <span class="emojitext">💡🔝</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>genius</span> </td>
-<td> <span class="emojitext">💡🔝</span> </td>
+<td> <span class="emojitext">🈶🆗</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>Gentleman</span> </td>
@@ -4617,11 +4631,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>get out</span> </td>
-<td> <span class="emojitext">✊⤴️</span> </td>
+<td> <span class="emojitext">🗑️⤴️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>get out</span> </td>
-<td> <span class="emojitext">🗑️⤴️</span> </td>
+<td> <span class="emojitext">✊⤴️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>get scared</span> </td>
@@ -4637,15 +4651,15 @@
 </tr>
 <tr class="notfirst">
 <td> <span>get up</span> </td>
-<td> <span class="emojitext">🔚</span> </td>
-</tr>
-<tr class="notfirst">
-<td> <span>get up</span> </td>
 <td> <span class="emojitext">🌪️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>get up</span> </td>
 <td> <span class="emojitext">📈</span> </td>
+</tr>
+<tr class="notfirst">
+<td> <span>get up</span> </td>
+<td> <span class="emojitext">🔚</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>getting tired</span> </td>
@@ -4668,20 +4682,20 @@
 <td> <span class="emojitext">🌺</span> </td>
 </tr>
 <tr class="notfirst">
-<td> <span>girl</span> </td>
+<td> <span>Girl</span> </td>
 <td> <span class="emojitext">👸</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>Girl</span> </td>
-<td> <span class="emojitext">👸</span> </td>
+<td> <span class="emojitext">👸🔷</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>girl</span> </td>
 <td> <span class="emojitext">🧍‍♀️</span> </td>
 </tr>
 <tr class="notfirst">
-<td> <span>Girl</span> </td>
-<td> <span class="emojitext">👸🔷</span> </td>
+<td> <span>girl</span> </td>
+<td> <span class="emojitext">👸</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>girls</span> </td>
@@ -4689,11 +4703,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>give</span> </td>
-<td> <span class="emojitext">🎁</span> </td>
+<td> <span class="emojitext">👐</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>give</span> </td>
-<td> <span class="emojitext">👐</span> </td>
+<td> <span class="emojitext">🚛🔙</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>give</span> </td>
@@ -4701,11 +4715,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>give</span> </td>
-<td> <span class="emojitext">➡️</span> </td>
+<td> <span class="emojitext">🎁</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>give</span> </td>
-<td> <span class="emojitext">🚛🔙</span> </td>
+<td> <span class="emojitext">➡️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>give a gift</span> </td>
@@ -4761,11 +4775,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>glass</span> </td>
-<td> <span class="emojitext">🍸</span> </td>
+<td> <span class="emojitext">🍷</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>glass</span> </td>
-<td> <span class="emojitext">🍷</span> </td>
+<td> <span class="emojitext">🍸</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>glass of wine</span> </td>
@@ -4829,7 +4843,7 @@
 </tr>
 <tr class="notfirst">
 <td> <span>go out</span> </td>
-<td> <span class="emojitext">📈</span> </td>
+<td> <span class="emojitext">📤</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>go out</span> </td>
@@ -4837,7 +4851,7 @@
 </tr>
 <tr class="notfirst">
 <td> <span>go out</span> </td>
-<td> <span class="emojitext">📤</span> </td>
+<td> <span class="emojitext">📈</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>go to</span> </td>
@@ -4849,11 +4863,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>go up a jump</span> </td>
-<td> <span class="emojitext">🚧</span> </td>
+<td> <span class="emojitext">🚧🔼</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>go up a jump</span> </td>
-<td> <span class="emojitext">🚧🔼</span> </td>
+<td> <span class="emojitext">🚧</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>go up to</span> </td>
@@ -4884,6 +4898,14 @@
 <td> <span class="emojitext">📀</span> </td>
 </tr>
 <tr class="notfirst">
+<td> <span>Good</span> </td>
+<td> <span class="emojitext">😍</span> </td>
+</tr>
+<tr class="notfirst">
+<td> <span>Good</span> </td>
+<td> <span class="emojitext">💟</span> </td>
+</tr>
+<tr class="notfirst">
 <td> <span>good</span> </td>
 <td> <span class="emojitext">👌⬅️</span> </td>
 </tr>
@@ -4892,16 +4914,8 @@
 <td> <span class="emojitext">👌</span> </td>
 </tr>
 <tr class="notfirst">
-<td> <span>Good</span> </td>
-<td> <span class="emojitext">💟</span> </td>
-</tr>
-<tr class="notfirst">
-<td> <span>Good</span> </td>
-<td> <span class="emojitext">😍</span> </td>
-</tr>
-<tr class="notfirst">
 <td> <span>good boy</span> </td>
-<td> <span class="emojitext">🔆</span> </td>
+<td> <span class="emojitext">😊</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>good boy</span> </td>
@@ -4913,7 +4927,7 @@
 </tr>
 <tr class="notfirst">
 <td> <span>good boy</span> </td>
-<td> <span class="emojitext">😊</span> </td>
+<td> <span class="emojitext">🔆</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>good heart</span> </td>
@@ -5077,11 +5091,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>ground</span> </td>
-<td> <span class="emojitext">📊✴️</span> </td>
+<td> <span class="emojitext">✴️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>ground</span> </td>
-<td> <span class="emojitext">✴️</span> </td>
+<td> <span class="emojitext">📊✴️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>ground floor</span> </td>
@@ -5129,7 +5143,7 @@
 </tr>
 <tr class="notfirst">
 <td> <span>half</span> </td>
-<td> <span class="emojitext">🎯</span> </td>
+<td> <span class="emojitext">〰️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>half</span> </td>
@@ -5137,7 +5151,7 @@
 </tr>
 <tr class="notfirst">
 <td> <span>half</span> </td>
-<td> <span class="emojitext">〰️</span> </td>
+<td> <span class="emojitext">🎯</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>half -minded</span> </td>
@@ -5153,7 +5167,7 @@
 </tr>
 <tr class="notfirst">
 <td> <span>hand</span> </td>
-<td> <span class="emojitext">👐</span> </td>
+<td> <span class="emojitext">✊</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>hand</span> </td>
@@ -5161,7 +5175,7 @@
 </tr>
 <tr class="notfirst">
 <td> <span>hand</span> </td>
-<td> <span class="emojitext">✊</span> </td>
+<td> <span class="emojitext">👐</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>handcuff</span> </td>
@@ -5205,11 +5219,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>happy</span> </td>
-<td> <span class="emojitext">😍</span> </td>
+<td> <span class="emojitext">😀</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>happy</span> </td>
-<td> <span class="emojitext">😀</span> </td>
+<td> <span class="emojitext">😍</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>Happy New Year</span> </td>
@@ -5225,7 +5239,7 @@
 </tr>
 <tr class="notfirst">
 <td> <span>hard</span> </td>
-<td> <span class="emojitext">💎</span> </td>
+<td> <span class="emojitext">💎🔝</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>hard</span> </td>
@@ -5233,7 +5247,7 @@
 </tr>
 <tr class="notfirst">
 <td> <span>hard</span> </td>
-<td> <span class="emojitext">💎🔝</span> </td>
+<td> <span class="emojitext">💎</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>hare</span> </td>
@@ -5253,11 +5267,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>have</span> </td>
-<td> <span class="emojitext">🈶📎</span> </td>
+<td> <span class="emojitext">🌬️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>have</span> </td>
-<td> <span class="emojitext">🌬️</span> </td>
+<td> <span class="emojitext">🈶📎</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>have a fever</span> </td>
@@ -5281,11 +5295,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>have compassion</span> </td>
-<td> <span class="emojitext">😰</span> </td>
+<td> <span class="emojitext">😇</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>have compassion</span> </td>
-<td> <span class="emojitext">😇</span> </td>
+<td> <span class="emojitext">😰</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>have compassion for</span> </td>
@@ -5337,7 +5351,7 @@
 </tr>
 <tr class="notfirst">
 <td> <span>head</span> </td>
-<td> <span class="emojitext">📽️</span> </td>
+<td> <span class="emojitext">🙆‍♂️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>head</span> </td>
@@ -5345,7 +5359,7 @@
 </tr>
 <tr class="notfirst">
 <td> <span>head</span> </td>
-<td> <span class="emojitext">🙆‍♂️</span> </td>
+<td> <span class="emojitext">📽️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>head of head</span> </td>
@@ -5456,20 +5470,20 @@
 <td> <span class="emojitext">🛐</span> </td>
 </tr>
 <tr class="notfirst">
-<td> <span>hide</span> </td>
-<td> <span class="emojitext">🛐</span> </td>
-</tr>
-<tr class="notfirst">
 <td> <span>HIDE</span> </td>
 <td> <span class="emojitext">👝</span> </td>
 </tr>
 <tr class="notfirst">
-<td> <span>high</span> </td>
-<td> <span class="emojitext">🔊</span> </td>
+<td> <span>hide</span> </td>
+<td> <span class="emojitext">🛐</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>high</span> </td>
 <td> <span class="emojitext">📶</span> </td>
+</tr>
+<tr class="notfirst">
+<td> <span>high</span> </td>
+<td> <span class="emojitext">🔊</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>high</span> </td>
@@ -5533,19 +5547,19 @@
 </tr>
 <tr class="notfirst">
 <td> <span>homacious</span> </td>
-<td> <span class="emojitext">👺</span> </td>
-</tr>
-<tr class="notfirst">
-<td> <span>homacious</span> </td>
 <td> <span class="emojitext">🗿</span> </td>
 </tr>
 <tr class="notfirst">
-<td> <span>home</span> </td>
-<td> <span class="emojitext">🏠</span> </td>
+<td> <span>homacious</span> </td>
+<td> <span class="emojitext">👺</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>home</span> </td>
 <td> <span class="emojitext">👨‍👩‍👧‍👦</span> </td>
+</tr>
+<tr class="notfirst">
+<td> <span>home</span> </td>
+<td> <span class="emojitext">🏠</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>homeland</span> </td>
@@ -5585,11 +5599,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>horse</span> </td>
-<td> <span class="emojitext">🏇🔝</span> </td>
+<td> <span class="emojitext">🐎🐎</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>horse</span> </td>
-<td> <span class="emojitext">🐎🐎</span> </td>
+<td> <span class="emojitext">🏇🔝</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>hospital</span> </td>
@@ -5845,11 +5859,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>in</span> </td>
-<td> <span class="emojitext">⌛</span> </td>
+<td> <span class="emojitext">⤵️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>in</span> </td>
-<td> <span class="emojitext">⤵️</span> </td>
+<td> <span class="emojitext">⌛</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>in a breath</span> </td>
@@ -5893,11 +5907,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>in fact</span> </td>
-<td> <span class="emojitext">🔩⬅️</span> </td>
+<td> <span class="emojitext">➕👍</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>in fact</span> </td>
-<td> <span class="emojitext">➕👍</span> </td>
+<td> <span class="emojitext">🔩⬅️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>in favor</span> </td>
@@ -5964,11 +5978,11 @@
 <td> <span class="emojitext">✔️</span> </td>
 </tr>
 <tr class="notfirst">
-<td> <span>In the</span> </td>
+<td> <span>in the</span> </td>
 <td> <span class="emojitext">⤵️</span> </td>
 </tr>
 <tr class="notfirst">
-<td> <span>in the</span> </td>
+<td> <span>In the</span> </td>
 <td> <span class="emojitext">⤵️</span> </td>
 </tr>
 <tr class="notfirst">
@@ -5988,11 +6002,11 @@
 <td> <span class="emojitext">◀️🔭</span> </td>
 </tr>
 <tr class="notfirst">
-<td> <span>In the end</span> </td>
+<td> <span>in the end</span> </td>
 <td> <span class="emojitext">🏁</span> </td>
 </tr>
 <tr class="notfirst">
-<td> <span>in the end</span> </td>
+<td> <span>In the end</span> </td>
 <td> <span class="emojitext">🏁</span> </td>
 </tr>
 <tr class="notfirst">
@@ -6061,11 +6075,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>indicate</span> </td>
-<td> <span class="emojitext">👆</span> </td>
+<td> <span class="emojitext">🪄🐉</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>indicate</span> </td>
-<td> <span class="emojitext">🪄🐉</span> </td>
+<td> <span class="emojitext">👆</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>indigestion</span> </td>
@@ -6121,27 +6135,23 @@
 </tr>
 <tr class="notfirst">
 <td> <span>innocent</span> </td>
-<td> <span class="emojitext">🙅‍♀️🚹🚺🍎</span> </td>
-</tr>
-<tr class="notfirst">
-<td> <span>innocent</span> </td>
 <td> <span class="emojitext">😇</span> </td>
 </tr>
 <tr class="notfirst">
-<td> <span>inquire</span> </td>
-<td> <span class="emojitext">💡</span> </td>
+<td> <span>innocent</span> </td>
+<td> <span class="emojitext">🙅‍♀️🚹🚺🍎</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>inquire</span> </td>
 <td> <span class="emojitext">🐒😈</span> </td>
 </tr>
 <tr class="notfirst">
-<td> <span>inside</span> </td>
-<td> <span class="emojitext">💌</span> </td>
+<td> <span>inquire</span> </td>
+<td> <span class="emojitext">💡</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>inside</span> </td>
-<td> <span class="emojitext">👈</span> </td>
+<td> <span class="emojitext">⤵️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>inside</span> </td>
@@ -6149,7 +6159,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>inside</span> </td>
-<td> <span class="emojitext">⤵️</span> </td>
+<td> <span class="emojitext">👈</span> </td>
+</tr>
+<tr class="notfirst">
+<td> <span>inside</span> </td>
+<td> <span class="emojitext">💌</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>insolent</span> </td>
@@ -6181,7 +6195,7 @@
 </tr>
 <tr class="notfirst">
 <td> <span>intend</span> </td>
-<td> <span class="emojitext">👍</span> </td>
+<td> <span class="emojitext">👂</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>intend</span> </td>
@@ -6189,11 +6203,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>intend</span> </td>
-<td> <span class="emojitext">👂</span> </td>
+<td> <span class="emojitext">💡</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>intend</span> </td>
-<td> <span class="emojitext">💡</span> </td>
+<td> <span class="emojitext">👍</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>intend to</span> </td>
@@ -6256,16 +6270,16 @@
 <td> <span class="emojitext">🏝️</span> </td>
 </tr>
 <tr class="notfirst">
-<td> <span>IT</span> </td>
-<td> <span class="emojitext">🤡</span> </td>
+<td> <span>it</span> </td>
+<td> <span class="emojitext">🚹</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>it</span> </td>
 <td> <span class="emojitext">🚺</span> </td>
 </tr>
 <tr class="notfirst">
-<td> <span>it</span> </td>
-<td> <span class="emojitext">🚹</span> </td>
+<td> <span>IT</span> </td>
+<td> <span class="emojitext">🤡</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>It is not true?</span> </td>
@@ -6305,11 +6319,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>joint</span> </td>
-<td> <span class="emojitext">🖇️</span> </td>
+<td> <span class="emojitext">🦾🦿</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>joint</span> </td>
-<td> <span class="emojitext">🦾🦿</span> </td>
+<td> <span class="emojitext">🖇️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>joke</span> </td>
@@ -6325,11 +6339,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>joy</span> </td>
-<td> <span class="emojitext">😀</span> </td>
+<td> <span class="emojitext">😁</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>joy</span> </td>
-<td> <span class="emojitext">😁</span> </td>
+<td> <span class="emojitext">😀</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>judgment</span> </td>
@@ -6401,11 +6415,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>kick</span> </td>
-<td> <span class="emojitext">👟⚽</span> </td>
+<td> <span class="emojitext">👟⚡</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>kick</span> </td>
-<td> <span class="emojitext">👟⚡</span> </td>
+<td> <span class="emojitext">👟⚽</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>kid</span> </td>
@@ -6461,7 +6475,7 @@
 </tr>
 <tr class="notfirst">
 <td> <span>know</span> </td>
-<td> <span class="emojitext">📚</span> </td>
+<td> <span class="emojitext">👀</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>know</span> </td>
@@ -6469,7 +6483,7 @@
 </tr>
 <tr class="notfirst">
 <td> <span>know</span> </td>
-<td> <span class="emojitext">👀</span> </td>
+<td> <span class="emojitext">📚</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>know that</span> </td>
@@ -6497,11 +6511,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>lady</span> </td>
-<td> <span class="emojitext">😢😔</span> </td>
+<td> <span class="emojitext">🚷</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>lady</span> </td>
-<td> <span class="emojitext">🚷</span> </td>
+<td> <span class="emojitext">😢😔</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>lama</span> </td>
@@ -6557,11 +6571,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>last</span> </td>
-<td> <span class="emojitext">🔚🔜</span> </td>
+<td> <span class="emojitext">🔭</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>last</span> </td>
-<td> <span class="emojitext">🔭</span> </td>
+<td> <span class="emojitext">🔚🔜</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>last</span> </td>
@@ -6593,19 +6607,19 @@
 </tr>
 <tr class="notfirst">
 <td> <span>LAUGH</span> </td>
-<td> <span class="emojitext">😅</span> </td>
+<td> <span class="emojitext">😂</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>laugh</span> </td>
-<td> <span class="emojitext">😅</span> </td>
+<td> <span class="emojitext">😂</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>LAUGH</span> </td>
-<td> <span class="emojitext">😂</span> </td>
+<td> <span class="emojitext">😅</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>laugh</span> </td>
-<td> <span class="emojitext">😂</span> </td>
+<td> <span class="emojitext">😅</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>launch</span> </td>
@@ -6636,12 +6650,12 @@
 <td> <span class="emojitext">🏫</span> </td>
 </tr>
 <tr class="notfirst">
-<td> <span>Leave</span> </td>
-<td> <span class="emojitext">👞🔭</span> </td>
-</tr>
-<tr class="notfirst">
 <td> <span>leave</span> </td>
 <td> <span class="emojitext">🖐️</span> </td>
+</tr>
+<tr class="notfirst">
+<td> <span>Leave</span> </td>
+<td> <span class="emojitext">👞🔭</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>leaves</span> </td>
@@ -6669,11 +6683,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>legs</span> </td>
-<td> <span class="emojitext">👢</span> </td>
+<td> <span class="emojitext">🐾</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>legs</span> </td>
-<td> <span class="emojitext">🐾</span> </td>
+<td> <span class="emojitext">👢</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>legs in front</span> </td>
@@ -6681,11 +6695,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>less</span> </td>
-<td> <span class="emojitext">🙅‍♀️</span> </td>
+<td> <span class="emojitext">➖</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>less</span> </td>
-<td> <span class="emojitext">➖</span> </td>
+<td> <span class="emojitext">🙅‍♀️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>lesser</span> </td>
@@ -6729,11 +6743,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>liar</span> </td>
-<td> <span class="emojitext">🤥</span> </td>
+<td> <span class="emojitext">🐍</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>liar</span> </td>
-<td> <span class="emojitext">🐍</span> </td>
+<td> <span class="emojitext">🤥</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>life</span> </td>
@@ -6753,7 +6767,7 @@
 </tr>
 <tr class="notfirst">
 <td> <span>light</span> </td>
-<td> <span class="emojitext">📖</span> </td>
+<td> <span class="emojitext">👶</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>light</span> </td>
@@ -6765,7 +6779,7 @@
 </tr>
 <tr class="notfirst">
 <td> <span>light</span> </td>
-<td> <span class="emojitext">👶</span> </td>
+<td> <span class="emojitext">📖</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>light -hearted</span> </td>
@@ -6825,11 +6839,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>little</span> </td>
-<td> <span class="emojitext">🔻</span> </td>
+<td> <span class="emojitext">👶</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>little</span> </td>
-<td> <span class="emojitext">👶</span> </td>
+<td> <span class="emojitext">🔻</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>little by little</span> </td>
@@ -6857,11 +6871,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>load</span> </td>
-<td> <span class="emojitext">⚖️</span> </td>
+<td> <span class="emojitext">🚚</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>load</span> </td>
-<td> <span class="emojitext">🚚</span> </td>
+<td> <span class="emojitext">⚖️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>local</span> </td>
@@ -6881,11 +6895,15 @@
 </tr>
 <tr class="notfirst">
 <td> <span>long</span> </td>
+<td> <span class="emojitext">🆚</span> </td>
+</tr>
+<tr class="notfirst">
+<td> <span>long</span> </td>
 <td> <span class="emojitext">🛏️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>long</span> </td>
-<td> <span class="emojitext">🆚</span> </td>
+<td> <span class="emojitext">🏒</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>long</span> </td>
@@ -6894,10 +6912,6 @@
 <tr class="notfirst">
 <td> <span>long</span> </td>
 <td> <span class="emojitext">➡️</span> </td>
-</tr>
-<tr class="notfirst">
-<td> <span>long</span> </td>
-<td> <span class="emojitext">🏒</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>long stretch</span> </td>
@@ -7113,11 +7127,7 @@
 </tr>
 <tr class="notfirst">
 <td> <span>man</span> </td>
-<td> <span class="emojitext">👫</span> </td>
-</tr>
-<tr class="notfirst">
-<td> <span>man</span> </td>
-<td> <span class="emojitext">🗿</span> </td>
+<td> <span class="emojitext">👨</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>man</span> </td>
@@ -7125,7 +7135,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>man</span> </td>
-<td> <span class="emojitext">👨</span> </td>
+<td> <span class="emojitext">👫</span> </td>
+</tr>
+<tr class="notfirst">
+<td> <span>man</span> </td>
+<td> <span class="emojitext">🗿</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>manage</span> </td>
@@ -7197,10 +7211,6 @@
 </tr>
 <tr class="notfirst">
 <td> <span>master</span> </td>
-<td> <span class="emojitext">🎓🛠️</span> </td>
-</tr>
-<tr class="notfirst">
-<td> <span>master</span> </td>
 <td> <span class="emojitext">🎓📚</span> </td>
 </tr>
 <tr class="notfirst">
@@ -7212,11 +7222,15 @@
 <td> <span class="emojitext">🎓🛠️</span> </td>
 </tr>
 <tr class="notfirst">
-<td> <span>Master cherry</span> </td>
-<td> <span class="emojitext">🎓🛠️🍒</span> </td>
+<td> <span>master</span> </td>
+<td> <span class="emojitext">🎓🛠️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>master cherry</span> </td>
+<td> <span class="emojitext">🎓🛠️🍒</span> </td>
+</tr>
+<tr class="notfirst">
+<td> <span>Master cherry</span> </td>
 <td> <span class="emojitext">🎓🛠️🍒</span> </td>
 </tr>
 <tr class="notfirst">
@@ -7345,11 +7359,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>misfortune</span> </td>
-<td> <span class="emojitext">🤕</span> </td>
+<td> <span class="emojitext">🤕🔝</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>misfortune</span> </td>
-<td> <span class="emojitext">🤕🔝</span> </td>
+<td> <span class="emojitext">🤕</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>mistake</span> </td>
@@ -7405,11 +7419,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>more</span> </td>
-<td> <span class="emojitext">🆕</span> </td>
+<td> <span class="emojitext">📶</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>more</span> </td>
-<td> <span class="emojitext">📶</span> </td>
+<td> <span class="emojitext">🆕</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>more and more</span> </td>
@@ -7429,19 +7443,19 @@
 </tr>
 <tr class="notfirst">
 <td> <span>moreover</span> </td>
-<td> <span class="emojitext">⏭️</span> </td>
-</tr>
-<tr class="notfirst">
-<td> <span>moreover</span> </td>
 <td> <span class="emojitext">📶</span> </td>
 </tr>
 <tr class="notfirst">
-<td> <span>morning</span> </td>
-<td> <span class="emojitext">🌅</span> </td>
+<td> <span>moreover</span> </td>
+<td> <span class="emojitext">⏭️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>morning</span> </td>
 <td> <span class="emojitext">🌇</span> </td>
+</tr>
+<tr class="notfirst">
+<td> <span>morning</span> </td>
+<td> <span class="emojitext">🌅</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>mortal</span> </td>
@@ -7505,11 +7519,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>move</span> </td>
-<td> <span class="emojitext">😢</span> </td>
+<td> <span class="emojitext">🔓</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>move</span> </td>
-<td> <span class="emojitext">🔓</span> </td>
+<td> <span class="emojitext">😢</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>move</span> </td>
@@ -7597,6 +7611,10 @@
 </tr>
 <tr class="notfirst">
 <td> <span>nail</span> </td>
+<td> <span class="emojitext">💅</span> </td>
+</tr>
+<tr class="notfirst">
+<td> <span>nail</span> </td>
 <td> <span class="emojitext">🔨📌</span> </td>
 </tr>
 <tr class="notfirst">
@@ -7604,20 +7622,16 @@
 <td> <span class="emojitext">📌</span> </td>
 </tr>
 <tr class="notfirst">
-<td> <span>nail</span> </td>
-<td> <span class="emojitext">💅</span> </td>
-</tr>
-<tr class="notfirst">
 <td> <span>nailed</span> </td>
 <td> <span class="emojitext">🔨📌</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>name</span> </td>
-<td> <span class="emojitext">🗣️🏷️</span> </td>
+<td> <span class="emojitext">🏷️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>name</span> </td>
-<td> <span class="emojitext">🏷️</span> </td>
+<td> <span class="emojitext">🗣️🏷️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>nape</span> </td>
@@ -7837,15 +7851,15 @@
 </tr>
 <tr class="notfirst">
 <td> <span>not to know</span> </td>
+<td> <span class="emojitext">🤔</span> </td>
+</tr>
+<tr class="notfirst">
+<td> <span>not to know</span> </td>
 <td> <span class="emojitext">🙈🙉🙊</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>not to know</span> </td>
 <td> <span class="emojitext">🙄</span> </td>
-</tr>
-<tr class="notfirst">
-<td> <span>not to know</span> </td>
-<td> <span class="emojitext">🤔</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>Not yet</span> </td>
@@ -7861,11 +7875,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>notice</span> </td>
-<td> <span class="emojitext">😳</span> </td>
+<td> <span class="emojitext">👀</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>notice</span> </td>
-<td> <span class="emojitext">👀</span> </td>
+<td> <span class="emojitext">😳</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>November</span> </td>
@@ -7873,19 +7887,19 @@
 </tr>
 <tr class="notfirst">
 <td> <span>Now</span> </td>
-<td> <span class="emojitext">🕰️</span> </td>
-</tr>
-<tr class="notfirst">
-<td> <span>Now</span> </td>
-<td> <span class="emojitext">🌬️</span> </td>
-</tr>
-<tr class="notfirst">
-<td> <span>Now</span> </td>
 <td> <span class="emojitext">✔️</span> </td>
+</tr>
+<tr class="notfirst">
+<td> <span>Now</span> </td>
+<td> <span class="emojitext">🕰️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>now</span> </td>
 <td> <span class="emojitext">👇⏲️</span> </td>
+</tr>
+<tr class="notfirst">
+<td> <span>Now</span> </td>
+<td> <span class="emojitext">🌬️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>number</span> </td>
@@ -7913,11 +7927,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>obvious</span> </td>
-<td> <span class="emojitext">🤗</span> </td>
+<td> <span class="emojitext">💡</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>obvious</span> </td>
-<td> <span class="emojitext">💡</span> </td>
+<td> <span class="emojitext">🤗</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>obviously</span> </td>
@@ -7929,11 +7943,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>Of</span> </td>
-<td> <span class="emojitext">⏩</span> </td>
+<td> <span class="emojitext">📎</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>Of</span> </td>
-<td> <span class="emojitext">📎</span> </td>
+<td> <span class="emojitext">⏩</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>of a thousand colors</span> </td>
@@ -7993,19 +8007,19 @@
 </tr>
 <tr class="notfirst">
 <td> <span>Oh</span> </td>
-<td> <span class="emojitext">😧</span> </td>
-</tr>
-<tr class="notfirst">
-<td> <span>Oh</span> </td>
 <td> <span class="emojitext">😮</span> </td>
 </tr>
 <tr class="notfirst">
-<td> <span>Oh!</span> </td>
+<td> <span>Oh</span> </td>
 <td> <span class="emojitext">😧</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>Oh!</span> </td>
 <td> <span class="emojitext">😩</span> </td>
+</tr>
+<tr class="notfirst">
+<td> <span>Oh!</span> </td>
+<td> <span class="emojitext">😧</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>Ohi</span> </td>
@@ -8033,10 +8047,6 @@
 </tr>
 <tr class="notfirst">
 <td> <span>on</span> </td>
-<td> <span class="emojitext">🆚</span> </td>
-</tr>
-<tr class="notfirst">
-<td> <span>on</span> </td>
 <td> <span class="emojitext">🔼</span> </td>
 </tr>
 <tr class="notfirst">
@@ -8045,11 +8055,15 @@
 </tr>
 <tr class="notfirst">
 <td> <span>on</span> </td>
+<td> <span class="emojitext">⤵️</span> </td>
+</tr>
+<tr class="notfirst">
+<td> <span>on</span> </td>
 <td> <span class="emojitext">⏭️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>on</span> </td>
-<td> <span class="emojitext">⤵️</span> </td>
+<td> <span class="emojitext">🆚</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>on doing</span> </td>
@@ -8177,11 +8191,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>opinion</span> </td>
-<td> <span class="emojitext">💭</span> </td>
+<td> <span class="emojitext">🈶↔️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>opinion</span> </td>
-<td> <span class="emojitext">🈶↔️</span> </td>
+<td> <span class="emojitext">💭</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>opponent</span> </td>
@@ -8237,11 +8251,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>other</span> </td>
-<td> <span class="emojitext">👫</span> </td>
+<td> <span class="emojitext">🆕</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>other</span> </td>
-<td> <span class="emojitext">🆕</span> </td>
+<td> <span class="emojitext">👫</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>others</span> </td>
@@ -8489,11 +8503,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>people</span> </td>
-<td> <span class="emojitext">👨‍👩‍👧‍👦</span> </td>
+<td> <span class="emojitext">👬👭</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>people</span> </td>
-<td> <span class="emojitext">👬👭</span> </td>
+<td> <span class="emojitext">👨‍👩‍👧‍👦</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>pepper</span> </td>
@@ -8505,11 +8519,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>Perhaps</span> </td>
-<td> <span class="emojitext">🤔</span> </td>
+<td> <span class="emojitext">1️⃣⬅️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>Perhaps</span> </td>
-<td> <span class="emojitext">1️⃣⬅️</span> </td>
+<td> <span class="emojitext">🤔</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>perhaps that</span> </td>
@@ -8561,15 +8575,15 @@
 </tr>
 <tr class="notfirst">
 <td> <span>piece</span> </td>
+<td> <span class="emojitext">🔩⏩🚪</span> </td>
+</tr>
+<tr class="notfirst">
+<td> <span>piece</span> </td>
 <td> <span class="emojitext">⏲️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>piece</span> </td>
 <td> <span class="emojitext">🔩</span> </td>
-</tr>
-<tr class="notfirst">
-<td> <span>piece</span> </td>
-<td> <span class="emojitext">🔩⏩🚪</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>pigeon</span> </td>
@@ -8593,11 +8607,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>pinch</span> </td>
-<td> <span class="emojitext">🙌😆</span> </td>
+<td> <span class="emojitext">🖖🦀</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>pinch</span> </td>
-<td> <span class="emojitext">🖖🦀</span> </td>
+<td> <span class="emojitext">🙌😆</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>Pine tree</span> </td>
@@ -8609,15 +8623,15 @@
 </tr>
 <tr class="notfirst">
 <td> <span>Pinocchio</span> </td>
-<td> <span class="emojitext">🌱🏃‍♂️</span> </td>
-</tr>
-<tr class="notfirst">
-<td> <span>Pinocchio</span> </td>
 <td> <span class="emojitext">🏃‍♂️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>Pinocchio</span> </td>
 <td> <span class="emojitext">🌱</span> </td>
+</tr>
+<tr class="notfirst">
+<td> <span>Pinocchio</span> </td>
+<td> <span class="emojitext">🌱🏃‍♂️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>pipe</span> </td>
@@ -8661,15 +8675,15 @@
 </tr>
 <tr class="notfirst">
 <td> <span>plant</span> </td>
-<td> <span class="emojitext">🌿</span> </td>
-</tr>
-<tr class="notfirst">
-<td> <span>plant</span> </td>
 <td> <span class="emojitext">🌲</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>plant</span> </td>
 <td> <span class="emojitext">⛳</span> </td>
+</tr>
+<tr class="notfirst">
+<td> <span>plant</span> </td>
+<td> <span class="emojitext">🌿</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>play</span> </td>
@@ -8725,15 +8739,15 @@
 </tr>
 <tr class="notfirst">
 <td> <span>poor</span> </td>
+<td> <span class="emojitext">😥</span> </td>
+</tr>
+<tr class="notfirst">
+<td> <span>poor</span> </td>
 <td> <span class="emojitext">🆖</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>poor</span> </td>
 <td> <span class="emojitext">💶📴</span> </td>
-</tr>
-<tr class="notfirst">
-<td> <span>poor</span> </td>
-<td> <span class="emojitext">😥</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>poor devil</span> </td>
@@ -8745,11 +8759,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>porcelain lamp</span> </td>
-<td> <span class="emojitext">🏮💠</span> </td>
+<td> <span class="emojitext">🏮</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>porcelain lamp</span> </td>
-<td> <span class="emojitext">🏮</span> </td>
+<td> <span class="emojitext">🏮💠</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>portion</span> </td>
@@ -8836,11 +8850,11 @@
 <td> <span class="emojitext">🤴</span> </td>
 </tr>
 <tr class="notfirst">
-<td> <span>principle</span> </td>
+<td> <span>Principle</span> </td>
 <td> <span class="emojitext">☝️📃</span> </td>
 </tr>
 <tr class="notfirst">
-<td> <span>Principle</span> </td>
+<td> <span>principle</span> </td>
 <td> <span class="emojitext">☝️📃</span> </td>
 </tr>
 <tr class="notfirst">
@@ -8889,11 +8903,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>provoke</span> </td>
-<td> <span class="emojitext">➡️</span> </td>
+<td> <span class="emojitext">🌬️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>provoke</span> </td>
-<td> <span class="emojitext">🌬️</span> </td>
+<td> <span class="emojitext">➡️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>prune</span> </td>
@@ -8909,7 +8923,7 @@
 </tr>
 <tr class="notfirst">
 <td> <span>Pull</span> </td>
-<td> <span class="emojitext">🤾‍♂️</span> </td>
+<td> <span class="emojitext">✊⏬</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>Pull</span> </td>
@@ -8917,7 +8931,7 @@
 </tr>
 <tr class="notfirst">
 <td> <span>Pull</span> </td>
-<td> <span class="emojitext">✊⏬</span> </td>
+<td> <span class="emojitext">🤾‍♂️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>Pull</span> </td>
@@ -8933,11 +8947,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>pumpkin</span> </td>
-<td> <span class="emojitext">💥🙆‍♂️</span> </td>
+<td> <span class="emojitext">🧑‍🦲</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>pumpkin</span> </td>
-<td> <span class="emojitext">🧑‍🦲</span> </td>
+<td> <span class="emojitext">💥🙆‍♂️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>punishment</span> </td>
@@ -8973,11 +8987,7 @@
 </tr>
 <tr class="notfirst">
 <td> <span>put</span> </td>
-<td> <span class="emojitext">➡️</span> </td>
-</tr>
-<tr class="notfirst">
-<td> <span>put</span> </td>
-<td> <span class="emojitext">📩</span> </td>
+<td> <span class="emojitext">👐</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>put</span> </td>
@@ -8985,11 +8995,15 @@
 </tr>
 <tr class="notfirst">
 <td> <span>put</span> </td>
-<td> <span class="emojitext">👐</span> </td>
+<td> <span class="emojitext">📩</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>put</span> </td>
 <td> <span class="emojitext">💺</span> </td>
+</tr>
+<tr class="notfirst">
+<td> <span>put</span> </td>
+<td> <span class="emojitext">➡️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>put away</span> </td>
@@ -9073,11 +9087,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>raise</span> </td>
-<td> <span class="emojitext">🔚</span> </td>
+<td> <span class="emojitext">📈</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>raise</span> </td>
-<td> <span class="emojitext">📈</span> </td>
+<td> <span class="emojitext">🔚</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>raise</span> </td>
@@ -9205,19 +9219,19 @@
 </tr>
 <tr class="notfirst">
 <td> <span>recommend</span> </td>
-<td> <span class="emojitext">🙏💯</span> </td>
-</tr>
-<tr class="notfirst">
-<td> <span>recommend</span> </td>
 <td> <span class="emojitext">💬☝️</span> </td>
 </tr>
 <tr class="notfirst">
-<td> <span>red</span> </td>
-<td> <span class="emojitext">🔴</span> </td>
+<td> <span>recommend</span> </td>
+<td> <span class="emojitext">🙏💯</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>red</span> </td>
 <td> <span class="emojitext">❤️</span> </td>
+</tr>
+<tr class="notfirst">
+<td> <span>red</span> </td>
+<td> <span class="emojitext">🔴</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>Red shrimp</span> </td>
@@ -9237,11 +9251,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>regret</span> </td>
-<td> <span class="emojitext">😰</span> </td>
+<td> <span class="emojitext">😢</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>regret</span> </td>
-<td> <span class="emojitext">😢</span> </td>
+<td> <span class="emojitext">😰</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>regular</span> </td>
@@ -9253,11 +9267,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>rejoice</span> </td>
-<td> <span class="emojitext">😀</span> </td>
+<td> <span class="emojitext">🙅‍♀️🙅‍♀️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>rejoice</span> </td>
-<td> <span class="emojitext">🙅‍♀️🙅‍♀️</span> </td>
+<td> <span class="emojitext">😀</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>rejoice everything</span> </td>
@@ -9293,15 +9307,15 @@
 </tr>
 <tr class="notfirst">
 <td> <span>remain</span> </td>
-<td> <span class="emojitext">🤷‍♂️</span> </td>
-</tr>
-<tr class="notfirst">
-<td> <span>remain</span> </td>
 <td> <span class="emojitext">⏸️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>remain</span> </td>
 <td> <span class="emojitext">😵</span> </td>
+</tr>
+<tr class="notfirst">
+<td> <span>remain</span> </td>
+<td> <span class="emojitext">🤷‍♂️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>remain without</span> </td>
@@ -9365,11 +9379,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>resentful</span> </td>
-<td> <span class="emojitext">☹️</span> </td>
+<td> <span class="emojitext">😠</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>resentful</span> </td>
-<td> <span class="emojitext">😠</span> </td>
+<td> <span class="emojitext">☹️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>resign</span> </td>
@@ -9472,16 +9486,16 @@
 <td> <span class="emojitext">⚖️</span> </td>
 </tr>
 <tr class="notfirst">
+<td> <span>right</span> </td>
+<td> <span class="emojitext">💪</span> </td>
+</tr>
+<tr class="notfirst">
 <td> <span>Right</span> </td>
 <td> <span class="emojitext">👌</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>right</span> </td>
 <td> <span class="emojitext">☝️🎩📖</span> </td>
-</tr>
-<tr class="notfirst">
-<td> <span>right</span> </td>
-<td> <span class="emojitext">💪</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>right away</span> </td>
@@ -9585,7 +9599,7 @@
 </tr>
 <tr class="notfirst">
 <td> <span>ruffle</span> </td>
-<td> <span class="emojitext">🙂🙃</span> </td>
+<td> <span class="emojitext">💥🙆‍♂️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>ruffle</span> </td>
@@ -9593,7 +9607,7 @@
 </tr>
 <tr class="notfirst">
 <td> <span>ruffle</span> </td>
-<td> <span class="emojitext">💥🙆‍♂️</span> </td>
+<td> <span class="emojitext">🙂🙃</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>ruffled</span> </td>
@@ -9613,15 +9627,15 @@
 </tr>
 <tr class="notfirst">
 <td> <span>rummage</span> </td>
-<td> <span class="emojitext">🪄🖍️</span> </td>
-</tr>
-<tr class="notfirst">
-<td> <span>rummage</span> </td>
 <td> <span class="emojitext">👀🔍</span> </td>
 </tr>
 <tr class="notfirst">
+<td> <span>rummage</span> </td>
+<td> <span class="emojitext">🪄🖍️</span> </td>
+</tr>
+<tr class="notfirst">
 <td> <span>run</span> </td>
-<td> <span class="emojitext">🐎</span> </td>
+<td> <span class="emojitext">👞🐎</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>run</span> </td>
@@ -9629,7 +9643,7 @@
 </tr>
 <tr class="notfirst">
 <td> <span>run</span> </td>
-<td> <span class="emojitext">👞🐎</span> </td>
+<td> <span class="emojitext">🐎</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>run a danger</span> </td>
@@ -9653,11 +9667,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>rush</span> </td>
-<td> <span class="emojitext">🐎</span> </td>
+<td> <span class="emojitext">⛷️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>rush</span> </td>
-<td> <span class="emojitext">⛷️</span> </td>
+<td> <span class="emojitext">🐎</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>rustle</span> </td>
@@ -9773,11 +9787,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>scene</span> </td>
-<td> <span class="emojitext">🎪</span> </td>
+<td> <span class="emojitext">🎞️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>scene</span> </td>
-<td> <span class="emojitext">🎞️</span> </td>
+<td> <span class="emojitext">🎪</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>school</span> </td>
@@ -9789,19 +9803,19 @@
 </tr>
 <tr class="notfirst">
 <td> <span>scold</span> </td>
-<td> <span class="emojitext">🗡️⤴️</span> </td>
-</tr>
-<tr class="notfirst">
-<td> <span>scold</span> </td>
 <td> <span class="emojitext">🌞🌬️</span> </td>
 </tr>
 <tr class="notfirst">
-<td> <span>scope</span> </td>
-<td> <span class="emojitext">⭕</span> </td>
+<td> <span>scold</span> </td>
+<td> <span class="emojitext">🗡️⤴️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>scope</span> </td>
 <td> <span class="emojitext">↗️</span> </td>
+</tr>
+<tr class="notfirst">
+<td> <span>scope</span> </td>
+<td> <span class="emojitext">⭕</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>scourge</span> </td>
@@ -9825,11 +9839,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>scratch</span> </td>
-<td> <span class="emojitext">👐😾</span> </td>
+<td> <span class="emojitext">⚙️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>scratch</span> </td>
-<td> <span class="emojitext">⚙️</span> </td>
+<td> <span class="emojitext">👐😾</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>scratch your head</span> </td>
@@ -9889,11 +9903,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>see</span> </td>
-<td> <span class="emojitext">👀</span> </td>
+<td> <span class="emojitext">🙄</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>see</span> </td>
-<td> <span class="emojitext">🙄</span> </td>
+<td> <span class="emojitext">👀</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>see that</span> </td>
@@ -10009,11 +10023,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>share</span> </td>
-<td> <span class="emojitext">💭👍</span> </td>
+<td> <span class="emojitext">📱🖇️📱</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>share</span> </td>
-<td> <span class="emojitext">📱🖇️📱</span> </td>
+<td> <span class="emojitext">💭👍</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>sharp</span> </td>
@@ -10137,6 +10151,10 @@
 </tr>
 <tr class="notfirst">
 <td> <span>sigh</span> </td>
+<td> <span class="emojitext">🌬️</span> </td>
+</tr>
+<tr class="notfirst">
+<td> <span>sigh</span> </td>
 <td> <span class="emojitext">🌬️🔝</span> </td>
 </tr>
 <tr class="notfirst">
@@ -10144,12 +10162,8 @@
 <td> <span class="emojitext">🙄</span> </td>
 </tr>
 <tr class="notfirst">
-<td> <span>sigh</span> </td>
-<td> <span class="emojitext">🌬️</span> </td>
-</tr>
-<tr class="notfirst">
 <td> <span>sign</span> </td>
-<td> <span class="emojitext">〽️</span> </td>
+<td> <span class="emojitext">🚦</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>sign</span> </td>
@@ -10161,7 +10175,7 @@
 </tr>
 <tr class="notfirst">
 <td> <span>sign</span> </td>
-<td> <span class="emojitext">🚦</span> </td>
+<td> <span class="emojitext">〽️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>silence</span> </td>
@@ -10185,11 +10199,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>simple</span> </td>
-<td> <span class="emojitext">⚪</span> </td>
+<td> <span class="emojitext">🆖</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>simple</span> </td>
-<td> <span class="emojitext">🆖</span> </td>
+<td> <span class="emojitext">⚪</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>Sin</span> </td>
@@ -10197,19 +10211,19 @@
 </tr>
 <tr class="notfirst">
 <td> <span>since</span> </td>
-<td> <span class="emojitext">◀️</span> </td>
-</tr>
-<tr class="notfirst">
-<td> <span>since</span> </td>
 <td> <span class="emojitext">↙️</span> </td>
 </tr>
 <tr class="notfirst">
-<td> <span>sing</span> </td>
-<td> <span class="emojitext">🗣️🎤</span> </td>
+<td> <span>since</span> </td>
+<td> <span class="emojitext">◀️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>sing</span> </td>
 <td> <span class="emojitext">🗣️🎤👶</span> </td>
+</tr>
+<tr class="notfirst">
+<td> <span>sing</span> </td>
+<td> <span class="emojitext">🗣️🎤</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>single</span> </td>
@@ -10273,11 +10287,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>sleep</span> </td>
-<td> <span class="emojitext">😴</span> </td>
+<td> <span class="emojitext">🛌💤</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>sleep</span> </td>
-<td> <span class="emojitext">🛌💤</span> </td>
+<td> <span class="emojitext">😴</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>sleepy</span> </td>
@@ -10365,11 +10379,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>so that</span> </td>
-<td> <span class="emojitext">↗️</span> </td>
+<td> <span class="emojitext">🔝➡️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>so that</span> </td>
-<td> <span class="emojitext">🔝➡️</span> </td>
+<td> <span class="emojitext">↗️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>so?</span> </td>
@@ -10437,11 +10451,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>son</span> </td>
-<td> <span class="emojitext">👦💟</span> </td>
+<td> <span class="emojitext">👦</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>son</span> </td>
-<td> <span class="emojitext">👦</span> </td>
+<td> <span class="emojitext">👦💟</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>songwriter rice</span> </td>
@@ -10497,11 +10511,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>spasm</span> </td>
-<td> <span class="emojitext">⚡</span> </td>
+<td> <span class="emojitext">😲</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>spasm</span> </td>
-<td> <span class="emojitext">😲</span> </td>
+<td> <span class="emojitext">⚡</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>spatient</span> </td>
@@ -10641,11 +10655,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>start</span> </td>
-<td> <span class="emojitext">🎬</span> </td>
+<td> <span class="emojitext">👞</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>start</span> </td>
-<td> <span class="emojitext">👞</span> </td>
+<td> <span class="emojitext">🎬</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>start again</span> </td>
@@ -10693,11 +10707,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>stick</span> </td>
-<td> <span class="emojitext">🆘</span> </td>
+<td> <span class="emojitext">📌</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>stick</span> </td>
-<td> <span class="emojitext">📌</span> </td>
+<td> <span class="emojitext">🆘</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>stick to the bell</span> </td>
@@ -10737,11 +10751,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>stop</span> </td>
-<td> <span class="emojitext">🚏</span> </td>
+<td> <span class="emojitext">🔚</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>stop</span> </td>
-<td> <span class="emojitext">🔚</span> </td>
+<td> <span class="emojitext">🚏</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>stopped</span> </td>
@@ -10761,14 +10775,14 @@
 </tr>
 <tr class="notfirst">
 <td> <span>Street</span> </td>
-<td> <span class="emojitext">🔭</span> </td>
-</tr>
-<tr class="notfirst">
-<td> <span>street</span> </td>
 <td> <span class="emojitext">🛣️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>Street</span> </td>
+<td> <span class="emojitext">🔭</span> </td>
+</tr>
+<tr class="notfirst">
+<td> <span>street</span> </td>
 <td> <span class="emojitext">🛣️</span> </td>
 </tr>
 <tr class="notfirst">
@@ -10809,19 +10823,19 @@
 </tr>
 <tr class="notfirst">
 <td> <span>strong</span> </td>
-<td> <span class="emojitext">🔊</span> </td>
-</tr>
-<tr class="notfirst">
-<td> <span>strong</span> </td>
 <td> <span class="emojitext">🌶️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>strong</span> </td>
-<td> <span class="emojitext">💪</span> </td>
+<td> <span class="emojitext">🔊</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>strong</span> </td>
 <td> <span class="emojitext">🔝</span> </td>
+</tr>
+<tr class="notfirst">
+<td> <span>strong</span> </td>
+<td> <span class="emojitext">💪</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>struggle</span> </td>
@@ -10837,11 +10851,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>stucco</span> </td>
-<td> <span class="emojitext">😳</span> </td>
+<td> <span class="emojitext">😵</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>stucco</span> </td>
-<td> <span class="emojitext">😵</span> </td>
+<td> <span class="emojitext">😳</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>stuck</span> </td>
@@ -10853,11 +10867,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>stuff</span> </td>
-<td> <span class="emojitext">📦</span> </td>
+<td> <span class="emojitext">🍽️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>stuff</span> </td>
-<td> <span class="emojitext">🍽️</span> </td>
+<td> <span class="emojitext">📦</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>stumble across</span> </td>
@@ -10889,11 +10903,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>suddenly</span> </td>
-<td> <span class="emojitext">⚡⬅️</span> </td>
+<td> <span class="emojitext">🔜</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>suddenly</span> </td>
-<td> <span class="emojitext">🔜</span> </td>
+<td> <span class="emojitext">⚡⬅️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>suffer</span> </td>
@@ -10908,28 +10922,28 @@
 <td> <span class="emojitext">🪄👉</span> </td>
 </tr>
 <tr class="notfirst">
-<td> <span>Sun</span> </td>
-<td> <span class="emojitext">☀️</span> </td>
-</tr>
-<tr class="notfirst">
 <td> <span>sun</span> </td>
 <td> <span class="emojitext">⛺</span> </td>
 </tr>
 <tr class="notfirst">
-<td> <span>Sunrise</span> </td>
-<td> <span class="emojitext">🌇</span> </td>
+<td> <span>Sun</span> </td>
+<td> <span class="emojitext">☀️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>Sunrise</span> </td>
 <td> <span class="emojitext">🌅</span> </td>
 </tr>
 <tr class="notfirst">
-<td> <span>sunset</span> </td>
-<td> <span class="emojitext">🌆</span> </td>
+<td> <span>Sunrise</span> </td>
+<td> <span class="emojitext">🌇</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>sunset</span> </td>
 <td> <span class="emojitext">❄️</span> </td>
+</tr>
+<tr class="notfirst">
+<td> <span>sunset</span> </td>
+<td> <span class="emojitext">🌆</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>superhuman</span> </td>
@@ -10985,11 +10999,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>swing</span> </td>
-<td> <span class="emojitext">🎠</span> </td>
+<td> <span class="emojitext">🌙</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>swing</span> </td>
-<td> <span class="emojitext">🌙</span> </td>
+<td> <span class="emojitext">🎠</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>switched on</span> </td>
@@ -11017,15 +11031,7 @@
 </tr>
 <tr class="notfirst">
 <td> <span>take</span> </td>
-<td> <span class="emojitext">🔧</span> </td>
-</tr>
-<tr class="notfirst">
-<td> <span>take</span> </td>
-<td> <span class="emojitext">🎬</span> </td>
-</tr>
-<tr class="notfirst">
-<td> <span>take</span> </td>
-<td> <span class="emojitext">✊</span> </td>
+<td> <span class="emojitext">📮</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>take</span> </td>
@@ -11033,11 +11039,19 @@
 </tr>
 <tr class="notfirst">
 <td> <span>take</span> </td>
-<td> <span class="emojitext">👞👇</span> </td>
+<td> <span class="emojitext">🎬</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>take</span> </td>
-<td> <span class="emojitext">📮</span> </td>
+<td> <span class="emojitext">🔧</span> </td>
+</tr>
+<tr class="notfirst">
+<td> <span>take</span> </td>
+<td> <span class="emojitext">✊</span> </td>
+</tr>
+<tr class="notfirst">
+<td> <span>take</span> </td>
+<td> <span class="emojitext">👞👇</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>take a jump</span> </td>
@@ -11057,11 +11071,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>take back</span> </td>
-<td> <span class="emojitext">🚛🔙</span> </td>
+<td> <span class="emojitext">✊🔙</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>take back</span> </td>
-<td> <span class="emojitext">✊🔙</span> </td>
+<td> <span class="emojitext">🚛🔙</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>take game of</span> </td>
@@ -11089,15 +11103,15 @@
 </tr>
 <tr class="notfirst">
 <td> <span>take up again</span> </td>
-<td> <span class="emojitext">✊🔙</span> </td>
-</tr>
-<tr class="notfirst">
-<td> <span>take up again</span> </td>
 <td> <span class="emojitext">🎬🔙</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>take up again</span> </td>
 <td> <span class="emojitext">🗣️➕</span> </td>
+</tr>
+<tr class="notfirst">
+<td> <span>take up again</span> </td>
+<td> <span class="emojitext">✊🔙</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>talent</span> </td>
@@ -11117,11 +11131,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>tape</span> </td>
-<td> <span class="emojitext">🎗️</span> </td>
+<td> <span class="emojitext">🎞️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>tape</span> </td>
-<td> <span class="emojitext">🎞️</span> </td>
+<td> <span class="emojitext">🎗️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>taper</span> </td>
@@ -11205,23 +11219,23 @@
 </tr>
 <tr class="notfirst">
 <td> <span>That</span> </td>
-<td> <span class="emojitext">↙️</span> </td>
-</tr>
-<tr class="notfirst">
-<td> <span>That</span> </td>
 <td> <span class="emojitext">⏬</span> </td>
 </tr>
 <tr class="notfirst">
-<td> <span>That</span> </td>
-<td> <span class="emojitext">↪️</span> </td>
+<td> <span>that</span> </td>
+<td> <span class="emojitext">👉</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>That</span> </td>
 <td> <span class="emojitext">🎲</span> </td>
 </tr>
 <tr class="notfirst">
-<td> <span>that</span> </td>
-<td> <span class="emojitext">👉</span> </td>
+<td> <span>That</span> </td>
+<td> <span class="emojitext">↙️</span> </td>
+</tr>
+<tr class="notfirst">
+<td> <span>That</span> </td>
+<td> <span class="emojitext">↪️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>that is to say that</span> </td>
@@ -11305,15 +11319,15 @@
 </tr>
 <tr class="notfirst">
 <td> <span>there</span> </td>
+<td> <span class="emojitext">➰</span> </td>
+</tr>
+<tr class="notfirst">
+<td> <span>there</span> </td>
 <td> <span class="emojitext">✔️✔️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>there</span> </td>
 <td> <span class="emojitext">👉</span> </td>
-</tr>
-<tr class="notfirst">
-<td> <span>there</span> </td>
-<td> <span class="emojitext">➰</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>there is the case that</span> </td>
@@ -11336,12 +11350,12 @@
 <td> <span class="emojitext">🚹🚹</span> </td>
 </tr>
 <tr class="notfirst">
-<td> <span>They</span> </td>
-<td> <span class="emojitext">🚹🚹</span> </td>
-</tr>
-<tr class="notfirst">
 <td> <span>they</span> </td>
 <td> <span class="emojitext">🚹</span> </td>
+</tr>
+<tr class="notfirst">
+<td> <span>They</span> </td>
+<td> <span class="emojitext">🚹🚹</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>they make fat</span> </td>
@@ -11353,7 +11367,7 @@
 </tr>
 <tr class="notfirst">
 <td> <span>think</span> </td>
-<td> <span class="emojitext">🤔📌</span> </td>
+<td> <span class="emojitext">💭🆗</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>think</span> </td>
@@ -11361,7 +11375,7 @@
 </tr>
 <tr class="notfirst">
 <td> <span>think</span> </td>
-<td> <span class="emojitext">💭🆗</span> </td>
+<td> <span class="emojitext">🤔📌</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>think about</span> </td>
@@ -11453,19 +11467,19 @@
 </tr>
 <tr class="notfirst">
 <td> <span>throw away</span> </td>
-<td> <span class="emojitext">🚮</span> </td>
-</tr>
-<tr class="notfirst">
-<td> <span>throw away</span> </td>
 <td> <span class="emojitext">🖐️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>throw away</span> </td>
-<td> <span class="emojitext">🤾‍♂️</span> </td>
+<td> <span class="emojitext">🚮</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>throw away</span> </td>
 <td> <span class="emojitext">🗑️</span> </td>
+</tr>
+<tr class="notfirst">
+<td> <span>throw away</span> </td>
+<td> <span class="emojitext">🤾‍♂️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>throw yourself in your arms</span> </td>
@@ -11509,7 +11523,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>time</span> </td>
-<td> <span class="emojitext">🔂</span> </td>
+<td> <span class="emojitext">⌚</span> </td>
+</tr>
+<tr class="notfirst">
+<td> <span>time</span> </td>
+<td> <span class="emojitext">⏲️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>time</span> </td>
@@ -11517,11 +11535,7 @@
 </tr>
 <tr class="notfirst">
 <td> <span>time</span> </td>
-<td> <span class="emojitext">⌚</span> </td>
-</tr>
-<tr class="notfirst">
-<td> <span>time</span> </td>
-<td> <span class="emojitext">⏲️</span> </td>
+<td> <span class="emojitext">🔂</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>time ago</span> </td>
@@ -11553,6 +11567,14 @@
 </tr>
 <tr class="notfirst">
 <td> <span>to</span> </td>
+<td> <span class="emojitext">🔜</span> </td>
+</tr>
+<tr class="notfirst">
+<td> <span>to</span> </td>
+<td> <span class="emojitext">🆚</span> </td>
+</tr>
+<tr class="notfirst">
+<td> <span>to</span> </td>
 <td> <span class="emojitext">▶️</span> </td>
 </tr>
 <tr class="notfirst">
@@ -11561,15 +11583,7 @@
 </tr>
 <tr class="notfirst">
 <td> <span>to</span> </td>
-<td> <span class="emojitext">🆚</span> </td>
-</tr>
-<tr class="notfirst">
-<td> <span>to</span> </td>
 <td> <span class="emojitext">↗️</span> </td>
-</tr>
-<tr class="notfirst">
-<td> <span>to</span> </td>
-<td> <span class="emojitext">🔜</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>to apologize</span> </td>
@@ -11777,11 +11791,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>to kiss</span> </td>
-<td> <span class="emojitext">😚</span> </td>
+<td> <span class="emojitext">😘</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>to kiss</span> </td>
-<td> <span class="emojitext">😘</span> </td>
+<td> <span class="emojitext">😚</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>to knock</span> </td>
@@ -12221,11 +12235,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>turn on</span> </td>
-<td> <span class="emojitext">🕯️</span> </td>
+<td> <span class="emojitext">🔥</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>turn on</span> </td>
-<td> <span class="emojitext">🔥</span> </td>
+<td> <span class="emojitext">🕯️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>turn over</span> </td>
@@ -12273,11 +12287,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>ugly</span> </td>
-<td> <span class="emojitext">🤢</span> </td>
+<td> <span class="emojitext">👹</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>ugly</span> </td>
-<td> <span class="emojitext">👹</span> </td>
+<td> <span class="emojitext">🤢</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>unbeen</span> </td>
@@ -12285,11 +12299,15 @@
 </tr>
 <tr class="notfirst">
 <td> <span>under</span> </td>
-<td> <span class="emojitext">⤴️</span> </td>
+<td> <span class="emojitext">🔽</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>under</span> </td>
-<td> <span class="emojitext">🔽</span> </td>
+<td> <span class="emojitext">⤴️</span> </td>
+</tr>
+<tr class="notfirst">
+<td> <span>understand</span> </td>
+<td> <span class="emojitext">💡</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>understand</span> </td>
@@ -12298,10 +12316,6 @@
 <tr class="notfirst">
 <td> <span>understand</span> </td>
 <td> <span class="emojitext">➡️📽️</span> </td>
-</tr>
-<tr class="notfirst">
-<td> <span>understand</span> </td>
-<td> <span class="emojitext">💡</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>understanding</span> </td>
@@ -12337,11 +12351,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>until</span> </td>
-<td> <span class="emojitext">🏁</span> </td>
+<td> <span class="emojitext">▶️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>until</span> </td>
-<td> <span class="emojitext">▶️</span> </td>
+<td> <span class="emojitext">🏁</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>until then</span> </td>
@@ -12561,15 +12575,15 @@
 </tr>
 <tr class="notfirst">
 <td> <span>voice</span> </td>
-<td> <span class="emojitext">🔔</span> </td>
-</tr>
-<tr class="notfirst">
-<td> <span>voice</span> </td>
 <td> <span class="emojitext">📣</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>voice</span> </td>
 <td> <span class="emojitext">🔔🌬️</span> </td>
+</tr>
+<tr class="notfirst">
+<td> <span>voice</span> </td>
+<td> <span class="emojitext">🔔</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>Voice of the wind</span> </td>
@@ -12641,11 +12655,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>warm</span> </td>
-<td> <span class="emojitext">🌞</span> </td>
+<td> <span class="emojitext">😡</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>warm</span> </td>
-<td> <span class="emojitext">😡</span> </td>
+<td> <span class="emojitext">🌞</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>warmer</span> </td>
@@ -12681,11 +12695,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>way</span> </td>
-<td> <span class="emojitext">🔧</span> </td>
+<td> <span class="emojitext">🎭</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>way</span> </td>
-<td> <span class="emojitext">🎭</span> </td>
+<td> <span class="emojitext">🔧</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>weak</span> </td>
@@ -12712,8 +12726,8 @@
 <td> <span class="emojitext">🔝</span> </td>
 </tr>
 <tr class="notfirst">
-<td> <span>Well</span> </td>
-<td> <span class="emojitext">💟</span> </td>
+<td> <span>well</span> </td>
+<td> <span class="emojitext">🆗</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>well</span> </td>
@@ -12724,8 +12738,8 @@
 <td> <span class="emojitext">🆗</span> </td>
 </tr>
 <tr class="notfirst">
-<td> <span>well</span> </td>
-<td> <span class="emojitext">🆗</span> </td>
+<td> <span>Well</span> </td>
+<td> <span class="emojitext">💟</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>wet</span> </td>
@@ -12737,7 +12751,7 @@
 </tr>
 <tr class="notfirst">
 <td> <span>What</span> </td>
-<td> <span class="emojitext">💬</span> </td>
+<td> <span class="emojitext">🙄⁉️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>What</span> </td>
@@ -12749,11 +12763,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>What</span> </td>
-<td> <span class="emojitext">🙄⁉️</span> </td>
+<td> <span class="emojitext">💭</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>What</span> </td>
-<td> <span class="emojitext">💭</span> </td>
+<td> <span class="emojitext">💬</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>what a surprise!</span> </td>
@@ -12777,11 +12791,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>What?</span> </td>
-<td> <span class="emojitext">🤔❓</span> </td>
+<td> <span class="emojitext">🙄⁉️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>What?</span> </td>
-<td> <span class="emojitext">🙄⁉️</span> </td>
+<td> <span class="emojitext">🤔❓</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>when</span> </td>
@@ -12797,11 +12811,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>where</span> </td>
-<td> <span class="emojitext">⤵️</span> </td>
+<td> <span class="emojitext">👉</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>where</span> </td>
-<td> <span class="emojitext">👉</span> </td>
+<td> <span class="emojitext">⤵️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>where from</span> </td>
@@ -12841,31 +12855,31 @@
 </tr>
 <tr class="notfirst">
 <td> <span>While</span> </td>
-<td> <span class="emojitext">🔁</span> </td>
-</tr>
-<tr class="notfirst">
-<td> <span>While</span> </td>
-<td> <span class="emojitext">🔜</span> </td>
-</tr>
-<tr class="notfirst">
-<td> <span>while</span> </td>
-<td> <span class="emojitext">⌛</span> </td>
+<td> <span class="emojitext">⏳</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>while</span> </td>
 <td> <span class="emojitext">🎲👍</span> </td>
 </tr>
 <tr class="notfirst">
-<td> <span>While</span> </td>
-<td> <span class="emojitext">⏳</span> </td>
+<td> <span>while</span> </td>
+<td> <span class="emojitext">⌛</span> </td>
 </tr>
 <tr class="notfirst">
-<td> <span>whim</span> </td>
-<td> <span class="emojitext">🐒</span> </td>
+<td> <span>While</span> </td>
+<td> <span class="emojitext">🔜</span> </td>
+</tr>
+<tr class="notfirst">
+<td> <span>While</span> </td>
+<td> <span class="emojitext">🔁</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>whim</span> </td>
 <td> <span class="emojitext">🃏</span> </td>
+</tr>
+<tr class="notfirst">
+<td> <span>whim</span> </td>
+<td> <span class="emojitext">🐒</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>whining</span> </td>
@@ -12905,11 +12919,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>who</span> </td>
-<td> <span class="emojitext">↪️</span> </td>
+<td> <span class="emojitext">👤</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>who</span> </td>
-<td> <span class="emojitext">👤</span> </td>
+<td> <span class="emojitext">↪️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>who knows</span> </td>
@@ -12973,11 +12987,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>wing</span> </td>
-<td> <span class="emojitext">⛰️</span> </td>
+<td> <span class="emojitext">💦💥</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>wing</span> </td>
-<td> <span class="emojitext">💦💥</span> </td>
+<td> <span class="emojitext">⛰️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>wings</span> </td>
@@ -12989,11 +13003,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>winter</span> </td>
-<td> <span class="emojitext">❄️</span> </td>
+<td> <span class="emojitext">⌛❄️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>winter</span> </td>
-<td> <span class="emojitext">⌛❄️</span> </td>
+<td> <span class="emojitext">❄️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>witch</span> </td>
@@ -13093,11 +13107,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>word</span> </td>
-<td> <span class="emojitext">🌬️</span> </td>
+<td> <span class="emojitext">💬</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>word</span> </td>
-<td> <span class="emojitext">💬</span> </td>
+<td> <span class="emojitext">🌬️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>words smiled</span> </td>
@@ -13108,11 +13122,11 @@
 <td> <span class="emojitext">✋🛠️🖊️</span> </td>
 </tr>
 <tr class="notfirst">
-<td> <span>work</span> </td>
+<td> <span>Work</span> </td>
 <td> <span class="emojitext">🖐️🛠️</span> </td>
 </tr>
 <tr class="notfirst">
-<td> <span>Work</span> </td>
+<td> <span>work</span> </td>
 <td> <span class="emojitext">🖐️🛠️</span> </td>
 </tr>
 <tr class="notfirst">
@@ -13177,11 +13191,11 @@
 </tr>
 <tr class="notfirst">
 <td> <span>year</span> </td>
-<td> <span class="emojitext">🗓️</span> </td>
+<td> <span class="emojitext">🌏➰🌞</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>year</span> </td>
-<td> <span class="emojitext">🌏➰🌞</span> </td>
+<td> <span class="emojitext">🗓️</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>yellow</span> </td>
@@ -13204,12 +13218,12 @@
 <td> <span class="emojitext">👆👆</span> </td>
 </tr>
 <tr class="notfirst">
-<td> <span>You</span> </td>
-<td> <span class="emojitext">👆🎩</span> </td>
-</tr>
-<tr class="notfirst">
 <td> <span>you</span> </td>
 <td> <span class="emojitext">👆</span> </td>
+</tr>
+<tr class="notfirst">
+<td> <span>You</span> </td>
+<td> <span class="emojitext">👆🎩</span> </td>
 </tr>
 <tr class="notfirst">
 <td> <span>you can see that</span> </td>
@@ -13263,8 +13277,10 @@
 <td> <span>zum</span> </td>
 <td> <span class="emojitext">🥁💥‼️</span> </td>
 </tr>
-
+</tbody>
 </table>
+</div>
+
 
   </main>
 
