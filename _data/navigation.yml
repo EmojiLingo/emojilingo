@@ -13,8 +13,8 @@ menu_items:
       path_canonical: /glossary/
       path: /it/glossary/
     - label: Esempi
-      path_canonical: /examples/
-      path: /it/examples/
+      path_canonical: /specimens/
+      path: /it/specimens/
     - label: "#WorldEmojiDay"
       path_canonical: /worldemojiday/
       path: /it/worldemojiday/
@@ -40,9 +40,9 @@ menu_items:
     - label: Glossary
       path_canonical: /glossary/
       path: /glossary/
-    - label: Examples
-      path_canonical: /examples/
-      path: /examples/
+    - label: Specimens
+      path_canonical: /specimens/
+      path: /specimens/
     - label: "#WorldEmojiDay"
       path_canonical: /worldemojiday/
       path: /worldemojiday/
