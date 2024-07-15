@@ -1,3 +1,10 @@
+
+html {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
 /* Reset some default styles */
 body, h1, h2, h3, h4, h5, h6, p {
   margin: 0;
@@ -5,10 +12,11 @@ body, h1, h2, h3, h4, h5, h6, p {
 }
 
 body {
+  height: 100%;
   display: flex;
   flex-direction: column;
-  margin: 0; /* Add this to reset default margin */
-  padding-top: 80px; /* Adjust the padding-top value based on your nav-wrapper height */
+  /* margin: 0; */
+  /* padding-top: 5%;  */
   background-color: #1a1a1a;
   color: #ffffff;
   /* font-family: 'Calistoga', sans-serif; */
@@ -16,6 +24,51 @@ body {
   font-size: 20px;
   line-height: 1.6;
 }
+
+a {
+  color: #a0d9ff;
+  transition: color 0.3s ease-in-out;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #a0d9ff;
+}
+
+h1 {
+  font-size: 22px;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  font-size: 12px;
+}
+
+hr {
+  border-color: #a0d9ff;
+}
+
+
+p {
+  text-indent: 0px;
+  /* line-height: 32px; */
+  /* margin-bottom: 18px; */
+}
+
 
 blockquote {
   /* margin-left: 20px; */
@@ -54,36 +107,89 @@ em {
   margin-right: -40px;
 }
 
-/* tr.notfirst:hover{
-  background:rgb(211, 150, 218);
-  background-clip: padding-box;
-  border-style: none;
- } */
+header {
+  box-sizing: border-box;
+  position: sticky;
+  top: 0;
+  height: 10%;
+  width: 100%;
+  /* padding: 10px; */
+  justify-content: space-between;
+  align-items: center;
+  background-color: #5c7187;
+  z-index: 1000; /* Adjust the z-index based on your needs */
+  flex-shrink: 0; /* Prevent header and footer from shrinking */
+}
 
- /* WorldEmojiDay (wed) */
- div.wed {
+main {
+  box-sizing: border-box;
+  position: sticky;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  top: 5%; /* 5% of height of body */
+  bottom: 5%; /* 5% of height of body */
+  max-width: 80%;
+  height: 75%; /* 10% header, 5% main.top, 5% main.bottom 10% footer */
+  margin: auto;
+  background-color: #5c7187;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+/* WED */
+
+/* WorldEmojiDay (wed-announcement) */
+div.wed-announcement {
+  position:sticky;
   background-color: #2b1987;
   border: 2px solid #52c0b4;
   padding: 20px;
-  margin: 20px 0;
   text-align: center;
   border-radius: 10px;
   font-size: 20px;
 }
 
-table.wed {
-  margin: 20px 0; /* Add margin here to separate from the div above */
-}
-
+/* ALL TABLES PROPS */
 
 tr.table-header {
   font-size: 20px;
- }
+}
 
 table {
   border-collapse: collapse;  /* collaps border between cells */
+  width: 100%;
 }
 
+th{
+  text-align: left;
+}
+
+td {
+  vertical-align: top;
+  padding: 5px;
+}
+
+/* TABLE SEARCH INPUT */
+
+#searchInput {
+  width: 100%;
+  box-sizing: border-box;
+  margin: auto;
+  background-image: url('/assets/searchicon.png');
+  background-size: 20px;
+  background-position: 10px 10px;  /* Position the search icon */
+  background-repeat: no-repeat; /* Do not repeat the icon image */
+  font-size: 16px; /* Increase font-size */
+  margin-bottom: 12px; /* Add some space below the input */
+  margin-bottom: 20ox;
+  padding: 10px 40px 10px 40px; /* Add some padding */
+  border: 1px solid #ddd; /* Add a grey border */
+
+}
+
+/* WED TABLE CONTROL */
 
 table td.dt-control {
   text-align: center;
@@ -115,53 +221,36 @@ html.dark table tr.dt-hasChild td.dt-control:before,
   border-left-color: transparent;
 }
 
-td {
-  vertical-align: top;
-  padding: 5px;
+/* tr.notfirst:hover{
+  background:rgb(211, 150, 218);
+  background-clip: padding-box;
+  border-style: none;
+ } */
+
+
+ .tableFixHeadScrollBody {
+  position: relative;
+  overflow-y: auto;
+  top: 10px;
 }
 
-
-p {
-  text-indent: 0px;
-  /* line-height: 32px; */
-  margin-bottom: 18px;
-}
-
-th{
-  text-align: left;
-}
-
-#searchInput {
-  width: 100%;
-  box-sizing: border-box;
-  margin: auto;
-  background-image: url('/assets/searchicon.png');
-  background-size: 20px;
-  background-position: 10px 10px;  /* Position the search icon */
-  background-repeat: no-repeat; /* Do not repeat the icon image */
-  font-size: 16px; /* Increase font-size */
-  margin-bottom: 12px; /* Add some space below the input */
-  margin-bottom: 20ox;
-  padding: 10px 40px 10px 40px; /* Add some padding */
-  border: 1px solid #ddd; /* Add a grey border */
-
-}
-
-header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  /* padding: 10px; */
-  justify-content: space-between;
-  align-items: center;
+.tableFixHeadScrollBody thead {
+  position: sticky; /* make the table heads sticky */
+  top: 0px; /* table head will be placed from the top of the table and sticks to it */
   background-color: #5c7187;
-  z-index: 1000; /* Adjust the z-index based on your needs */
-  border-bottom: 30px solid #1a1a1a;
 }
+
+.tableFixHeadScrollBody tbody {
+  z-index: -1;
+}
+
+
+/* NAV */
 
 .nav-wrapper {
   display: flex;
   align-items: center;
+  height: 100%;
 }
 
 .toplogo {
@@ -240,19 +329,6 @@ color: white;
   display: none;
 }
 
-main{
-  justify-content: center;
-  flex-direction: column;
-  max-width: 60%;
-  margin: auto;
-  margin-top: 60px;
-  margin-bottom: 50px;
-  background-color: #5c7187;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-}
-
 /* for smaller screen or when screen shrinks */
 @media only screen and (max-width: 1100px) {
 
@@ -326,46 +402,18 @@ main{
   } */
 }
 
-footer {
+footer{
   background-color: #2c3e50;
-  padding: 20px;
-  text-align: center;
   color: #ecf0f1;
+  text-align: center;
+  height: 5%;
+  flex-shrink: 0; /* Prevent header and footer from shrinking */
+}
+footer p {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 5px;
 }
 
-a {
-  color: #a0d9ff;
-  transition: color 0.3s ease-in-out;
-}
 
-h1, h2, h3, h4, h5, h6 {
-  color: #a0d9ff;
-}
 
-h1 {
-  font-size: 22px;
-}
-
-h2 {
-  font-size: 20px;
-}
-
-h3 {
-  font-size: 18px;
-}
-
-h4 {
-  font-size: 16px;
-}
-
-h5 {
-  font-size: 14px;
-}
-
-h6 {
-  font-size: 12px;
-}
-
-hr {
-  border-color: #a0d9ff;
-}

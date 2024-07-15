@@ -358,26 +358,46 @@ def main(lang):
     md_output = []
 
     md_output.extend([
-        '<div class="wed">',
+        '<div class="wed-announcement">',
         intro[lang],
         '</div>'
     ])
 
-    md_output.append(
-        '<table class="wed">'
-    )
+    # start div with table
     md_output.extend([
-        '<tr class="table-header">',
-            # f'<th>{date_header[lang]}</th>',
-            '<th></th>', # dt-control
-            f'<th>{languages[lang]}</th>',
-            f'<th>Emojilingo</th>',
-            f'<th>Chat-GPT</th>',
-        '</tr>'
+        '<div class="tableFixHeadScrollBody">',
+            '<table class="wed">'
+                '<colgroup>',
+                    '<col width="5%">',
+                    '<col width="45%">',
+                    '<col width="25%">',
+                    '<col width="25%">',
+                '</colgroup>'
     ])
-    md_output.append(
-        '<tr> <th colspan="100%"> <input type="text" id="searchInput" onkeyup="searchFunction()" placeholder="Search..."> </th> </tr>'
-    )
+
+    # header
+    md_output.extend([
+        '<thead>',
+            '<tr class="table-header">',
+                # f'<th>{date_header[lang]}</th>',
+                '<th></th>', # dt-control
+                f'<th>{languages[lang]}</th>',
+                f'<th>Emojilingo</th>',
+                f'<th>Chat-GPT</th>',
+            '</tr>',
+            # search input
+            '<tr>',
+                '<th colspan="100%">',
+                    ' <input type="text" id="searchInput" onkeyup="searchFunction()" placeholder="Search...">'
+                '</th>'
+            '</tr>',
+        '</thead>',
+    ])
+
+    # start of tbody
+    md_output.extend([
+        '<tbody>'
+    ])
 
     date_txt_el_ref_source = [
         (d, t, e, gpt, r_en, r_lang, s) for d, t, e, gpt, r_en, r_lang, s in
@@ -387,6 +407,10 @@ def main(lang):
         # sorted alpha by txt (parenthesis at the end)
         date_txt_el_ref_source, key=lambda x: (not x[1][0].isalnum(), x[1].lower())
     )
+
+    # debug: take first 10
+    # date_txt_el_ref_source_alpha = date_txt_el_ref_source_alpha[:10]
+
     for d, txt, el, gpt, ref_en, ref_lang, source in date_txt_el_ref_source_alpha:
         ref_book_EN, ref_canto_roman, ref_line_num = ref_en.split(',')
         ref_book_EN = ref_book_EN.strip()
@@ -420,9 +444,17 @@ def main(lang):
             '</tr>'
         ])
 
-    md_output.append(
-        '</table>'
-    )
+    # end of tbody
+    md_output.extend([
+        '</tbody>'
+    ])
+
+    # end of table
+    md_output.extend([
+            '</table>',
+        '</div>',
+    ])
+
 
     with open(f'_i18n/{lang.lower()}/worldemojiday.html', 'w') as f:
         f.write('\n'.join(md_output))
