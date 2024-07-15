@@ -47,27 +47,36 @@ AUTHORS = [
             Currently working as a research technician in the Cognitive Neurorobotics Research Unit at the Okinawa Institute of Science and Technology in Japan, where he supports researches in a variety of fields such as Robotics, Natural Language Processing, Computer Simulations, and Human-Computer Interaction. Since 2015 he has been actively exploring the field of conversational AI and developed a number of ChatBots. With his wide expertise in these fields, he enthusiastically joined the original Emojitaliano project from its birth, taking charge of creating the <a href="https://t.me/emojitalianobot">@emojitalianobot</a>, therefore providing the crucial technological support which preserves and makes available to the community the Emojitaliano glossary, grammar, and compelling and entertaining training games for reading the Emojitaliano code."""
         ),
     },
-
 ]
 
-AUTHOR_TEMPLATE = lambda name, email, img_url, website, description:\
+TERMS = {
+    'WEBSITE_IT': 'Sito Web',
+    'WEBSITE_EN': 'Web Site',
+}
+
+AUTHOR_TEMPLATE = lambda name, email, img_url, website_term, website, description: \
     textwrap.dedent(
     f"""\
         <tr>
-            <td align="center">
+            <td></td>
+            <td align="left"><h1>{name}</h1></td>
+        </tr>
+        <tr>
+            <td style="vertical-align:middle" align="center">
                 <p>
                     <img class="contact-img" src="{img_url}">
                 </p>
                 <p>
-                    <a href="{website}" target="_blank">Sito Web</a>
+                    <a href="{website}" target="_blank">{website_term}</a>
                 </p>
                 <p>
                     <a href="mailto:{email}">Email</a>
                 </p>
             </td>
             <td align="left">
-                <h1>{name}</h1>
-                <p> {description} </p>
+                <p>
+                    {description}
+                </p>
             </td>
         </tr>
     """
@@ -87,10 +96,15 @@ def extract_contacts():
                     author_dict['NAME'],
                     author_dict['EMAIL'],
                     author_dict['IMG_URL'],
+                    TERMS[f'WEBSITE_{lang.upper()}'],
                     author_dict['WEBSITE'],
                     author_dict[f'DESCRIPTION_{lang.upper()}'],
                 )
             )
+            html_content.extend([
+                '<tr></tr>',
+            ])
+
         html_content.extend([
             '</tbody>',
             '</table>',

@@ -153,8 +153,6 @@
           {% for item in menu_items %}
             <a {% if page.url == item.path_canonical %} class="active" {% endif %} href="{{ item.path }}" onclick="hideDropdown()">{{ item.label }}</a>
           {% endfor %}
-          <a {% if page.url == "/" %} class="active" {% endif %} href="{% tl home %}" onclick="hideDropdown()">{% t pages.home %}</a>
-
         </div>
       </div>
       <div class="topnav">
