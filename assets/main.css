@@ -129,7 +129,7 @@ main {
   overflow-y: auto;
   top: 5%; /* 5% of height of body */
   bottom: 5%; /* 5% of height of body */
-  max-width: 80%;
+  max-width: 70%;
   height: 75%; /* 10% header, 5% main.top, 5% main.bottom 10% footer */
   margin: auto;
   background-color: #5c7187;
