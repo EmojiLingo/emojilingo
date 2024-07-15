@@ -12,7 +12,7 @@ menu_items:
     - label: Glossario
       path_canonical: /glossary/
       path: /it/glossary/
-    - label: Esempi
+    - label: Specimen
       path_canonical: /specimens/
       path: /it/specimens/
     - label: "#WorldEmojiDay"

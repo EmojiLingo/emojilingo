@@ -153,6 +153,8 @@ div.wed-announcement {
 
 /* ALL TABLES PROPS */
 
+
+th,
 tr.table-header {
   font-size: 20px;
 }
@@ -352,7 +354,7 @@ table.contact.td {
 }
 
 /* for smaller screen or when screen shrinks */
-@media only screen and (max-width: 1100px) {
+@media only screen and (max-width: 1150px) {
 
   body {
     font-size: 15px;
@@ -362,6 +364,12 @@ table.contact.td {
   .topnav {
     display: none; /* Hide the regular menu for smaller screens */
   }
+
+  th,
+  tr.table-header {
+    font-size: 18px;
+  }
+
 
   /* Hamburger menu styles */
   .hamburger-menu {
