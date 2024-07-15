@@ -3,7 +3,7 @@ menu_items:
     - label: Casa
       path_canonical: /
       path: /it/
-    - label: Riguardo
+    - label: Emojilingo
       path_canonical: /about/
       path: /it/about/
     - label: Grammatica
@@ -31,7 +31,7 @@ menu_items:
     - label: Home
       path_canonical: /
       path: /
-    - label: About
+    - label: Emojilingo
       path_canonical: /about/
       path: /about/
     - label: Grammar
