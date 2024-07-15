@@ -414,5 +414,10 @@ footer p {
   padding: 5px;
 }
 
+.contact-img {
+  float: left;
+}
 
-
+table.contact.td {
+  padding: 0;
+}

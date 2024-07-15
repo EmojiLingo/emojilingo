@@ -5,4 +5,4 @@ namespace: contacts
 permalink: /contacts/
 ---
 
-{% translate_file contacts.md %}
+{% translate_file contacts.html %}
