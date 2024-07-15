@@ -5,7 +5,7 @@ namespace: media
 permalink: /media/
 ---
 
-# [Pinocchio in Emojitaliano](https://www.scritturebrevi.it/2017/11/22/pinocchio-in-emojitaliano-il-libro-2/)
+<!-- # [Pinocchio in Emojitaliano](https://www.scritturebrevi.it/2017/11/22/pinocchio-in-emojitaliano-il-libro-2/) -->
 
 ## 2016
 - 17.04.2016: Tradurre Pinocchio in emoticon, Loredana Lipperini, La Repubblic.
@@ -83,10 +83,10 @@ permalink: /media/
 <!-- [link]() -->
 
 ## 2018
-- 1.1.2018: Il Pinocchio in emoji disegna un nuovo italiano, Diletta Parlangeli, La Stampa Tech (con un riferimento anche alla Costituzione in Emojitaliano di Marina Pierani). Versione in inglese qui: Italian Revisited, Pinocchio Translated Into Emoji Language. 
+- 1.1.2018: Il Pinocchio in emoji disegna un nuovo italiano, Diletta Parlangeli, La Stampa Tech (con un riferimento anche alla Costituzione in Emojitaliano di Marina Pierani). Versione in inglese qui: Italian Revisited, Pinocchio Translated Into Emoji Language.
 [link](https://worldcrunch.com/tech-science/italian-revisited-pinocchio-translated-into-emoji-language)
 
-- 2.1.2018: Hicieron una versión de Pinocho “traducida” en emojis, Tecno. 
+- 2.1.2018: Hicieron una versión de Pinocho “traducida” en emojis, Tecno.
 [link](https://tn.com.ar/tecno/redes-sociales/2018/01/02/hicieron-una-version-de-pinocho-traducida-en-emojis/)
 
 - 5.1.2018: Pinokio” przetłumaczony na emotikony, TVN24 PL
@@ -122,11 +122,11 @@ permalink: /media/
 - 18.4.2018: Un “Pinocchio in Emojitaliano” da Macerata fa il giro del mondo, Stefano Fabrizi, Corriere Adriatico.
 [link](https://www.corriereadriatico.it/spettacoli/macerata_chiusaroli_emojitaliano_pinocchio-3677874.html)
 
-- 24.4.2018: 25 aprile: la Costituzione è in emoji, Valentina Ruggio, La Repubblica. 
+- 24.4.2018: 25 aprile: la Costituzione è in emoji, Valentina Ruggio, La Repubblica.
 [link](https://www.repubblica.it/tecnologia/social-network/2018/04/24/news/25_aprile_la_costituzione_e_in_emoji_il_gioco_per_vedere_quanto_conosci_la_legge_dello_stato-194715129/)
 <!-- Nello stesso articolo la pagina con la lettura del testo: https://www.repubblica.it/tecnologia/social-network/2018/04/24/foto/il_25_aprile_in_emoji_la_costituzione_tradotta_dalle_faccine_all_italiano-194717339/1/ -->
 
-- 7.6.2018: Emojitaliano tra le lingue di traduzione del Manifesto di Parole Ostili. 
+- 7.6.2018: Emojitaliano tra le lingue di traduzione del Manifesto di Parole Ostili.
 [link1](https://paroleostili.it/wp-content/uploads/2018/06/manifesto_emoji.pdf)
 [link2](https://paroleostili.it/news/il-manifesto-emojitaliano/)
 
@@ -135,23 +135,23 @@ permalink: /media/
 [link](https://ilmanifesto.it/pinocchio-in-emojitaliano)
 
 ## 2020
-- 16.02.2020: L'Infinito di Leopardi in emoji: "Abbiamo tradotto l'io poetico", Valentina Ruggiu, La Repubblica. 
+- 16.02.2020: L'Infinito di Leopardi in emoji: "Abbiamo tradotto l'io poetico", Valentina Ruggiu, La Repubblica.
 [link](https://www.repubblica.it/tecnologia/social-network/2020/02/16/news/l_infinito_di_leopardi_in_emoji_abbiamo_tradotto_l_io_poetico_-248760860/
 Link alla lettura del testo: https://www.repubblica.it/tecnologia/social-network/2020/02/16/foto/l_infinito_leopardi_emoji-248760929/1/)
 
-- 16.02.2020: L'Infinito in 27 lingue, anche emoji, ANSA. 
+- 16.02.2020: L'Infinito in 27 lingue, anche emoji, ANSA.
 [link](https://www.ansa.it/marche/notizie/2020/02/16/linfinito-in-27-lingue-anche-emoji_d33765ee-a0ec-45f0-b941-fde13a463b04.html)
 
-- 17.02.2020: L'Infinito di Leoparditradotto con le emojil'idea di una comunità web, Francesco Muccino, Lumsanews. 
+- 17.02.2020: L'Infinito di Leoparditradotto con le emojil'idea di una comunità web, Francesco Muccino, Lumsanews.
 [link](https://www.lumsanews.it/linfinito-di-leopardi-tradotto-con-le-emoji-lidea-di-una-comunita-web/)
 
 - 18.02.2020: L'Infinito di Leopardi tradotto con gli emoji, Il Cittadino di Recanati.
 [link](https://www.ilcittadinodirecanati.it/notizie-recanati/53166-l-infinito-di-giacomo-leopardi-tradotto-con-gli-emoji-un-lavoro-della-prof-ssa-chiusaroli)
 
-- 20.02.2020: L'Infinito di Leopardi tradotto con gli emoji, Libreriamo. 
+- 20.02.2020: L'Infinito di Leopardi tradotto con gli emoji, Libreriamo.
 [link](https://libreriamo.it/libri/linfinito-di-leopardi-tradotto-con-gli-emoji/)
 
-- 15.03.2020: Emojitaliano: la risorsa culturale e linguistica delle faccine, Laura Rondinella, RecenSito: quotidiano di musica e spettacolo. 
+- 15.03.2020: Emojitaliano: la risorsa culturale e linguistica delle faccine, Laura Rondinella, RecenSito: quotidiano di musica e spettacolo.
 [link](https://www.recensito.net/rubriche/tecnologia/emojitaliano-faccine-comunicazione-linguistica.html)
 
 - 16.7.2020: Emoji, il nuovo Esperanto digitale. Le "faccine" sono ormai un linguaggio, Repubblica.
@@ -162,13 +162,13 @@ Link alla lettura del testo: https://www.repubblica.it/tecnologia/social-network
 
 ## 2022
 
-- 14.2.2022: L'Infinito in Emojitaliano: Leopardi tradotto nella XXVIII lingua. 
+- 14.2.2022: L'Infinito in Emojitaliano: Leopardi tradotto nella XXVIII lingua.
 [link](https://prezi.com/p/vtns7tdk7mve/emojitaliano/)
 
-- 9.4.2022: L'Emojitaliano: intervista a Francesca Chiusaroli, Federico Pani, Il Piccolo di Verona. 
+- 9.4.2022: L'Emojitaliano: intervista a Francesca Chiusaroli, Federico Pani, Il Piccolo di Verona.
 [link](https://federicopani.com/2022/04/09/lemojitaliano-lintervista-a-francesca-chiusaroli/)
 
-- 21.12.2022: Inventare una lingua, Anna Rita Longo, CICAP. 
+- 21.12.2022: Inventare una lingua, Anna Rita Longo, CICAP.
 [link](https://www.cicap.org/n/articolo.php?id=1801028&fbclid=IwAR2EgCILLpQHuSpmPo-oSg-Q8hHo_KjsnlCJ5frTasFXQCh5-zOHamb4lFA_aem_AfvHxaFSF-B8b5T21SkkBvY_vsg_P0E6xYHFf6s3srf6GY3vto3h87Cv4mU88p4dHCY)
 
 - 2022: L'Educazione emozionale: Strategie e strumenti operativi per promuovere lo sviluppo delle competenze emotive a scuola e in famiglia, Alessandro Ricci, Marco Maggi.
@@ -178,5 +178,5 @@ Link alla lettura del testo: https://www.repubblica.it/tecnologia/social-network
 - 10.7.2023: Emojitaliano. TickTock Video. Veronica Repetti, Linguisticattiva.
 [link](https://www.tiktok.com/@linguisticattiva/video/7286897510864522528)
 
-- 17.7.2023: Giornata degli Emoji: cinque anni fa a Macerata nasceva Pinocchio in emojitaliano, Giorgia Clementi, CapoCronaca. 
+- 17.7.2023: Giornata degli Emoji: cinque anni fa a Macerata nasceva Pinocchio in emojitaliano, Giorgia Clementi, CapoCronaca.
 [link](https://capocronaca.it/accadde-oggi/giornata-degli-emoji-cinque-anni-fa-a-macerata-nasceva-pinocchio-in-emojitaliano/)
