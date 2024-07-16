@@ -273,18 +273,6 @@ html.dark table tr.dt-hasChild td.dt-control:before,
   display: flex;
 }
 
-.topnav-lang {
-  margin-left: auto; /* Push topnav-lang to the right */
-  padding-right: 20px; /* Add padding to the right */
-  display: flex; /* Add display: flex; for better alignment */
-  font-size: 20px;
-}
-
-.topnav-lang a {
-  text-decoration: none;
-  color: black; /* Set the desired color for the language links */
-}
-
 /* style the separator between language links */
 .topnav-lang .separator {
   margin: 0 5px; /* Adjust the margin as needed */
@@ -315,16 +303,19 @@ html.dark table tr.dt-hasChild td.dt-control:before,
   color: white;
 }
 
-
-
 /* Right-aligned section inside the top navigation */
 .topnav-lang {
   float: right;
-  padding-right: 20;
+  padding-right: 20px;
+  margin-left: auto; /* Push topnav-lang to the right */
+  display: flex; /* Add display: flex; for better alignment */
+  font-size: 20px;
 }
 
 .topnav-lang a {
   color: white;
+  text-decoration: none;
+  /* color: black; */
 }
 
 .hamburger-menu-dropdown {
@@ -410,7 +401,6 @@ table.contact.td {
     display: flex;
     align-items: left;
     flex-direction: column; /* Stack items vertically on smaller screens */
-    width: 200px;
   }
 
   .hamburger-menu-icon {
@@ -474,6 +464,10 @@ table.contact.td {
   .contact-img {
       width: 100px;
       height: auto;
+  }
+
+  .topnav-lang {
+    font-size: 18px;
   }
 
 
