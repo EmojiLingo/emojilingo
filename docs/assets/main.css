@@ -151,11 +151,11 @@ div.wed-announcement {
   border: 2px solid #a18fff;
   padding-left: 20px;
   padding-right: 20px;
-  padding-top: 20px;
-  padding-bottom: 10px;
+  padding-top: 10px;
+  padding-bottom: 0px;
   text-align: center;
   border-radius: 10px;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 /* ALL TABLES PROPS */
@@ -350,6 +350,7 @@ footer p {
 
 .contact-img {
   float: left;
+  border-radius: 50%;
   /* width: 100%;
   height: auto; */
 }
@@ -462,11 +463,11 @@ table.contact.td {
   }
 
   div.wed-announcement {
-    font-size: 15px;
+    font-size: 14px;
     padding-left: 10px;
     padding-right: 10px;
-    padding-top: 10px;
-    padding-bottom: 5px;
+    padding-top: 5px;
+    padding-bottom: 0px;
 
   }
 
