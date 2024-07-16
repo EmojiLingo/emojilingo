@@ -105,7 +105,16 @@ em {
 .emojitext {
   font-family: 'AppleColorEmoji';
   letter-spacing: 5px;
-  margin-right: -40px;
+  font-size: 20px;
+}
+
+a.emojilink {
+  text-decoration: none;
+}
+.emojilink span {
+  font-family: 'AppleColorEmoji';
+  font-size: 25px;
+  padding-right: 5px;
 }
 
 header {
@@ -401,6 +410,7 @@ table.contact.td {
     display: flex;
     align-items: left;
     flex-direction: column; /* Stack items vertically on smaller screens */
+    width: 35%;
   }
 
   .hamburger-menu-icon {

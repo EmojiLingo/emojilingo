@@ -49,17 +49,12 @@ AUTHORS = [
     },
 ]
 
-TERMS = {
-    'WEBSITE_IT': 'Sito Web',
-    'WEBSITE_EN': 'Web Site',
-}
 
-AUTHOR_TEMPLATE = lambda name, email, img_url, website_term, website, description: \
+AUTHOR_TEMPLATE = lambda name, email, img_url, website, description: \
     textwrap.dedent(
     f"""\
         <tr>
-            <td></td>
-            <td align="left"><h1>{name}</h1></td>
+            <td colspan=2 align="left"><h1>{name}</h1></td>
         </tr>
         <tr>
             <td style="vertical-align:middle" align="center">
@@ -67,10 +62,12 @@ AUTHOR_TEMPLATE = lambda name, email, img_url, website_term, website, descriptio
                     <img class="contact-img" src="{img_url}">
                 </p>
                 <p>
-                    <a href="{website}" target="_blank">{website_term}</a>
-                </p>
-                <p>
-                    <a href="mailto:{email}">Email</a>
+                    <a class="emojilink" href="{website}" target="_blank">
+                        <span>🌐</span>
+                    </a>
+                    <a class="emojilink" href="mailto:{email}">
+                        <span>📧</span>
+                    </a>
                 </p>
             </td>
             <td align="left">
@@ -96,7 +93,6 @@ def extract_contacts():
                     author_dict['NAME'],
                     author_dict['EMAIL'],
                     author_dict['IMG_URL'],
-                    TERMS[f'WEBSITE_{lang.upper()}'],
                     author_dict['WEBSITE'],
                     author_dict[f'DESCRIPTION_{lang.upper()}'],
                 )
