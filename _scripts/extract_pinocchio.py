@@ -46,10 +46,10 @@ def main():
             '| ' + it + ' | <span class="emojitext">' + el + '</span> |'
         )
 
-    with open('_i18n/en/specimens.md', 'w') as f:
+    with open('_i18n/en/pinocchio.md', 'w') as f:
         f.write('\n'.join(md_output_en_emojilingo))
 
-    with open('_i18n/it/specimens.md', 'w') as f:
+    with open('_i18n/it/pinocchio.md', 'w') as f:
         f.write('\n'.join(md_output_it_emojilingo))
 
 
