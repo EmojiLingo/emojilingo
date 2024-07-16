@@ -8,7 +8,7 @@
 
 menu_items:
   it:
-    - label: Casa
+    - label: Home
       path_canonical: /
       path: /it/
     - label: Emojilingo
