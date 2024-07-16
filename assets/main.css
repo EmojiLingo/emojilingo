@@ -104,8 +104,8 @@ em {
 
 .emojitext {
   font-family: 'AppleColorEmoji';
-  letter-spacing: 5px;
-  font-size: 20px;
+  letter-spacing: 3px;
+  font-size: 17px;
 }
 
 a.emojilink {
@@ -141,7 +141,7 @@ main {
   bottom: 5%; /* 5% of height of body */
 
   /* This sets the width to 60% but caps it at 700 px. */
-  max-width: min(60%, 680px);
+  max-width: min(75%, 800px);
 
   height: 75%; /* 10% header, 5% main.top, 5% main.bottom 10% footer */
   margin: auto;
@@ -469,6 +469,11 @@ table.contact.td {
     padding-top: 5px;
     padding-bottom: 0px;
 
+  }
+
+  .emojitext {
+    letter-spacing: 3px;
+    font-size: 16px;
   }
 
   .contact-img {

@@ -1,3 +1,11 @@
+# languages:
+# - language: "en"
+#   links:
+#     - title: "Specimens" url: /specimens/
+# - language: "it"
+#   links:
+#     - title: "Specimen" url: /specimens/
+
 menu_items:
   it:
     - label: Casa
@@ -13,6 +21,7 @@ menu_items:
       path_canonical: /glossary/
       path: /it/glossary/
     - label: Specimen
+      title: Specimen
       path_canonical: /specimens/
       path: /it/specimens/
     - label: "#WorldEmojiDay"
@@ -41,6 +50,7 @@ menu_items:
       path_canonical: /glossary/
       path: /glossary/
     - label: Specimens
+      title: Specimens
       path_canonical: /specimens/
       path: /specimens/
     - label: "#WorldEmojiDay"

@@ -1,11 +1,9 @@
 ---
-layout: page
-title: Specimens
+layout: default
+# title: {% t titles.specimens %}
+# title: specimens.label
 namespace: specimens
 permalink: /specimens/
-nav: true
-siteNav: true
 ---
-<!-- This is a test page. -->
 
 {% translate_file specimens.md %}

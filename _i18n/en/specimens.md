@@ -1,4 +1,4 @@
 - ## [Pinocchio](../pinocchio)
-- ## Italiana Constitution
-- ## The infinity by Giacomo Leopardi
+- ## [The Italian Constitution](../costituzione)
+- ## [The Infinity by Giacomo Leopardi](../infinito)
 - ## [Parole di Dante](../parole_di_dante)
