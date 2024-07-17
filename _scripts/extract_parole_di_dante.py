@@ -59,7 +59,7 @@ def ensure_strings_dict(d):
     }
     return new_dict
 
-def fuzzy_enhence(term, terzina):
+def fuzzy_enhence(term, terzina, debug=True):
     num_chars_terzina = len(terzina)
     # sorted candidates by best match
     # * -score
@@ -82,9 +82,13 @@ def fuzzy_enhence(term, terzina):
             candidates.add((-score, span, result))
             if counter > 100:
                 candidates.pop() # remove last one
-    return candidates[0][-1] # get last element in tuple (result)
 
-def get_terzina(dc_json, lang, book_en, canto_num,  line, txt):
+    best_cand_score, best_cand_span, best_cand_result = candidates[0]
+    best_cand_score = -best_cand_score # transfor to pos
+
+    return best_cand_score, best_cand_span, best_cand_result
+
+def get_terzina(dc_json, lang, book_en, canto_num,  line, txt, debug=False):
     line_pos_terzina = line % 3 # position of line in terzina
 
     match line_pos_terzina:
@@ -115,13 +119,13 @@ def get_terzina(dc_json, lang, book_en, canto_num,  line, txt):
 
 
     result = '<br>'.join(result)
-    result = fuzzy_enhence(txt, result)
-    # search txt_lang in result and Emphasized text (with <em>)
-    # for i, line in enumerate(result):
-    #     if txt in line:
-    #         result[i] = line.replace(txt, f'<em> {txt} </em>')
+    score, matched_span, emph_terzina = fuzzy_enhence(txt, result)
+    if debug:
+        if score < 0.7:
+            print(
+                f'{score}: term={txt} match={matched_span} book={book_en} canto={canto_num}  line={line}')
 
-    return result
+    return emph_terzina
 
 def retry_with_exponential_backoff(
     func,
