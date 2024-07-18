@@ -18,4 +18,10 @@ jobs:
         uses: PacificPromise/macos-telegram-action@main
         with:
           type: group # group | topic | channel
-          message: Test telegram action
+          message: |
+            ${{ github.actor }} created commit:
+            Commit message: ${{ github.event.commits[0].message }}
+
+            Repository: ${{ github.repository }}
+
+            See changes: https://github.com/${{ github.repository }}/commit/${{github.sha}}
