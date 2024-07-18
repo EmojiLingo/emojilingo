@@ -252,7 +252,3 @@ def main(lang):
 if __name__ == "__main__":
     for lang in ['IT','EN']:
         main(lang)
-
-    # chat_with_gpt('trasumanar')
-    # main_ChatGPT()
-    # extract_chatgpt_manual() # create a temp.txt file with a field from chatgpt.json

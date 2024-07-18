@@ -11,11 +11,11 @@ from .utils import download_table, ensure_strings_dict
 SPREADSHEET_KEY = '13vkH3a-C0OpVTm9r5daFg_y0MN8lPASwGICaa72zaGg'
 SPREADSHEET_GID = 262347955
 
-MODEL = "gpt-3.5-turbo"
-# MODEL = "gpt-4-turbo" # not available wiht this key
+# MODEL = "gpt-3.5-turbo"
+# MODEL = "gpt-4-turbo"
+MODEL = "gpt-4"
 
-CURRENT_DIR_SCRIPTS = os.path.dirname(__file__)
-CHATGPT_JSON = os.path.join(CURRENT_DIR_SCRIPTS, '../_chatgpt/', 'chatgpt.json')
+CHATGPT_JSON = os.path.join('../_chatgpt/', f'{MODEL}.json')
 
 
 load_dotenv()
@@ -196,22 +196,26 @@ def main(debug=True):
 '''
 Create a test.txt file with a field from chatgpt.json
 '''
-def extract_chatgpt_manual():
+def extract_chatgpt_emojilingo_explanations():
 
     with open(CHATGPT_JSON) as fin:
         full_result_json = json.load(fin)
 
-    with open('test.txt', 'w') as fout:
-        emojilingo_chatgpt = [
+    emojilingo_chatgpt = [
             value['response_processed']['emojilingo_chatgpt']
             for term, value in full_result_json.items()
         ]
-        explanation = [
-            value['response_processed']['explanation']
-            for term, value in full_result_json.items()
-        ]
+    explanation = [
+        value['response_processed']['explanation']
+        for term, value in full_result_json.items()
+    ]
+
+    with open('em_expl_tmp.txt', 'w') as fout:
         fout.write(
-            '\n'.join(explanation)
+            '\n'.join([
+                f'{el}\t{exp}'
+                for el, exp in zip(emojilingo_chatgpt, explanation)
+            ])
         )
 
 
@@ -226,7 +230,7 @@ def test_chatgpt():
     print(response)
 
 if __name__ == "__main__":
-    test_chatgpt()
+    # test_chatgpt()
     # main()
-    # extract_chatgpt_manual()
+    extract_chatgpt_emojilingo_explanations()
 
