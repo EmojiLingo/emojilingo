@@ -1,15 +1,21 @@
 name: telegram message
-on: [push]
-jobs:
 
+on: [push]
+
+env:
+  TELEGRAM_GROUP_ID: ${{ secrets.TELEGRAM_GROUP_ID }}
+  TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+  # TELEGRAM_TOPIC_ID: ${{ secrets.TELEGRAM_TOPIC_ID }}
+  # TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
+
+jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
     steps:
-      - name: send telegram message on push
-        uses: yanzay/notify-telegram@v0.1.0
-        if: always()
+      - uses: actions/checkout@main
+      - name: Send custom message
+        uses: PacificPromise/macos-telegram-action@main
         with:
-          chat: ${{ secrets.CHAT }} # user id or channel name secret
-          token: ${{ secrets.TOKEN }} # token secret
-          status: ${{ job.status }} # do not modify this line
+          type: group # group | topic | channel
+          message: Test telegram action
