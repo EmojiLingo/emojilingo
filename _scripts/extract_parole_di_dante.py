@@ -346,7 +346,7 @@ def main(lang):
 
     intro = {
         'IT': "<p>Emojilingo partecipa alla Giornata Mondiale degli Emoji 2024 con Parole di Dante, un glossario della Divina Commedia di Dante Alighieri tradotto in emoji con corrispondenze in italiano e in inglese, e con un esperimento di AI di traduzione dalla lingua alla emoji-lingua.</p><p>Per più informazioni sul progetto <a href=\"../parole_di_dante\">clicca qua</a>.</p>",
-        'EN': "<p>Emojilingo celebrates World Emoji Day 2024 with Parole di Dante (Dante’s words), a glossary of Dante Alighieri's Divine Comedy translated into emoji with correspondences in Italian and English, and with an AI experiment of translation from language to the emoji-language.</p><p>For more info about the project <a href=\"../parole_di_dante\">click here</a>.</p>"
+        'EN': "<p>Emojilingo celebrates World Emoji Day 2024 with Parole di Dante (Dante’s words), a glossary of Dante Alighieri's Divine Comedy translated into emoji with corresponding translations from Italian to English and vice versa, and with an AI experiment of translation from language to the emoji-language.</p><p>For more info about the project <a href=\"../parole_di_dante\">click here</a>.</p>"
     }
 
     table = download_table()
