@@ -7,7 +7,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: send telegram message on push
-        uses: appleboy/telegram-action@master
+        uses: yanzay/notify-telegram@v0.1.0
+        if: always()
         with:
-          to: ${{ secrets.TELEGRAM_TO }}
-          token: ${{ secrets.TELEGRAM_TOKEN }}
+          chat: ${{ secrets.CHAT }} # user id or channel name secret
+          token: ${{ secrets.TOKEN }} # token secret
+          status: ${{ job.status }} # do not modify this line
