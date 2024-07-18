@@ -27,6 +27,10 @@ permalink: /media/
 - 2022: L'Educazione emozionale: Strategie e strumenti operativi per promuovere lo sviluppo delle competenze emotive a scuola e in famiglia, Alessandro Ricci, Marco Maggi.
 [link](https://books.google.it/books?id=SamGEAAAQBAJ&pg=PA188&lpg=PA188&dq=infinito+emojitaliano&source=bl&ots=PK-UOpetBC&sig=ACfU3U3snNncYPFUIZlBhyqDuU6HlUTh_A&hl=it&sa=X&ved=2ahUKEwiMso3v5dqDAxWgqf0HHShbDNA4HhDoAXoECAMQAw#v=onepage&q=infinito%20emojitaliano&f=false)
 
+# 2021
+
+- #Emojitaliano. Un esperimento collettivo e un gioco social. [link](https://www.art-usi.it/emojitaliano-un-esperimento-collettivo-e-un-gioco-social/)
+
 # 2020
 
 - 16.02.2020: L'Infinito di Leopardi in emoji: "Abbiamo tradotto l'io poetico", Valentina Ruggiu, La Repubblica.
