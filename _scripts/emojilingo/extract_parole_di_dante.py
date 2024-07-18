@@ -7,13 +7,7 @@ import json
 import roman
 from sortedcontainers import SortedSet
 from Levenshtein import ratio
-import re
-from collections import OrderedDict
-import textwrap
-import time
-import random
-import openai
-from openai import OpenAI
+from .utils import download_table, ensure_strings_dict
 
 '''
 SPREADSHEET
@@ -36,28 +30,10 @@ table.keys(): [
 '''
 
 CURRENT_DIR = os.path.dirname(__file__)
-CHATGPT_JSON = os.path.join(CURRENT_DIR, '../_chatgpt/', 'chatgpt.json')
 DC_JSON = os.path.join(CURRENT_DIR, '../_sources/dc_Hollander.json')
 SPREADSHEET_KEY = '13vkH3a-C0OpVTm9r5daFg_y0MN8lPASwGICaa72zaGg'
 SPREADSHEET_GID = 262347955
 
-def download_table():
-    url = f'https://docs.google.com/spreadsheets/d/{SPREADSHEET_KEY}/export?SPREADSHEET_GID={SPREADSHEET_GID}&format=csv'
-    r = requests.get(url, allow_redirects=True)
-    data = r.content
-    df = pd.read_csv(BytesIO(data))
-    table = df.to_dict()
-    return table
-
-def ensure_strings_list(l):
-    return [str(l) if type(l) is not str else e for e in l]
-
-def ensure_strings_dict(d):
-    new_dict = {
-        k: str(v) if type(v) is not str else v
-        for k,v in d.items()
-    }
-    return new_dict
 
 def fuzzy_enhence(term, terzina, debug=True):
     num_chars_terzina = len(terzina)
@@ -127,207 +103,6 @@ def get_terzina(dc_json, lang, book_en, canto_num,  line, txt, debug=False):
 
     return emph_terzina
 
-def retry_with_exponential_backoff(
-    func,
-    initial_delay = 2,
-    additional_delay = 5,
-    max_retries: int = 10,
-):
-    """Retry a function with exponential backoff."""
-
-    def wrapper(*args, **kwargs):
-        num_retries = 0
-        delay = initial_delay
-
-        while True:
-            try:
-                return func(*args, **kwargs)
-
-            except Exception as error:
-                print(
-                    'Error in request',
-                    type(error).__name__,
-                    error.args
-                )
-
-                num_retries += 1
-
-                if num_retries > max_retries:
-                    raise Exception(f"Maximum number of retries ({max_retries}) exceeded.")
-
-                delay += additional_delay
-
-                time.sleep(delay)
-
-            except Exception as e:
-                raise e
-
-    return wrapper
-
-
-def main_ChatGPT(debug=True):
-    # https://platform.openai.com/docs/overview
-    from dotenv import load_dotenv
-    import os
-
-    # chat GPT preps
-
-    load_dotenv()
-    client = OpenAI(
-        api_key = os.getenv('CHATGPT_API_KEY')
-    )
-
-    @retry_with_exponential_backoff
-    def send_request_to_chatgpt(messages):
-        response = client.chat.completions.create(
-            # two messages (prompt and next term)
-            messages = messages,
-
-            # max_tokens = 4000,
-
-            # 'gpt-4-turbo' not available wiht this key
-            model = "gpt-3.5-turbo",
-
-            #  only the new GPT-4 Turbo models support reproducible outputs
-            # seed = 7263081721,
-            temperature = 1, # default 1
-
-            # request_timeout = 10
-        )
-        return response
-
-    def chat_with_gpt(term):
-
-        prompt_with_term = textwrap.dedent(
-            f"""\
-            Ti darò una parola dalla Divina Commedia di Dante e ti chiedo di inventare una traduzione in emoji.
-
-            Rispondimi con una singola traduzione in 2 righe di testo puro (senza formattazione):
-            - traduzione in emoji
-            - breve frase di spiegazione della scelta.
-
-            La parola è `{term}`"""
-        )
-
-        # single message with prompt and term
-        messages = [
-            {
-                "role": "user",
-                "content": prompt_with_term
-            }
-        ]
-
-        response = send_request_to_chatgpt(messages)
-        choice = response.choices[0]
-
-        response_txt = choice.message.content
-
-        if debug:
-            print(term)
-            print(response_txt)
-
-        response_txt_lines = [
-            l.strip()
-            for l in response_txt.splitlines()
-            if l.strip() != ''
-        ]
-
-        if len(response_txt_lines)!=2:
-            print(f'Error in num of lines ({len(response_txt_lines)})')
-            print(f'Repeating request...\n')
-            return chat_with_gpt(term)
-        else:
-            emojilingo_chatgpt, explanation = response_txt_lines
-
-        if debug:
-            print('emojilingo_chatgpt: ', emojilingo_chatgpt)
-            print('explanation: ', explanation)
-
-        result_json = {
-            'model': response.model,
-            'id': response.id,
-            'created': response.created,
-            # only the new GPT-4 Turbo models support reproducible outputs
-            'fingerprint': response.system_fingerprint,                    # finish_reason
-                # 'stop' - finished
-                # 'length' - max_tokens exceeded
-            # 'finish_reason': choice.finish_reason,
-            # 'content': json.loads(choice.message.content),
-
-            'response_processed': {
-                'term_it': term,
-                'emojilingo_chatgpt': emojilingo_chatgpt,
-                'explanation': explanation
-            }
-        }
-
-        return result_json
-
-    # retrieve terms from spreadsheet
-    table = download_table()
-    termini_it_dict = ensure_strings_dict(table['IT']) # index -> term
-    termini_it = list(termini_it_dict.values())
-
-    # test first 10 by uncommenting this line
-    # termini_it = termini_it[:10]
-
-    num_termini_it = len(termini_it)
-
-    if os.path.exists(CHATGPT_JSON):
-        with open(CHATGPT_JSON) as fin:
-            full_result_json = json.load(fin)
-            if debug:
-                print(f'Found {len(full_result_json)} stored terms')
-    else:
-        full_result_json = {}
-
-
-    num_terms_stored = len(full_result_json)
-
-    for index in range(num_terms_stored, num_termini_it):
-
-        term = termini_it[index]
-
-        if debug:
-            print(index)
-
-        term_result_json = chat_with_gpt(term)
-        full_result_json[term] = term_result_json
-
-        if debug:
-            print('\n-----------------------\n')
-
-        # rewrite full json file for every term
-        with open(CHATGPT_JSON, 'w') as fout:
-            json.dump(
-                full_result_json,
-                fout,
-                indent=3,
-                ensure_ascii=False
-            )
-
-'''
-Create a test.txt file with a field from chatgpt.json
-'''
-def extract_chatgpt_manual():
-
-    with open(CHATGPT_JSON) as fin:
-        full_result_json = json.load(fin)
-
-    with open('test.txt', 'w') as fout:
-        emojilingo_chatgpt = [
-            value['response_processed']['emojilingo_chatgpt']
-            for term, value in full_result_json.items()
-        ]
-        explanation = [
-            value['response_processed']['explanation']
-            for term, value in full_result_json.items()
-        ]
-        fout.write(
-            '\n'.join(explanation)
-        )
-
-
 def main(lang):
 
     assert lang in ['IT','EN']
@@ -349,7 +124,7 @@ def main(lang):
         'EN': "<p>Emojilingo celebrates World Emoji Day 2024 with Parole di Dante (Dante’s words), a glossary of Dante Alighieri's Divine Comedy translated into emoji with corresponding translations from Italian to English and vice versa, and with an AI experiment of translation from language to the emoji-language.</p><p>For more info about the project <a href=\"../parole_di_dante\">click here</a>.</p>"
     }
 
-    table = download_table()
+    table = download_table(SPREADSHEET_KEY, SPREADSHEET_GID)
     # print(json.dumps(table, indent=3))
 
     dates = list(ensure_strings_dict(table['Day']).values())
@@ -475,8 +250,8 @@ def main(lang):
 
 
 if __name__ == "__main__":
-    main('IT')
-    main('EN')
+    for lang in ['IT','EN']:
+        main(lang)
 
     # chat_with_gpt('trasumanar')
     # main_ChatGPT()
