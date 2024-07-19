@@ -1,5 +1,5 @@
 {
-   "trasumanar": {
+   "0": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ks6ukHKbSIgY72P6EbuffMZVB3bR",
       "created": 1720958116,
@@ -10,7 +10,7 @@
          "explanation": "Il verbo \"trasumanar\" viene tradotto con l'emoji di un razzo e un extraterrestre per rappresentare il concetto di superamento della natura umana verso una dimensione ultraterrena."
       }
    },
-   "color che son sospesi": {
+   "1": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ks6vjvnnPbAyvnvr9xLZNVi8gVdl",
       "created": 1720958117,
@@ -21,7 +21,7 @@
          "explanation": "I colori sono sospesi nel cielo come un arcobaleno luminoso."
       }
    },
-   "bella persona": {
+   "2": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ks6w9xu7pnCeWk6jwmdWK6kjRGO0",
       "created": 1720958118,
@@ -32,7 +32,7 @@
          "explanation": "Una bella ed affascinante figura, che risplende come una stella."
       }
    },
-   "dolenti note": {
+   "3": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ks7Id7VSdlnCLuox7ypWxuFWmC69",
       "created": 1720958140,
@@ -43,7 +43,7 @@
          "explanation": "Le anime in pena cantano con dolore nell'Inferno."
       }
    },
-   "tin tin": {
+   "4": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ks7dKahb9QSpkTwjlnFdOmBoJLSu",
       "created": 1720958161,
@@ -54,7 +54,7 @@
          "explanation": "Il suono di una campanella, simbolo di avviso o chiamata."
       }
    },
-   "mirra": {
+   "5": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ks7zkB9PJq9RCPWEtKE08rDGtIYa",
       "created": 1720958183,
@@ -65,7 +65,7 @@
          "explanation": "La mirra è una resina vegetale utilizzata nell'antichità per profumi e unzioni."
       }
    },
-   "cricchi": {
+   "6": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ks8K2DEq4Bq16iFEmDLRy5Sk90RM",
       "created": 1720958204,
@@ -76,7 +76,7 @@
          "explanation": "Dante incontra i dannati che camminano tra le fiamme dell'Inferno."
       }
    },
-   "merda": {
+   "7": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ks8gWx5ZWGroIYCBpi2DJB0581O2",
       "created": 1720958226,
@@ -87,7 +87,7 @@
          "explanation": "Ho scelto l'emoji della cacca in fiamme perché nella Divina Commedia la parola \"merda\" è spesso usata in modo sprezzante e disgustoso, associata agli Inferi e alle pene dell'Inferno."
       }
    },
-   "imbestiarsi": {
+   "8": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ks91TtbQAJXLcF95yIqn55L0Gnu0",
       "created": 1720958247,
@@ -98,7 +98,7 @@
          "explanation": "La parola imbestiarsi è stata rappresentata con un serpente che si avvolge su se stesso, simboleggiando la confusione e il disorientamento del protagonista nella tenebrosa selva oscura."
       }
    },
-   "alo": {
+   "9": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ks9N3F2HNTk3PVYmuwULmkvjcbHw",
       "created": 1720958269,
@@ -109,7 +109,7 @@
          "explanation": "Un'immagine di vegetazione per rappresentare la parola \"alo\", che si riferisce a piante e vegetazione."
       }
    },
-   "alluminare": {
+   "10": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ksEd9OQodj03Of5eu77TEO0fTxpY",
       "created": 1720958595,
@@ -120,7 +120,7 @@
          "explanation": "Rappresenta l'illuminare o rischiarare con la luce, simboleggiato dall'emoji di una candela accesa."
       }
    },
-   "biancovestito": {
+   "11": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ksEeHwCQFBugA3ziilnV3YNsjhE9",
       "created": 1720958596,
@@ -131,7 +131,7 @@
          "explanation": "Un angelo con indosso un mantello bianco, simbolo di purezza e divinità."
       }
    },
-   "intuarsi": {
+   "12": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ksEfWHPX688NV9x4yqvlIK7kNXAt",
       "created": 1720958597,
@@ -142,7 +142,7 @@
          "explanation": "Rappresenta l'atto di percepire qualcosa in modo intuitivo o sottile, come se fosse un'intuizione misteriosa o magica."
       }
    },
-   "colubro": {
+   "13": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ksF465GH3tEPdlGYQFZ5LJRn7gM4",
       "created": 1720958622,
@@ -153,7 +153,7 @@
          "explanation": "Serpente velenoso, simbolo del tradimento e dell'inganno."
       }
    },
-   "concolore": {
+   "14": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ksFSIcYT3MM4Koa3VQuwoa2VLAHP",
       "created": 1720958646,
@@ -164,7 +164,7 @@
          "explanation": "Due figure umane dello stesso colore, rappresentando unità e armonia tra di loro."
       }
    },
-   "immegliarsi": {
+   "15": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ksFqxhIcvHh2ykcRMXbVPuHGWIqS",
       "created": 1720958670,
@@ -175,7 +175,7 @@
          "explanation": "Il 🚶‍♂️ si 🔄 avvicina al 👼 per migliorarsi spiritualmente."
       }
    },
-   "incinquarsi": {
+   "16": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ksGrOpOdAblNXEo1L60bWezEfEKE",
       "created": 1720958733,
@@ -186,7 +186,7 @@
          "explanation": "Il mago si è incinquato nel bosco incantato."
       }
    },
-   "inforsarsi": {
+   "17": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ksGucBHwLtOttLMsIXigj0eSA8w0",
       "created": 1720958736,
@@ -197,7 +197,7 @@
          "explanation": "Dante descrive qui i peccatori che bruciano nell'Inferno e si rivoltano nel fango bollente."
       }
    },
-   "inmillarsi": {
+   "18": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ksGxTf1PWshtaVCsyB3EeAOEoFAY",
       "created": 1720958739,
@@ -208,7 +208,7 @@
          "explanation": "Interpretazione: L'emozione di partire per un nuovo viaggio, simboleggiata dalla valigia pronta e la persona che balla di gioia."
       }
    },
-   "inverare": {
+   "19": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ksHgAG50xNxgOy8BLIilT6vPm4xm",
       "created": 1720958784,
@@ -219,7 +219,7 @@
          "explanation": "Rappresenta il concetto di falsificare la verità, come nel caso della parola \"inverare\" che significa mentire."
       }
    },
-   "baiulo": {
+   "20": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ksI1URGVW2iFK2T6jbPtB2dHEgC5",
       "created": 1720958805,
@@ -230,7 +230,7 @@
          "explanation": "Un baiulo è un portatore di bagagli, rappresentato qui dall'emoji di una borsa per trasportare oggetti."
       }
    },
-   "ammentarsi": {
+   "21": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ksIOCoDx9jnPFwJJNaDG8wZliN35",
       "created": 1720958828,
@@ -241,7 +241,7 @@
          "explanation": "Un'emoji con una lente d'ingrandimento per indicare l'atto di osservare o esaminare attentamente qualcosa, in questo caso la parola \"ammentarsi\" che significa rendersi conto o accorgersi."
       }
    },
-   "minugia": {
+   "22": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ksIk6SkhBjtoNS0oOlhmR4pjRykN",
       "created": 1720958850,
@@ -252,7 +252,7 @@
          "explanation": "La minugia è rappresentata da un piatto di minestra, simbolo di modestia e semplicità, accompagnato da un'aquila che rappresenta la protezione divina."
       }
    },
-   "orza e poggia": {
+   "23": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ksJ5gsauADgqMCTocxxh7kew97gr",
       "created": 1720958871,
@@ -263,7 +263,7 @@
          "explanation": "La parola \"orza e poggia\" fa riferimento alla navigazione in mare, simboleggiata dalle onde che si infrangono sulla chiglia della nave."
       }
    },
-   "il ‘pappo’ e ‘l ‘dindi": {
+   "24": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ksJU30N55XLLQnvFEfmHVxV8pK8A",
       "created": 1720958896,
@@ -274,7 +274,7 @@
          "explanation": "La pizza rappresenta il \"pappo\" per la sua costanza nel nutrire le persone, mentre la tacchina simboleggia il \"dindi\" per la sua presenza tipica nelle tavole festive."
       }
    },
-   "grifagno": {
+   "25": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ksJVhKywZLJQWK1MRbRkH0JDstyT",
       "created": 1720958897,
@@ -285,7 +285,7 @@
          "explanation": "Ho scelto queste emoji perché rappresentano animali feroci e mostruosi, simili al grifagno descritto da Dante."
       }
    },
-   "lurco": {
+   "26": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ksJrYWH5xB5vWggvrWUlOX0B8F1t",
       "created": 1720958919,
@@ -296,7 +296,7 @@
          "explanation": "L'emoji del gufo rappresenta il concetto di \"lurco\" come una figura notturna e misteriosa, simile a un rapace che osserva nell'ombra."
       }
    },
-   "forcata": {
+   "27": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ksKC5PiYc8XJhlW2W23xtvGQWuqJ",
       "created": 1720958940,
@@ -307,7 +307,7 @@
          "explanation": "La parola \"forcata\" si riferisce a un'arma simile a una forca utilizzata per pungolare i dannati all'inferno, rappresentata qui con un coltello e una mucca."
       }
    },
-   "occhi di bragia": {
+   "28": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ksKiKhhB4zdST0Pwk3g7ooYvbqy8",
       "created": 1720958972,
@@ -318,7 +318,7 @@
          "explanation": "Gli occhi brillavano intensamente come brace accesa, simbolo di passione o rabbia."
       }
    },
-   "marra": {
+   "29": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ksKkVzDBW9mi0QL4JDZY7VIpNTuw",
       "created": 1720958974,
@@ -329,7 +329,7 @@
          "explanation": "🔨 Percussore di punizione, simbolo di violenza e punizione nella Commedia."
       }
    },
-   "vigilia": {
+   "30": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ksMZrrnM0rlQs8LWRzXxzjLVgmbh",
       "created": 1720959087,
@@ -340,7 +340,7 @@
          "explanation": "La vigilia è il momento di attesa prima di un evento importante."
       }
    },
-   "lonza": {
+   "31": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ksMf2gcGmDlQUuAm4WuAOvCFL1Vr",
       "created": 1720959093,
@@ -351,7 +351,7 @@
          "explanation": "Una lonza è un animale veloce che rappresenta la rapidità e l'agilità, concetti che possono essere espressi con l'emoji di un leopardo."
       }
    },
-   "dispitto": {
+   "32": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ksMkVU5FPW2PmLnmnmrQp3eSFGUX",
       "created": 1720959098,
@@ -362,7 +362,7 @@
          "explanation": "Un mix di rabbia e tristezza, rappresentato dai cuori spezzati e la faccina arrabbiata."
       }
    },
-   "imborgarsi": {
+   "33": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ksN75xP5VbV6xaIdmRSKy6L2RGW4",
       "created": 1720959121,
@@ -373,7 +373,7 @@
          "explanation": "La faccia di Dante si imborga di stupore quando si trova di fronte alle nuove scoperte dell'oltretomba."
       }
    },
-   "infuturarsi": {
+   "34": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ksNTHy1Ia5epQc6kKl1msu68FJtz",
       "created": 1720959143,
@@ -384,7 +384,7 @@
          "explanation": "Il simbolo dell'orologio rappresenta il concetto di tempo futuro e il globo di cristallo simboleggia la capacità di predire il futuro, riflettendo il significato di \"infuturarsi\" come guardare al futuro con previsione."
       }
    },
-   "intepidare": {
+   "35": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ksNvCkZhtUbmLgveQ95TLHNl4NYp",
       "created": 1720959171,
@@ -395,7 +395,7 @@
          "explanation": "Rappresenta l'oscillazione tra il caldo delle fiamme infernali 🔥 e il freddo delle acque del fiume Cocito 💦, simboli del tormento dei dannati."
       }
    },
-   "adona": {
+   "36": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ksNxzvQtkn2EWPvNLjuA8ssm1yN8",
       "created": 1720959173,
@@ -406,7 +406,7 @@
          "explanation": "Un'emoji che rappresenta un angelo circondato dal fuoco, poiché \"adona\" è il nome della dodicesima bolgia dell'Inferno dantesco, dove sono puniti i falsari."
       }
    },
-   "bieco": {
+   "37": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ksOM6y0UaOA73yg0y8U7dVPyJ8n8",
       "created": 1720959198,
@@ -417,7 +417,7 @@
          "explanation": "Il volto torvo e malvagio di Satana nella descrizione infernale."
       }
    },
-   "bivero": {
+   "38": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ksOmfIigpTM4c4p4m1yUCkMc04JM",
       "created": 1720959224,
@@ -428,7 +428,7 @@
          "explanation": "L'emoji del bivero rappresenta la bevanda immaginaria menzionata nell'Inferno di Dante."
       }
    },
-   "intrearsi": {
+   "39": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ksPCk6k27knQNexaRlAboOunDhZN",
       "created": 1720959250,
@@ -439,7 +439,7 @@
          "explanation": "Due persone che si avvinghiano e si circondano reciprocamente, simboleggiando l'intrecciarsi delle anime nei tormenti dell'Inferno."
       }
    },
-   "burchio": {
+   "40": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ksPEpuMP7K0A4GtqDFnMRv7zdz8p",
       "created": 1720959252,
@@ -450,7 +450,7 @@
          "explanation": "Un castello in fiamme per rappresentare il concetto di \"burchio\" come luogo devastato e in rovina."
       }
    },
-   "tremolar": {
+   "41": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ksPajLWnw6Jg4HvgH2UXc4qQiiaS",
       "created": 1720959274,
@@ -461,7 +461,7 @@
          "explanation": "Rappresenta il tremolar delle fiamme dell'Inferno descritto da Dante."
       }
    },
-   "cirro negletto": {
+   "42": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ksPwDLutySYPfbIkkKc4bcU3HktY",
       "created": 1720959296,
@@ -472,7 +472,7 @@
          "explanation": "Rappresenta un cielo nuvoloso e senza arcobaleno, descrivendo un ambiente cupo e tetreo."
       }
    },
-   "botolo": {
+   "43": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ksQHLdV64VioisdCbRmawlCUmpyW",
       "created": 1720959317,
@@ -483,7 +483,7 @@
          "explanation": "Rappresenta il fuoco dell'Inferno, dove si trovano i botoli, ovvero i dannati violenti."
       }
    },
-   "amor": {
+   "44": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ksQeXwzgOIdHAjqedpKH8o3iMZu5",
       "created": 1720959340,
@@ -494,7 +494,7 @@
          "explanation": "L'amor rappresentato con un cuore, due persone e una rosa per simboleggiare l'amore romantico."
       }
    },
-   "si fanno grassi": {
+   "45": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ksR0jXlJIOGMqvUI8HsUtBsH1VbD",
       "created": 1720959362,
@@ -505,7 +505,7 @@
          "explanation": "Gli emoji di cibi grassi rappresentano l'aumento di peso dei peccatori nella Divina Commedia."
       }
    },
-   "grasso": {
+   "46": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ksRLUK0H5VYspe8tL2XkhWp6Pejl",
       "created": 1720959383,
@@ -516,7 +516,7 @@
          "explanation": "Ho scelto queste emoji perché il grasso è spesso associato a cibi ricchi e calorici."
       }
    },
-   "manicare": {
+   "47": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ksRgs6iWk9QGZwYzPAG4H5dhV9Ha",
       "created": 1720959404,
@@ -527,7 +527,7 @@
          "explanation": "Mangiare pasta con avidità, tanto che si guardano gli altri per assicurarsi di non perderne nemmeno un pezzetto."
       }
    },
-   "il ben dell’intelletto": {
+   "48": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ksS22xHmxnceTxlo8lI3eADxKQjs",
       "created": 1720959426,
@@ -538,7 +538,7 @@
          "explanation": "Amore per la conoscenza e il sapere."
       }
    },
-   "perso": {
+   "49": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ksSPKR7fEU4xr3CpXD3QYHAijPsY",
       "created": 1720959449,
@@ -549,7 +549,7 @@
          "explanation": "Ho scelto l'emoji dell'occhio e della persona in quanto \"perso\" potrebbe indicare qualcuno che si è smarrito o che non sa più dove andare, come il protagonista della Commedia."
       }
    },
-   "introcque": {
+   "50": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ksSl2dXeWQm0AJkonPYxZ5i4iDXE",
       "created": 1720959471,
@@ -560,7 +560,7 @@
          "explanation": "La parola \"introcque\" indica un'entrata chiusa, rappresentata dal lucchetto che simboleggia la chiusura."
       }
    },
-   "incielare": {
+   "51": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ksT6LjJ61jHDPULvprqYA8uWEBAl",
       "created": 1720959492,
@@ -571,7 +571,7 @@
          "explanation": "Rappresenta un tempestoso e turbolento momento nell'Inferno di Dante, pieno di fuoco, vento e neve."
       }
    },
-   "rubro": {
+   "52": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ksTVw2ZDAYXm35QCohOyFXxsX2Oj",
       "created": 1720959517,
@@ -582,7 +582,7 @@
          "explanation": "Il colore rosso è spesso associato al rubro, che qui rappresenta il peccato della violenza."
       }
    },
-   "imparadisare": {
+   "53": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ksTqTbySaqcIEpuafw11JfhtY7J8",
       "created": 1720959538,
@@ -593,7 +593,7 @@
          "explanation": "Rappresenta l'idea di essere portati in paradiso, simboleggiata dall'angelo e dall'isola, come descritto da Dante nella Divina Commedia."
       }
    },
-   "inmiarsi": {
+   "54": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ksUB8et4QN1LrVBmfsWFKuokwHD3",
       "created": 1720959559,
@@ -604,7 +604,7 @@
          "explanation": "L'emoji delle mani giunte e dell'onda rappresentano il concetto di immergersi spiritualmente o fisicamente in qualcosa, come avviene nella Divina Commedia quando i personaggi si inmergono nelle diverse profondità dell'aldilà."
       }
    },
-   "bruti": {
+   "55": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ksUbCud1ygd6E72c0KrqtG6WKyip",
       "created": 1720959585,
@@ -615,7 +615,7 @@
          "explanation": "Ho scelto l'emoji della scimmia per rappresentare la parola \"bruti\" poiché suggerisce l'idea di brutalità e selvaticità. La fiamma aggiunge un'impressione di violenza e aggressività."
       }
    },
-   "tetragono": {
+   "56": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ksUxpTi3b9QXXqmFSR6kImXasMv7",
       "created": 1720959607,
@@ -626,7 +626,7 @@
          "explanation": "Ho scelto queste emoji per rappresentare un tetragono, una figura geometrica con quattro lati."
       }
    },
-   "pieta": {
+   "57": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ksUxPO5xJtSvoYqzlKBw3KQoMCpC",
       "created": 1720959607,
@@ -637,7 +637,7 @@
          "explanation": "Un cuore pieno di compassione e amore, simbolo della pietà mostrata nei confronti degli altri."
       }
    },
-   "lo bello stilo": {
+   "58": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ksVJKEGmE4nb6ypgzv5mAiGvXzbE",
       "created": 1720959629,
@@ -648,7 +648,7 @@
          "explanation": "Il simbolo della penna (📝) rappresenta lo stilo, mentre l'angelo (👼) simboleggia la bellezza e la perfezione della poesia di Dante."
       }
    },
-   "per li rami": {
+   "59": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ksVe7l0bUE8IWJhp9mhhK3PzIbWP",
       "created": 1720959650,
@@ -659,7 +659,7 @@
          "explanation": "Questo emoji rappresenta il concetto di rami, associato al volo degli uccelli tra di essi."
       }
    },
-   "cognazione": {
+   "60": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ksW0vmJW5H6aZ8g9HpKM2vyTH1bU",
       "created": 1720959672,
@@ -670,7 +670,7 @@
          "explanation": "La parola \"cognazione\" rappresenta il legame familiare tra individui attraverso il sangue."
       }
    },
-   "lussurioso": {
+   "61": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ksWLdlA9z8tPSbMSiqM4yitQzu2r",
       "created": 1720959693,
@@ -681,7 +681,7 @@
          "explanation": "Inferno, Canto V: i lussuriosi vengono puniti nel fiume di fuoco per il peccato della lussuria."
       }
    },
-   "invidiosi veri": {
+   "62": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ksWhXNnbvDKmUHYNhsLWFHUeqC7T",
       "created": 1720959715,
@@ -692,7 +692,7 @@
          "explanation": "Rappresenta la malvagità e la gelosia dei personaggi nella Divina Commedia."
       }
    },
-   "teodìa": {
+   "63": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ksX2xHcvlhaK5SHkNpfvRwkrdKFb",
       "created": 1720959736,
@@ -703,7 +703,7 @@
          "explanation": "La parola \"teodìa\" rappresentata con le emoji della preghiera e di un libro, poiché si tratta di un concetto teologico che riguarda la giustizia divina."
       }
    },
-   "innanellare": {
+   "64": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ksXO9aGVfixCmcLpqYin2rADai7Y",
       "created": 1720959758,
@@ -714,7 +714,7 @@
          "explanation": "Matrimonio, legame che unisce due persone."
       }
    },
-   "fiumana": {
+   "65": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ksXkiRW0NaRRpzLyi5aKjNBoaCjU",
       "created": 1720959780,
@@ -725,7 +725,7 @@
          "explanation": "I demoni infernali trasformano le anime umane in fiumana per punirle."
       }
    },
-   "donna": {
+   "66": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ksY5aOLIlfNOO48Ia3m9SNxB7PX5",
       "created": 1720959801,
@@ -736,7 +736,7 @@
          "explanation": "Una donna con i capelli scuri che brilla di luce, simbolo della bellezza e dell'eleganza femminile."
       }
    },
-   "accaffi": {
+   "67": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ksYmzwpRucWiNkoWT9HK00JYq8X8",
       "created": 1720959844,
@@ -747,7 +747,7 @@
          "explanation": "Presta attenzione, perché `accaffi` si riferisce ai buffoni e ai giullari presenti nell'Inferno di Dante."
       }
    },
-   "arte": {
+   "68": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ksZ8j9eb5PzC53Bl6sOX0hGAp8Mo",
       "created": 1720959866,
@@ -758,7 +758,7 @@
          "explanation": "Arte viene rappresentata con l'emoji del teatro e della tavolozza dei colori perché rappresenta l'espressione creativa e artistica dell'uomo."
       }
    },
-   "apprensiva": {
+   "69": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ksZ9ZPgRglSrA79ce18nhkkkPJrD",
       "created": 1720959867,
@@ -769,7 +769,7 @@
          "explanation": "Mi sembra che l'emoji del pensiero rifletta il senso di preoccupazione o ansietà che può esprimere il termine \"apprensiva\"."
       }
    },
-   "avaccio": {
+   "70": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ksZU8W4HBlMCsiWXGRGnUuo2eQKS",
       "created": 1720959888,
@@ -780,7 +780,7 @@
          "explanation": "Camminare indietro lentamente, come se si stesse sgretolando. Ho scelto queste emoji perché rappresentano il movimento retrogradante e la sensazione di perdita di controllo."
       }
    },
-   "amanza": {
+   "71": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ksZqDFCPyN1LbKvYvAPoCgUWF8Au",
       "created": 1720959910,
@@ -791,7 +791,7 @@
          "explanation": "La parola \"amanza\" rappresentata con un coltello e un cuore spezzato perché si riferisce a un omicidio romantico."
       }
    },
-   "bulicame": {
+   "72": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ksaBLnRvMiUpNznGBVRhZf0JjdDD",
       "created": 1720959931,
@@ -802,7 +802,7 @@
          "explanation": "Un vulcano che erutta acqua bollente, simbolo del fiume di acqua calda menzionato nella Divina Commedia."
       }
    },
-   "cuticagna": {
+   "73": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ksaXiGH6Pk2vXB9ISWFD8mk3tv1y",
       "created": 1720959953,
@@ -813,7 +813,7 @@
          "explanation": "Inferno - cuticagna è un termine usato per indicare una sorta di demone o diavolo all'interno dell'Inferno, quindi ho scelto l'emoji del diavolo."
       }
    },
-   "archimandrita": {
+   "74": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ksatno2kR8pQybFQdODGZuD5lkjS",
       "created": 1720959975,
@@ -824,7 +824,7 @@
          "explanation": "Il termine \"archimandrita\" rappresenta un monaco di alto rango nella gerarchia ecclesiastica, quindi ho scelto emoji di un angelo, un castello e una preghiera."
       }
    },
-   "il Bel Paese": {
+   "75": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ksbEk4bM0HyavXVV6bZfBB7P1mDA",
       "created": 1720959996,
@@ -835,7 +835,7 @@
          "explanation": "Italia, la terra bella con paesaggi mozzafiato e ricca di cultura."
       }
    },
-   "assenzo": {
+   "76": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ksbaUDqCoS3pBMMVEMyOQSr9ZZHw",
       "created": 1720960018,
@@ -846,7 +846,7 @@
          "explanation": "La parola \"assenzo\" in emoji rappresenta l'accordo e l'approvazione tra due persone."
       }
    },
-   "babbo": {
+   "77": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ksbvFumXfhYnmy1xYnN50y06p6OQ",
       "created": 1720960039,
@@ -857,7 +857,7 @@
          "explanation": "Un padre amorevole che si prende cura della famiglia."
       }
    },
-   "stenebrare": {
+   "78": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9kscGF5EPhBz1vj5XGU5ay4vCEMHW",
       "created": 1720960060,
@@ -868,7 +868,7 @@
          "explanation": "Rappresenta l'oscurità e il buio della parola \"stenebrare\" nella Divina Commedia."
       }
    },
-   "aggirata": {
+   "79": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9kscc6ieiYaopDocWbgpScOMNUzKL",
       "created": 1720960082,
@@ -879,7 +879,7 @@
          "explanation": "Il labirinto simboleggia la perdita e la confusione dell'anima smarrita."
       }
    },
-   "rubino": {
+   "80": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9kscysD1Ou1ezeBYsihtP6lGypApz",
       "created": 1720960104,
@@ -890,7 +890,7 @@
          "explanation": "Il rubino rappresenta il dolore e la sofferenza dell'Inferno."
       }
    },
-   "delusa": {
+   "81": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ksdJJJXxkWQIYB4MlTxtUz2k30hW",
       "created": 1720960125,
@@ -901,7 +901,7 @@
          "explanation": "Per rappresentare la tristezza e la delusione che si provano quando ci si sente delusi da qualcuno o qualcosa."
       }
    },
-   "adimare": {
+   "82": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ksdfNO2QAchksYtLQfAGM8ynEmed",
       "created": 1720960147,
@@ -912,7 +912,7 @@
          "explanation": "Dante usa il termine \"adimare\" per descrivere le fiamme infernali, quindi ho scelto l'emoji di un vulcano in eruzione per rappresentare il concetto di fuoco e tormento."
       }
    },
-   "cammino": {
+   "83": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ksdgPKhQVSLCOGQB9jEuQ3ZkyEbK",
       "created": 1720960148,
@@ -923,7 +923,7 @@
          "explanation": "Il cammino di Dante all'interno dell'Inferno è difficile e pericoloso."
       }
    },
-   "nato": {
+   "84": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9kse250nF8r37Nf2TLXD8q3gD46TD",
       "created": 1720960170,
@@ -934,7 +934,7 @@
          "explanation": "Il neonato rappresenta la nascita e l'inizio di un nuovo viaggio, simboleggiato qui con un mix di emojis che rappresentano la vita, la creazione e la natura della Divina Commedia."
       }
    },
-   "gramo": {
+   "85": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9kseQ0eDzqpltL8CN6bfwyJsq1Lub",
       "created": 1720960194,
@@ -945,7 +945,7 @@
          "explanation": "Il giudizio infernale. Ho scelto queste emoji per rappresentare la pesantezza e la punizione del peccato."
       }
    },
-   "quinci e quindi": {
+   "86": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ksevP8zDWZqD7bMo5E2PBZjQ5WCL",
       "created": 1720960225,
@@ -956,7 +956,7 @@
          "explanation": "Indica un movimento avanti e indietro, come un flusso continuo di azioni e pensieri."
       }
    },
-   "antomata": {
+   "87": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ksf1g3tNHtWSPy5eH0L28S7oH8eg",
       "created": 1720960231,
@@ -967,7 +967,7 @@
          "explanation": "Il cuore spezzato è simboleggiato dal fantasma, rappresentante la profonda tristezza dell'anima."
       }
    },
-   "contingenza": {
+   "88": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ksfR5EezebNHhFZQsa92Uoq9ReGJ",
       "created": 1720960257,
@@ -978,7 +978,7 @@
          "explanation": "La contingenza rappresenta il concetto di variabilità e imprevedibilità, simboleggiato dall'emoji che indica la riflessione e l'incertezza."
       }
    },
-   "cortesia": {
+   "89": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ksfpLSSctkHhgbBb998bydVKVjm3",
       "created": 1720960281,
@@ -989,7 +989,7 @@
          "explanation": "La cortesia è simboleggiata da una corona per rappresentare il rispetto e la gentilezza che si manifesta attraverso gesti nobili e amichevoli."
       }
    },
-   "culo": {
+   "90": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ksgBszchCElWNcXVW64r27rogVW7",
       "created": 1720960303,
@@ -1000,7 +1000,7 @@
          "explanation": "Rappresentano l'aspetto umoristico del termine e il suo significato intrinseco legato al mondo del basso."
       }
    },
-   "speranza": {
+   "91": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ksgWzyG1IRPUYdpRejoVGk3NKsLN",
       "created": 1720960324,
@@ -1011,7 +1011,7 @@
          "explanation": "La speranza è simboleggiata dall'arcobaleno, portatore di pace e promesse di un futuro migliore."
       }
    },
-   "brancolare": {
+   "92": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ksgsziFBU8MQWE35InL0SmXXxbcg",
       "created": 1720960346,
@@ -1022,7 +1022,7 @@
          "explanation": "Ho scelto l'emoji delle mani che cercano nel buio per rappresentare il senso di incertezza e confusione nel tentativo di capire."
       }
    },
-   "resurrezione": {
+   "93": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ksgt5vGA5sp4ZLLyyFMrgaOsBX2R",
       "created": 1720960347,
@@ -1033,7 +1033,7 @@
          "explanation": "Il sole sorge di nuovo dopo la notte buia della morte."
       }
    },
-   "angelo": {
+   "94": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ksjwq5pvIunOWxKGVfuBellaCVwe",
       "created": 1720960536,
@@ -1044,7 +1044,7 @@
          "explanation": "Angelo è rappresentato dalle emoji di un angelo e un volto sorridente per indicare la purezza e la bontà dell'essere celeste."
       }
    },
-   "fiche": {
+   "95": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9kt0qgLAfNbwpVQ3SNimBT4rcAdRr",
       "created": 1720961584,
@@ -1055,7 +1055,7 @@
          "explanation": "La fiche rappresenta il cerchio infernale in cui sono puniti i falsari, simboleggiato dal fuoco che li brucia eternamente."
       }
    },
-   "barba": {
+   "96": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9kt0sTAdCPHIeMvYhI2ifDHOPnjb9",
       "created": 1720961586,
@@ -1066,7 +1066,7 @@
          "explanation": "Dante descrive il barbuto Diavolo all'Inferno come una figura feroce e spaventosa."
       }
    },
-   "oscuro/scuro": {
+   "97": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9kt4AeWW0UcaqrvBcF2P2sdZbUDEe",
       "created": 1720961790,
@@ -1077,7 +1077,7 @@
          "explanation": "Rappresenta l'oscurità e le tenebre presenti nell'Inferno di Dante."
       }
    },
-   "aggueffarsi": {
+   "98": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktC5yZICcsuwUlPhoLiWg6h9OrdL",
       "created": 1720962281,
@@ -1088,7 +1088,7 @@
          "explanation": "Un leone si nasconde tra le foglie, osservando attentamente."
       }
    },
-   "maestro": {
+   "99": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktIAb6KasMV6t9AWipg7E8J6RjD1",
       "created": 1720962658,
@@ -1099,7 +1099,7 @@
          "explanation": "Il maestro indica la figura di Virgilio, guida di Dante nell'Inferno."
       }
    },
-   "rubécchio": {
+   "100": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktP5yrEgyuJp1wEgLFL7odwuKbgA",
       "created": 1720963087,
@@ -1110,7 +1110,7 @@
          "explanation": "Il rubécchio simboleggia il vento impetuoso e la tempesta descritta nella scena."
       }
    },
-   "aquila": {
+   "101": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktWwvHfkCp2jUZOXa1MYRAeJGtmB",
       "created": 1720963574,
@@ -1121,7 +1121,7 @@
          "explanation": "Simboleggia l'aquila che appare nell'empireo, rappresentante del giusto governo di un imperatore."
       }
    },
-   "nicchia": {
+   "102": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktWxzzLfyvkiKEvVFq4Uo8dqljtO",
       "created": 1720963575,
@@ -1132,7 +1132,7 @@
          "explanation": "Una chiave infuocata, simbolo della ricerca e del raggiungimento di una meta importante."
       }
    },
-   "accline": {
+   "103": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktWydvpmuhemMZM6uryWUdmkbTjj",
       "created": 1720963576,
@@ -1143,7 +1143,7 @@
          "explanation": "\"Aveva un portamento maestoso e fiero, come una stella che si eleva verso l'alto.\" - Ho scelto l'emoji della stella con la freccia in alto perché rappresenta l'azione di elevarsi e sollevarsi, come descritto nel testo."
       }
    },
-   "aggrato": {
+   "104": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktWzqOge2IIcRFvwPf2jxRaUPkc0",
       "created": 1720963577,
@@ -1154,7 +1154,7 @@
          "explanation": "Mi sembra che l'emojii della preghiera e il sorriso siano perfetti per esprimere gratitudine e gioia."
       }
    },
-   "arzanà": {
+   "105": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktX17eOBLCiQ16pzIASrcnXZF5uk",
       "created": 1720963579,
@@ -1165,7 +1165,7 @@
          "explanation": "Un'arsenale è un luogo dove vengono costruite e riparate le navi. Ho scelto l'emoji della barca e del martello per rappresentare entrambi gli elementi."
       }
    },
-   "berze": {
+   "106": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktX2ew4yRZsGAUGMQqhzqTXdopU3",
       "created": 1720963580,
@@ -1176,7 +1176,7 @@
          "explanation": "Il termine \"berze\" si traduce con l'emoji del diavolo ardente per rappresentare l'inferno descritto da Dante nella Divina Commedia."
       }
    },
-   "letargo": {
+   "107": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktX3UpX4xDxj5UFo34yWq9HZpotH",
       "created": 1720963581,
@@ -1187,7 +1187,7 @@
          "explanation": "Ho scelto queste emoji perché il letargo è un sonno profondo e pesante."
       }
    },
-   "accismare": {
+   "108": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktX4Z5eu7mp4W2dBeyfpkfv822kY",
       "created": 1720963582,
@@ -1198,7 +1198,7 @@
          "explanation": "Espressione di violenza e morte, rappresentata dalle armi utilizzate per uccidere."
       }
    },
-   "ramogna": {
+   "109": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktX5Q0ATDMDzo1w3U5ICSedAkboN",
       "created": 1720963583,
@@ -1209,7 +1209,7 @@
          "explanation": "La ramogna simboleggia una pianta che brucia, rappresentando il dolore e il tormento dell'Inferno."
       }
    },
-   "denso": {
+   "110": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktX6TyPTBkkoIf5RalbHUcwThRZV",
       "created": 1720963584,
@@ -1220,7 +1220,7 @@
          "explanation": "Denso viene rappresentato con la pioggia e la nebbia, simboli di oscurità e confusione."
       }
    },
-   "muffa": {
+   "111": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktX7PdjRxpdrJTVxk2SHOnl37PCB",
       "created": 1720963585,
@@ -1231,7 +1231,7 @@
          "explanation": "La muffa rappresenta qualcosa di sporco e disgustoso, come uno stato di decadenza o corruzione."
       }
    },
-   "libro": {
+   "112": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktX9HWi10Cg13qUHvxUaWv079cHI",
       "created": 1720963587,
@@ -1242,7 +1242,7 @@
          "explanation": "👀 Per rappresentare il concetto di libro in modo semplice e immediato."
       }
    },
-   "scoglio": {
+   "113": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktXAmsDctPmTv35pzwjULXFCGoNw",
       "created": 1720963588,
@@ -1253,7 +1253,7 @@
          "explanation": "Scoglio rappresentato con un'onda che si infrange su una roccia, simboleggiando un ostacolo o una difficoltà da superare."
       }
    },
-   "libertà": {
+   "114": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktXBVx2WKcV3h9nLhtUTtEwLVU3S",
       "created": 1720963589,
@@ -1264,7 +1264,7 @@
          "explanation": "La libertà è simboleggiata da un uccello che vola libero nel paesaggio aperto."
       }
    },
-   "scardova": {
+   "115": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktXBckSbS4rLgPTE5eGhRv3KiMwx",
       "created": 1720963589,
@@ -1275,7 +1275,7 @@
          "explanation": "Una coppia di emoji che rappresentano un mare in tempesta e un uccello marino, simboli della situazione di tumulto e confusione che caratterizza la scena descritta da Dante con il termine \"scardova\"."
       }
    },
-   "ora": {
+   "116": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktXDLj6Zduv7SYMZQau7DMjrUW3X",
       "created": 1720963591,
@@ -1286,7 +1286,7 @@
          "explanation": "Ho scelto l'emoji dell'orologio per rappresentare il concetto di tempo, che è spesso associato alla parola \"ora\" nella Divina Commedia."
       }
    },
-   "ancoi": {
+   "117": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktXEHFS16O3i01g6VQWbMXEb6EHc",
       "created": 1720963592,
@@ -1297,7 +1297,7 @@
          "explanation": "\"Ancoi\" in emoji è rappresentato da una persona che si avvicina a un castello, simboleggiando il concetto di \"ancorare\" o \"recarsi presso\"."
       }
    },
-   "sanza ‘nfamia e sanza lodo": {
+   "118": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktXFxMtaMM1pboUJFyQP12YAUomE",
       "created": 1720963593,
@@ -1308,7 +1308,7 @@
          "explanation": "Il re è rispettato e onorato senza avere né critiche né elogi, simbolo di una reputazione impeccabile."
       }
    },
-   "piluccare": {
+   "119": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktXHiE0RBhMW8Mx1UqDVJpyOKEag",
       "created": 1720963595,
@@ -1319,7 +1319,7 @@
          "explanation": "Mangereccezza, visione delle anime che si nutrono di frutti nel Purgatorio di Dante."
       }
    },
-   "lavoro": {
+   "120": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktXIMMIfGHaW549FiOOD6zWKp5Ry",
       "created": 1720963596,
@@ -1330,7 +1330,7 @@
          "explanation": "L'emojii rappresentano diversi tipi e ambiti di lavoro, dimostrando la varietà di attività che possono essere realizzate con impegno e dedizione."
       }
    },
-   "fersa": {
+   "121": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktXJ6hnaEtkuz6b0OPjMbqiam35z",
       "created": 1720963597,
@@ -1341,7 +1341,7 @@
          "explanation": "Una combinazione di emoji che rappresentano un leone e il fuoco, simboli di forza e potere, che sono associati al concetto di \"fersa\" nella Divina Commedia di Dante."
       }
    },
-   "gabbo": {
+   "122": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktXKqwaPyUuRXZOQocHIUjHBsPwK",
       "created": 1720963598,
@@ -1352,7 +1352,7 @@
          "explanation": "Un emoji raffigurante un pagliaccio, simbolo di buffonate e ridicolo, come nel contesto in cui Dante utilizza il termine \"gabbo\" nella Divina Commedia."
       }
    },
-   "co": {
+   "123": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktXLGbaXCKwO4QNW4Z3sL1sx2IJH",
       "created": 1720963599,
@@ -1363,7 +1363,7 @@
          "explanation": "Ho scelto queste emoji perché 'co' appare nell'Inferno, dove i peccatori sono puniti con fuoco e tormento."
       }
    },
-   "pina": {
+   "124": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktXMOcV9JIcxHkKUngAVBpoauSM4",
       "created": 1720963600,
@@ -1374,7 +1374,7 @@
          "explanation": "Una delle poche parole che possono essere rappresentate con un emoji che la rappresenta in modo chiaro."
       }
    },
-   "masnada": {
+   "125": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktXNaKYjledcMaxIdhvsOwv9Snti",
       "created": 1720963601,
@@ -1385,7 +1385,7 @@
          "explanation": "La parola \"masnada\" è tradotta con emoji che evocano il concetto di un gruppo di demoni forti e potenti."
       }
    },
-   "sciorina": {
+   "126": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktXOoPEZ6qAO88bUrmWE5IHIcl6i",
       "created": 1720963602,
@@ -1396,7 +1396,7 @@
          "explanation": "Il termine \"sciorina\" rappresenta un'immagine di nobiltà e potere, simboleggiata da una regina con una spada."
       }
    },
-   "vanni": {
+   "127": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktXPjM59VhMuog4NDEkGKvXpszCf",
       "created": 1720963603,
@@ -1407,7 +1407,7 @@
          "explanation": "La parola \"vanni\" è tradotta con un'onda in tempesta per rappresentare l'idea di un mare agitato e tormentato."
       }
    },
-   "mamma": {
+   "128": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktXQJcY8tWn2hjuxpHEmWGIJlh8l",
       "created": 1720963604,
@@ -1418,7 +1418,7 @@
          "explanation": "Una madre che ama teneramente il suo figlio."
       }
    },
-   "Alichino": {
+   "129": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktXR8vhi4OfaKgSBtoGWeDORLJ4J",
       "created": 1720963605,
@@ -1429,7 +1429,7 @@
          "explanation": "Alichino è un demone della Divina Commedia che tormenta le anime dannate nell'Inferno con la sua malvagità."
       }
    },
-   "attuia": {
+   "130": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktXSmxObo1DLkgVFegNxKFmkkswr",
       "created": 1720963606,
@@ -1440,7 +1440,7 @@
          "explanation": "Attuia è una parola che evoca l'inferno e il tormento, rappresentata dall'iconografia del fuoco, delle catene e della mente confusa."
       }
    },
-   "degno di nota": {
+   "131": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktXTfJrUrMRkqEFFfSIJcHbBA4q6",
       "created": 1720963607,
@@ -1451,7 +1451,7 @@
          "explanation": "\"La perfezione di questa scrittura è degna di nota\" - ho scelto il rotolo di pergamena e il pollice alzato per rappresentare un testo particolarmente notevole."
       }
    },
-   "indiarsi": {
+   "132": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktXVDfPGOka3LyfWPCUE77Tf3y5A",
       "created": 1720963609,
@@ -1462,7 +1462,7 @@
          "explanation": "Indossare un'espressione di meraviglia, come se stato colpiti dal mare."
       }
    },
-   "biscazza": {
+   "133": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktXWvQF7zwqv4ijPQrtaG7sUFIya",
       "created": 1720963610,
@@ -1473,7 +1473,7 @@
          "explanation": "Ho scelto l'emoji di un dado e di una borsa di denaro per rappresentare il concetto di \"biscazza\", che si riferisce a un luogo di gioco d'azzardo e scommesse."
       }
    },
-   "inurbarsi": {
+   "134": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktXXajmWSDuUkoHumajNGnN73lNU",
       "created": 1720963611,
@@ -1484,7 +1484,7 @@
          "explanation": "Ispirata alla città, simboleggia la ricerca di una comunità o di un ambiente abitato."
       }
    },
-   "luce": {
+   "135": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktXYMPttG2wjKIRw1fyeUlCJ2bOz",
       "created": 1720963612,
@@ -1495,7 +1495,7 @@
          "explanation": "La luce simboleggia la conoscenza, la saggezza e la illuminazione spirituale."
       }
    },
-   "invetriato": {
+   "136": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktXZ7rp1UwrySFedSLKlKw0K7Jwv",
       "created": 1720963613,
@@ -1506,7 +1506,7 @@
          "explanation": "Un vecchio che ha perso il colore e la vitalità, come un vetrificato senza luce."
       }
    },
-   "nuca": {
+   "137": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktXaQZG2GgRf4VMXllxFMmf35DDY",
       "created": 1720963614,
@@ -1517,7 +1517,7 @@
          "explanation": "La parola 'nuca' è stata tradotta con l'emoji del fuoco e un volto arrabbiato per rappresentare il concetto di rabbia e violenza presenti nella Divina Commedia."
       }
    },
-   "perizoma": {
+   "138": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktXb2zu2IpNvj05GjnT9Fgnm57rE",
       "created": 1720963615,
@@ -1528,7 +1528,7 @@
          "explanation": "Il perizoma è indossato nell'Inferno, simbolo di sofferenza e tormento."
       }
    },
-   "sacrato poema": {
+   "139": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktXcQTcPH3TzPF3ii83nSRWfY6z8",
       "created": 1720963616,
@@ -1539,7 +1539,7 @@
          "explanation": "Il emoji delle mani giunte simboleggia la sacralità e rispetto attribuiti al poema divino."
       }
    },
-   "scerpare": {
+   "140": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktXdgjIScIRLIAGFD0b4miGNvH1i",
       "created": 1720963617,
@@ -1550,7 +1550,7 @@
          "explanation": "Dante descrive il gesto dell'Angelo che \"scerpa\" l'anima dei dannati dal corpo con una precisione tagliente."
       }
    },
-   "vanità": {
+   "141": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktXe5O1pOvQGUiuEtxuxEOfgV65u",
       "created": 1720963618,
@@ -1561,7 +1561,7 @@
          "explanation": "Una donna elegante che riflette il concetto di vanità nel contesto della Divina Commedia."
       }
    },
-   "solecchio": {
+   "142": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktXfZbc7lcJVJbTucaQRt9n0pELt",
       "created": 1720963619,
@@ -1572,7 +1572,7 @@
          "explanation": "Il sole rappresenta la luce e l'occhio simboleggia la visione, quindi si potrebbe interpretare come \"guardare la luce\" simboleggiando la conoscenza."
       }
    },
-   "ventilare": {
+   "143": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktXgvCJCK89l43nsRGc5ablyoOr8",
       "created": 1720963620,
@@ -1583,7 +1583,7 @@
          "explanation": "Rappresenta il concetto di \"ventilare\", ossia di far circolare e muovere l'aria."
       }
    },
-   "zara": {
+   "144": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktXiwbjHG2KNYAa3B3iiHR8i1ECf",
       "created": 1720963622,
@@ -1594,7 +1594,7 @@
          "explanation": "Re in battaglia, rappresenta potere e regalità."
       }
    },
-   "alfa": {
+   "145": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktXj6h3MXPtIvSrNRynRbhsO8om1",
       "created": 1720963623,
@@ -1605,7 +1605,7 @@
          "explanation": "Alfa è la prima lettera dell'alfabeto greco e rappresenta l'inizio, proprio come la lettera A nell'alfabeto latino."
       }
    },
-   "indragare": {
+   "146": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktXkWpwOJpafn6AuFuJpUSkrwPxe",
       "created": 1720963624,
@@ -1616,7 +1616,7 @@
          "explanation": "Ho scelto queste emoji perché la parola \"indragare\" fa riferimento a guardare intensamente qualcosa in fiamme."
       }
    },
-   "anguinaia": {
+   "147": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktXmbIcKxkZEOnRxI3b1mPSj4K1p",
       "created": 1720963626,
@@ -1627,7 +1627,7 @@
          "explanation": "Una serpe avvolta intorno a qualcosa rappresenta l'idea di inganno e tradimento, simile all'aggrovigliarsi della serpe nella Divina Commedia."
       }
    },
-   "eclissi": {
+   "148": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktXmpNpgRTtLPUIdNrbYE2Uw1aP4",
       "created": 1720963626,
@@ -1638,7 +1638,7 @@
          "explanation": "La fase in cui la luna è oscurata dal sole durante un'eclissi."
       }
    },
-   "bordone": {
+   "149": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktXnxaYwbHBgmz2O3Cb5w5RUW7bL",
       "created": 1720963627,
@@ -1649,7 +1649,7 @@
          "explanation": "Il bordone è uno strumento musicale a corde molto antico, simile ad una viola da gamba."
       }
    },
-   "adorare": {
+   "150": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktXoRGVJFuzFcseHWZiKQyBo9ijK",
       "created": 1720963628,
@@ -1660,7 +1660,7 @@
          "explanation": "Mi sembra che l'emoj sia adatto perché simboleggia il gesto di adorazione e venerazione."
       }
    },
-   "broda": {
+   "151": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktXqYykG2nOjrsDLztulxy0nubtF",
       "created": 1720963630,
@@ -1671,7 +1671,7 @@
          "explanation": "La broda è simbolo di umiltà e semplicità, ingredienti essenziali per affrontare la vita."
       }
    },
-   "Italia": {
+   "152": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktXr6gXdSJ7JJ7G5kN0e5zqsiIWN",
       "created": 1720963631,
@@ -1682,7 +1682,7 @@
          "explanation": "👑 La bandiera italiana rappresenta il paese di Dante, l'Italia."
       }
    },
-   "cenìt": {
+   "153": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktXtsownDqf3UPHaoybeW3hTVXTU",
       "created": 1720963633,
@@ -1693,7 +1693,7 @@
          "explanation": "Il fuoco dell'Inferno, i peccatori trasformati in creature mostruose."
       }
    },
-   "dotta": {
+   "154": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktXtuQ4VTD7Fg93YiqtumUslstUg",
       "created": 1720963633,
@@ -1704,7 +1704,7 @@
          "explanation": "Rappresenta la parola \"dotta\" con un libro e degli occhi, simboli di conoscenza e saggezza."
       }
    },
-   "acquistare": {
+   "155": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktXvAbf1zq0SHlsw5Tg8W2yz1LRT",
       "created": 1720963635,
@@ -1715,7 +1715,7 @@
          "explanation": "Ho scelto l'emoji del carrello della spesa con il denaro per rappresentare l'azione di \"acquistare\", che significa fare una transazione commerciale."
       }
    },
-   "condiscendere": {
+   "156": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktXw1ZyVljKYy7pe3dP7Ojv4JN93",
       "created": 1720963636,
@@ -1726,7 +1726,7 @@
          "explanation": "Rappresenta il gesto di accettare o acconsentire, simboleggiato dallo scuotimento di mano tra due persone."
       }
    },
-   "congratulare": {
+   "157": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktXxHoYMSvI4z6KUDldzWQl1nTna",
       "created": 1720963637,
@@ -1737,7 +1737,7 @@
          "explanation": "Celebrazione e gioia per un merito raggiunto."
       }
    },
-   "correggere": {
+   "158": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktXyiDbi566p3QfGIy2nRGUoVXgo",
       "created": 1720963638,
@@ -1748,7 +1748,7 @@
          "explanation": "Rappresenta il gesto di correggere un errore o una sbavatura, come farebbe Dante nel rivedere il suo testo."
       }
    },
-   "discetti": {
+   "159": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktXz4ztc1pPfMM07DfMJiCgT0589",
       "created": 1720963639,
@@ -1759,7 +1759,7 @@
          "explanation": "Il cuore spezzato è simboleggiato dalla spada, espressione di dolore e sofferenza."
       }
    },
-   "divenire": {
+   "160": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktY05SyuP52OEUEsoF4BY4gTcPfX",
       "created": 1720963640,
@@ -1770,7 +1770,7 @@
          "explanation": "Il simbolo del cerchio rappresenta il concetto di divenire, il continuo cambiamento e evoluzione della vita, come descritto da Dante nella Divina Commedia."
       }
    },
-   "festinare": {
+   "161": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktY10CzUPjQy00Y9BpvJ1VqugklQ",
       "created": 1720963641,
@@ -1781,7 +1781,7 @@
          "explanation": "Correre verso un banchetto, simbolo di desiderio e fretta."
       }
    },
-   "garrire": {
+   "162": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktY2Gddtp5syCVGJe5GJZMdng5VX",
       "created": 1720963642,
@@ -1792,7 +1792,7 @@
          "explanation": "La parola \"garrire\" significa \"gridare come un uccello\", quindi ho scelto l'emoji di un uccello che cinguetta per rappresentare questo concetto."
       }
    },
-   "meritare": {
+   "163": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktY3QXmxgHsiFwJ8wvB58OUYltKP",
       "created": 1720963643,
@@ -1803,7 +1803,7 @@
          "explanation": "Il merito viene ricompensato con una corona."
       }
    },
-   "stilo": {
+   "164": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktY4oPGUyUdTxW9602MlIfZVug2O",
       "created": 1720963644,
@@ -1814,7 +1814,7 @@
          "explanation": "Il simbolo dell'inchiostro rappresenta lo stilo, usato da Dante per scrivere le sue opere."
       }
    },
-   "aiutare": {
+   "165": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktY5DzhLxmDbjgWR1oZixvu1eKr4",
       "created": 1720963645,
@@ -1825,7 +1825,7 @@
          "explanation": "Collaborazione e supporto reciproco sono fondamentali per aiutare gli altri."
       }
    },
-   "allumare": {
+   "166": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktY6Kz5316PJ1ISnJCPHBEUyp55S",
       "created": 1720963646,
@@ -1836,7 +1836,7 @@
          "explanation": "Il fuoco illumina, simbolo di conoscenza e saggezza."
       }
    },
-   "stare freschi": {
+   "167": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktYGHfSIezrvB8N0GXmoBvnoGwjr",
       "created": 1720963656,
@@ -1847,7 +1847,7 @@
          "explanation": "Ho scelto queste emoji perché rappresentano il concetto di stare freschi, associato al freddo e al gelo."
       }
    },
-   "caligine": {
+   "168": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktYQQBVWKxigBXCC9XVEbJPIlsRv",
       "created": 1720963666,
@@ -1858,7 +1858,7 @@
          "explanation": "Una nuvola fitta e oscura che avvolge e confonde, riferendosi al concetto di oscurità e confusione."
       }
    },
-   "folgoreggiare": {
+   "169": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktYRZon9wAX4tO8tMbgAa70qPOPI",
       "created": 1720963667,
@@ -1869,7 +1869,7 @@
          "explanation": "La parola \"folgoreggiare\" è stata tradotta con l'emoji del fulmine seguito da una stella per rappresentare un'azione luminosa e intensa simile a un bagliore fulminante."
       }
    },
-   "zavorra": {
+   "170": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktYbGyFgGZRpF6kT1ALIAE8SKuma",
       "created": 1720963677,
@@ -1880,7 +1880,7 @@
          "explanation": "La zavorra è il peso che trasciniamo con noi, come un'ancora legata alla valigia della nostra anima."
       }
    },
-   "rimbombare": {
+   "171": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktYkOf98AKD30jgVue1aGRNQTg5O",
       "created": 1720963686,
@@ -1891,7 +1891,7 @@
          "explanation": "Il suono forte e rimbombante è rappresentato dalle emoji di altoparlanti e esplosioni, per indicare un rumore assordante."
       }
    },
-   "vita": {
+   "172": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktYumbvaJ5y3aka4ZHb9xCyFfHkl",
       "created": 1720963696,
@@ -1902,7 +1902,7 @@
          "explanation": "La vita è simboleggiata da un uccello libero e luminoso, rappresentando la libertà e la bellezza della vita stessa."
       }
    },
-   "modo": {
+   "173": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktZ4SWX3Q2UZCrURC3fsK7Vq88yf",
       "created": 1720963706,
@@ -1913,7 +1913,7 @@
          "explanation": "Il modo simboleggia il viaggio e la ricerca di una direzione nella vita."
       }
    },
-   "batisteo": {
+   "174": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktZFpGX4zdp3cpUNLoo5vhxqmXa0",
       "created": 1720963717,
@@ -1924,7 +1924,7 @@
          "explanation": "Il termine \"batisteo\" può essere tradotto con emoji che rappresentano il fuoco e le catene, simbolizzando il concetto di punizione infernale."
       }
    },
-   "antelucano": {
+   "175": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktZGPT2scQMiT64vbVv8irujIfzC",
       "created": 1720963718,
@@ -1935,7 +1935,7 @@
          "explanation": "Il termine \"antelucano\" significa \"prima dell'alba\", quindi ho scelto emoji del sole che sorge all'orizzonte per rappresentare questo concetto."
       }
    },
-   "burro": {
+   "176": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktZPd7flCK4dCh7yTPrA1shHkhWX",
       "created": 1720963727,
@@ -1946,7 +1946,7 @@
          "explanation": "Un alimento grasso e untuoso, simbolo di ricchezza e abbondanza."
       }
    },
-   "convenire": {
+   "177": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktZZ1fG6Jf2wWpYA20sSKC6ggJzY",
       "created": 1720963737,
@@ -1957,7 +1957,7 @@
          "explanation": "Due persone che concordano, si mettono d'accordo e si accordano reciprocamente."
       }
    },
-   "appulcrare": {
+   "178": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktZjThKvHCzfhyJ4wS9NskTgKgGs",
       "created": 1720963747,
@@ -1968,7 +1968,7 @@
          "explanation": "Significa \"seppellire\", quindi ho scelto l'emoji di una tomba e di una bara."
       }
    },
-   "ghiottoni": {
+   "179": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktZtTpheytryyxkkHZI64foaf9Pt",
       "created": 1720963757,
@@ -1979,7 +1979,7 @@
          "explanation": "Gli emoji rappresentano il concetto di \"ghiottoni\" come persone che amano mangiare in modo eccessivo e goloso."
       }
    },
-   "gaetta": {
+   "180": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9kta39SGV6PxTb0XEHpn2Ba9TziTq",
       "created": 1720963767,
@@ -1990,7 +1990,7 @@
          "explanation": "Un vecchio nel cerchio dell'Inferno legato e bruciato perché ha commesso violenza contro se stesso. Ho scelto queste emoji per rappresentare sia la vecchiaia del peccatore, sia il suo essere bruciato nelle fiamme dell'Inferno."
       }
    },
-   "pepe": {
+   "181": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktaDaNL6eQ2NIOTiTUxHcE1liPfY",
       "created": 1720963777,
@@ -2001,7 +2001,7 @@
          "explanation": "Pepe è un simbolo di piccantezza e intensità, proprio come l'inferno descritto da Dante."
       }
    },
-   "viro": {
+   "182": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktaE17dPGxR3cjfgHGURwPNh5GAj",
       "created": 1720963778,
@@ -2012,7 +2012,7 @@
          "explanation": "Il viro è un uomo infedele condannato a soffrire nel girone dei lussuriosi all'Inferno."
       }
    },
-   "fame": {
+   "183": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktaOZXmBeLiJC2XgZuGDK3IGKbuV",
       "created": 1720963788,
@@ -2023,7 +2023,7 @@
          "explanation": "La fame è rappresentata da cibi vari per indicare il desiderio insaziabile di nutrirsi."
       }
    },
-   "voi": {
+   "184": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktaYo1UAuFjy9ixrctOa9LKysBES",
       "created": 1720963798,
@@ -2034,7 +2034,7 @@
          "explanation": "Due persone che si abbracciano, rappresentando il pluralismo del pronome \"voi\" utilizzato per indicare più di una persona."
       }
    },
-   "tegghia": {
+   "185": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktaiZO1wlYwdFKFkA2NMB3FlnyCO",
       "created": 1720963808,
@@ -2045,7 +2045,7 @@
          "explanation": "Una combinazione di emoji che rappresenta una casa infuocata, simboleggiando la descrizione di un luogo oscuro e violento nella Divina Commedia."
       }
    },
-   "pane": {
+   "186": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktashgPI5pB2BjifcJEDa3CPDuGT",
       "created": 1720963818,
@@ -2056,7 +2056,7 @@
          "explanation": "Il pane rappresenta il cibo di base, essenziale per la sopravvivenza e simbolo di sostentamento."
       }
    },
-   "spiga": {
+   "187": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktb2VbzIAh5DA3Clxd7YNOQIXu3l",
       "created": 1720963828,
@@ -2067,7 +2067,7 @@
          "explanation": "La spiga rappresenta la prosperità e la fertilità della natura, simbolo di ricchezza e abbondanza."
       }
    },
-   "balba": {
+   "188": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktbCDo42tPKRMWAZN6tBKMJOxpiV",
       "created": 1720963838,
@@ -2078,7 +2078,7 @@
          "explanation": "Una emoji di una persona che parla con difficoltà per rappresentare il concetto di balbuzie."
       }
    },
-   "vernaccia": {
+   "189": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktbDKPn6yB5azElnIF3GyksWC6ID",
       "created": 1720963839,
@@ -2089,7 +2089,7 @@
          "explanation": "La vernaccia è un vino tipico della Toscana, rappresentato dalle uve 🍇 e dal vino 🍷."
       }
    },
-   "coagulare": {
+   "190": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktbNRzntPUXJAXUFjSz9gDWELZWR",
       "created": 1720963849,
@@ -2100,7 +2100,7 @@
          "explanation": "Il fuoco si congela, rappresentando il contrasto tra i due elementi opposti e la trasformazione che avviene in paradiso."
       }
    },
-   "belletta": {
+   "191": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktbXNHxAVrNp5rVNNGwTZOUclDVU",
       "created": 1720963859,
@@ -2111,7 +2111,7 @@
          "explanation": "La corona e la maschera rappresentano l'idea di bellezza e inganno, caratteristiche che la parola \"belletta\" simboleggia nella Divina Commedia."
       }
    },
-   "parlasia": {
+   "192": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktbhganH7AGCG657qGRNxK3nsiYg",
       "created": 1720963869,
@@ -2122,7 +2122,7 @@
          "explanation": "La parola \"parlasia\" si traduce con l'emoji di una bocca che parla e un segno di silenzio, simboleggiando la parola che non è ascoltata o non ha alcun effetto."
       }
    },
-   "ché": {
+   "193": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktbrWh33ypdnuCS1C1AIDptFntem",
       "created": 1720963879,
@@ -2133,7 +2133,7 @@
          "explanation": "Per rappresentare il concetto di \"ché\" ho scelto l'emoji di una persona con una mano sul mento, che indica la riflessione e il pensiero su qualcosa."
       }
    },
-   "agrume": {
+   "194": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktc1hEdiOfq4GNVrmyyHUy7Iih1f",
       "created": 1720963889,
@@ -2144,7 +2144,7 @@
          "explanation": "Ho scelto queste emoji perché rappresentano i colori e i frutti tipici degli agrumi."
       }
    },
-   "cintola": {
+   "195": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktc2PsgXXVymjgZKfqUSCH8TnnHa",
       "created": 1720963890,
@@ -2155,7 +2155,7 @@
          "explanation": "La cintola simboleggia la cintura che Dante indossa nel viaggio attraverso l'Inferno, il Purgatorio e il Paradiso."
       }
    },
-   "agosta": {
+   "196": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktcDSaGO8VBlwOXCHJFiVFGc3G5u",
       "created": 1720963901,
@@ -2166,7 +2166,7 @@
          "explanation": "Un pesce spada, simbolo di forza e agilità, come l'animale marino descritto nella Divina Commedia."
       }
    },
-   "addio": {
+   "197": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktcNJPvdNFyAQQjRZMNRByPzpcTX",
       "created": 1720963911,
@@ -2177,7 +2177,7 @@
          "explanation": "L'emoji della mano che saluta rappresenta l'addio, un gesto di separazione o congedo emotivo."
       }
    },
-   "aceto": {
+   "198": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktcXv8nEnjBGUpLBBdcGuHxao4EB",
       "created": 1720963921,
@@ -2188,7 +2188,7 @@
          "explanation": "Il limone rappresenta l'acidità dell'aceto, mentre il fuoco simboleggia la sua capacità di bruciare il palato."
       }
    },
-   "talento": {
+   "199": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktchWfIwBPEeMQCvgST5RBRigoV0",
       "created": 1720963931,
@@ -2199,7 +2199,7 @@
          "explanation": "Il talento rappresenta l'abilità e l'intelligenza necessari per raggiungere il successo."
       }
    },
-   "scacchi": {
+   "200": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktcrNYR7evr7whcspryOIP3tprLx",
       "created": 1720963941,
@@ -2210,7 +2210,7 @@
          "explanation": "Rappresentano la strategia e la competizione presenti nella partita degli scacchi, simbolo di ingegno e sfida. 🔥"
       }
    },
-   "stormo": {
+   "201": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktd1NRLK23dCww2JAN3yP7IbFgi3",
       "created": 1720963951,
@@ -2221,7 +2221,7 @@
          "explanation": "Un gruppo di uccelli che volano insieme durante una tempesta."
       }
    },
-   "rogna": {
+   "202": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktd1x2dAUKyzZLJ8FUy7GIcXqZCL",
       "created": 1720963951,
@@ -2232,7 +2232,7 @@
          "explanation": "L'emoji del virus rappresenta la rognosità di una situazione difficile da affrontare e che porta frustrazione."
       }
    },
-   "stormire": {
+   "203": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktdCQ4PvCQbEYNOvqbwhCW5YAIjt",
       "created": 1720963962,
@@ -2243,7 +2243,7 @@
          "explanation": "Il fruscio del vento tra le foglie, simbolo di movimento e agitazione."
       }
    },
-   "squillo": {
+   "204": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktdLqM4R1UenGcyxxBka6gyYyTNL",
       "created": 1720963971,
@@ -2254,7 +2254,7 @@
          "explanation": "Il squillo è rappresentato da un telefono che squilla, simboleggiando il suono di una campana che risuona."
       }
    },
-   "quartana": {
+   "205": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktdWt44QHBoWsRuWXmgwQ9h9NrWH",
       "created": 1720963982,
@@ -2265,7 +2265,7 @@
          "explanation": "Malattia ricorrente che causava febbre e brividi, come la malaria."
       }
    },
-   "squilla": {
+   "206": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktdgFKkj5zrArNYix1H0L52PdjSZ",
       "created": 1720963992,
@@ -2276,7 +2276,7 @@
          "explanation": "Le campane squillano festosamente, annunciando un evento importante."
       }
    },
-   "oppilazione": {
+   "207": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktdqTFoBUpJmFDVilQ1nswnQFL0E",
       "created": 1720964002,
@@ -2287,7 +2287,7 @@
          "explanation": "Il cibo in eccesso porta al vomito, rappresentato qui dall'emoji di un hamburger con una faccina disgustata."
       }
    },
-   "mammella": {
+   "208": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktdqskwHmar9zR4oaaTGaFyyRGbg",
       "created": 1720964002,
@@ -2298,7 +2298,7 @@
          "explanation": "Madre che allatta, simbolo di amore e protezione materna."
       }
    },
-   "intoppare": {
+   "209": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9kte0R2rk3qS1Wal7SkPoIkdYNzVM",
       "created": 1720964012,
@@ -2309,7 +2309,7 @@
          "explanation": "Un angelo che pensa intensamente, simboleggiando l'intrappolarsi in un pensiero o problema."
       }
    },
-   "disio": {
+   "210": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9kteBymyQJgltX0l4Y8aCU2LF5xBo",
       "created": 1720964023,
@@ -2320,7 +2320,7 @@
          "explanation": "Desiderio ardente e appassionato, simboleggiato dal fuoco e dal cuore che bruciano per qualcosa."
       }
    },
-   "idropesì": {
+   "211": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9kteLlhteSajPzTV58SbIcSD9hH1h",
       "created": 1720964033,
@@ -2331,7 +2331,7 @@
          "explanation": "Pioggia che cade copiosa come lacrime, simboleggiando tristezza e malinconia."
       }
    },
-   "giuntura": {
+   "212": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9kteVJXbqIPl6aLriwqJzkBGXCezQ",
       "created": 1720964043,
@@ -2342,7 +2342,7 @@
          "explanation": "Un emoji raffigurante due mani che si stringono per rappresentare l'unione e la connessione tra due punti o elementi diversi."
       }
    },
-   "complessione": {
+   "213": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktefuwS0Ht8gjvxPgDHQiYpJ8BSY",
       "created": 1720964053,
@@ -2353,7 +2353,7 @@
          "explanation": "Molti significati e sfaccettature, proprio come la complessione del testo di Dante."
       }
    },
-   "saetta": {
+   "214": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktetFy89rWqFkQ6fSbpH3DZf7itP",
       "created": 1720964067,
@@ -2364,7 +2364,7 @@
          "explanation": "🌩️ Veloce come un lampo, la saetta illumina il cielo durante un temporale."
       }
    },
-   "sale": {
+   "215": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktetp6IYcclfpTJg7PGHAFHixqQU",
       "created": 1720964067,
@@ -2375,7 +2375,7 @@
          "explanation": "🌊 Per indicare il simbolo del sale, presente nell'Inferno di Dante come tormento dei dannati."
       }
    },
-   "fiamma": {
+   "216": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktf3HHOoTCYlhxnNgqIDgyegeMVp",
       "created": 1720964077,
@@ -2386,7 +2386,7 @@
          "explanation": "La fiamma simboleggia energia e passione, come in Dante rappresenta il desiderio e l'amore ardente."
       }
    },
-   "corno": {
+   "217": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktfE9QgNU5ofrI2edsGyG9Emy23D",
       "created": 1720964088,
@@ -2397,7 +2397,7 @@
          "explanation": "Il corno è simbolo di annuncio e avvertimento nell'aldilà."
       }
    },
-   "ago": {
+   "218": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktfN0LWoAqRc7Lyfp3YYVmTt9Q7V",
       "created": 1720964097,
@@ -2408,7 +2408,7 @@
          "explanation": "L'emoji dell'orologio è associata al concetto di \"tempo\", mentre il globo cristallino richiama l'idea di \"precisione\"."
       }
    },
-   "effetto": {
+   "219": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktfOCIqjfvznaDtXds6C8I8Q2NhU",
       "created": 1720964098,
@@ -2419,7 +2419,7 @@
          "explanation": "Il 🎭 rappresenta il concetto di \"effetto teatrale\", mentre il 💥 rappresenta il risultato sorprendente e impattante che si ottiene."
       }
    },
-   "manso": {
+   "220": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktfYk5Mf9NznaUPBn4Bi0e3EvODV",
       "created": 1720964108,
@@ -2430,7 +2430,7 @@
          "explanation": "Un agnello mansueto, simbolo di docilità e innocenza."
       }
    },
-   "magagna": {
+   "221": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktfio0TO25Z4LVmQNSANwzXCZqdM",
       "created": 1720964118,
@@ -2441,7 +2441,7 @@
          "explanation": "La magagna rappresenta una ferita o un male fisico, simboleggiato qui con l'emoji di una goccia di sangue e una faccina con occhio gonfio."
       }
    },
-   "ferrigno": {
+   "222": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktfsdugAVRl3kblcYvmM6naf7d3a",
       "created": 1720964128,
@@ -2452,7 +2452,7 @@
          "explanation": "Unione di ferro e metallo, rappresenta la durezza e la solidità della parola \"ferrigno\" nella Divina Commedia."
       }
    },
-   "terragno": {
+   "223": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktg4Ycb2odYfPcvcfK0kp4rDEbs8",
       "created": 1720964140,
@@ -2463,7 +2463,7 @@
          "explanation": "La scelta di usare l'emoji del pianeta Terra e delle persone rappresenta la parola \"terragno\" che si riferisce alla dimensione umana e terrena."
       }
    },
-   "gente nuova": {
+   "224": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktg9KGLGyXe5Q8ez9MIV8k8pQOKN",
       "created": 1720964145,
@@ -2474,7 +2474,7 @@
          "explanation": "Rappresenta l'arrivo di nuove persone, simboleggiato dall'emoji di due persone nuove che si avvicinano."
       }
    },
-   "trombetta": {
+   "225": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktgEDRgjQXeCv5ifB965scdrL8s2",
       "created": 1720964150,
@@ -2485,7 +2485,7 @@
          "explanation": "In Dante la trombetta è spesso utilizzata per annunciare eventi importanti, simboleggia il richiamo alla giustizia divina."
       }
    },
-   "temprare": {
+   "226": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktgOyymZUTCSrTxlhYHz6WwetAGW",
       "created": 1720964160,
@@ -2496,7 +2496,7 @@
          "explanation": "In questa frase ho scelto l'emoji del termometro e della spada per rappresentare rispettivamente il concetto di temperare e purificare, che è il significato di \"temprare\" in questo contesto."
       }
    },
-   "palagio": {
+   "227": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktgbZ9p2YZ90p6s1h4GCy1JR2XC0",
       "created": 1720964173,
@@ -2507,7 +2507,7 @@
          "explanation": "Il palagio è un castello in fiamme, simbolo di rovina e distruzione."
       }
    },
-   "scandere": {
+   "228": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktgjtJowkOgEy1OatL9I34smuB4d",
       "created": 1720964181,
@@ -2518,7 +2518,7 @@
          "explanation": "Il tempo è scandito dalle parole del poeta Dante."
       }
    },
-   "sacco": {
+   "229": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktsSoyoj5P8TUdHBBcahhuQDHmcu",
       "created": 1720964908,
@@ -2529,7 +2529,7 @@
          "explanation": "Il sacco simboleggia la pena e la sofferenza che i peccatori devono sopportare."
       }
    },
-   "scemo": {
+   "230": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktsTmhstxiNCJcKyZp2r5GpaDDVz",
       "created": 1720964909,
@@ -2540,7 +2540,7 @@
          "explanation": "Un emoji di un pagliaccio per rappresentare l'idiozia o la stupidità di qualcuno."
       }
    },
-   "protervo": {
+   "231": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktsUHTbRQysR4tC7GVDvdkNPRGZr",
       "created": 1720964910,
@@ -2551,7 +2551,7 @@
          "explanation": "Il guerriero si distingue per la sua audacia e fierezza."
       }
    },
-   "farina": {
+   "232": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktsV3VoS4EWVHDLofGcsHUVy3rxT",
       "created": 1720964911,
@@ -2562,7 +2562,7 @@
          "explanation": "La farina rappresenta il cibo di base, essenziale per la sopravvivenza."
       }
    },
-   "passeggiare": {
+   "233": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktsWyrgCXaQF9OszSoz6kE4RFxG7",
       "created": 1720964912,
@@ -2573,7 +2573,7 @@
          "explanation": "Questa emoji rappresenta il camminare, un'attività che si assomiglia molto al passeggiare."
       }
    },
-   "inebriare": {
+   "234": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktsXVCOU8ehyg5FThnXC5q4ZF7Hs",
       "created": 1720964913,
@@ -2584,7 +2584,7 @@
          "explanation": "La botta che ti fa girare la testa come dopo aver bevuto troppo vino."
       }
    },
-   "involare": {
+   "235": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktsXHvB90nhJmbBRip8ZENW1ZNrn",
       "created": 1720964913,
@@ -2595,7 +2595,7 @@
          "explanation": "Un'aquila che vola via velocemente simboleggia l'azione di involare, cioè rubare rapidamente."
       }
    },
-   "gire": {
+   "236": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktsYjctjIqnOIQ4L6rRP1rWAJIfd",
       "created": 1720964914,
@@ -2606,7 +2606,7 @@
          "explanation": "La parola \"gire\" è stata tradotta con l'emoji del mondo che gira su sé stesso, rappresentando il concetto di movimento e cambiamento continuo."
       }
    },
-   "gaggio": {
+   "237": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktsZDbiDrxC9jWNFA3CQnmFfxwjH",
       "created": 1720964915,
@@ -2617,7 +2617,7 @@
          "explanation": "Chiave e borsa da portare con sé durante il viaggio."
       }
    },
-   "aiuola": {
+   "238": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktsa0si2ayyaeCQb67ajjFHU20mu",
       "created": 1720964916,
@@ -2628,7 +2628,7 @@
          "explanation": "Rappresenta un giardino o un piccolo pezzo di terra con fiori, come potrebbe essere descritta un'aiuola."
       }
    },
-   "galla": {
+   "239": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktsb2TnY9VOZsxHWIipvImQRFARG",
       "created": 1720964917,
@@ -2639,7 +2639,7 @@
          "explanation": "Un volto triste e segnato dalle pene dell'Inferno, rappresentato con la maschera tragica."
       }
    },
-   "credere": {
+   "240": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktscJmGz3a89k0EDzYqSjiK1pyE2",
       "created": 1720964918,
@@ -2650,7 +2650,7 @@
          "explanation": "Credo che le mani giunte possano simboleggiare la fede e l'adorazione."
       }
    },
-   "corata": {
+   "241": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktsdOjqJPKO0Zn2dJ22sfjSAd7j7",
       "created": 1720964919,
@@ -2661,7 +2661,7 @@
          "explanation": "In emoji ho scelto un zombie e un demone per rappresentare l'idea di una presenza spaventosa e mostruosa, che capovolge il significato originale di \"corata\"."
       }
    },
-   "atro": {
+   "242": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktseXsOikQHhkXogp1fJhw16f3fc",
       "created": 1720964920,
@@ -2672,7 +2672,7 @@
          "explanation": "La parola \"atro\" è stata tradotta con l'emoji di un teschio, fiamme e un vulcano per rappresentare qualcosa di oscuro, infernale e distruttivo."
       }
    },
-   "onde": {
+   "243": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktsg8Rpl7n9o6jC0IbWLDBtjRaPR",
       "created": 1720964922,
@@ -2683,7 +2683,7 @@
          "explanation": "Rappresenta il moto ondoso del mare, simbolo di continuità e di flusso costante."
       }
    },
-   "pandere": {
+   "244": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktsgkFcn1tKtuYhqT07ZN55oeM69",
       "created": 1720964922,
@@ -2694,7 +2694,7 @@
          "explanation": "Aprire, come un lucchetto sciolto di fronte alle porte dell'Inferno."
       }
    },
-   "galassia": {
+   "245": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktshHgaJL9bVsOhTNuZJkS0nl1Un",
       "created": 1720964923,
@@ -2705,7 +2705,7 @@
          "explanation": "La galassia rappresenta l'immensità e l'universo infinito descritto da Dante."
       }
    },
-   "offensione": {
+   "246": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktsioKpK4TUWsoA7IxZ2D0Xxp4rX",
       "created": 1720964924,
@@ -2716,7 +2716,7 @@
          "explanation": "Il pugno che colpisce rappresenta l'offesa."
       }
    },
-   "nosco": {
+   "247": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktsjFUDZMXAOe4nRIa7ytyQSiT4n",
       "created": 1720964925,
@@ -2727,7 +2727,7 @@
          "explanation": "Mi sembra appropriato usare l'emoji degli occhi e del cervello per rappresentare \"nosco\" che significa \"io conosco\" in latino, indicando la conoscenza e la consapevolezza."
       }
    },
-   "necessitate": {
+   "248": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktskNRUGMv44chdMsKRzBXXVbtUS",
       "created": 1720964926,
@@ -2738,7 +2738,7 @@
          "explanation": "Una catena di fuoco, simbolo del bisogno impellente e doloroso."
       }
    },
-   "margarita": {
+   "249": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktslRPmYijvsmeNKBETMR2tCZu2S",
       "created": 1720964927,
@@ -2749,7 +2749,7 @@
          "explanation": "Una margherita rappresenta la purezza e la semplicità, presenti anche nel testo della Divina Commedia."
       }
    },
-   "magnanimo": {
+   "250": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktsmyKtfapezfE6vJZoecCLSvbXz",
       "created": 1720964928,
@@ -2760,7 +2760,7 @@
          "explanation": "Realtà molto influente e nobile, come un re che ha nobili e generose azioni."
       }
    },
-   "litare": {
+   "251": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktso0LHaCQxmlo0qedLbC53bPp8p",
       "created": 1720964930,
@@ -2771,7 +2771,7 @@
          "explanation": "Litare significa combattere o scontrarsi, quindi ho scelto le emoji di una spada incrociata con uno scudo per rappresentare un conflitto o una battaglia."
       }
    },
-   "lunghesso": {
+   "252": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktsp18b2Wmup9DnsMvgE1mk67gV4",
       "created": 1720964931,
@@ -2782,7 +2782,7 @@
          "explanation": "Il lunghesso è un viaggio notturno, simboleggiato da una luna e una valigia."
       }
    },
-   "lasso": {
+   "253": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktsqtOKgguEXsujuGEdmaLbjSDcY",
       "created": 1720964932,
@@ -2793,7 +2793,7 @@
          "explanation": "La parola \"lasso\" in emoji rappresenta tristezza e dolore, perché Dante la usa per esprimere un senso di sconfitta e abbandono."
       }
    },
-   "gradire": {
+   "254": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktsrh6bPUpvIetthWxgvq7NrzezI",
       "created": 1720964933,
@@ -2804,7 +2804,7 @@
          "explanation": "Una reazione positiva e entusiasta alla ricezione di qualcosa."
       }
    },
-   "s’etterna": {
+   "255": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktssOy1PxemPet5FbuFFeuCW3qBH",
       "created": 1720964934,
@@ -2815,7 +2815,7 @@
          "explanation": "Il tempo eterno, simboleggiato dall'orologio e dal cielo stellato."
       }
    },
-   "morto": {
+   "256": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktstXEtunmNL4Uexu5SFDvUB7OHr",
       "created": 1720964935,
@@ -2826,7 +2826,7 @@
          "explanation": "Ho scelto queste emoji perché rappresentano la morte e il dolore che essa porta."
       }
    },
-   "zaffiro": {
+   "257": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktsuUTwy3GTDEDz2SRwPpyfQjrrw",
       "created": 1720964936,
@@ -2837,7 +2837,7 @@
          "explanation": "Rappresenta la bellezza e la purezza del paradiso descritto da Dante."
       }
    },
-   "trasvolare": {
+   "258": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktsuJAXtbRip65mJKy3nrDuk0Z23",
       "created": 1720964936,
@@ -2848,7 +2848,7 @@
          "explanation": "Un'emoji di un aereo che decolla, rappresenta il concetto di trasvolare come volare sopra qualcosa o superare un ostacolo."
       }
    },
-   "porci": {
+   "259": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktsvUM78OXXUG8yw0AaMPO1fogYK",
       "created": 1720964937,
@@ -2859,7 +2859,7 @@
          "explanation": "Ho scelto l'emoji del maiale perché rappresenta i porci citati da Dante nell'Inferno."
       }
    },
-   "ortolano": {
+   "260": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktswhDsVwwOIYMOkmzfwP8UHjtsR",
       "created": 1720964938,
@@ -2870,7 +2870,7 @@
          "explanation": "Rappresenta un contadino che coltiva ortaggi, come descritto nel passaggio della Divina Commedia."
       }
    },
-   "male e peggio": {
+   "261": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktsxUTJnh7Wn3buncLp9JWLTxTOv",
       "created": 1720964939,
@@ -2881,7 +2881,7 @@
          "explanation": "Il male e il peggio sono rappresentati con l'emoji del demonio e del fuoco, simboli di sofferenza e punizione."
       }
    },
-   "livido": {
+   "262": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktsykdyFgVJqIX5WRDvKe2z2B0xR",
       "created": 1720964940,
@@ -2892,7 +2892,7 @@
          "explanation": "Il livido rappresenta il dolore fisico e emotivo provato dall'anima dannata nell'Inferno di Dante."
       }
    },
-   "tacersi": {
+   "263": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktszEZSdnkYTDpA2pd1orBh1duDu",
       "created": 1720964941,
@@ -2903,7 +2903,7 @@
          "explanation": "La scelta dell'emoji del bocchino per tacersi rappresenta il silenzio e la riservatezza."
       }
    },
-   "gola": {
+   "264": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktt0xyEJb25EMIHotFDPTLRRkqJ0",
       "created": 1720964942,
@@ -2914,7 +2914,7 @@
          "explanation": "La gola rappresenta l'ingordigia e il desiderio insaziabile di cibo."
       }
    },
-   "ma guarda e passa": {
+   "265": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktt2LtBya0qQnWFn9wFU0DuIUjrY",
       "created": 1720964944,
@@ -2925,7 +2925,7 @@
          "explanation": "Dante consiglia di guardare in fretta e continuare il cammino, senza fermarsi troppo a guardare attorno."
       }
    },
-   "carne": {
+   "266": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktt35azCEXbkmWgD0e5Wt2tVS1Tg",
       "created": 1720964945,
@@ -2936,7 +2936,7 @@
          "explanation": "Ho scelto queste emoji perché rappresentano la sostanza fisica e materiale del corpo umano."
       }
    },
-   "inoltrarsi": {
+   "267": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktt4KkOp3E5wCsuXDd2OnO7X9zHV",
       "created": 1720964946,
@@ -2947,7 +2947,7 @@
          "explanation": "Camminare in avanti nella selva oscura dell'Inferno."
       }
    },
-   "bruno": {
+   "268": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktt59ZsQNQdvNXpfh0Hjel84zzeD",
       "created": 1720964947,
@@ -2958,7 +2958,7 @@
          "explanation": "Il colore bruno rappresenta la dannazione e l'inferno, simboleggiato dal fuoco e creature mostruose."
       }
    },
-   "cosa fatta capo ha": {
+   "269": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktt6TbCiyXE1cVoAEMJLh5E0JkNO",
       "created": 1720964948,
@@ -2969,7 +2969,7 @@
          "explanation": "Una testa con un nodo che rappresenta l'idea di una situazione risolta o conclusa."
       }
    },
-   "bollore": {
+   "270": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktt7ZM7OcdbepCoDXCWjTun2TLGg",
       "created": 1720964949,
@@ -2980,7 +2980,7 @@
          "explanation": "Il bollore rappresenta la fiamma e l'acqua, elementi di purificazione e trasformazione nell'Inferno di Dante."
       }
    },
-   "bolgia": {
+   "271": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktt7F9N7YtKFiTd8DOKej6opeto3",
       "created": 1720964949,
@@ -2991,7 +2991,7 @@
          "explanation": "La bolgia è un luogo di tormento nella Divina Commedia, rappresentata dall'emoji di un turbinio di emozioni e confusione."
       }
    },
-   "bigio": {
+   "272": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktt8KEm8cqVEjD3Lm89V5QR8ZaJk",
       "created": 1720964950,
@@ -3002,7 +3002,7 @@
          "explanation": "Un colore indefinito che rappresenta l'incertezza e la confusione dell'anima."
       }
    },
-   "﻿﻿﻿﻿a viso aperto": {
+   "273": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktt9pyiHhMkHtNPb7gw6oOhcFAwp",
       "created": 1720964951,
@@ -3013,7 +3013,7 @@
          "explanation": "Il viso aperto esprime sincerità e trasparenza, quindi ho scelto l'emoji con un sorriso e degli occhi aperti per rappresentare questa idea."
       }
    },
-   "assetare": {
+   "274": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9kttAGy21shxGcTKfSED3cZkUvAPS",
       "created": 1720964952,
@@ -3024,7 +3024,7 @@
          "explanation": "Il deserto è un luogo arido e caldo, dove non c'è acqua e si può sentire una grande sete."
       }
    },
-   "loquela": {
+   "275": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9kttCd1unFP1QK74lWUFw6oUzJul8",
       "created": 1720964954,
@@ -3035,7 +3035,7 @@
          "explanation": "La parola \"loquela\" è stata tradotta con l'emoji di una bocca che parla perché si riferisce al parlare dei dannati nell'Inferno di Dante."
       }
    },
-   "quisquilia": {
+   "276": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9kttDGChdNwIfaT4DkncZmMOL5TKd",
       "created": 1720964955,
@@ -3046,7 +3046,7 @@
          "explanation": "Scelta l'emoji di una spazzatura per rappresentare \"quisquilia\", che significa qualcosa di insignificante o di poco valore."
       }
    },
-   "latino": {
+   "277": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9kttEipSHdyyfZausHS8aR6zfd8xv",
       "created": 1720964956,
@@ -3057,7 +3057,7 @@
          "explanation": "Traduzione della parola \"latino\" in emoji perché il latino è una lingua antica studiata principalmente nelle scuole."
       }
    },
-   "dislaga": {
+   "278": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9kttFoLhIvitlFoGG6SAHu86MMWEt",
       "created": 1720964957,
@@ -3068,7 +3068,7 @@
          "explanation": "Il simbolo del legame spezzato rappresenta la parola \"dislaga\" che indica un allontanamento o una separazione, come descritto nel testo della Divina Commedia."
       }
    },
-   "quatto quatto": {
+   "279": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9kttGQvTnqzPJwY6RZ7ZmLSiRbpEO",
       "created": 1720964958,
@@ -3079,7 +3079,7 @@
          "explanation": "Silenziosamente, passo dopo passo. Ho scelto queste emoji per rappresentare il movimento furtivo e discreto di qualcuno che si muove pian piano senza farsi notare."
       }
    },
-   "piaggia": {
+   "280": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9kttHJyB9zfl8Z2bUPnAopemJf8jk",
       "created": 1720964959,
@@ -3090,7 +3090,7 @@
          "explanation": "Rappresenta una scena di un uomo che cammina lungo una piaggia, che simboleggia il viaggio e l'avanzare nella vita."
       }
    },
-   "mi taccio": {
+   "281": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9kttIgm8YKkSs2qNRlHyleCm9126m",
       "created": 1720964960,
@@ -3101,7 +3101,7 @@
          "explanation": "Non dire nulla, mantenere il silenzio come simbolo di riservatezza e mistero."
       }
    },
-   "epa": {
+   "282": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9kttJQh41j5KTXpe7CVmRmHHSbJli",
       "created": 1720964961,
@@ -3112,7 +3112,7 @@
          "explanation": "La parola \"epa\" potrebbe essere rappresentata con l'emoji del fuoco e un angelo, in riferimento ai passaggi riguardanti il Paradiso di Dante."
       }
    },
-   "fiata": {
+   "283": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9kttKpduFfnk5tuTXIUObJWCj7Ij1",
       "created": 1720964962,
@@ -3123,7 +3123,7 @@
          "explanation": "La parola \"fiata\" potrebbe essere rappresentata con le emoji del fuoco e del vento, poiché si tratta di un termine che indica il soffio o il respiro."
       }
    },
-   "etico": {
+   "284": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9kttLAzBJOAxMc0djlI6AdNtphGAR",
       "created": 1720964963,
@@ -3134,7 +3134,7 @@
          "explanation": "La chiave per comprendere i principi etici."
       }
    },
-   "mesto": {
+   "285": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9kttMkpmdmnc0TZtza2AGH2hHmIo2",
       "created": 1720964964,
@@ -3145,7 +3145,7 @@
          "explanation": "La parola \"mesto\" è stata tradotta con emoji che esprimono tristezza e dolore, rappresentando lo stato d'animo di chi è afflitto da malinconia."
       }
    },
-   "tigna": {
+   "286": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9kttNZrCFahqVxvd7Qbq5AWd2n2UM",
       "created": 1720964965,
@@ -3156,7 +3156,7 @@
          "explanation": "La parola tigna è rappresentata dall'emoji di un batterio per simboleggiare un disturbo cutaneo contagioso."
       }
    },
-   "ventraia": {
+   "287": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9kttO4qnl4woA4aXzMGwKP2aXCfZ6",
       "created": 1720964966,
@@ -3167,7 +3167,7 @@
          "explanation": "La ventraia è il vento che soffia all'arco degli infami, simboleggiando il tormento degli ipocriti nell'Inferno dantesco."
       }
    },
-   "zeba": {
+   "288": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9kttPiGDNuhkGVBCuRwxxd2Kv939F",
       "created": 1720964967,
@@ -3178,7 +3178,7 @@
          "explanation": "Un emoji di zebra perché la parola \"zeba\" si riferisce agli animali simili alle zebre presenti all'Inferno nella Divina Commedia."
       }
    },
-   "vaneggiare": {
+   "289": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9kttQfH8fNmVFlb6szfuh2xj7KZM0",
       "created": 1720964968,
@@ -3189,7 +3189,7 @@
          "explanation": "Chi vaneggia parla in modo incoerente e confusionario."
       }
    },
-   "zanzara": {
+   "290": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9kttRIrVL9QBzXAGeQfOg9MHHiA5S",
       "created": 1720964969,
@@ -3200,7 +3200,7 @@
          "explanation": "Una zanzara è fastidiosa come un tormento nella vita di Dante nel Inferno."
       }
    },
-   "costura": {
+   "291": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9kttStMDN45RK1QeUnEQbJdBF41vg",
       "created": 1720964970,
@@ -3211,7 +3211,7 @@
          "explanation": "Mi sono ispirato al tema della sartoria e ho scelto l'emoji dell'abito e dell'ago per rappresentare il concetto di \"costura\"."
       }
    },
-   "urlare": {
+   "292": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9kttTX2O4W9ky38yZd7zQgQ37cE2Q",
       "created": 1720964971,
@@ -3222,7 +3222,7 @@
          "explanation": "Il gesto delle mani aperte con la bocca spalancata rappresenta l'azione di urlare, un modo visivo ed espressivo per comunicare grande rumore e disperazione."
       }
    },
-   "trangugiare": {
+   "293": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9kttUK9OPiFBVE8rsH28WFziYri3n",
       "created": 1720964972,
@@ -3233,7 +3233,7 @@
          "explanation": "La scelta dell'emoji di un piatto e di una lingua che lecca rappresenta il concetto di \"trangugiare\", cioè mangiare avidamente e con gusto."
       }
    },
-   "spedale": {
+   "294": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9kttVu1MxglqvbJm39RTvBwLnoOCt",
       "created": 1720964973,
@@ -3244,7 +3244,7 @@
          "explanation": "Rappresenta un ospedale, luogo di cura e guarigione come descritto nella Divina Commedia."
       }
    },
-   "universo": {
+   "295": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9kttVzpOSwyARK9fuTF0kh4otf9jj",
       "created": 1720964973,
@@ -3255,7 +3255,7 @@
          "explanation": "Simboleggia l'intero universo descritto nella Divina Commedia."
       }
    },
-   "schianza": {
+   "296": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9kttWWsUrtTotklpABCeUGaaLrq0I",
       "created": 1720964974,
@@ -3266,7 +3266,7 @@
          "explanation": "In questa parola ho scelto l'emoji di un fantasma con una scoppio per rappresentare il concetto di una repentina sparizione, come simboleggiato dall'espressione `schianza` nella Divina Commedia."
       }
    },
-   "smarrire": {
+   "297": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9kttXkso3xAV96oIEObCZsVYwp2pM",
       "created": 1720964975,
@@ -3277,7 +3277,7 @@
          "explanation": "La parola \"smarrire\" può essere rappresentata con un emoji che simboleggia la perdita o la confusione, come il mondo in frantumi."
       }
    },
-   "scabbia": {
+   "298": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9kttYv0fchnsQzCwIEZngLgSdV2RA",
       "created": 1720964976,
@@ -3288,7 +3288,7 @@
          "explanation": "La scabbia è rappresentata da un virus e del sangue, che simboleggiano la malattia e la sofferenza."
       }
    },
-   "serocchia": {
+   "299": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9kttZRCZGfP90YBXnggiufg8FWW1V",
       "created": 1720964977,
@@ -3299,7 +3299,7 @@
          "explanation": "Vecchia signora con rughe sul viso. Ho scelto queste emoji perché rappresentano una persona anziana e rugosa."
       }
    },
-   "gonna": {
+   "300": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9kttaE0QT8MPmxcK2a2cu6o8oq5J2",
       "created": 1720964978,
@@ -3310,7 +3310,7 @@
          "explanation": "La gonna è un simbolo di peccato e lussuria nel contesto della Divina Commedia."
       }
    },
-   "suso": {
+   "301": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9kttbisUgGjcNmKybPECaHrUMW2aU",
       "created": 1720964979,
@@ -3321,7 +3321,7 @@
          "explanation": "Suso significa guardando verso l'alto, quindi ho scelto l'emoji della freccia verso l'alto e degli occhi per rappresentare questa idea."
       }
    },
-   "sorrise parolette": {
+   "302": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9kttcu8Ke46h4Il8zvlAK8UpQXnE6",
       "created": 1720964980,
@@ -3332,7 +3332,7 @@
          "explanation": "Una faccina sorridente seguita da un fumetto per rappresentare le parole pronunciate con un sorriso."
       }
    },
-   "strega": {
+   "303": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9kttdPszY8IEdiwI8ttrmHk95Ns9W",
       "created": 1720964981,
@@ -3343,7 +3343,7 @@
          "explanation": "La strega è spesso rappresentata con un cappello a punta e una palla di cristallo, simboli tradizionali della magia e della stregoneria."
       }
    },
-   "santo": {
+   "304": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9kttdWZxqfCnzCMQPKU2UnEmT38Ms",
       "created": 1720964981,
@@ -3354,7 +3354,7 @@
          "explanation": "Significa \"santo\", rappresentato con un angelo e una colomba per evocare l'immagine di purezza e sacralità."
       }
    },
-   "defunto": {
+   "305": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktte4glb1XsTHSTeE9iSTkg6nDFf",
       "created": 1720964982,
@@ -3365,7 +3365,7 @@
          "explanation": "L'emoji ⚰️ rappresenta la morte e la fine della vita, quindi ho scelto questa per tradurre \"defunto\"."
       }
    },
-   "lebbre": {
+   "306": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9kttfM0qqmKQlpwqVpT5PUJfWKoa1",
       "created": 1720964983,
@@ -3376,7 +3376,7 @@
          "explanation": "Rappresenta la malattia e la sofferenza associata alla lebbra, caratterizzata da piaghe e necrosi della pelle."
       }
    },
-   "orto e occaso": {
+   "307": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9kttgpJPMT5r9dFBURRZMmmIJRNCU",
       "created": 1720964984,
@@ -3387,7 +3387,7 @@
          "explanation": "Il tramonto e l'alba rappresentano l'inizio e la fine delle giornate, simbolo del ciclo eterno della natura."
       }
    },
-   "ipocrita": {
+   "308": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9kttivpevXozeJT1KHYv3BRSv2kHx",
       "created": 1720964986,
@@ -3398,7 +3398,7 @@
          "explanation": "Una faccia falsa che nasconde la vera natura dell'individuo."
       }
    },
-   "indonnarsi": {
+   "309": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9kttjNGMCn8F5vlSJ97rBfg5H1hlr",
       "created": 1720964987,
@@ -3409,7 +3409,7 @@
          "explanation": "Unisce l'emoji di un uomo con un abito da sposa per rappresentare il concetto di \"indossare un vestito da sposa\" nella lingua italiana."
       }
    },
-   "gratuito": {
+   "310": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9kttlPFZhKYDLN85Fy9mu8wFZgDQY",
       "created": 1720964989,
@@ -3420,7 +3420,7 @@
          "explanation": "🎁💰🚫Nessun costo, libero da spese."
       }
    },
-   "Galeotto": {
+   "311": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9kttmDzSIsAHo4gx2PbWhCg1FCs7u",
       "created": 1720964990,
@@ -3431,7 +3431,7 @@
          "explanation": "Il cuore infuocato dal desiderio proibito come nel canto V dell'Inferno, dove Paolo e Francesca confessano di essere stati condotti alla dannazione da un libro d'amore."
       }
    },
-   "ingegno": {
+   "312": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9kttoklgznGofapN9tXEOXv4KHUvi",
       "created": 1720964992,
@@ -3442,7 +3442,7 @@
          "explanation": "La luce del genio illuminato dall'ingegno."
       }
    },
-   "femmine da conio": {
+   "313": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9kttpwRDQjQHLumsYeLZZz2uM3cDS",
       "created": 1720964993,
@@ -3453,7 +3453,7 @@
          "explanation": "Donne bellissime e seducenti, simbolo di ricchezza e lusso."
       }
    },
-   "febbre": {
+   "314": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9kttr8LPdQ7ZQZ8WXkhUBOrSfd5jL",
       "created": 1720964995,
@@ -3464,7 +3464,7 @@
          "explanation": "🔥 La febbre è rappresentata dall'emoji del termometro (🤒) che indica il senso di malessere e bruciore tipico di questa condizione."
       }
    },
-   "baratto": {
+   "315": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktttuw3hmhzaSUEkS3U5uKL41YtK",
       "created": 1720964997,
@@ -3475,7 +3475,7 @@
          "explanation": "Scelgo queste emoji perché rappresentano un'azione di scambio e protezione, concetti chiave associati al termine \"baratto\" all'interno della Divina Commedia."
       }
    },
-   "drago": {
+   "316": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9kttvqXTpWCkYfNymSwZM2wzxVZHm",
       "created": 1720964999,
@@ -3486,7 +3486,7 @@
          "explanation": "Un drago rappresenta un simbolo di potenza e pericolo."
       }
    },
-   "fanciulla / fanciullo": {
+   "317": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9kttxf3LkTMg3XiBbvzNOxecPpiGt",
       "created": 1720965001,
@@ -3497,7 +3497,7 @@
          "explanation": "Rappresentano i giovani innocenti e puri, simbolo di speranza e purezza."
       }
    },
-   "contigiato": {
+   "318": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9kttz6xYJ6aHvv1OSM5b348IX68Yt",
       "created": 1720965003,
@@ -3508,7 +3508,7 @@
          "explanation": "Due preti che si combattono, rappresentano il significato dell'invidia e della rivalità presente nella parola \"contigiato\" nella Divina Commedia."
       }
    },
-   "cintura": {
+   "319": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktu0V13AdXWuxDeuvWfrL8pKZeuK",
       "created": 1720965004,
@@ -3519,7 +3519,7 @@
          "explanation": "Una cintura è un accessorio indossato intorno alla vita che si può rappresentare con l'emoji dei pantaloni."
       }
    },
-   "caro": {
+   "320": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktu1ujezc8zhjPM3XbVawB0rmH6f",
       "created": 1720965005,
@@ -3530,7 +3530,7 @@
          "explanation": "Due cuori che si amano, rappresentati dall'emoji di una coppia in amore. La parola \"caro\" esprime il concetto di affetto e legame profondo tra due persone."
       }
    },
-   "catenella": {
+   "321": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktu2chLZsEdGpek1Opi21gsWDK9H",
       "created": 1720965006,
@@ -3541,7 +3541,7 @@
          "explanation": "Una catena formata da piccoli anelli, rappresentata dall'emoji della catenella per simboleggiare l'idea di collegamento e unione."
       }
    },
-   "circunscrivere": {
+   "322": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktuD3aJgDs5WSfbl8MQAT1lV963y",
       "created": 1720965017,
@@ -3552,7 +3552,7 @@
          "explanation": "Penso che l'emoji della freccia che gira intorno a un cerchio chiuso possa rappresentare bene l'idea di circoscrivere o delimitare qualcosa."
       }
    },
-   "cappello": {
+   "323": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktuNkNw6y8bP1uP1qG9LeINOWpI7",
       "created": 1720965027,
@@ -3563,7 +3563,7 @@
          "explanation": "Un cappello elegante che rappresenta il potere e la dignità dei personaggi nella Divina Commedia."
       }
    },
-   "assommare": {
+   "324": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktuX7gXodM6XNgXRu4IawDWLKURY",
       "created": 1720965037,
@@ -3574,7 +3574,7 @@
          "explanation": "Rappresenta l'idea di aggiungere, sommare."
       }
    },
-   "camiscia": {
+   "325": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktuh6YVq80OxcSvubsrnO9szzCiJ",
       "created": 1720965047,
@@ -3585,7 +3585,7 @@
          "explanation": "La camiscia è bruciata, simbolo di purificazione attraverso il fuoco dell'Inferno."
       }
    },
-   "menare": {
+   "326": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktusbEbdKPNPu6To8eLYFS3TjgJN",
       "created": 1720965058,
@@ -3596,7 +3596,7 @@
          "explanation": "Due emoji di scontro per rappresentare il significato di menare, che indica un azione violenta o un combattimento."
       }
    },
-   "mezzo": {
+   "327": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktv2QurQhCJcLfV44ATJgrAaUjoJ",
       "created": 1720965068,
@@ -3607,7 +3607,7 @@
          "explanation": "Rappresenta il Purgatorio, che è il mezzo tra il Paradiso e l'Inferno."
       }
    },
-   "puzza / puzzo": {
+   "328": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktvCkWPXRjJKM6pHQuWGwj0S0o57",
       "created": 1720965078,
@@ -3618,7 +3618,7 @@
          "explanation": "La parola \"puzza\" è stata tradotta in emoji con il simbolo di un escremento e di un naso, per rappresentare il concetto olfattivo di cattivo odore."
       }
    },
-   "lupa / lupo": {
+   "329": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktvMdj32zDOke3VTbyiMCbLWDKs9",
       "created": 1720965088,
@@ -3629,7 +3629,7 @@
          "explanation": "Il lupo rappresenta la bestialità e la ferocia, simboli delle anime dannate nell'Inferno di Dante."
       }
    },
-   "peltro": {
+   "330": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktvWEsJqH3ZLWlVyL0RC1RjilhNA",
       "created": 1720965098,
@@ -3640,7 +3640,7 @@
          "explanation": "Peltro è simboleggiato dalla corazza come materiale resistente e protettivo."
       }
    },
-   "sospetto": {
+   "331": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktvggVo8dgPbWT2J7ZGwc6d4rtc7",
       "created": 1720965108,
@@ -3651,7 +3651,7 @@
          "explanation": "Sto cercando di scoprire il vero significato di qualcosa, ma ho dei dubbi."
       }
    },
-   "invenzione": {
+   "332": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktvhFWE95v7NJdcpNqKZ97VhakPL",
       "created": 1720965109,
@@ -3662,7 +3662,7 @@
          "explanation": "Ho scelto queste emoji perché \"invenzione\" è un concetto creativo e illuminante, come l'idea che si accende nella mente di Dante durante il suo viaggio."
       }
    },
-   "innocente": {
+   "333": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktvr1wQWYbnizfEV0aLlT1S32SSP",
       "created": 1720965119,
@@ -3673,7 +3673,7 @@
          "explanation": "Un innocente angelo per rappresentare l'idea di purezza e innocenza."
       }
    },
-   "indovarsi": {
+   "334": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktw1z0ZDOz0H2kt7fo8ImnrofFe3",
       "created": 1720965129,
@@ -3684,7 +3684,7 @@
          "explanation": "Il simbolo della lente d'ingrandimento rappresenta l'azione di \"indovinarsi\" o capirsi reciprocamente."
       }
    },
-   "fantasia": {
+   "335": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktwBRxS1n6T14tSvtH4U8pWrUi2n",
       "created": 1720965139,
@@ -3695,7 +3695,7 @@
          "explanation": "La fantasia è come un arcobaleno pieno di stelle e pensieri brillanti."
       }
    },
-   "atleta": {
+   "336": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktwLiWVV7eHxeFY6FKn8EPxFRWRM",
       "created": 1720965149,
@@ -3706,7 +3706,7 @@
          "explanation": "Emoji dell'atleta che rappresenta forza e determinazione."
       }
    },
-   "paura": {
+   "337": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktwVS7G5tK3jw4Luvot9ynkIAIH2",
       "created": 1720965159,
@@ -3717,7 +3717,7 @@
          "explanation": "Interpreto la paura con l'emoji di un fantasma spaventato perché rappresenta la sensazione di terrore e timore che si prova di fronte a qualcosa di sconosciuto o minaccioso."
       }
    },
-   "dove il sì suona": {
+   "338": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktwfwEBif5GXXoXSgbWQmu4hTafy",
       "created": 1720965169,
@@ -3728,7 +3728,7 @@
          "explanation": "Il suono della campana rappresenta il sì, simbolo di conferma e accettazione."
       }
    },
-   "zucca": {
+   "339": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktwgBzlGWKdrfiISjHGTpPccOSBi",
       "created": 1720965170,
@@ -3739,7 +3739,7 @@
          "explanation": "Una zucca simboleggia il regno dei morti, in particolare nell'Inferno di Dante."
       }
    },
-   "scroscio": {
+   "340": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktwqnEBBRuWMg985W0SK5YVneG0i",
       "created": 1720965180,
@@ -3750,7 +3750,7 @@
          "explanation": "Ho scelto l'emoji di un'onda che si infrange per rappresentare il suono forte e improvviso di uno scroscio d'acqua."
       }
    },
-   "ringavagnare": {
+   "341": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktx0vbzdvPv4h3fGEQtdFjjD9N9U",
       "created": 1720965190,
@@ -3761,7 +3761,7 @@
          "explanation": "Descrizione dei peccati e delle pene dell'Inferno."
       }
    },
-   "bizzarro": {
+   "342": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktxAl1kS3btRkhpwM8rZE0bNbeY2",
       "created": 1720965200,
@@ -3772,7 +3772,7 @@
          "explanation": "Emoticon di faccina pazzo e stellina per enfatizzare il concetto di stranezza e eccentricità associato al termine \"bizzarro\"."
       }
    },
-   "gratulare": {
+   "343": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktxKJccusjGOQY3k08MDZMYoJ1LX",
       "created": 1720965210,
@@ -3783,7 +3783,7 @@
          "explanation": "Espressione di felicità e congratulazioni."
       }
    },
-   "rosseggiare": {
+   "344": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktxTfFlNGPfgNGyWWUVy2Qu5T20d",
       "created": 1720965219,
@@ -3794,7 +3794,7 @@
          "explanation": "La rosa è rossa e il sole tramonta, creando una sottile sfumatura nel cielo."
       }
    },
-   "scolorare": {
+   "345": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktxdRV2pQAELyNUbtoMjmS73DEbD",
       "created": 1720965229,
@@ -3805,7 +3805,7 @@
          "explanation": "Significa che qualcosa sta perdendo colore o vivacità, come nel processo di sbiadimento dei colori."
       }
    },
-   "prato": {
+   "346": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktxexabfUq7EUkPLEUlkNOWJVZtR",
       "created": 1720965230,
@@ -3816,7 +3816,7 @@
          "explanation": "I prati rappresentano la natura e la vita rigogliosa, simboli di pace e tranquillità."
       }
    },
-   "golare": {
+   "347": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktxovPFmK2JQrl5LklGUIpyJI3R9",
       "created": 1720965240,
@@ -3827,7 +3827,7 @@
          "explanation": "Emoji della lingua che le anime lussuriose usano per mostrarsi golose."
       }
    },
-   "porpora": {
+   "348": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktxymXwT1aqZbIypfkMAdIB8h8Cr",
       "created": 1720965250,
@@ -3838,7 +3838,7 @@
          "explanation": "La porpora è un colore associato alla regalità e alla sacralità, simboleggia potere e nobiltà."
       }
    },
-   "patria": {
+   "349": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9kty82EfAFEkuO31NeD0NbPpwPmmN",
       "created": 1720965260,
@@ -3849,7 +3849,7 @@
          "explanation": "La patria è simboleggiata dall'emoji dell'Italia e di una famiglia, rappresentando il legame emotivo e familiare con il proprio paese."
       }
    },
-   "nastro": {
+   "350": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktyITQpe7Fpi3hV8ZI9v2vy4mSmn",
       "created": 1720965270,
@@ -3860,7 +3860,7 @@
          "explanation": "Ho scelto l'emoji di un nastro perché rappresenta la grazia e la delicatezza, concetti che possono essere associati al termine \"nastro\" nella Divina Commedia."
       }
    },
-   "affocare": {
+   "351": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktyTr0MKShBlgvTZlPa0WtEloZz6",
       "created": 1720965281,
@@ -3871,7 +3871,7 @@
          "explanation": "La parola \"affocare\" è stata tradotta con l'emoji di un fuoco al quale viene versata dell'acqua. Questo simbolo rappresenta il concetto di spegnimento del fuoco, che è il significato di affocare."
       }
    },
-   "doccia": {
+   "352": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktyUd6H0acWeWNLASxiMbhTI3OKA",
       "created": 1720965282,
@@ -3882,7 +3882,7 @@
          "explanation": "Una doccia rappresenta purificazione e rinnovamento, concetti che si ritrovano spesso nella Divina Commedia di Dante."
       }
    },
-   "gioviale": {
+   "353": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktyemPTPYCGnUBNnEQLG4QNbzqGy",
       "created": 1720965292,
@@ -3893,7 +3893,7 @@
          "explanation": "Il sorriso e la festa trasmettono gioia e allegria."
       }
    },
-   "arrossare": {
+   "354": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktyn6nDNuRDb3OfqcloPNMf1AkUs",
       "created": 1720965301,
@@ -3904,7 +3904,7 @@
          "explanation": "Il pomodoro arrossisce quando viene messo sul fuoco, simile a quando una persona arrossisce per la vergogna o l'imbarazzo."
       }
    },
-   "impinguare": {
+   "355": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktyyxeP9yrGyQ1jvqCo9MCAj6A49",
       "created": 1720965312,
@@ -3915,7 +3915,7 @@
          "explanation": "Gli emoji scelti rappresentano l'idea di ingrassare, che è il significato di impinguare."
       }
    },
-   "abbagliare": {
+   "356": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktz8KPxBhaoqIOOmgM09EXNfLvpg",
       "created": 1720965322,
@@ -3926,7 +3926,7 @@
          "explanation": "Rappresenta la luce intensa e accecante, come quella che abbaglia gli occhi dei protagonisti nella Divina Commedia."
       }
    },
-   "cometa": {
+   "357": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktzIqKlACBSJCSfX8wTythQGMCTa",
       "created": 1720965332,
@@ -3937,7 +3937,7 @@
          "explanation": "Una cometa nel cielo simboleggia un evento straordinario e sorprendente."
       }
    },
-   "fantolino": {
+   "358": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktzSNTvwgCZyCLSnfDJMjXTzi2Nd",
       "created": 1720965342,
@@ -3948,7 +3948,7 @@
          "explanation": "Un bambino perché rappresenta l'innocenza e la purezza tipica di un fanciullo."
       }
    },
-   "strenna": {
+   "359": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktzTAr6LauRwpFQDCqzYwH5Oxbvo",
       "created": 1720965343,
@@ -3959,7 +3959,7 @@
          "explanation": "Per rappresentare il concetto di \"regalo\" contenuto nella parola \"strenna\"."
       }
    },
-   "fulgore": {
+   "360": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktzdwMuhlMcErX55TPy9YRi3OOu4",
       "created": 1720965353,
@@ -3970,7 +3970,7 @@
          "explanation": "Il fulgore rappresenta la luce intensa e brillante che illumina il cammino dei viandanti."
       }
    },
-   "topazio": {
+   "361": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktzn3F8rn2UNQloiNtMDZ2g3tUan",
       "created": 1720965363,
@@ -3981,7 +3981,7 @@
          "explanation": "Il topazio è una pietra preziosa nota per il suo splendore e la sua lucentezza."
       }
    },
-   "smeraldo": {
+   "362": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ktzxRDjgtYLM6pVqysPblFywZdbn",
       "created": 1720965373,
@@ -3992,7 +3992,7 @@
          "explanation": "Rappresenta la ricchezza e la bellezza, come l'esuberanza del colore verde brillante dell smeraldo."
       }
    },
-   "famiglia": {
+   "363": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ku07zxf8y3kgeWHKVqvisB57pvqZ",
       "created": 1720965383,
@@ -4003,7 +4003,7 @@
          "explanation": "Tutti i membri della famiglia riuniti insieme. E' il simbolo dell'importanza dei legami familiari."
       }
    },
-   "stelle": {
+   "364": {
       "model": "gpt-3.5-turbo-0125",
       "id": "chatcmpl-9ku0Hh3HD9gpb95uN9TOHOxuwEatM",
       "created": 1720965393,

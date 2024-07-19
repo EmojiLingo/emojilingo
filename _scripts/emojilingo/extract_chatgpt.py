@@ -7,15 +7,41 @@ from openai import OpenAI
 import json
 from .utils import download_table, ensure_strings_dict
 
-
 SPREADSHEET_KEY = '13vkH3a-C0OpVTm9r5daFg_y0MN8lPASwGICaa72zaGg'
 SPREADSHEET_GID = 262347955
 
+# https://platform.openai.com/docs/overview
 # MODEL = "gpt-3.5-turbo"
 # MODEL = "gpt-4-turbo"
 MODEL = "gpt-4"
 
-CHATGPT_JSON = os.path.join('../_chatgpt/', f'{MODEL}.json')
+# LANG = 'IT'
+LANG = 'EN'
+
+CHATGPT_JSON = os.path.join('../_chatgpt/', f'{MODEL}_{LANG}.json')
+
+PROMPT_WITH_TERM = {
+    'IT': textwrap.dedent(
+            """\
+            Ti darò una parola dalla Divina Commedia di Dante e ti chiedo di inventare una traduzione in emoji.
+
+            Rispondimi con una singola traduzione in 2 righe di testo puro (senza formattazione):
+            - traduzione in emoji
+            - breve frase di spiegazione della scelta.
+
+            La parola è `{term}`"""
+        ),
+    'EN': textwrap.dedent(
+            """\
+            I will give you a word from Dante's Divine Comedy and ask you to invent a translation in emoji.
+
+            Respond with a single translation in 2 lines of plain text (without formatting):
+            - translation in emoji
+            - brief explanation of the choice.
+
+            The word is {term}"""
+        )
+}
 
 
 load_dotenv()
@@ -82,22 +108,11 @@ def send_request_to_chatgpt(messages):
 
 def chat_with_gpt(term, debug=True):
 
-    prompt_with_term = textwrap.dedent(
-        f"""\
-        Ti darò una parola dalla Divina Commedia di Dante e ti chiedo di inventare una traduzione in emoji.
-
-        Rispondimi con una singola traduzione in 2 righe di testo puro (senza formattazione):
-        - traduzione in emoji
-        - breve frase di spiegazione della scelta.
-
-        La parola è `{term}`"""
-    )
-
     # single message with prompt and term
     messages = [
         {
             "role": "user",
-            "content": prompt_with_term
+            "content": PROMPT_WITH_TERM[LANG].format(term=term)
         }
     ]
 
@@ -139,7 +154,7 @@ def chat_with_gpt(term, debug=True):
         # 'content': json.loads(choice.message.content),
 
         'response_processed': {
-            'term_it': term,
+            f'term_{LANG.lower()}': term,
             'emojilingo_chatgpt': emojilingo_chatgpt,
             'explanation': explanation
         }
@@ -148,17 +163,15 @@ def chat_with_gpt(term, debug=True):
     return result_json
 
 def main(debug=True):
-    # https://platform.openai.com/docs/overview
-
     # retrieve terms from spreadsheet
     table = download_table(SPREADSHEET_KEY, SPREADSHEET_GID)
-    termini_it_dict = ensure_strings_dict(table['IT']) # index -> term
-    termini_it = list(termini_it_dict.values())
+    termini_lang_dict = ensure_strings_dict(table[LANG]) # index -> term
+    termini_lang = list(termini_lang_dict.values())
 
     # test first 10 by uncommenting this line
-    # termini_it = termini_it[:10]
+    # termini_lang = termini_lang[:10]
 
-    num_termini_it = len(termini_it)
+    num_termini_it = len(termini_lang)
 
     if os.path.exists(CHATGPT_JSON):
         with open(CHATGPT_JSON) as fin:
@@ -173,13 +186,13 @@ def main(debug=True):
 
     for index in range(num_terms_stored, num_termini_it):
 
-        term = termini_it[index]
+        term = termini_lang[index]
 
         if debug:
             print(index)
 
         term_result_json = chat_with_gpt(term)
-        full_result_json[term] = term_result_json
+        full_result_json[index] = term_result_json
 
         if debug:
             print('\n-----------------------\n')
@@ -193,6 +206,39 @@ def main(debug=True):
                 ensure_ascii=False
             )
 
+# there are repeated terms in the english version of the dante dictionary
+# (e.g., scrab, dead)
+def find_duplicates(filepath):
+    with open(filepath) as fin:
+        full_result_json = json.load(fin)
+
+    term_set = set()
+    duplicate_set = set()
+
+    for idx, value in full_result_json.items():
+        term_lang = value['response_processed'][f'term_{LANG.lower()}']
+        if term_lang in term_set:
+            duplicate_set.add(term_lang)
+        else:
+            term_set.add(term_lang)
+
+    print(f'Duplicatess ({len(duplicate_set)}): {duplicate_set}')
+
+# use idx instead of term in keys to avoid duplications
+def fix_chatgpt_json(filepath):
+    with open(filepath) as fin:
+        full_result_json = json.load(fin)
+
+    new_dict = {
+        idx: value
+        for idx, (term, value)
+        in enumerate(full_result_json.items())
+    }
+
+    filepath = filepath.replace('.json','_fixed.json')
+
+    with open(filepath, 'w') as fout:
+        json.dump(new_dict, fout, indent=3, ensure_ascii=False)
 '''
 Create a test.txt file with a field from chatgpt.json
 '''
@@ -201,20 +247,17 @@ def extract_chatgpt_emojilingo_explanations():
     with open(CHATGPT_JSON) as fin:
         full_result_json = json.load(fin)
 
-    emojilingo_chatgpt = [
-            value['response_processed']['emojilingo_chatgpt']
-            for term, value in full_result_json.items()
-        ]
-    explanation = [
-        value['response_processed']['explanation']
-        for term, value in full_result_json.items()
-    ]
-
     with open('em_expl_tmp.txt', 'w') as fout:
         fout.write(
             '\n'.join([
-                f'{el}\t{exp}'
-                for el, exp in zip(emojilingo_chatgpt, explanation)
+                '\t'.join([
+                    value['response_processed'][f'term_{LANG.lower()}'],
+                    value['response_processed']['emojilingo_chatgpt'],
+                    value['response_processed']['explanation']
+                ])
+                for
+                    term, value
+                    in full_result_json.items()
             ])
         )
 
@@ -231,6 +274,15 @@ def test_chatgpt():
 
 if __name__ == "__main__":
     # test_chatgpt()
-    # main()
+
+    main()
     extract_chatgpt_emojilingo_explanations()
+
+    # fix_chatgpt_json('../_chatgpt/gpt-4_EN.json')
+
+    # find_duplicates('../_chatgpt/gpt-3.5-turbo_EN.json')
+    # {'fear', 'scab', 'dead'}
+
+
+
 
