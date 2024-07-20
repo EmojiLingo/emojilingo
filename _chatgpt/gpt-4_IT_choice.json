@@ -617,6 +617,42 @@
          "choice": "🔅",
          "choice_source": "Emojilingo",
          "explanation": "\"Alo\" nella Divina Commedia fa riferimento alla luce, perciò l'emoji del sole rappresenta al meglio questa parola arcaica."
+      },
+      {
+         "term": "alo",
+         "choice": "🔅",
+         "choice_source": "Emojilingo",
+         "explanation": "\"Alo\" in italiano arcaico indica il calore del sole, quindi l'emoji che più si avvicina a questo concetto è 🔅."
+      },
+      {
+         "term": "alo",
+         "choice": "🔥",
+         "choice_source": "Emojilingo\nChat-GPT\n4-0613\n(Italian)",
+         "explanation": "\"Alo\" nell'antico italiano, utilizzato nella Divina Commedia, si riferisce al fuoco, pertanto l'emoji che meglio rappresenta la traduzione è quella del fuoco."
+      },
+      {
+         "term": "alo",
+         "choice": "🔅",
+         "choice_source": "Emojilingo",
+         "explanation": "La parola \"alo\" in termini danteschi significa \"splendore\" o \"luce\", che viene rappresentata meglio dall'emoji del sole."
+      },
+      {
+         "term": "alo",
+         "choice": "🔥",
+         "choice_source": "Emojilingo\nChat-GPT\n4-0613\n(Italian)",
+         "explanation": "\"Alo\" è un'espressione arcaica che indica il fuoco, quindi l'emoji del fuoco è la traduzione più appropriata e diretta."
+      },
+      {
+         "term": "alo",
+         "choice": "🔅",
+         "choice_source": "Emojilingo",
+         "explanation": "La parola \"alo\" nell'antico italiano significa \"calore\", \"luminosità\". L'emoji del sole 🔅 cattura meglio questi concetti rispetto alle altre opzioni."
+      },
+      {
+         "term": "alo",
+         "choice": "🔅",
+         "choice_source": "Emojilingo",
+         "explanation": "La parola \"alo\" in antico italiano significa \"sole\", pertanto l'emoji più corrispondente è quella del sole."
       }
    ],
    "10": [
@@ -5329,6 +5365,12 @@
          "choice": "⚔️💔",
          "choice_source": "Emojilingo\nChat-GPT\n4-0613\n(Italian)",
          "explanation": "\"Gramo\" significa afflitto, tormentato. Il cuore spezzato e la spada sembrano rappresentare meglio l'idea di tormento."
+      },
+      {
+         "term": "gramo",
+         "choice": "🥺",
+         "choice_source": "Emojilingo",
+         "explanation": "Il termine \"gramo\" in antico italiano assume il significato di afflitto, triste. L'emoji 🥺 rispecchia meglio questo concetto, rappresentando un'espressione malinconica e addolorata."
       }
    ],
    "86": [
@@ -6445,6 +6487,30 @@
          "choice": "📈",
          "choice_source": "Emojilingo",
          "explanation": "L'emoji 📈 rappresenta meglio la parola \"accline\", che significa \"inclinato verso\", senza aggiungere confusione con altre emoji come nella B e C."
+      },
+      {
+         "term": "accline",
+         "choice": "📈",
+         "choice_source": "Emojilingo",
+         "explanation": "La parola \"accline\" significa inclinato o orientato in modo favorevole. L'emoji \"📈\" suggerisce un'ascesa o un andamento positivo, che è in linea con il significato della parola. Le altre due proposte sembrano suggerire un'azione verso il basso, che è l'opposto del significato intendato."
+      },
+      {
+         "term": "accline",
+         "choice": "🌟🔼",
+         "choice_source": "Emojiligo\nChat-GPT\n3.5-turbo-0125\n(Italian)",
+         "explanation": "Accline, nell'uso dantesco, significa \"inclinate verso\". L'emoji 🌟🔼 rappresenta meglio l'idea di qualcosa che non solo è orientata verso l'alto (🔼), ma che è anche importante o valorizzata (🌟)."
+      },
+      {
+         "term": "accline",
+         "choice": "🌟🔼",
+         "choice_source": "Emojiligo\nChat-GPT\n3.5-turbo-0125\n(Italian)",
+         "explanation": "La parola \"accline\" significa \"inclinato verso\". L'emoji \"🌟🔼\" trasmette l'idea di un cambiamento positivo o di un innalzamento, che riflette la migliore interpretazione possibile data dalla parola."
+      },
+      {
+         "term": "accline",
+         "choice": "🌟🔼",
+         "choice_source": "Emojiligo\nChat-GPT\n3.5-turbo-0125\n(Italian)",
+         "explanation": "Accline significa inclinato o piegato in favore di qualcosa, quindi l'emoji della stella con l'indicazione di direzione verso l'alto sembra rappresentare meglio questa idea. Le altre opzioni possono essere fraintese come riferimenti a mercati azionari o trend."
       }
    ],
    "104": [
@@ -6631,6 +6697,30 @@
          "choice": "👟💨",
          "choice_source": "Emojilingo",
          "explanation": "La parola \"berze\" è un termine arcaico per indicare l'azione di fuggire velocemente. L'emoji dei piedi che corrono con il vento sembra rappresentare meglio questo concetto."
+      },
+      {
+         "term": "berze",
+         "choice": "👟💨",
+         "choice_source": "Emojilingo",
+         "explanation": "La parola \"berze\" nel contesto della Divina Commedia si riferisce all'azione di fuggire rapidamente. La stringa emoji con le scarpe da ginnastica e il vento rappresenta meglio questo concetto."
+      },
+      {
+         "term": "berze",
+         "choice": "👹🔥",
+         "choice_source": "Emojiligo\nChat-GPT\n3.5-turbo-0125\n(Italian)",
+         "explanation": "Berze in antico italiano significava 'Diavoli'. Pertanto, l'emoji 👹 rappresenta i diavoli e l'emoji 🔥 rappresenta l'inferno, il luogo tipico dei diavoli."
+      },
+      {
+         "term": "berze",
+         "choice": "👟💨",
+         "choice_source": "Emojilingo",
+         "explanation": "La parola \"berze\" nella Divina Commedia viene utilizzata per indicare fughe o corse veloci e quindi, tra le opzioni date, l'emoji con una scarpa in movimento sembra essere la migliore traduzione."
+      },
+      {
+         "term": "berze",
+         "choice": "👟💨",
+         "choice_source": "Emojilingo",
+         "explanation": "\"Berze\" nel contesto della Divina Commedia indica le \"sue peccatrice rapide\" o le \"persone che fanno tutto in fretta\". Quindi, le emoji di una scarpa che corre sembrano l'interpretazione più accurata."
       }
    ],
    "107": [
@@ -7499,6 +7589,30 @@
          "choice": "✋🛠️🖊️",
          "choice_source": "Emojilingo",
          "explanation": "Questa traduzione fa riferimento al concetto di \"lavoro\" in modo più generale e comprensibile, utilizzando l'emoji della mano (al lavoro) e strumenti comuni di lavoro come il martello e la penna."
+      },
+      {
+         "term": "lavoro",
+         "choice": "✋🛠️🖊️",
+         "choice_source": "Emojilingo",
+         "explanation": "Questa traduzione sembra rappresentare meglio il concetto generale di \"lavoro\", includendo sia il lavoro fisico (indicato dal martello) che quello intellettuale (indicato dalla penna)."
+      },
+      {
+         "term": "lavoro",
+         "choice": "💪🔨⏰",
+         "choice_source": "Emojilingo\nChat-GPT\n4-0613\n(Italian)",
+         "explanation": "Questa sequenza di emoji è più semplice da capire, rappresenta forza (lavoro fisico), un attrezzo (lavoro manuale) e il tempo (che si effettua durante il giorno e richiede tempo)."
+      },
+      {
+         "term": "lavoro",
+         "choice": "✋🛠️🖊️",
+         "choice_source": "Emojilingo",
+         "explanation": "La scelta si basa sulla semplicità e la sintesi rappresentativa del concetto di lavoro. L'emoji della mano, del martello e della penna possono significare sia lavoro fisico che intellettuale. Le altre opzioni sono più specifiche e meno generali."
+      },
+      {
+         "term": "lavoro",
+         "choice": "✋🛠️🖊️",
+         "choice_source": "Emojilingo",
+         "explanation": "Questa stringa di emoji è più semplice e sintetizza al meglio il concetto di \"lavoro\", più generico rispetto agli altri due."
       }
    ],
    "121": [
@@ -8243,6 +8357,12 @@
          "choice": "🧘‍♀️",
          "choice_source": "Emojilingo",
          "explanation": "\"Indiarsi\" significa \"perdersi in riflessioni\". L'emoji della persona in meditazione può esprimere bene questo concetto, in quanto la meditazione è un momento di introspezione e riflessione."
+      },
+      {
+         "term": "indiarsi",
+         "choice": "👥🏞️🚶‍♂️🌔",
+         "choice_source": "Emojilingo\nChat-GPT\n4-0613\n(Italian)",
+         "explanation": "L'insieme di emoji meglio rappresenta il concetto di \"indiarsi\", ovvero andarsene, ma con un senso di viaggio o pellegrinaggio spirituale o anche letteralmente camminare attraverso un paesaggio."
       }
    ],
    "133": [
@@ -8677,6 +8797,12 @@
          "choice": "🙏📖",
          "choice_source": "Emojiligo\nChat-GPT\n3.5-turbo-0125\n(Italian)",
          "explanation": "Questa combinazione rispecchia meglio il concetto di \"sacrato poema\". Il gesto di preghiera associato al libro suggerisce un testo sacro, un poema religioso, che è la definizione più vicina di \"sacrato poema\"."
+      },
+      {
+         "term": "sacrato poema",
+         "choice": "📜🛐",
+         "choice_source": "Emojilingo",
+         "explanation": "Questa combinazione rappresenta al meglio il concetto di \"poema sacro\". Il rotolo (📜) evoca l'idea di un testo antico, e il simbolo del culto (🛐) comunica il carattere sacro."
       }
    ],
    "140": [
@@ -12273,6 +12399,18 @@
          "choice": "👋😢",
          "choice_source": "Emojilingo\nChat-GPT\n4-0613\n(Italian)",
          "explanation": "Questo set di emoji mi sembra che catturi meglio il senso di tristezza che spesso accompagna un addio, specialmente nel contesto della Divina Commedia."
+      },
+      {
+         "term": "addio",
+         "choice": "👋😢",
+         "choice_source": "Emojilingo\nChat-GPT\n4-0613\n(Italian)",
+         "explanation": "L'emoji della mano che saluta con l'aggiunta dell'emoji triste riflette meglio l'emozione di tristezza o malinconia associata all'addio."
+      },
+      {
+         "term": "addio",
+         "choice": "👋😢",
+         "choice_source": "Emojilingo\nChat-GPT\n4-0613\n(Italian)",
+         "explanation": "Il addio non significa solo dire ciao ma implica un senso di tristezza, quindi l'emoji con il pianto è la più appropriata."
       }
    ],
    "198": [
@@ -12583,6 +12721,66 @@
          "choice": "🦠",
          "choice_source": "Emojilingo",
          "explanation": "La rogna è una malattia della pelle causata da un microorganismo, quindi l'emoji del microbo è la più accurata e sintetica. Le altre aggiungono elementi di rabbia o frustrazione che possono essere interpretativi, ma non necessari."
+      },
+      {
+         "term": "rogna",
+         "choice": "🦠🤬",
+         "choice_source": "Emojiligo\nChat-GPT\n3.5-turbo-0125\n(Italian)",
+         "explanation": "La rogna è una malattia infettiva che provoca grande irritazione (rappresentato dall'emoji arrabbiata), non solo un semplice problema (rappresentato dall'emoji del microbo)."
+      },
+      {
+         "term": "rogna",
+         "choice": "🦠",
+         "choice_source": "Emojilingo",
+         "explanation": "L'emoji del microbo è sufficiente a rappresentare \"rogna\" nel suo senso più letterale di malattia della pelle, senza necessità di altre emoji aggiuntive o metaforiche."
+      },
+      {
+         "term": "rogna",
+         "choice": "🦠",
+         "choice_source": "Emojilingo",
+         "explanation": "La rogna è una malattia parassitaria, principalmente dei cani, quindi l'emoji del microbo sembra essere la scelta più diretta e meno complicata."
+      },
+      {
+         "term": "rogna",
+         "choice": "🦠🤬",
+         "choice_source": "Emojiligo\nChat-GPT\n3.5-turbo-0125\n(Italian)",
+         "explanation": "La rogna, malattia che provoca sofferenza e irritazione, è ben rappresentata dall'emoji del microorganismo (che simboleggia la malattia) e dall'emoji della faccia arrabbiata (che simboleggia la sofferenza e l'irritazione)."
+      },
+      {
+         "term": "rogna",
+         "choice": "🦠",
+         "choice_source": "Emojilingo",
+         "explanation": "La rogna è una malattia infettiva principalmente diffusa fra gli animali ma trasmettibile all'uomo, quindi l'emoji del microrganismo è la più appropriata e meno allusiva."
+      },
+      {
+         "term": "rogna",
+         "choice": "🦠🤬",
+         "choice_source": "Emojiligo\nChat-GPT\n3.5-turbo-0125\n(Italian)",
+         "explanation": "L'emoji del microbo rappresenta la malattia della rogna. L'emoji della faccia arrabbiata trasmette il disagio e il fastidio causato da questa condizione, rendendola la traduzione più completa."
+      },
+      {
+         "term": "rogna",
+         "choice": "🦠🤬",
+         "choice_source": "Emojiligo\nChat-GPT\n3.5-turbo-0125\n(Italian)",
+         "explanation": "La rogna è una malattia pelle causata da un parassita (rappresentato da 🦠) e causa molto fastidio (rappresentato da 🤬), quindi l'emoji A sembra la più adatta."
+      },
+      {
+         "term": "rogna",
+         "choice": "🦠",
+         "choice_source": "Emojilingo",
+         "explanation": "Questo emoji rappresenta al meglio l'aspetto patologico e contagioso della rogna, in accordo con il significato arcaico della parola italiana. Le altre opzioni sono più confuse e meno dirette."
+      },
+      {
+         "term": "rogna",
+         "choice": "🦠🤬",
+         "choice_source": "Emojiligo\nChat-GPT\n3.5-turbo-0125\n(Italian)",
+         "explanation": "La rogna nelle opere medievali spesso si riferisce a una malattia della pelle (rappresentata dall'emoji del microbo) che causa grande disagio (rappresentato dall'emoji arrabbiata), quindi questa combinazione sembra la più appropriata."
+      },
+      {
+         "term": "rogna",
+         "choice": "🦠🤬",
+         "choice_source": "Emojiligo\nChat-GPT\n3.5-turbo-0125\n(Italian)",
+         "explanation": "Questa traduzione unisce l'idea di malattia (rappresentata dall'emoji del microbo) con quella di luogo dove è sgradevole stare (espressa dall'emoji arrabbiata), che insieme interpretano bene il concetto di \"rogna\"."
       }
    ],
    "203": [
@@ -15559,6 +15757,30 @@
          "choice": "👑💖",
          "choice_source": "Emojiligo\nChat-GPT\n3.5-turbo-0125\n(Italian)",
          "explanation": "Penso che la combinazione di \"corona\" e \"cuore\" catturi meglio l'ideale di una persona magnanima, che è sia nobile (rappresentato dal simbolo della corona) che generosa e amorevole (rappresentato dal cuore)."
+      },
+      {
+         "term": "magnanimo",
+         "choice": "👑💪",
+         "choice_source": "Emojilingo\nChat-GPT\n4-0613\n(Italian)",
+         "explanation": "Il termine 'magnanimo' trasmette l'idea di una grande nobiltà d'animo insieme a forza di carattere. L'emoji della corona 👑 simboleggia la nobiltà, mentre il braccio 💪 rappresenta la forza."
+      },
+      {
+         "term": "magnanimo",
+         "choice": "👑💖",
+         "choice_source": "Emojiligo\nChat-GPT\n3.5-turbo-0125\n(Italian)",
+         "explanation": "La magnanimità non riguarda solo la forza (rappresentata dall'emoji 💪), ma anche la gentilezza e l'amore (rappresentato dall'emoji 💖) che, secondo me, viene meglio trasmesso dal combinazione di emoji 👑 e 💖. La medaglia 🏅 non esprime completamente il significato della parola."
+      },
+      {
+         "term": "magnanimo",
+         "choice": "👑💖",
+         "choice_source": "Emojiligo\nChat-GPT\n3.5-turbo-0125\n(Italian)",
+         "explanation": "Questa coppia di emoji rappresenta alla perfezione la parola \"magnanimo\": la corona 👑 simboleggia la nobiltà d'animo e il cuore 💖 la generosità e l'amore per gli altri."
+      },
+      {
+         "term": "magnanimo",
+         "choice": "👑💖",
+         "choice_source": "Emojiligo\nChat-GPT\n3.5-turbo-0125\n(Italian)",
+         "explanation": "La combinazione di corona e cuore rappresenta bene l'idea di nobiltà d'animo (simboleggiata dalla corona) e generosità/inclinazione a fare il bene (rappresentata dal cuore) che caratterizza il concetto di \"magnanimo\"."
       }
    ],
    "251": [
@@ -16365,6 +16587,24 @@
          "choice": "🤐",
          "choice_source": "Emojilingo",
          "explanation": "La traduzione A sembra essere la più diretta ed efficace. Il simbolo emoji 🤐 implica chiaramente il tacersi, quindi non c'è bisogno di ulteriori simboli."
+      },
+      {
+         "term": "tacersi",
+         "choice": "🤐🚫💬",
+         "choice_source": "Emojilingo\nChat-GPT\n4-0613\n(Italian)",
+         "explanation": "Questa combinazione di emoji rende l'idea di tacersi in maniera più completa, con la sensazione di silenzio espresso sia dall'emoji con la bocca chiusa, ma anche dall'emoji che proibisce la conversazione."
+      },
+      {
+         "term": "tacersi",
+         "choice": "🤐",
+         "choice_source": "Emojilingo",
+         "explanation": "La scelta si basa sulla semplicità e direttezza di questa emoji che esprime perfettamente il concetto di tacere o \"tacersi\". L'emoji da sola è più che sufficiente."
+      },
+      {
+         "term": "tacersi",
+         "choice": "🤐",
+         "choice_source": "Emojilingo",
+         "explanation": "L'emoji 🤐 trasmette in maniera perfetta il significato di \"tacersi\", ovvero restare in silenzio, senza bisogno di ulteriori simboli."
       }
    ],
    "264": [
@@ -18969,6 +19209,18 @@
          "choice": "⚰️",
          "choice_source": "Emojiligo\nChat-GPT\n3.5-turbo-0125\n(Italian)",
          "explanation": "L'emoji ⚰️ rappresenta meglio il concetto di defunto, suggerendo il rito funebre. L'emoji 🪦 suggerisce più un monumento commemorativo, mentre 💀 suggerisce più la morte in generale."
+      },
+      {
+         "term": "defunto",
+         "choice": "⚰️",
+         "choice_source": "Emojiligo\nChat-GPT\n3.5-turbo-0125\n(Italian)",
+         "explanation": "La traduzione scelta rappresenta infatti un feretro, che è più direttamente collegato al concetto di persona defunta rispetto alle altre opzioni."
+      },
+      {
+         "term": "defunto",
+         "choice": "⚰️",
+         "choice_source": "Emojiligo\nChat-GPT\n3.5-turbo-0125\n(Italian)",
+         "explanation": "La scelta va al cofanetto del funerale perché suggerisce la morte (come \"defunto\") ma è meno drammatico e impressionante rispetto al teschio."
       }
    ],
    "306": [
@@ -19217,6 +19469,24 @@
          "choice": "🚶‍♀️💫👑",
          "choice_source": "Emojilingo\nChat-GPT\n4-0613\n(Italian)",
          "explanation": "Questa traduzione sembra rappresentare meglio il significato originale di \"indonnarsi\", che indica il diventare signora o dama, quindi un'evoluzione o un miglioramento di stato simbolizzato anche dal sorgere delle stelle e della corona."
+      },
+      {
+         "term": "indonnarsi",
+         "choice": "🪄🎩",
+         "choice_source": "Emojilingo",
+         "explanation": "La parola 'indonnarsi' significa vestirsi in modo elegante. L'emoji del mago con il cappello mi sembra la più adatta a rappresentare questo concetto, essendo lui un simbolo di eleganza e raffinatezza."
+      },
+      {
+         "term": "indonnarsi",
+         "choice": "🪄🎩",
+         "choice_source": "Emojilingo",
+         "explanation": "La parola indonnarsi si riferisce ad adornarsi o vestirsi elegantemente. L'emoji del mago con il cappello sembra caratterizzare meglio questa azione di trasformazione nell'abbigliamento."
+      },
+      {
+         "term": "indonnarsi",
+         "choice": "🪄🎩",
+         "choice_source": "Emojilingo",
+         "explanation": "\"Indonnarsi\" significa \"trasformarsi\" o \"convertirsi in\", e la bacchetta magica più il cappello mi ricordano la trasformazione magica, come avviene in molti racconti."
       }
    ],
    "310": [
@@ -20891,6 +21161,30 @@
          "choice": "🏃‍♂️💪🥇",
          "choice_source": "Emojiligo\nChat-GPT\n3.5-turbo-0125\n(Italian)",
          "explanation": "Questa sequenza di emoji cattura sia l'aspetto fisico (corsa e forza) che competitivo (medaglia d'oro) dell'atleta. Le altre opzioni sono meno complete."
+      },
+      {
+         "term": "atleta",
+         "choice": "🏅🏋️",
+         "choice_source": "Emojilingo\nChat-GPT\n4-0613\n(Italian)",
+         "explanation": "Questa traduzione in emoji rappresenta meglio la parola \"atleta\", infatti comprende sia l'aspetto di vincita (medaglia) che quello di competizione fisica (pesista). L'aumento di dettagli la rende più specifica."
+      },
+      {
+         "term": "atleta",
+         "choice": "🤼‍♂️",
+         "choice_source": "Emojilingo",
+         "explanation": "Uno sportivo generico che lotta potrebbe riflettere al meglio la parola \"atleta\" in un solo emoji, considerando che l'atleta può essere adibito a numerosi sport."
+      },
+      {
+         "term": "atleta",
+         "choice": "🤼‍♂️",
+         "choice_source": "Emojilingo",
+         "explanation": "Questa emoji sembra cogliere bene il concetto di \"atleta\", rappresentando una persona che sta gareggiando fisicamente, senza dover ricorrere a più emoji."
+      },
+      {
+         "term": "atleta",
+         "choice": "🤼‍♂️",
+         "choice_source": "Emojilingo",
+         "explanation": "Quest'emoji rappresenta meglio l'atleta in un singolo simbolo. Le altre opzioni utilizzano più emoji per trasmettere l'idea, che può creare confusione."
       }
    ],
    "337": [
@@ -21449,6 +21743,30 @@
          "choice": "🟪🔄⬜",
          "choice_source": "Emojilingo\nChat-GPT\n4-0613\n(Italian)",
          "explanation": "Questa emoji cattura meglio il concetto di \"scolorare\", mostrando un colore che diventa bianco o svuotato, similmente a come \"scolorare\" suggerisce un perdersi o un svanire di colore."
+      },
+      {
+         "term": "scolorare",
+         "choice": "🟪🔄⬜",
+         "choice_source": "Emojilingo\nChat-GPT\n4-0613\n(Italian)",
+         "explanation": "Questa serie di emoji sembra meglio rappresentare l'azione del \"scolorare\", con un colore che si trasforma in bianco."
+      },
+      {
+         "term": "scolorare",
+         "choice": "🌈🚫",
+         "choice_source": "Emojiligo\nChat-GPT\n3.5-turbo-0125\n(Italian)",
+         "explanation": "Questa sembra la traduzione più vicina al significato di \"scolorare\", ovvero la perdita o mancanza di colori (rappresentato dal 🌈) che vengono cancellati (rappresentato dal 🚫)."
+      },
+      {
+         "term": "scolorare",
+         "choice": "🌈🚫",
+         "choice_source": "Emojiligo\nChat-GPT\n3.5-turbo-0125\n(Italian)",
+         "explanation": "La traduzione B simboleggia l'idea di perdere colore da qualche cosa di vivido (i colori dell'arcobaleno) e quindi è la più idonea a tradurre \"scolorare\"."
+      },
+      {
+         "term": "scolorare",
+         "choice": "🌈🚫",
+         "choice_source": "Emojiligo\nChat-GPT\n3.5-turbo-0125\n(Italian)",
+         "explanation": "Penso che la combinazione di un arcobaleno (che rappresenta i colori) e il simbolo del divieto esprima meglio l'idea di \"scolorare\"."
       }
    ],
    "346": [

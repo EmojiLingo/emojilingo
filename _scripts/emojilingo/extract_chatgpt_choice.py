@@ -32,6 +32,7 @@ COL_EMOJI1, COL_EMOJI2, COL_EMOJI3 = COLS_EMOJI = \
 
 
 NUM_ITERATIONS = 10 # how many time to ask to evaluate the same emoji pair
+WINNER_DIFFERENCE = 2 # how many votes winner should have more than second
 
 TXT_TRANSLATIONS = {
     'IT': {
@@ -233,14 +234,29 @@ def chat_with_gpt(term, emoji1, emoji2, emoji3, debug=True):
 
     return result_json
 
-def main(debug=True):
-    # retrieve terms from spreadsheet
+def get_table_terms_and_emojis():
     table = download_table(SPREADSHEET_KEY, SPREADSHEET_GID)
     termini_lang_dict = ensure_strings_dict(table[LANG]) # index -> term
     termini_lang = list(termini_lang_dict.values())
     emoji1_values = list(ensure_strings_dict(table[COL_EMOJI1]).values())
     emoji2_values = list(ensure_strings_dict(table[COL_EMOJI2]).values())
     emoji3_values = list(ensure_strings_dict(table[COL_EMOJI3]).values())
+    return (
+        termini_lang,
+        emoji1_values,
+        emoji2_values,
+        emoji3_values
+    )
+
+def main(debug=True):
+    # retrieve terms from spreadsheet
+
+    (
+        termini_lang,
+        emoji1_values,
+        emoji2_values,
+        emoji3_values
+    ) = get_table_terms_and_emojis()
 
     # test first 10 by uncommenting this line
     # termini_lang = termini_lang[:10]
@@ -249,14 +265,14 @@ def main(debug=True):
 
     if os.path.exists(CHATGPT_JSON):
         with open(CHATGPT_JSON) as fin:
-            full_result_json = json.load(fin)
+            term_all_results_dict = json.load(fin)
             if debug:
-                print(f'Found {len(full_result_json)} stored terms')
+                print(f'Found {len(term_all_results_dict)} stored terms')
     else:
-        full_result_json = {}
+        term_all_results_dict = {}
 
 
-    num_terms_stored = len(full_result_json)
+    num_terms_stored = len(term_all_results_dict)
     model = None
 
     for index in range(num_terms_stored, num_termini_lang):
@@ -271,25 +287,24 @@ def main(debug=True):
 
         iter_results = []
 
-        for iteration in tqdm(range(NUM_ITERATIONS)):
+        for _ in tqdm(range(NUM_ITERATIONS)):
 
             response_json = chat_with_gpt(term, emoji1, emoji2, emoji3)
             response_processed = response_json['response_processed']
 
-            # if model is None:
-            #     model = response_json['model']
-            #     print('Chat-GPT Model', model)
+            if model is None:
+                # print out model once
+                model = response_json['model']
+                print('Chat-GPT Model', model)
 
             iter_results.append(response_processed)
+            # response_processed keys:
+            # - term
+            # - choice
+            # - choice_source
+            # - explanation
 
-            # term, choice, choice_source, explanation = (
-            #     response_processed['term'],
-            #     response_processed['choice'],
-            #     response_processed['choice_source'],
-            #     response_processed['explanation']
-            # )
-
-        full_result_json[index] = iter_results
+        term_all_results_dict[index] = iter_results
 
         if debug:
             print('\n-----------------------\n')
@@ -297,7 +312,7 @@ def main(debug=True):
         # rewrite full json file for every term
         with open(CHATGPT_JSON, 'w') as fout:
             json.dump(
-                full_result_json,
+                term_all_results_dict,
                 fout,
                 indent=3,
                 ensure_ascii=False
@@ -310,41 +325,119 @@ def test():
         print('----------\n')
 
 def analysis():
+
+    (
+        termini_lang,
+        emoji1_values,
+        emoji2_values,
+        emoji3_values
+    ) = get_table_terms_and_emojis()
+
     with open(CHATGPT_JSON) as fin:
-         dict_json = json.load(fin)
+         term_all_results_dict = json.load(fin)
+
+    def get_term_winner_most_common(iter_results):
+        term_winner_counter = Counter(
+            (el['choice_source'], el['choice'])  # model (full name), emoji
+            for el in iter_results
+        )
+        return term_winner_counter.most_common()
+
+    def print_term_winner_most_common(term_winner_most_common):
+        for source, freq in term_winner_most_common:
+            print(
+                '\n'.join([
+                    f'  - {freq}: {COLS_EMOJI_DICT_SIMPLIFIED[source]}'
+                ])
+            )
 
     # idx -> NUM_ITERATIONS dicts
     # {'term', 'choice', 'choice_source', 'explanation'}
 
-    winnder_counter = Counter()
-    undecided = 0
-    for idx, list_value in dict_json.items():
-        term = list_value[0]['term']
-        term_source_counter = Counter()
-        term_source_counter.update(el['choice_source'] for el in list_value)
-        most_common = term_source_counter.most_common()
-        first_most_common_source, first_most_common_freq = most_common[0]
-        winner_col_simplified = COLS_EMOJI_DICT_SIMPLIFIED[first_most_common_source]
-        if first_most_common_freq == NUM_ITERATIONS:
+    # how many rows each model has winned
+    model_winner_counter = Counter()
+
+    term_winner_freq = []
+    for idx, iter_results in term_all_results_dict.items():
+        idx = int(idx)
+        term = iter_results[0]['term']
+        term_winner_most_common = get_term_winner_most_common(iter_results)
+        (first_winner_source, first_winner_emoji), first_winner_freq = term_winner_most_common[0]
+        winner_model_simplified = COLS_EMOJI_DICT_SIMPLIFIED[first_winner_source]
+        if len(term_winner_most_common)==1:
             # only one winner
-            winnder_counter.update([winner_col_simplified])
+            term_winner_freq.append(
+                (term, first_winner_emoji, winner_model_simplified, first_winner_freq)
+            )
         else:
             # second winner
-            second_most_common_source, second_most_common_freq = most_common[1]
-            if first_most_common_freq > second_most_common_freq:
-                winnder_counter.update([winner_col_simplified])
+            (_, _), second_most_common_freq = term_winner_most_common[1]
+            diff = first_winner_freq - second_most_common_freq
+            if diff >= WINNER_DIFFERENCE:
+                model_winner_counter.update([winner_model_simplified])
+                term_winner_freq.append(
+                    (term, first_winner_emoji, winner_model_simplified, first_winner_freq)
+                )
             else:
-                undecided += 1
-        print(
-            f'{winner_col_simplified} ({first_most_common_freq})'
-        )
+                # print term winner counter for undecided term
+                print(f'Undecided results for: `{term}`')
+                print_term_winner_most_common(term_winner_most_common)
+
+                ###########
+                # Rerun until WINNER_DIFFERENCE cap
+                ###########
+                assert termini_lang[idx] == term
+                emoji1 = emoji1_values[idx]
+                emoji2 = emoji2_values[idx]
+                emoji3 = emoji3_values[idx]
+                while diff < WINNER_DIFFERENCE:
+                    response_json = chat_with_gpt(term, emoji1, emoji2, emoji3)
+                    response_processed = response_json['response_processed']
+                    winner_model_simplified = COLS_EMOJI_DICT_SIMPLIFIED[
+                        response_processed['choice_source']
+                    ]
+                    print(f'   New run and winner: {winner_model_simplified}')
+
+                    # appending new vote result in iter_results and update counter
+                    iter_results.append(response_processed)
+                    term_winner_most_common = get_term_winner_most_common(iter_results)
+                    (_, first_winner_emoji), first_winner_freq = term_winner_most_common[0]
+                    (_, _), second_most_common_freq = term_winner_most_common[1]
+                    diff = first_winner_freq - second_most_common_freq
+
+                # print term winner counter for undecided term
+                print(f'Decided results for: `{term}`')
+                print_term_winner_most_common(term_winner_most_common)
+                term_winner_freq.append(
+                    (term, first_winner_emoji, winner_model_simplified, first_winner_freq)
+                )
+
+                # rewrite to file all updated results
+                with open(CHATGPT_JSON, 'w') as fout:
+                    json.dump(
+                        term_all_results_dict,
+                        fout,
+                        indent=3,
+                        ensure_ascii=False
+                    )
+
+                # print new line
+                print()
+
+    # winners per term
     print('\n--------------\n')
-    print(winnder_counter.most_common())
-    print('Undecided:', undecided)
+    print('Rows with winners:', len(term_winner_freq))
+    print('\n--------------')
+    with open('winner_analysis.txt', 'w') as fout:
+        for term_choice_source_freq in term_winner_freq:
+            fout.write('\t'.join([str(e) for e in term_choice_source_freq]))
+            fout.write('\n')
 
-
-
-
+    # how many rows each model has winned
+    print('\n--------------')
+    print('Model Winners')
+    print('--------------')
+    print(model_winner_counter.most_common())
 
 if __name__ == "__main__":
     # test()
