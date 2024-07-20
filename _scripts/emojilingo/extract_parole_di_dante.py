@@ -1,17 +1,18 @@
 # WorldEmojiDay 2024 - Parole di Dante
 import os
-import requests
-import pandas as pd
-from io import BytesIO
 import json
 import roman
 from sortedcontainers import SortedSet
+from unidecode import unidecode
 from Levenshtein import ratio
+import re
 from .utils import download_table, ensure_strings_dict
 
 '''
 SPREADSHEET
 https://docs.google.com/spreadsheets/d/13vkH3a-C0OpVTm9r5daFg_y0MN8lPASwGICaa72zaGg/edit?SPREADSHEET_GID=262347955#SPREADSHEET_GID=262347955
+
+'', , , , 'Ref IT', 'Ref EN', 'Source IT', 'Source EN']
 
 table.keys(): [
     'id', # 0-based index
@@ -19,9 +20,15 @@ table.keys(): [
     'IT',  # {0: 'trasumanar', 1: 'color che son sospesi', ..., 364: 'stelle'}
     'EN',  # same above
     'Emojilingo', # {0: '🪐', 1: "👥↪️'🕸", 2: '🧍🔆', ..., '👨\u200d👩\u200d👦', 364: '✨'}
-    'Chat-GPT\n(Manuale)',          # same above
-    'Chat-GPT\n(API)',          # same above
-    'Chat-GPT\n(Spiegazione',          # same above
+    'Emojiligo\nChat-GPT\n(Manuale)',                           # same above
+    'Emojiligo\nChat-GPT\n3.5-turbo-0125\n(Italian)',           # same above
+    'Spiegazione\nChat-GPT\n3.5-turbo-0125\n(Italian)',         # same above
+    'Emojilingo\nChat-GPT\n4-0613\n(Italian)',                  # same above
+    'Spiegazione\nChat-GPT\n4-0613\n(Italian)',                 # same above
+    'Emojiligo\nChat-GPT\n3.5-turbo-0125\n(English)',           # same above
+    'Spiegazione\nChat-GPT\n3.5-turbo-0125\n(English)',         # same above
+    'Emojilingo\nChat-GPT\n4-0613\n(English)',                  # same above
+    'Spiegazione\nChat-GPT\n4-0613\n(English)'                  # same above
     'Ref IT', # {0: 'Paradiso, I, 70', 1: 'Inferno, II, 52', ...,  364: 'Inferno XXXIV, 139'}
     'Ref EN', # same above
     'Source IT', # {0: "Trasumanar significar ...', 364: '...'}
@@ -29,33 +36,54 @@ table.keys(): [
 ]
 '''
 
-CURRENT_DIR = os.path.dirname(__file__)
-DC_JSON = os.path.join(CURRENT_DIR, '../_sources/dc_Hollander.json')
+DC_JSON = os.path.join('../_sources/dc_Hollander.json')
 SPREADSHEET_KEY = '13vkH3a-C0OpVTm9r5daFg_y0MN8lPASwGICaa72zaGg'
 SPREADSHEET_GID = 262347955
+GPT_EMOJILINGO_COLUMN_HEADER = 'Emojiligo\nChat-GPT\n3.5-turbo-0125\n(Italian)'
+GPT_EXPLANATION_COLUMN_HEADER = 'Spiegazione\nChat-GPT\n3.5-turbo-0125\n(Italian)'
 
-
-def fuzzy_enhence(term, terzina, debug=True):
+def fuzzy_enhence(term, terzina):
+    num_chars_term = len(term)
     num_chars_terzina = len(terzina)
+
+    # normalize: remove accents and lowercase it
+    norm_term = unidecode(term).lower()
+    norm_terzina = unidecode(terzina).lower()
+
+    # divide in tokens including punct and spaces
+    terzina_tokens = re.findall( r"[\w]+|[\W]", terzina)
+    norm_terzina_tokens = re.findall( r"[\w]+|[\W]", norm_terzina)
+    assert len(terzina_tokens) == len(norm_terzina_tokens)
+    num_tokens = len(terzina_tokens)
+    # print(tokens)
+
+    # make sure same num of chars after normalization
+    assert len(norm_term) == num_chars_term
+    assert len(norm_terzina) == num_chars_terzina
+
     # sorted candidates by best match
     # * -score
     # * span
     # * result
     candidates = SortedSet()
     counter = 0
-    for span_start in range(num_chars_terzina):
-        for span_end in range(span_start+1, num_chars_terzina):
+    for span_start_token in range(num_tokens):
+        for span_end_token in range(span_start_token+1, num_tokens+1):
             counter += 1
-            span = terzina[span_start:span_end]
+            norm_span_tokens = norm_terzina_tokens[span_start_token:span_end_token]
+            span_tokens = terzina_tokens[span_start_token:span_end_token]
+            norm_span_chars = ''.join(norm_span_tokens)
+            span_chars = ''.join(span_tokens)
             # Using fuzz library to span ratio
-            score = ratio(term, span)
-            before = terzina[:span_start]
-            after = terzina[span_end:]
-            result =  f'{before}<em>{span}</em>{after}'
+            score = ratio(norm_term, norm_span_chars)
+            before = ''.join(terzina_tokens[:span_start_token])
+            after = ''.join(terzina_tokens[span_end_token:])
+            result =  f'{before}<em>{span_chars}</em>{after}'
             # sorted in tuple
             # - by score from big to small (in absolute terms)
             # - and then by span alphabetical order)
-            candidates.add((-score, span, result))
+
+            candidates.add((-score, span_chars, result))
             if counter > 100:
                 candidates.pop() # remove last one
 
@@ -64,7 +92,7 @@ def fuzzy_enhence(term, terzina, debug=True):
 
     return best_cand_score, best_cand_span, best_cand_result
 
-def get_terzina(dc_json, lang, book_en, canto_num,  line, txt, debug=False):
+def get_terzina(dc_json, lang, book_en, canto_num,  line, term, debug=True):
     line_pos_terzina = line % 3 # position of line in terzina
 
     match line_pos_terzina:
@@ -95,11 +123,13 @@ def get_terzina(dc_json, lang, book_en, canto_num,  line, txt, debug=False):
 
 
     result = '<br>'.join(result)
-    score, matched_span, emph_terzina = fuzzy_enhence(txt, result)
+    score, matched_span, emph_terzina = fuzzy_enhence(term, result)
     if debug:
-        if score < 0.7:
+        if score < 0.65:
             print(
-                f'{score}: term={txt} match={matched_span} book={book_en} canto={canto_num}  line={line}')
+                f'{score}: term="{term}" match="{matched_span}" book={book_en} canto={canto_num}  line={line}')
+            print('Terzina:', emph_terzina)
+            print('--------------\n')
 
     return emph_terzina
 
@@ -130,8 +160,8 @@ def main(lang):
     dates = list(ensure_strings_dict(table['Day']).values())
     table_emojilingo = ensure_strings_dict(table['Emojilingo'])
     # table_chatgpt_manuale = ensure_strings_dict(table['Chat-GPT\n(Manuale)'])
-    table_chatgpt_api = ensure_strings_dict(table['Chat-GPT\n(API)'])
-    # table_chatgpt_spiegazione = ensure_strings_dict(table['Chat-GPT\n(Spiegazione'])
+    table_chatgpt_api = ensure_strings_dict(table[GPT_EMOJILINGO_COLUMN_HEADER])
+    # table_chatgpt_spiegazione = ensure_strings_dict(table[GPT_EXPLANATION_COLUMN_HEADER])
 
     table_lang = ensure_strings_dict(table[lang])
     emojilingo = list(table_emojilingo.values())
@@ -191,14 +221,14 @@ def main(lang):
         zip(dates, txt_lang, emojilingo, chatgpt, ref_EN, ref_lang, source_lang)
     ]
     date_txt_el_ref_source_alpha = sorted(
-        # sorted alpha by txt (parenthesis at the end)
+        # sorted alpha by term (parenthesis at the end)
         date_txt_el_ref_source, key=lambda x: (not x[1][0].isalnum(), x[1].lower())
     )
 
     # debug: take first 10
     # date_txt_el_ref_source_alpha = date_txt_el_ref_source_alpha[:10]
 
-    for d, txt, el, gpt, ref_en, ref_lang, source in date_txt_el_ref_source_alpha:
+    for d, term, el, gpt, ref_en, ref_lang, source in date_txt_el_ref_source_alpha:
         ref_book_EN, ref_canto_roman, ref_line_num = ref_en.split(',')
         ref_book_EN = ref_book_EN.strip()
         ref_canto_num = roman.fromRoman(ref_canto_roman.strip())
@@ -206,14 +236,14 @@ def main(lang):
         el = el.replace('\n','').replace("'","^") # "＇"
 
         terzina_lang = get_terzina(
-            dc_json, lang, ref_book_EN, ref_canto_num, ref_line_num, txt
+            dc_json, lang, ref_book_EN, ref_canto_num, ref_line_num, term
         )
 
         md_output.extend([
             '<tr class="notfirst">',
                 # '<td>' + d + '</td>', # date (better not)
                 '<td class="dt-control"></td>',
-                '<td> <span>' + txt + '</span> </td>',
+                '<td> <span>' + term + '</span> </td>',
                 '<td> <span class=emojitext>' + el + '</span> </td>',
                 '<td> <span class=emojitext>' +gpt + '</span> </td>',
             '</tr>',
@@ -243,12 +273,13 @@ def main(lang):
     ])
 
 
-    with open(f'_i18n/{lang.lower()}/worldemojiday.html', 'w') as f:
+    with open(f'../_i18n/{lang.lower()}/worldemojiday.html', 'w') as f:
         f.write('\n'.join(md_output))
-
-
 
 
 if __name__ == "__main__":
     for lang in ['IT','EN']:
+        print('##########')
+        print('####', lang)
+        print('##########\n')
         main(lang)
