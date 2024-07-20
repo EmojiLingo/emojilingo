@@ -171,7 +171,7 @@ def main(debug=True):
     # test first 10 by uncommenting this line
     # termini_lang = termini_lang[:10]
 
-    num_termini_it = len(termini_lang)
+    num_termini_lang = len(termini_lang)
 
     if os.path.exists(CHATGPT_JSON):
         with open(CHATGPT_JSON) as fin:
@@ -184,7 +184,7 @@ def main(debug=True):
 
     num_terms_stored = len(full_result_json)
 
-    for index in range(num_terms_stored, num_termini_it):
+    for index in range(num_terms_stored, num_termini_lang):
 
         term = termini_lang[index]
 
