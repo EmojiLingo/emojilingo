@@ -106,20 +106,22 @@ def get_terzina(dc_json, lang, book_en, canto_num,  line, term, debug=True):
     canto_lang = dc_json[book_en][str(canto_num)][lang]
     islast = len(canto_lang) == start_line_terzina
     result = [
-        canto_lang[str(start_line_terzina)]
+
     ]
     if islast:
         # get previous terzina
-        result.extend([
+        result = [
             canto_lang[str(start_line_terzina-3)],
             canto_lang[str(start_line_terzina-2)],
-            canto_lang[str(start_line_terzina-1)]
-        ])
+            canto_lang[str(start_line_terzina-1)],
+            canto_lang[str(start_line_terzina)]
+        ]
     else:
-        result.extend([
+        result = [
+            canto_lang[str(start_line_terzina)],
             canto_lang[str(start_line_terzina+1)],
             canto_lang[str(start_line_terzina+2)]
-        ])
+        ]
 
 
     result = '<br>'.join(result)
