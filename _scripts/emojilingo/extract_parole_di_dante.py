@@ -19,7 +19,10 @@ table.keys(): [
     'Day', # {0: 1.01, 1: 2.01, ..., 363: 30.12, 364: 31.12}
     'IT',  # {0: 'trasumanar', 1: 'color che son sospesi', ..., 364: 'stelle'}
     'EN',  # same above
-    'Emojilingo', # {0: '🪐', 1: "👥↪️'🕸", 2: '🧍🔆', ..., '👨\u200d👩\u200d👦', 364: '✨'}
+    'Ref IT',  # {0: 'Paradiso, I, 70', 1: 'Inferno, II, 52', ...,  364: 'Inferno XXXIV, 139'}
+    'Ref EN',  # same above
+    'Emojitaliano', # {0: '🪐', 1: "👥↪️'🕸", 2: '🧍🔆', ..., '👨\u200d👩\u200d👦', 364: '✨'} (Manually translated by Francesca)
+    'Emojiligo\nChat-GPT\n(Manuale \nIncompleto)',
     'Emojiligo\nChat-GPT\n(Manuale)',                           # same above
     'Emojiligo\nChat-GPT\n3.5-turbo-0125\n(Italian)',           # same above
     'Spiegazione\nChat-GPT\n3.5-turbo-0125\n(Italian)',         # same above
@@ -28,19 +31,26 @@ table.keys(): [
     'Emojiligo\nChat-GPT\n3.5-turbo-0125\n(English)',           # same above
     'Spiegazione\nChat-GPT\n3.5-turbo-0125\n(English)',         # same above
     'Emojilingo\nChat-GPT\n4-0613\n(English)',                  # same above
-    'Spiegazione\nChat-GPT\n4-0613\n(English)'                  # same above
-    'Ref IT', # {0: 'Paradiso, I, 70', 1: 'Inferno, II, 52', ...,  364: 'Inferno XXXIV, 139'}
-    'Ref EN', # same above
+    'Spiegazione\nChat-GPT\n4-0613\n(English)',                  # same above
+
+    # EVALUATION
+    'Eval GPT-4-0613\nItalian\nWinner, Model',
+    'Eval GPT-4-0613\nItalian\nWinner, Emoji',
+
     'Source IT', # {0: "Trasumanar significar ...', 364: '...'}
     'Source EN'  # same above
 ]
+
+
+
+
+
 '''
 
-DC_JSON = os.path.join('../_sources/dc_Hollander.json')
+DIVINA_COMMEDIA_JSON = os.path.join('../_sources/dc_Hollander.json')
 SPREADSHEET_KEY = '13vkH3a-C0OpVTm9r5daFg_y0MN8lPASwGICaa72zaGg'
 SPREADSHEET_GID = 262347955
-GPT_EMOJILINGO_COLUMN_HEADER = 'Emojiligo\nChat-GPT\n3.5-turbo-0125\n(Italian)'
-GPT_EXPLANATION_COLUMN_HEADER = 'Spiegazione\nChat-GPT\n3.5-turbo-0125\n(Italian)'
+EMOJILINGO_GPT_COLUMN_HEADER = 'Eval GPT-4-0613\nItalian\nWinner, Emoji'
 
 def fuzzy_enhence(term, terzina):
     num_chars_term = len(term)
@@ -139,7 +149,8 @@ def main(lang):
 
     assert lang in ['IT','EN']
 
-    with open(DC_JSON) as fin:
+    # open divina commedia
+    with open(DIVINA_COMMEDIA_JSON) as fin:
         dc_json = json.load(fin)
 
     languages = {
@@ -160,14 +171,12 @@ def main(lang):
     # print(json.dumps(table, indent=3))
 
     dates = list(ensure_strings_dict(table['Day']).values())
-    table_emojilingo = ensure_strings_dict(table['Emojilingo'])
-    # table_chatgpt_manuale = ensure_strings_dict(table['Chat-GPT\n(Manuale)'])
-    table_chatgpt_api = ensure_strings_dict(table[GPT_EMOJILINGO_COLUMN_HEADER])
-    # table_chatgpt_spiegazione = ensure_strings_dict(table[GPT_EXPLANATION_COLUMN_HEADER])
+    table_emojitaliano = ensure_strings_dict(table['Emojitaliano']) # manually translated (by Francesca)
+    table_emojilingo_chatgpt = ensure_strings_dict(table[EMOJILINGO_GPT_COLUMN_HEADER])
 
     table_lang = ensure_strings_dict(table[lang])
-    emojilingo = list(table_emojilingo.values())
-    chatgpt = list(table_chatgpt_api.values())
+    emojitaliano = list(table_emojitaliano.values())
+    emojilingo = list(table_emojilingo_chatgpt.values())
     txt_lang = list(table_lang.values())
     ref_lang= list(table[f'Ref {lang}'].values())
     ref_EN= list(table[f'Ref EN'].values())
@@ -201,8 +210,8 @@ def main(lang):
                 # f'<th>{date_header[lang]}</th>',
                 '<th></th>', # dt-control
                 f'<th>{languages[lang]}</th>',
+                f'<th>Emojitaliano</th>',
                 f'<th>Emojilingo</th>',
-                f'<th>Chat-GPT</th>',
             '</tr>',
             # search input
             '<tr>',
@@ -219,8 +228,8 @@ def main(lang):
     ])
 
     date_txt_el_ref_source = [
-        (d, t, e, gpt, r_en, r_lang, s) for d, t, e, gpt, r_en, r_lang, s in
-        zip(dates, txt_lang, emojilingo, chatgpt, ref_EN, ref_lang, source_lang)
+        (d, t, ei, el, r_en, r_lang, s) for d, t, ei, el, r_en, r_lang, s in
+        zip(dates, txt_lang, emojitaliano, emojilingo, ref_EN, ref_lang, source_lang)
     ]
     date_txt_el_ref_source_alpha = sorted(
         # sorted alpha by term (parenthesis at the end)
@@ -230,12 +239,12 @@ def main(lang):
     # debug: take first 10
     # date_txt_el_ref_source_alpha = date_txt_el_ref_source_alpha[:10]
 
-    for d, term, el, gpt, ref_en, ref_lang, source in date_txt_el_ref_source_alpha:
+    for d, term, ei, el, ref_en, ref_lang, source in date_txt_el_ref_source_alpha:
         ref_book_EN, ref_canto_roman, ref_line_num = ref_en.split(',')
         ref_book_EN = ref_book_EN.strip()
         ref_canto_num = roman.fromRoman(ref_canto_roman.strip())
         ref_line_num = int(ref_line_num)
-        el = el.replace('\n','').replace("'","^") # "＇"
+        ei = ei.replace('\n','').replace("'","^") # "＇"
 
         terzina_lang = get_terzina(
             dc_json, lang, ref_book_EN, ref_canto_num, ref_line_num, term
@@ -246,8 +255,8 @@ def main(lang):
                 # '<td>' + d + '</td>', # date (better not)
                 '<td class="dt-control"></td>',
                 '<td> <span>' + term + '</span> </td>',
-                '<td> <span class=emojitext>' + el + '</span> </td>',
-                '<td> <span class=emojitext>' +gpt + '</span> </td>',
+                '<td> <span class=emojitext>' + ei + '</span> </td>',
+                '<td> <span class=emojitext>' +el + '</span> </td>',
             '</tr>',
             '<tr style="display:none" class="extra-info">',
                 '<td></td>', # dt-control
