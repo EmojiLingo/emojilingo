@@ -5,6 +5,12 @@ namespace: media
 permalink: /media/
 ---
 
+# 2024
+
+- 21.7.2024: Raffaele Manica, Un naso da esportazione: Pinocchio! Alias, Il Manifesto. [link](https://ilmanifesto.it/un-naso-da-esportazione-pinocchio )
+
+
+
 # 2023
 
 - 10.7.2023: Emojitaliano. TickTock Video. Veronica Repetti, Linguisticattiva.
