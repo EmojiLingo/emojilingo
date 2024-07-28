@@ -4,6 +4,8 @@
 import re
 import os
 import html
+from collections import Counter
+from tqdm import tqdm
 from bs4 import BeautifulSoup
 
 DE_MAURO_PATH = '../_sources/DeMauro'
@@ -231,23 +233,60 @@ def test_bs():
     print(pos.text)
     print(example.text)
 
-def extract_pos():
+def extract_pos(debug=False):
 
     parole_files = [
         f
         for f in sorted(os.listdir(DE_MAURO_PAROLA_PATH))
     ]
-    for f in parole_files:
-        parola_file_path = os.path.join(DE_MAURO_PAROLA_PATH, f)
+    all_tags = Counter()
+    exclude_file_names = [
+        '\\"https:'
+    ]
+
+    for numf, file_name in tqdm(enumerate(parole_files, 1)):
+    # for numf, file_name in enumerate(parole_files, 1):
+
+        if debug:
+            if numf == 2000:
+                break
+
+        if file_name in exclude_file_names:
+            continue
+        parola_file_path = os.path.join(DE_MAURO_PAROLA_PATH, file_name)
         # titles = getTitlesFromParolaFile(f_path)
         with open(parola_file_path) as fin:
             soup = BeautifulSoup(fin, 'html.parser')
             # <section id="descrizione"
-            descrizione = soup.find(id="descrizione")
-            # all_tags = descrizione.find_all()
-            spans = descrizione.find_all('span')
+            qualifica_section = soup.find(id='lemma_qualifica')
+            if qualifica_section is None:
+                print(file_name, 'qualifica_section == None ')
+                continue
+            descrizione_spans = qualifica_section.find_all('span')
+            if descrizione_spans is None:
+                print(file_name, 'descrizione_spans == None ')
+                continue
+            assert(len(descrizione_spans)==1) # only one span
+            descrizione_span_first = descrizione_spans[0]
+            tags_contents = descrizione_span_first.contents
+            if len(tags_contents)==0:
+                # empty tags
+                tags = ['<EMPTYTAG>']
+            else:
+                assert(len(tags_contents)==1) # only one
+                tags = tags_contents[0].split(', ')
+                tags = [t.strip() for t in tags]
+                # assert(True)
+            all_tags.update(tags)
 
-            for s in spans:
+            if debug:
+                print(file_name, tags)
+
+            '''
+            descrizione = soup.find(id="descrizione")
+            descrizione_spans = descrizione.find_all('span')
+
+            for s in descrizione_spans:
                 attrs = s.attrs # {'class': ['mu'], 'title': 'comune'}
                 if 'title' in attrs:
                     # first one
@@ -258,7 +297,7 @@ def extract_pos():
                 attr_class = attrs['class']
                 if attr_class == ['ac']:
                     # should be a list with a number and a period: ['1.']
-                    contents = s.contents
+                    descrizione_contents = s.contents
                     assert(True)
                     pass
                 if attr_class == ['pipe']:
@@ -267,8 +306,13 @@ def extract_pos():
                 else:
                     assert(True)
                     # print(attr_class)
-
-
+            '''
+    sorted_tags_by_freq = all_tags.most_common()
+    with open('demauro_tags.txt', 'w') as fout:
+        fout.write('\n'.join([
+            f'{tag}\t{count}'
+            for tag, count in sorted_tags_by_freq
+        ]))
 
 
 
