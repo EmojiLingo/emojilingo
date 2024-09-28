@@ -292,6 +292,7 @@ html.dark table tr.dt-hasChild td.dt-control:before,
   color: #f2f2f2;
   text-align: center;
   padding: 10px 10px;
+  border-radius: 25px;
   text-decoration: none;
   font-size: 20px;
   margin-right: 2px;
@@ -315,7 +316,7 @@ html.dark table tr.dt-hasChild td.dt-control:before,
 LastBorn
 --------------------------*/
 .topnav a:nth-child(6) {
-  background-color:rgb(255, 247, 28);
+  background-color:rgb(247, 244, 152);
   color: rgb(15, 6, 72);
 }
 .topnav a:nth-child(6).active {
