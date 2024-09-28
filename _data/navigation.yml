@@ -1,11 +1,3 @@
-# languages:
-# - language: "en"
-#   links:
-#     - title: "Specimens" url: /specimens/
-# - language: "it"
-#   links:
-#     - title: "Specimen" url: /specimens/
-
 menu_items:
   it:
     - label: Home
