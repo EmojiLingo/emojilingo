@@ -24,9 +24,9 @@ menu_items:
       title: Specimen
       path_canonical: /specimens/
       path: /it/specimens/
-    - label: "#WorldEmojiDay"
-      path_canonical: /worldemojiday/
-      path: /it/worldemojiday/
+    - label: "LastBorn"
+      path_canonical: /lastborn/
+      path: /it/lastborn/
     - label: Pubblicazioni
       path_canonical: /publications/
       path: /it/publications/
@@ -53,9 +53,9 @@ menu_items:
       title: Specimens
       path_canonical: /specimens/
       path: /specimens/
-    - label: "#WorldEmojiDay"
-      path_canonical: /worldemojiday/
-      path: /worldemojiday/
+    - label: "LastBorn"
+      path_canonical: /lastborn/
+      path: /lastborn/
     - label: Publications
       path_canonical: /publications/
       path: /publications/

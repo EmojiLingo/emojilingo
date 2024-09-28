@@ -1,4 +1,4 @@
-# WorldEmojiDay 2024 - Parole di Dante
+# LastBorn 2024 - Parole di Dante
 import os
 import json
 import roman
@@ -284,7 +284,7 @@ def main(lang):
     ])
 
 
-    with open(f'../_i18n/{lang.lower()}/worldemojiday.html', 'w') as f:
+    with open(f'../_i18n/{lang.lower()}/lastborn.html', 'w') as f:
         f.write('\n'.join(md_output))
 
 

@@ -152,9 +152,7 @@ main {
   padding: 20px;
 }
 
-/* WED */
-
-/* WorldEmojiDay (wed-announcement) */
+/* LastBorn (wed-announcement) */
 div.wed-announcement {
   position:sticky;
   background-color: #2b1987;
@@ -310,8 +308,22 @@ html.dark table tr.dt-hasChild td.dt-control:before,
 .topnav a.active {
   /* font-weight: bold; */
   background-color: #2b1987;
-  color: white;
+  color: rgb(255, 255, 255);
 }
+
+/*------------------------
+LastBorn
+--------------------------*/
+.topnav a:nth-child(6) {
+  background-color:rgb(255, 247, 28);
+  color: rgb(15, 6, 72);
+}
+.topnav a:nth-child(6).active {
+  background-color:  rgb(222, 159, 23);
+  color: rgb(15, 6, 72);
+}
+/*------------------------/*
+
 
 /* Right-aligned section inside the top navigation */
 .topnav-lang {
