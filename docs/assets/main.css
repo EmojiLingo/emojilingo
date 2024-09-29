@@ -316,11 +316,10 @@ html.dark table tr.dt-hasChild td.dt-control:before,
 LastBorn
 --------------------------*/
 .topnav a:nth-child(6) {
-  background-color:rgb(247, 244, 152);
-  color: rgb(15, 6, 72);
+  border:2px dashed rgb(222, 159, 23);;
 }
 .topnav a:nth-child(6).active {
-  background-color:  rgb(222, 159, 23);
+  background-color: rgb(222, 159, 23);
   color: rgb(15, 6, 72);
 }
 /*------------------------/*

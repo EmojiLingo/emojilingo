@@ -1,6 +1,7 @@
 # Parole di Dante
 
-(To look at the result of the Project [click here](../lastborn))
+🔗 Quick link to the 🔠 [Project](/parole_di_dante_table)
+<!-- [Spreadsheet](/parole_di_dante_spreadsheet){:target="_blank"} -->
 
 Parole di Dante (Dante’s words), by Emojilingo, is a glossary of Dante Alighieri’s Divine Comedy translated in emoji with correspondences from the Italian and the English versions of the work.
 
@@ -10,4 +11,4 @@ Parole di Dante uses Italian and English in the chain translation project, allow
 
 Finally, Emojilingo is now training Chat-GPT to learn the Emojitaliano grammar and give autonomous and creative translations, which the [research group](https://ceur-ws.org/Vol-3596/paper15.pdf) is going to validate. With the help of Chat-GPT, the automated translation process is more speedy and guarantees a more and more international view.
 
-To look at the result of the Project [click here](../lastborn).
+🔗 Quick link to the 🔠 [Project](/parole_di_dante_table) and to the [Spreadsheet](/parole_di_dante_spreadsheet){:target="_blank"}.

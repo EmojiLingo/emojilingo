@@ -1,4 +1,4 @@
-# LastBorn 2024 - Parole di Dante
+# Emojilingo 2024 - Parole di Dante
 import os
 import json
 import roman
@@ -163,8 +163,8 @@ def main(lang):
     # }
 
     intro = {
-        'IT': "<p>Emojilingo partecipa alla Giornata Mondiale degli Emoji 2024 con Parole di Dante, un glossario della Divina Commedia di Dante Alighieri tradotto in emoji con corrispondenze in italiano e in inglese, e con un esperimento di AI di traduzione dalla lingua alla emoji-lingua.</p><p>Per più informazioni sul progetto <a href=\"../parole_di_dante\">clicca qua</a>.</p>",
-        'EN': "<p>Emojilingo celebrates World Emoji Day 2024 with Parole di Dante (Dante’s words), a glossary of Dante Alighieri's Divine Comedy translated into emoji with corresponding translations from Italian to English and vice versa, and with an AI experiment of translation from language to the emoji-language.</p><p>For more info about the project <a href=\"../parole_di_dante\">click here</a>.</p>"
+        'IT': "<p>Emojilingo partecipa alla Giornata Mondiale degli Emoji 2024 con Parole di Dante, un glossario della Divina Commedia di Dante Alighieri tradotto in emoji con corrispondenze in italiano e in inglese, e con un esperimento di AI di traduzione dalla lingua alla emoji-lingua.</p><p>Per più informazioni sul progetto <a href=\"/it/parole_di_dante_about\">clicca qua</a>.</p>",
+        'EN': "<p>Emojilingo celebrates World Emoji Day 2024 with Parole di Dante (Dante’s words), a glossary of Dante Alighieri's Divine Comedy translated into emoji with corresponding translations from Italian to English and vice versa, and with an AI experiment of translation from language to the emoji-language.</p><p>For more info about the project <a href=\"/parole_di_dante_about\">click here</a>.</p>"
     }
 
     table = download_table(SPREADSHEET_KEY, SPREADSHEET_GID)
@@ -284,7 +284,7 @@ def main(lang):
     ])
 
 
-    with open(f'../_i18n/{lang.lower()}/lastborn.html', 'w') as f:
+    with open(f'../_i18n/{lang.lower()}/parole_di_dante_table.html', 'w') as f:
         f.write('\n'.join(md_output))
 
 
