@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Parole di Dante"
-namespace: parole_di_dante
+menu_item: /lastborn/
 permalink: /parole_di_dante_table/
 ---
 

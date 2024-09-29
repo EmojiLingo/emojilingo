@@ -1,7 +1,6 @@
 ---
 layout: default
 title: Media
-namespace: media
 permalink: /media/
 ---
 

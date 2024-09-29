@@ -1,7 +1,6 @@
 ---
 layout: default
 title: Glossary
-namespace: glossary
 permalink: /glossary/
 ---
 

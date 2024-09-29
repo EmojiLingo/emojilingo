@@ -151,14 +151,27 @@
         <div class="hamburger-menu-dropdown" id="DropdownMenu">
           {% assign menu_items = site.data.navigation.menu_items[site.lang] %}
           {% for item in menu_items %}
-            <a {% if page.url == item.path_canonical %} class="active" {% endif %} href="{{ item.path }}" onclick="hideDropdown()">{{ item.label }}</a>
+            <a
+            {% if
+              page.url == item.path_canonical or
+              page.menu_item == item.path_canonical
+            %}
+            class="active"
+            {% endif %} href="{{ item.path }}" onclick="hideDropdown()">{{ item.label }}</a>
           {% endfor %}
         </div>
       </div>
       <div class="topnav">
         {% assign menu_items = site.data.navigation.menu_items[site.lang] %}
         {% for item in menu_items %}
-          <a {% if page.url == item.path_canonical %} class="active" {% endif %} href="{{ item.path }}">{{ item.label }}</a>
+          <a
+          {% if
+            page.url == item.path_canonical or
+            page.menu_item == item.path_canonical
+          %}
+            class="active"
+          {% endif %}
+          href="{{ item.path }}">{{ item.label }}</a>
         {% endfor %}
       </div>
       <div class="topnav-lang">

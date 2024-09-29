@@ -1,7 +1,6 @@
 ---
 layout: default
 title: About
-namespace: about
 permalink: /about/
 ---
 

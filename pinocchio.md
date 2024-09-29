@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Pinocchio
-namespace: pinocchio
+menu_item: /specimens/
 permalink: /pinocchio/
 ---
 

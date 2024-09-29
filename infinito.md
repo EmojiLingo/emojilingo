@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Infinito
-namespace: infinito
+menu_item: /specimens/
 permalink: /infinito/
 ---
 

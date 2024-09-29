@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Parole di Dante (About)
-namespace: parole_di_dante
+menu_item: /specimens/
 permalink: /parole_di_dante_about/
 ---
 

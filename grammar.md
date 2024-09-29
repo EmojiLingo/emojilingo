@@ -1,7 +1,6 @@
 ---
 layout: default
 title: Grammar
-namespace: grammar
 permalink: /grammar/
 ---
 

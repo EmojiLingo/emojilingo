@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Costituzione
-namespace: costituzione
+menu_item: /specimens/
 permalink: /costituzione/
 ---
 

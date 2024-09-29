@@ -1,7 +1,6 @@
 ---
 layout: default
 title: Home
-namespace: home
 permalink: /
 ---
 

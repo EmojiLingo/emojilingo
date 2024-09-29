@@ -1,7 +1,6 @@
 ---
 layout: default
 title: "Last Born"
-namespace: lastborn
 permalink: /lastborn/
 ---
 
