@@ -24,7 +24,7 @@ CHATGPT_JSON = os.path.join('../_chatgpt/', f'{MODEL}_{LANG}_choice.json')
 
 COLS_EMOJI_DICT_SIMPLIFIED = {
     'Emojilingo': 'Emojilingo',
-    'Emojiligo\nChat-GPT\n3.5-turbo-0125\n(Italian)': 'GPT-3.5',
+    'Emojilingo\nChat-GPT\n3.5-turbo-0125\n(Italian)': 'GPT-3.5',
     'Emojilingo\nChat-GPT\n4-0613\n(Italian)': 'GPT-4'
 }
 COL_EMOJI1, COL_EMOJI2, COL_EMOJI3 = COLS_EMOJI = \

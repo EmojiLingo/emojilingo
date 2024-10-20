@@ -22,13 +22,13 @@ table.keys(): [
     'Ref IT',  # {0: 'Paradiso, I, 70', 1: 'Inferno, II, 52', ...,  364: 'Inferno XXXIV, 139'}
     'Ref EN',  # same above
     'Emojitaliano', # {0: '🪐', 1: "👥↪️'🕸", 2: '🧍🔆', ..., '👨\u200d👩\u200d👦', 364: '✨'} (Manually translated by Francesca)
-    'Emojiligo\nChat-GPT\n(Manuale \nIncompleto)',
-    'Emojiligo\nChat-GPT\n(Manuale)',                           # same above
-    'Emojiligo\nChat-GPT\n3.5-turbo-0125\n(Italian)',           # same above
+    'Emojilingo\nChat-GPT\n(Manuale \nIncompleto)',
+    'Emojilingo\nChat-GPT\n(Manuale)',                           # same above
+    'Emojilingo\nChat-GPT\n3.5-turbo-0125\n(Italian)',           # same above
     'Spiegazione\nChat-GPT\n3.5-turbo-0125\n(Italian)',         # same above
     'Emojilingo\nChat-GPT\n4-0613\n(Italian)',                  # same above
     'Spiegazione\nChat-GPT\n4-0613\n(Italian)',                 # same above
-    'Emojiligo\nChat-GPT\n3.5-turbo-0125\n(English)',           # same above
+    'Emojilingo\nChat-GPT\n3.5-turbo-0125\n(English)',           # same above
     'Spiegazione\nChat-GPT\n3.5-turbo-0125\n(English)',         # same above
     'Emojilingo\nChat-GPT\n4-0613\n(English)',                  # same above
     'Spiegazione\nChat-GPT\n4-0613\n(English)',                  # same above
