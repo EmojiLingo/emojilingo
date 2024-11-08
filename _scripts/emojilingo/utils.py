@@ -6,7 +6,7 @@ def download_table(key, gid):
     url = f'https://docs.google.com/spreadsheets/d/{key}/export?SPREADSHEET_GID={gid}&format=csv'
     r = requests.get(url, allow_redirects=True)
     data = r.content
-    df = pd.read_csv(BytesIO(data))
+    df = pd.read_csv(BytesIO(data), dtype=str)
     table = df.to_dict()
     return table
 
