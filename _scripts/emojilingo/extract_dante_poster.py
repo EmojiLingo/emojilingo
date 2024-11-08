@@ -211,7 +211,7 @@ def main(lang, months, col_num):
             \\begin{tabular}{
                 m{2cm} % term
                 p{2cm} % date
-                m{4.5cm} % verse
+                m{5cm} % verse
                 % m{5cm} % crusca explanation
                 m{2cm} % emojitaliano
                 m{2cm} % emojilingo
@@ -273,7 +273,7 @@ def main(lang, months, col_num):
         )
 
         tex_output.extend([
-            f'\\textbf{{{term}}} % term', # term
+            f'\\raggedright \\textbf{{{term}}} % term', # term
             f'& \multicolumn{{1}}{{r}}{{{d}}} % date', # date
             f'& \\tiny {terzina_lang} % verse', # verse
             # f'& \multicolumn{{1}}{{c}}{{{expl}}} % AC expl', # ac. Crusca Explanation
