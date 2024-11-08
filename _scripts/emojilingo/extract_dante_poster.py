@@ -148,7 +148,10 @@ def get_terzina(dc_json, lang, book_en, canto_num,  line, term, debug=True):
     return emph_terzina
 
 SUB_EMOJI = {
-    'italy': 'flag-italy'
+    'italy': 'flag-italy',
+    'a-button-(blood-type)': 'a-button-blood-type',
+    'enraged-face': 'red-question-mark', #TODO: fix me
+    'face-with-crossed-out-eyes': 'red-question-mark' #TODO: fix me
 }
 
 def get_emoji_tex(em_str):
@@ -158,11 +161,9 @@ def get_emoji_tex(em_str):
         e_tex = e.value.data['en'].lower() # 👍 -> :thumbs_up:
         e_tex = e_tex[1:-1] # remove : beginning and end (thumbs_up)
         e_tex = e_tex.replace('_','-') # thumbs_up -> thumbs-up
+        e_tex = e_tex.replace('’', '') # man’s-shoe -> mans-shoe
         if e_tex in SUB_EMOJI:
             e_tex = SUB_EMOJI[e_tex]
-        elif '’' in e_tex:
-            print('Warning: unknonw emoji', e_tex)
-            e_tex = 'red-question-mark'
         tex += f'\emoji{{{e_tex}}}'
     return tex
 
@@ -209,10 +210,11 @@ def main(lang, months, col_num):
             '''
             \\begin{tabular}{
                 m{2cm} % term
-                p{3cm} % date
-                m{6cm} % verse
+                p{2cm} % date
+                m{4.5cm} % verse
                 % m{5cm} % crusca explanation
                 m{2cm} % emojitaliano
+                m{2cm} % emojilingo
                 % m{3cm} % chat-gpt 3.5
                 % m{3cm} % chat-gpt 4
                 % m{5cm} % chat-gpt explanation
@@ -223,6 +225,7 @@ def main(lang, months, col_num):
             &   \multicolumn{1}{c}{\\textbf{Verse}}
             %&  \multicolumn{1}{c}{\\textbf{AC Explanation}}
             &   \multicolumn{1}{c}{\\textbf{Emojitaliano}}
+            &   \multicolumn{1}{c}{\\textbf{Emojilingo}}
             %&  \multicolumn{1}{c}{\\textbf{GPT-3.5 (IT)}}
             %&  \multicolumn{1}{c}{\\textbf{GPT-4 (IT)}}
             %&  \multicolumn{1}{c}{\\textbf{GPT-4 (IT) Explanation}}
@@ -260,19 +263,22 @@ def main(lang, months, col_num):
         ref_book_EN = ref_book_EN.strip()
         ref_canto_num = roman.fromRoman(ref_canto_roman.strip())
         ref_line_num = int(ref_line_num)
-        ei = ei.replace('\n','').replace("'","^") # emojitaliano
+        # ei = ei.replace('\n','').replace("'","^") # emojitaliano
         ei_tex = get_emoji_tex(ei) # emojitaliano tex (\emoji{thumb-up})
+        el_tex = get_emoji_tex(el) # emojilingo tex (\emoji{thumb-up})
 
         terzina_lang = get_terzina(
-            dc_json, lang, ref_book_EN, ref_canto_num, ref_line_num, term
+            dc_json, lang, ref_book_EN, ref_canto_num, ref_line_num, term,
+            debug=False
         )
 
         tex_output.extend([
-            f'\multicolumn{{1}}{{c}}{{\\textbf{{{term}}}}} % term', # term
+            f'\\textbf{{{term}}} % term', # term
             f'& \multicolumn{{1}}{{r}}{{{d}}} % date', # date
             f'& \\tiny {terzina_lang} % verse', # verse
             # f'& \multicolumn{{1}}{{c}}{{{expl}}} % AC expl', # ac. Crusca Explanation
             f'& \multicolumn{{1}}{{c}}{{\\normalsize {ei_tex}}} % emojitaliano', # emojitaliano
+            f'& \multicolumn{{1}}{{c}}{{\\normalsize {el_tex}}} % emojilingo', # emojilingo
             # f'& \multicolumn{{1}}{{c}}{{\\LARGE {{{gpt35}}}}}',
             # f'& \multicolumn{{1}}{{c}}{{\\LARGE {{{gpt4}}}}}',
             # f'& \multicolumn{{1}}{{c}}{{\\LARGE {{{gpt4_expl}}}}}',
