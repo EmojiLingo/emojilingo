@@ -229,6 +229,7 @@ def main(lang, months, col_num):
     tex_output.append(
         textwrap.dedent(
             f'''
+            \\rowcolors{{2}}{{whitishdarkcol}}{{whitishcol}}
             \\begin{{tabular}}{{
                 m{{2cm}} % term
                 p{{2cm}} % date
