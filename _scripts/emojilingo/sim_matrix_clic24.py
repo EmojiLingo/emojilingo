@@ -249,10 +249,45 @@ def make_heat_plot_final():
     plt.savefig(f'img/sim_matrix.png')
     # plt.show()
 
+def rebuild_colum_winning_model():
+    emoji_data = get_emoji_data_dict()
+    win_emoji_list = emoji_data['Chat-GPT 4 WIN']
+    ei_emoji_list = emoji_data['Emojitaliano']
+    gpt35_it_emoji_list = emoji_data['Chat-GPT 3.5 IT']
+    gpt4_it_emoji_list = emoji_data['Chat-GPT 4 IT']
 
+    # how they are printed
+    models = [
+        'Chat-GPT 4 WIN',
+        'Emojitaliano',
+        'Chat-GPT 3.5 IT',
+        'Chat-GPT 4 IT'
+    ]
+
+    win_ei_gpt35_gpt4 = zip(
+        win_emoji_list,
+        ei_emoji_list,
+        gpt35_it_emoji_list,
+        gpt4_it_emoji_list
+    )
+
+    for t in win_ei_gpt35_gpt4:
+        win_emoji = t[0]
+        winners_idx = []
+        for idx, e in enumerate(t[1:],1):
+            if e == win_emoji:
+                winners_idx.append(idx)
+
+        winner_models = [models[idx] for idx in winners_idx]
+        print(winner_models)
 
 if __name__ == "__main__":
     # make_matrix_old(EMOJILINGO_GPT35_IT_COLUMN_HEADER, 'Chat-GPT-3.5')
     # make_matrix_old(EMOJILINGO_GPT4_IT_COLUMN_HEADER, 'Chat-GPT-4')
+
+    # paper version
     make_heat_bars()
     make_heat_plot_final()
+
+    # to rebuild model winner column in spreadsheet
+    # rebuild_colum_winning_model()

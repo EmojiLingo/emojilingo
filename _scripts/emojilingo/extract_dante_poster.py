@@ -52,7 +52,8 @@ table.keys(): [
 DIVINA_COMMEDIA_JSON = os.path.join('../_sources/dc_Hollander.json')
 SPREADSHEET_KEY = '13vkH3a-C0OpVTm9r5daFg_y0MN8lPASwGICaa72zaGg'
 SPREADSHEET_GID = 262347955
-EMOJILINGO_GPT_COLUMN_HEADER = 'Eval GPT-4-0613\nItalian\nWinner, Emoji'
+EMOJILINGO_GPT_COLUMN_HEADER_EMOJI = 'Eval GPT-4-0613\nItalian\nWinner, Emoji'
+EMOJILINGO_GPT_COLUMN_HEADER_MODEL = 'Eval GPT-4-0613\nItalian\nWinner, Model'
 
 def fuzzy_enhence(term, terzina):
     num_chars_term = len(term)
@@ -196,11 +197,14 @@ def main(lang, months, col_num):
     dates = list(ensure_strings_dict(table['Day']).values())
 
     table_emojitaliano = ensure_strings_dict(table['Emojitaliano']) # manually translated (by Francesca)
-    table_emojilingo_chatgpt = ensure_strings_dict(table[EMOJILINGO_GPT_COLUMN_HEADER])
+    table_emojilingo_chatgpt_emoji = ensure_strings_dict(table[EMOJILINGO_GPT_COLUMN_HEADER_EMOJI])
+    table_emojilingo_chatgpt_model = ensure_strings_dict(table[EMOJILINGO_GPT_COLUMN_HEADER_MODEL])
+
 
     table_lang = ensure_strings_dict(table[lang])
     emojitaliano = list(table_emojitaliano.values())
-    emojilingo = list(table_emojilingo_chatgpt.values())
+    emojilingo = list(table_emojilingo_chatgpt_emoji.values())
+    emojilingo_model = list(table_emojilingo_chatgpt_model.values())
     txt_lang = list(table_lang.values())
     ref_lang= list(table[f'Ref {lang}'].values())
     ref_EN= list(table[f'Ref EN'].values())
@@ -249,8 +253,8 @@ def main(lang, months, col_num):
     )
 
     date_txt_el_ref_source = [
-        (d, t, ei, el, r_en, r_lang, s) for d, t, ei, el, r_en, r_lang, s in
-        zip(dates, txt_lang, emojitaliano, emojilingo, ref_EN, ref_lang, source_lang)
+        (d, t, ei, el, el_mod, r_en, r_lang, s) for d, t, ei, el, el_mod, r_en, r_lang, s in
+        zip(dates, txt_lang, emojitaliano, emojilingo, emojilingo_model, ref_EN, ref_lang, source_lang)
     ]
 
     # default sorted by month and date
@@ -272,13 +276,14 @@ def main(lang, months, col_num):
         if int(row[0].split('.')[1]) in months
     ]
 
-    for d, term, ei, el, ref_en, ref_lang, source in date_txt_el_ref_source_sorted:
+    for d, term, ei, el, el_mod, ref_en, ref_lang, source in date_txt_el_ref_source_sorted:
         ref_book_EN, ref_canto_roman, ref_line_num = ref_en.split(',')
         ref_book_EN = ref_book_EN.strip()
         ref_canto_num = roman.fromRoman(ref_canto_roman.strip())
         ref_line_num = int(ref_line_num)
         ei_tex = get_emoji_tex(ei) # emojitaliano tex (\emoji{thumb-up})
         el_tex = get_emoji_tex(el) # emojilingo tex (\emoji{thumb-up})
+        el_model_text = f'{el_mod}'.replace('_','').replace('Emojitaliano','Ei').replace('IT','')
 
         terzina_lang = get_terzina(
             dc_json, lang, ref_book_EN, ref_canto_num, ref_line_num, term,
@@ -290,7 +295,7 @@ def main(lang, months, col_num):
             f'& \multicolumn{{1}}{{r}}{{{d}}} % date', # date
             f'& \\tiny {terzina_lang} % verse', # verse
             f'& \multicolumn{{1}}{{c}}{{\\normalsize {ei_tex}}} % emojitaliano', # emojitaliano
-            f'& \multicolumn{{1}}{{c}}{{\\normalsize {el_tex}}} % emojilingo', # emojilingo
+            f'& \multicolumn{{1}}{{c}}{{\stackpair{{\\normalsize {el_tex}}}{{\\tiny {el_model_text}}}}} % emojilingo', # emojilingo
             '\\\\',
             # '\hline'
         ])
