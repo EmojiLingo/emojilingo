@@ -4,6 +4,12 @@ title: Publications
 permalink: /publications/
 ---
 
+# 2024
+
+-  F. Chiusaroli, F. Sangati, J. Monti, M.L. Pierucci, T. Uricchio (2024). Emojilingo: Harnessing AI to Translate Words into Emojis. Proceedings of the Tenth Italian Conference on Computational Linguistics (CLiC-it 2024).
+[LINK](https://clic2024.ilc.cnr.it/wp-content/uploads/2024/11/24_main_long.pdf)
+
+
 # 2023
 
 - 2023 F. Chiusaroli, 2023, L'invenzione del pittogramma. Creatività, imitazione, istanze di motivazione all'origine dell'emoticon, in G. Rocca, E. Notti, M. Muscariello (a cura di), po-ro-wi-to-jo. Scritti in onore di Mario Negri, Alessandria, Edizioni dell'Orso, pp. 145 -- 166 (ISBN: 9788836134014).
